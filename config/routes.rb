@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'pages/index'
+  get 'pages/about'
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.

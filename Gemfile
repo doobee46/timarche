@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
 gem "paperclip", "~> 4.2"
+gem "paperclip-dropbox", ">= 1.1.7"
 gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'sass-rails', '~> 4.0.3'
@@ -31,6 +32,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
+gem 'animate.css-rails', '~> 3.2.0'
 
 group :production do
   gem 'pg'

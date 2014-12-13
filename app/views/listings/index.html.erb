@@ -39,7 +39,7 @@
           <ul>
             <% @listings.each do |listing| %>
               <li class="item">
-               
+                  <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>
                   <div class="info clear">
                     <span class="item_title"><%= listing.name %></span>
                     <a class="store" href="">store Name</a>

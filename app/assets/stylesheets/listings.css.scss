@@ -1,0 +1,425 @@
+// Place all the styles related to the Listings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/***************Main_index_css**************************/
+.main_pages{
+  padding-bottom: 10px;
+  margin-top: 35px;
+
+}
+
+.main_pages h3{
+    text-align: center;
+    font-family: 'arvo', sans-serif;
+    font-weight: 700;
+    font-size: 28px; 
+    margin-top: 35px;
+    color:#333;
+}
+
+.main_pages p{
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 16px; 
+    margin-top: -10px;
+    color: #888;
+}
+
+.mid-jumbotron{
+	background-image: url(image_path("coverBG2.png"));
+	background-size: cover;
+	background-position: center-center;
+	height: 96px;
+	background-repeat: no-repeat;
+   
+ }
+
+.mid-jumbotron h3{
+   line-height: 66px;
+   color:#fff;
+   font-family:'Source Sans Pro', sans-serif;
+   font-size: 20px;
+   font-weight: 400;
+   text-transform: uppercase; 
+}
+
+.center-block{
+   float:none;
+}
+
+.med-group{
+	margin-top:25px;
+}
+
+form.navbar-form .form-group input.med[type="text"]{
+   font-size: 15px;
+   line-height: 17px;
+   font-weight: 400;
+   width: 600px;
+   height: 35px;
+   border-radius: 8px;
+   color:#888;
+   letter-spacing: 1px;
+   padding-left:6px;
+}
+
+.btn-midjumbo{
+   padding: 11px 17px 11px 17px;
+   /*height: 55px;
+     width: 60px;*/
+   border-radius: 10px;
+   background-color: #7C303C;
+   border:none;
+   margin-top:25px;
+
+}
+
+.btn-midjumbo:hover{
+   background-color: #5C232C;
+}
+
+.main_index{
+	width: 100%;
+	height:auto;
+	padding:0px 0px 35px 0px;
+	background-color: #EFEFEB;
+}
+
+ul.list_cat{
+	list-style-type: none;
+	padding: 0px 0px 20px 0px ;
+	margin: 0px;
+	border-bottom: 1px solid #bbb;
+	width: 100%;
+}
+
+.cat_list{
+	margin-bottom:35px;
+}
+
+ul.list_cat li.electro{
+	float:left;
+	display: inline;
+	margin-right: 5px;
+	background-image:url(image_path("store_bg_1.png"));
+    width: 222px;
+    height: 74px;
+}
+
+ul.list_cat li.artisanat{
+	float:left;
+	display: inline;
+	margin-right: 5px;
+	background-image:url(image_path("store_bg_2.png"));
+    width: 222px;
+    height: 74px;
+}
+
+ul.list_cat li.fashion{
+	float:left;
+	display: inline;
+	margin-right: 5px;
+	background-image:url(image_path("store_bg_3.png"));
+    width: 222px;
+    height: 74px;
+}
+ul.list_cat li.jouet{
+	float:left;
+	display: inline;
+	margin-right: 5px;
+	background-image:url(image_path("store_bg_4.png"));
+    width: 222px;
+    height: 74px;
+}
+
+ul.list_cat li.deal{
+	float:left;
+	display: inline;
+	margin-right: 5px;
+	background-image:url(image_path("store_bg_5.png"));
+    width: 222px;
+    height: 74px;
+}
+
+ul.list_cat li a {
+	color:#fff;
+	font-weight: 400;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+	letter-spacing: 1px;
+	position: relative;
+	top:25px;
+	left:30%;
+
+}
+
+ul.list_cat li:hover{
+   opacity: 0.5;
+   -webkit-transition:2s;
+   transition:2s;
+
+}
+
+
+ul.list_cat li:last-child{
+	margin-right: none;
+}
+
+.index_cat{
+	margin-bottom: 25px;
+}
+
+.index_cat h3{
+	font-weight: 700;
+	font-family: 'arvo', sans-serif;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+
+}
+
+.item_box{
+	width: 100%
+}
+
+.item_box h3{
+	font-weight: 700;
+	font-family: 'Arvo', sans-serif;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-align: left;
+	text-transform: uppercase
+}
+
+.item_box a{
+	margin-top: 5px;
+	font-weight: 300;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 13px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color:#26C9FF;
+}
+
+.item_list ul{
+	list-style-type: none;
+	padding:0px ;
+	margin-top: 50px;
+	width: 100%;
+}
+
+ul li.item{
+	width: 208px;
+	margin-right:20px;
+	float: left;
+	min-height: 1px;
+	margin-bottom: 35px;
+	position: relative;
+	box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.52);
+	border-radius: 0px 0px 4px 4px;
+	background: none repeat scroll 0% 0% #FFF;
+	height: 260px;
+	/*background-color:rgb(255,255,255);
+	width:222px;
+	height:273px;
+	-moz-box-shadow:0px 1px 2px rgba(0,0,0,0.28);
+	-webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.28);
+	box-shadow:0px 1px 2px rgba(0,0,0,0.28);
+	padding: 4px;
+	margin-right: 25px;
+	display: inline-table;
+	float: left;
+	margin-bottom: 25px;*/
+}
+
+ul li.item a img{
+	display: block;
+    width: 208px;
+    height: 200px;
+    vertical-align: middle;
+}
+
+ul li.item:last-of-type{
+	margin-right: 0px;
+}
+
+ul li.item .info span.item_title{
+	text-align: left;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 13px; 
+    margin:0px 0px 10px 8px;
+    color: #666;
+    display: block;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    white-space: nowrap;
+    width:205px;
+    text-decoration: none;
+    margin:5px 0px 4px 5px;
+    padding-right:3px;
+}
+
+ul li.item .info span.item_price{
+    color: #78C042;
+    right: 4px;
+    bottom: 0px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    float: right;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size:14px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin-right:5px;
+}
+
+ul li.item .info a.store{
+	margin: 4px 0px 0px 4px;
+	font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 13px; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    text-align: left;
+    white-space: nowrap;
+    width:100%;
+}
+
+.intro{
+	background-image:url(image_path("intro_bg.png"));
+	background-size: cover;
+	background-position: center-top;
+	height: 350px;
+	background-repeat: no-repeat;
+	margin-bottom: 0px;
+
+}
+.intro_box {
+    padding: 50px 0px;
+    text-align: center;
+}
+
+.intro_box h2 {
+    font-family: "arvo",sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #444;
+    font-size: 30px;
+    /*line-height: ;*/
+}
+
+.intro_box h2 ul {
+    width: 100px;
+    height: 34px;
+    margin: 0px;
+    padding: 0px;
+    list-style: outside none none;
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    transform: translate3d(0px, 0px, 0px);
+    transition: top 125ms ease-out 0s;
+    ist-style: outside none none;
+}
+
+.intro_box h2 ul li {
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    color: #444;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translate3d(0px, 0px, 0px);
+    transition: opacity 125ms ease-out 0s;
+}
+
+.btn-marketing{
+	color: #FFF;
+	display: inline-block;
+	background: none repeat scroll 0% 0% #6ED7AF;
+	border-radius: 20px;
+	padding: 5px 14px;
+	margin: 10px 0px;
+	font-size: 21px;
+	line-height: 1;
+    border:none;
+}
+
+.btn-marketing:hover{
+	background-color:#588F30; 
+}
+
+.intro_box h3 {
+    font-family: "Source Sans Pro",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+}
+
+.intro_box h3 a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.block-actions{
+	display: none;
+    left: 45px;
+    top:-130px;
+    position:relative;
+}
+
+.btn-heart{
+	background-color:#78C042;
+	border:none;
+}
+
+.btn-heart:hover{
+	background-color:#588F30;
+	border:none;
+}
+
+.btn-share{
+   background-color:#78C042;
+   border:none;
+}
+
+.btn-share:hover{
+   background-color:#588F30;
+   border:none;
+}
+
+ul li.item a img:hover{
+    opacity: 0.5;
+   -webkit-transition:2s;
+    transition:2s;
+}
+
+
+ .item_list ul li.item:hover .block-actions{
+    display: block;
+   -webkit-transition:2s;
+    transition:2s;
+}
+
+.block-actions button i{
+  padding-right:3px;
+}
+
+.centered{
+	width:720px;
+	margin-right:auto;
+	margin-left:auto;
+}

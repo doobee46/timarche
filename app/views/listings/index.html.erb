@@ -1,0 +1,77 @@
+<%= render :partial => 'shared/midsearch'%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="index_cat">
+        <h3>Categories</h3>
+        <div class="cat_list ">
+          <ul class="list_cat ">
+            <li class="electro"><a href="">Electroniques</a></li>
+            <li class="artisanat"><a href="">Artisanats</a></li>
+            <li class="fashion"><a href="">Fashion</a></li>
+            <li class="jouet"><a href="">Jouets</a></li>
+            <li class="deal"><a href="">Deals</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container clearfix">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="main_pages switcher">
+        <h3>Touts les Produits</h3>
+        <p>Découvrez les produits de partout dans le marché.</p>
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default">Recent</button>
+          <button type="button" class="btn btn-default">Populaire</button>
+          <button type="button" class="btn btn-default">Deals</button>
+        </div>
+      </div>
+      <div class="item_box">
+        <h3 class="pull-left">Produits en vedette</h3>
+        <%= link_to "Voir plus d'annonces >>",pages_browse_path , class: 'pull-right' %>
+        <!--<a class="pull-right" href="">Voir plus d'annonces </a>-->
+      </div>
+      <div class="item_list">
+          <ul>
+            <% @listings.each do |listing| %>
+              <li class="item">
+                <%= link_to (image_tag("default.png")), listing_path(listing) %>
+                <!--<a href=""><img src="http://d2a2wjuuf1c30f.cloudfront.net/product_photos/25492920/Magae_20a_20trois_20800x800_original.jpg" alt="item"> -->
+                  <div class="info clear">
+                    <span class="item_title"><%= listing.name %></span>
+                    <a class="store" href="">store Name</a>
+                    <span class="item_price"> <%=number_to_currency(listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: ",")   %></span>
+                  </div>
+                  <div class="block-actions">
+                    <button type="button" class="btn btn-primary btn-xs "><i class="fa fa-heart "></i>Like</button>
+                    <button type="button" class="btn btn-primary btn-xs "><i class="fa fa-share "></i>Share</button>
+                  </div>                                   
+              </li>
+             <% end %>  
+          </ul>  
+      </div>   
+    </div>
+  </div>
+</div>
+<div class="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="intro_box clearfix">
+          <h2>Découvrez les biens et produits que vous adorerez du marché</h2>
+            <%= link_to "Sign UP",new_user_registration_path ,class: 'btn btn-marketing' %>
+            <!--<a href="" class="btn btn-marketing">Sign Up</a>-->
+            <h3>ou bien <a href="">ouvrir votre propre boutique </a> gratuitement</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

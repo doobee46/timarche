@@ -18,6 +18,10 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body{
+    padding-top:60px;
+}
+
 a{
     color:#444;
     text-decoration: none;
@@ -39,7 +43,7 @@ a:hover{
     border-color: none;
 }
 
-.navbar-brand img{
+.navbar-brand a img{
     margin-top: -5px;
 }
 
@@ -103,7 +107,7 @@ li.dropdown.open{
     background-position: center-top;
     height: 550px;
     background-repeat: no-repeat;
-    margin-bottom: 0px;
+    margin:-48px 0px 0px 0px;
 }
 
 .jumbo_center{
@@ -131,7 +135,7 @@ li.dropdown.open{
     color: #fff;
     margin-top:15px;
     text-align: center;
-    padding-bottom:45px;
+    padding-bottom:4px;
 }
 
 form.navbar-form .form-group input[type="text"]{

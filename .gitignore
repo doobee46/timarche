@@ -14,6 +14,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
 
 config/settings.local.yml
 config/settings/*.local.yml
@@ -21,3 +27,6 @@ config/environments/*.local.yml
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore Paperclip uploaded files
+/public/system

@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+
+  before_filter :authenticate_user!, except: [:index]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   respond_to :html

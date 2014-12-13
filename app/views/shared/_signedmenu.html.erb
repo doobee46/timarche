@@ -32,9 +32,7 @@
                       </ul>
                     </li>
                     <li>
-                      <button type="button" class="btn btn-default btn-post"data-toggle="popover" title="Popover title" data-content="Pour poster une annonce , cliquer ici pour aussi faire l'enregistrement">
-                        Deposer une annonce
-                      </button>
+                       <%= button_to "Deposer une annonce", new_listing_path, :method => :get, class: 'btn btn-post'%>
                     </li>
                   </ul>
               </div>

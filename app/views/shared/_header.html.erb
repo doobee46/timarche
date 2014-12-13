@@ -10,8 +10,7 @@
               <div class="col-md-12">
                 <div class="navbar-header">
                   <div class="navbar-brand" href="#">
-                    <%= link_to image_tag("reverse_logo.png", class: ' animated bounce'), root_path %> 
-                    <!--<img  class="bounce"alt="Brand" src="app/assets/images/reverse_logo.png">-->
+                    <%= link_to image_tag("reverse_logo.png", class: ' animated bounce'), root_path %>
                   </div>
                 </div>
                  <ul class="nav navbar-nav pull-right">
@@ -30,11 +29,11 @@
                       <li><a href="#"><span class="icon_header glyphicon glyphicon-bullhorn" aria-hidden="true"></span>Nous contacter</a></li>
                     </ul>
                   </li>
+                  <%if user_signed_in?%>
                   <li>
-                    <button type="button" class="btn btn-default btn-post"data-toggle="popover" title="Popover title" data-content="Pour poster une annonce , cliquer ici pour aussi faire l'enregistrement">
-                      Deposer une annonce
-                    </button>
+                    <%= button_to "Deposer une annonce", new_listing_path, :method => :get, class: 'btn btn-post'%>
                   </li>
+                  <% end %>
                 </ul>
               </div>
             </div>                

@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  def after_sign_in_path_for(resource)
+    listings_path
+  end
+
   protected
 
   #->Prelang (user_login:devise)

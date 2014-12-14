@@ -1,0 +1,54 @@
+.pr-show{
+    background-color:#F6F6F6;
+}
+
+.product{
+    width: 1060px;
+    margin: 22px auto 50px;
+    padding: 20px;
+    background: none repeat scroll 0% 0% #fff;
+    border: 1px solid #B1BACE;
+    border-radius: 5px 4px 4px;
+    clear: both;
+}
+
+.title_head{
+    margin-top: -15px;
+}
+
+
+.desc{
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    position: relative;
+    color: #888;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 28px;
+}
+
+a.store{
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    position: relative;
+    color: #888;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 28px;
+    text-decoration: none;
+
+}
+
+.first_col img{
+    border-radius: 4px;
+    max-width: 100%;
+    vertical-align: middle;
+    margin: 0px auto;
+    height: 650px;
+}

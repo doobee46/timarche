@@ -112,7 +112,7 @@ li.dropdown.open{
 
 .jumbo_center{
     text-align: center;
-    padding-top: 85px;
+    padding-top:45px;
     width: 780px;
 }
 
@@ -136,6 +136,10 @@ li.dropdown.open{
     margin-top:15px;
     text-align: center;
     padding-bottom:4px;
+}
+
+form.navbar-form {
+    margin-bottom:65px;
 }
 
 form.navbar-form .form-group input[type="text"]{
@@ -645,7 +649,9 @@ ul.trending li.trending_listing .owner-details em {
     font-weight: 300;
     font-size: 16px;
     border:none;
-    letter-spacing: 1px; 
+    letter-spacing: 1px;
+    position: relative;
+    right: 80px; 
 }
 
 .btn-voir:hover{
@@ -696,6 +702,24 @@ ul.trending li.trending_listing .owner-details em {
     margin-right:auto;
     margin-top: 12px;
 
+}
+
+.btn-action{
+    background-color: #9CD08F;
+    color:#fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    border:none;
+    letter-spacing: 1px; 
+    width: 270px;
+    height: 60px;
+
+}
+
+.btn-action:hover{
+   background-color:#64B650;
+   color: #fff;
 }
 
 .btn-trial{

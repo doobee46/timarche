@@ -13,6 +13,9 @@
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             </button>
           </form>
+          <% unless user_signed_in?%>
+             <%= button_to "Ouvrir une boutique", user_registration_path, :method => :get, class: 'btn btn-action'%>
+          <%end%>
         </div>
       </div>
     </div>     
@@ -169,7 +172,7 @@
           </ul>              
         </div>
         <div class="voir-plus clear">
-            <%=link_to "Voir plus", listings_path, class: "btn btn-default btn-voir" %>
+            <%=link_to "Voir plus de produits", listings_path, class: "btn btn-voir" %>
             <!--<button type="button" class="btn btn-default btn-voir">Voir plus</button>-->
         </div>           
       </div>

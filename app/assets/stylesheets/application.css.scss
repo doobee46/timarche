@@ -97,12 +97,19 @@ li.dropdown.open{
     color:#fff;
 }
 
+.glyphicon-inbox{
+    font-size:25px;
+    position: relative;
+    left: 10px;
+    top: 3px;
+}
+
 .icon_header{
     padding-right: 15px;
 }
 
 .jumbotron{
-    background-image: url(image_path("coverBG_alt2.png"));
+    background-image: url(image_path("coverBG_alt2.jpg"));
     background-size: cover;
     background-position: center-top;
     height: 550px;
@@ -813,4 +820,5 @@ ul.nav li a i.mail{
     top: -15px;
     right: 10px;
     background-color:#5C232C;
+    padding: 3px 5px;
 }

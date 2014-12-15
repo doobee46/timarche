@@ -12,15 +12,17 @@
                 </div>
                   <ul class="nav navbar-nav pull-right">
                     <li class="active">
-                      <a href="">
+                       <%= link_to conversations_path, data: { no_turbolink: true } do %>
+                            <i class="glyphicon glyphicon-inbox"><span class="badge"><%=current_user.mailbox.inbox.count%></span></i>
+                        <%end%>
+                      <!--<a href="">
                         <i class="mail fa fa-inbox fa-2x"><span class="badge">42</span></i>
-                      </a>
+                      </a>-->
                     </li>
                     <li class="dropdown">
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         <span class="about-image">
                           <%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %>
-                          <!--<img src="https://s3.amazonaws.com/uifaces/faces/twitter/diesellaws/128.jpg" class="img-circle" height="30" width="30">-->
                         </span>
                         <span class="caret"></span>
                       </a>
@@ -42,7 +44,7 @@
                         </li>
                         <li>
                           <%= link_to destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
-                            <i class="glyphicon glyphicon-log-out"></i> Deconnecter
+                            <i class="glyphicon glyphicon-log-out"></i> Deconnexion
                           <% end %> 
                         </li>
                       </ul>

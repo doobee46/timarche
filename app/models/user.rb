@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  acts_as_messageable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   if Rails.env.development?
@@ -28,4 +29,14 @@ class User < ActiveRecord::Base
 
 
   devise authentication_keys: [:login]
+
+  def name
+    username
+  end
+
+  def mailboxer_email(object)
+     email
+  end
+
+
 end

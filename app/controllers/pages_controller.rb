@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   def browse
   	@listings = Listing.all
     respond_with(@listings)
+
   end
   
 end

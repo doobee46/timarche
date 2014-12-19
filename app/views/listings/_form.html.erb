@@ -17,6 +17,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "btn btn-default dropdown-toggle"}%>
+  </div>
+  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>

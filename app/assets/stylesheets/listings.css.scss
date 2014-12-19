@@ -117,8 +117,8 @@ ul.list_cat li.artisanat{
 	display: inline;
 	margin-right: 5px;
 	background-image:url(image_path("store_bg_2.png"));
-    width: 222px;
-    height: 74px;
+  width: 222px;
+  height: 74px;
 }
 
 ul.list_cat li.fashion{
@@ -126,16 +126,17 @@ ul.list_cat li.fashion{
 	display: inline;
 	margin-right: 5px;
 	background-image:url(image_path("store_bg_3.png"));
-    width: 222px;
-    height: 74px;
+  width: 222px;
+  height: 74px;
 }
+
 ul.list_cat li.jouet{
 	float:left;
 	display: inline;
 	margin-right: 5px;
 	background-image:url(image_path("store_bg_4.png"));
-    width: 222px;
-    height: 74px;
+  width: 222px;
+  height: 74px;
 }
 
 ul.list_cat li.deal{
@@ -143,8 +144,8 @@ ul.list_cat li.deal{
 	display: inline;
 	margin-right: 5px;
 	background-image:url(image_path("store_bg_5.png"));
-    width: 222px;
-    height: 74px;
+  width: 222px;
+  height: 74px;
 }
 
 ul.list_cat li a {
@@ -358,7 +359,7 @@ ul li.item .info a.store{
 	margin: 10px 0px;
 	font-size: 21px;
 	line-height: 1;
-    border:none;
+  border:none;
 }
 
 .btn-marketing:hover{

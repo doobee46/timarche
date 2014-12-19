@@ -76,6 +76,8 @@ GEM
       railties (>= 3.2, < 5.0)
     foreigner (1.7.1)
       activerecord (>= 3.0.0)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     hashie (3.3.2)
     hike (1.2.3)
     i18n (0.6.11)
@@ -365,6 +367,7 @@ DEPENDENCIES
   devise!
   figaro
   font-awesome-rails
+  friendly_id (~> 5.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   mailboxer

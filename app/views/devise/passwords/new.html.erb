@@ -1,16 +1,19 @@
-<h2>Forgot your password?</h2>
+<%= render :partial => 'shared/connected'%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="login centered-login">
+        <%= devise_error_messages! %>      
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %> 
+          <div class="form-group clearfix">
+              <%= f.label :email %><br/>
+              <%= f.email_field :email, autofocus: true ,class: "form-control"%>
+          </div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+          <%= f.button "Envoyez-moi instructions de mot de passe" , class: 'btn btn-login', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> envoie en cours..."} %>
+        <% end %>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

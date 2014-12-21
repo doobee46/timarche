@@ -12,5 +12,6 @@ class MessagesController < ApplicationController
     flash[:notice] = "Message has been sent!"
     redirect_to :conversations
   end
+
   
 end

@@ -78,10 +78,10 @@
               </div>            
             </li>
             <li class="trending_listing">
-              <a href=""><img src="https://img0.etsystatic.com/029/0/6780232/il_340x270.646249488_au4l.jpg" alt="ads"> 
+              <a href=""><img src="http://upload.wikimedia.org/wikipedia/commons/4/48/Camp-Perrin_artisanat.JPG" alt="ads">  
                 <div class="info clearfix">
                 <span class="listing_title">Lance-Pompons Pois / Dot Pom pom slingshot</span>
-                <span class="listing_price">$250</span>
+                <span class="listing_price">Gdes 15000</span>
                 </div>
               </a>
               <ul class="related_images">
@@ -222,13 +222,17 @@
     <div class="row">
       <div class="col-md-12">
         <div class="trial">
-           <h4>Aucune carte ou activités de prêt de crédit nécessaire.</h4> 
+          <%if user_signed_in?%>
+          <%else%>
+           <h4>Rejoignez-nous pour voir une liste personnalisé de produits en fonction de votre style et les marques que vous aimez</h4> 
            <h3>Essayer gratuitement notre plateforme.</h3>
            <div class="trialbox clear">
-            <button type="button" class="btn btn-default btn-trial">Ouvrir une boutique</button>
-          </div> 
+            <button type="button" class="btn btn-default btn-trial">inscrivez-vous à la boutique</button>
+           </div>
+          <%end%> 
         </div>           
       </div>
     </div>
   </div>
 </div>
+

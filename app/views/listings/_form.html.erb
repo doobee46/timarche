@@ -1,40 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="login centered-login">
+        <%= form_for(@listing,:html => { :multipart => true }) do |f| %>
+        <% if @listing.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
 
-<%= form_for(@listing,:html => { :multipart => true }) do |f| %>
-  <% if @listing.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+            <ul>
+            <% @listing.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+          <fieldset>
 
-      <ul>
-      <% @listing.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <!-- Form Name -->
+          <legend>Deposer une annonce</legend>
+
+          <!-- Text input-->
+          <div class="control-group">
+            <%= f.label :name, class: "control-label" %><br>
+            <div class="controls">
+              <%= f.text_field :name, class: "form-control" %>              
+            </div>
+          </div>
+
+          <!-- File Button --> 
+          <div class="control-group">
+            <%= f.label :image %><br>
+            <div class="controls">
+            <%= f.file_field :image, class: "form-control" %>
+            </div>
+          </div>
+
+          <!-- Textarea -->
+          <div class="control-group">
+            <%= f.label :description %><br>
+            <div class="controls">                     
+            <%= f.text_area :description, class: "form-control" %>
+            </div>
+          </div>
+
+          <!-- Select Basic -->
+          <div class="control-group">
+            <%= f.label :category_id %><br>
+            <div class="controls">
+              <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "btn btn-default dropdown-toggle form-control"}%>
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="control-group">          
+            <div class="controls">
+             <%= f.button "Publier Annonce" , class: 'btn btn-login', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publication en cours..."} %>
+            </div>
+          </div>
+
+          </fieldset>
+       <% end %>     
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "btn btn-default dropdown-toggle"}%>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-   <div class="field">
-     <%= f.label :image %><br>
-    <%= f.file_field :image, class: "form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
-  </div>
-
-<% end %>
+</div>

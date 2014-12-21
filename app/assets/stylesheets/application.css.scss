@@ -69,7 +69,7 @@ ul.nav li a.dropdown-toggle{
 }
 
 li.dropdown.open{
-    background-color:#333;
+    background-color:none;
 }
 
 .dropdown-menu{
@@ -97,10 +97,10 @@ li.dropdown.open{
     color:#fff;
 }
 
-.glyphicon-inbox{
+.glyphicon-envelope{
     font-size:25px;
     position: relative;
-    left: 10px;
+    left: 8px;
     top: 3px;
 }
 
@@ -215,11 +215,12 @@ form.navbar-form .form-group input[type="text"]{
     letter-spacing: 1px;
     font-size: 14px;
     font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 10px;
 }
 
 .btn-post:hover{
     background-color: #5C232C;
-    color:#fff;
+    color:#fff !important;
 }
 
 .post_grid{
@@ -821,4 +822,12 @@ ul.nav li a i.mail{
     right: 10px;
     background-color:#5C232C;
     padding: 3px 5px;
+}
+
+.navbar-default .navbar-nav > li > a.brow{
+    margin-top:5px;
+    font-weight: 600;
+    font-size:16;
+    letter-spacing:1px;
+    color:#333;
 }

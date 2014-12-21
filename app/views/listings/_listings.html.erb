@@ -21,7 +21,7 @@
                     <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
                   <div class="info">
                     <span class="item_title"><%= listing.name %></span>
-                    <a class="store" href="">store Name</a>
+                    <a class="store" href=""><%= listing.user.name%></a>
                     <span class="item_price"> <%=number_to_currency(listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: ",")   %></span>
                   </div>
                   <div class="block-actions">
@@ -31,7 +31,10 @@
               </li>
              <% end %>  
           </ul>  
-      </div>   
+      </div>
     </div>
+     <div>
+        <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
+     </div>   
   </div>
 </div>

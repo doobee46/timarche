@@ -1,9 +1,22 @@
-<%= content_tag_for(:li, conversation) do |conversation| %>
-<p></p>
-<%= link_to conversation.subject, conversation_path(conversation) %>
-|
-<% if conversation.is_completely_trashed?(current_user) %>
-<%= link_to 'Untrash', untrash_conversation_path(conversation), method: :post %>
-<% else %>
-<% end %>
-<%end%>
+<ul class="media-list ">
+  <% @conversations.each do |conversation|%>
+  <li class="media">
+    <a class="media-left" href="#">
+      <%=image_tag current_user.avatar.url, height: '48', width: '48', class: "img-circle"%>
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading"><%= link_to conversation.subject, conversation_path(conversation) %></h4>
+      <h5>Sent <%= time_ago_in_words (conversation.updated_at) %></h5>
+       <span class="admin">
+		<% if conversation.is_completely_trashed?(current_user) %>
+	      <%= link_to 'Untrash', untrash_conversation_path(conversation), method: :post %>
+	    <% else %>
+	      <%= link_to 'Move to trash', trash_conversation_path(conversation), method: :post %>
+	    <% end %>
+	   </span>
+    </div> 
+  </li>
+  <%end%>
+</ul>
+
+

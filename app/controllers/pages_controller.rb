@@ -4,15 +4,19 @@ class PagesController < ApplicationController
   respond_to :html
 
   def index
+    @listings = Listing.all
   end
 
   def about
   end
 
-  def browse
-  	@listings = Listing.all
-    respond_with(@listings)
+  def contact
+  end
 
+  def browse
+  	@listings = Listing.all.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
+    @messages_count = current_user.mailbox.inbox({:read => false}).count
+    respond_with(@listings)
   end
   
 end

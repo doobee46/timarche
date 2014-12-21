@@ -3,6 +3,7 @@ class ConversationsController < ApplicationController
   
   def index
     @conversations ||= current_user.mailbox.inbox.all
+    @messages_count = current_user.mailbox.inbox({:read => false}).count
   end
 
   def reply

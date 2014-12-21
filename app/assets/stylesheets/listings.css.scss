@@ -32,7 +32,7 @@
 }
 
 .mid-jumbotron{
-	background-image: url(image_path("coverBG2.png"));
+	background-image: url(image_path("coverBG2.jpg"));
 	background-size: cover;
 	background-position: center-center;
 	height: 96px;
@@ -41,12 +41,12 @@
  }
 
 .mid-jumbotron h3{
-   color:#fff;
-   font-family:'Source Sans Pro', sans-serif;
+   color:#474747;
+   font-family:'lato', sans-serif;
    font-size: 20px;
-   font-weight: 400;
+   font-weight: 600;
    text-transform: uppercase; 
-   
+   margin-top:26px;
 }
 
 .center-block{

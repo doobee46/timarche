@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141219020149) do
+ActiveRecord::Schema.define(version: 20141220053027) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20141219020149) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category_id"
+    t.integer  "user_id"
   end
 
   create_table "mailboxer_conversation_opt_outs", force: true do |t|

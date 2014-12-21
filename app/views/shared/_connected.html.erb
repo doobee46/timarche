@@ -2,11 +2,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-      	
+      	<% if @title == "signup" %>
         <h3>S'enregistrer a Timarché</h3>
-       
-        <!--<h3>Se connecter a Timarché</h3>-->
-     
+        <% elsif @title =="signin"%>
+        <h3>Se connecter a Timarché</h3>
+        <% elsif @title =="inbox"%>
+        <h5>Boite de reception <span>|</span> Conversation avec </h5> 
+        <% else %>
+        <%end%>
       </div>
     </div>     
   </div>

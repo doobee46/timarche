@@ -13,6 +13,9 @@ gem "figaro"
 gem "bootstrap_flash_messages", "~> 1.0.0"
 gem 'mailboxer'
 gem 'friendly_id', '~> 5.0.0'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
+gem 'quiet_assets'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -45,4 +48,8 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'faker'
+  gem 'thin'
 end

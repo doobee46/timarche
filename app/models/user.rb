@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :listings, dependent: :destroy
   acts_as_messageable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -13,7 +14,7 @@ class User < ActiveRecord::Base
                     :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
 
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :avatar, :content_type => /\Aavatar\/.*\Z/
  
 
   devise :database_authenticatable, :registerable,

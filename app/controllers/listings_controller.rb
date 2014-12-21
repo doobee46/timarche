@@ -6,7 +6,7 @@ class ListingsController < ApplicationController
   respond_to :html
 
   def index
-    @listings = Listing.all
+    @listings = Listing.all.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
     respond_with(@listings)
     @featured = @listings.limit(5)
   end
@@ -26,6 +26,7 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    @listing.user_id = current_user.id
     @listing.save
     respond_with(@listing)
   end

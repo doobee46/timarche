@@ -21,6 +21,10 @@ doc/
 .DS_Store
 .idea
 
+#Ignore sampleimages
+/sampleimages
+
+
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml

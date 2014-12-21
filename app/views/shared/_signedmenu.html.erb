@@ -11,9 +11,12 @@
                   </div>
                 </div>
                   <ul class="nav navbar-nav pull-right">
-                    <li class="active">
+                    <% unless @title == "browse" %>
+                    <li><%=link_to "Browse", pages_browse_path , class: 'brow'%></li>
+                    <%end%>
+                    <li>
                        <%= link_to conversations_path, data: { no_turbolink: true } do %>
-                            <i class="glyphicon glyphicon-inbox"><span class="badge"><%=current_user.mailbox.inbox.count%></span></i>
+                          <i class="glyphicon glyphicon-envelope"><span class="badge"><%=@messages_count%></span></i>
                         <%end%>
                       <!--<a href="">
                         <i class="mail fa fa-inbox fa-2x"><span class="badge">42</span></i>
@@ -28,13 +31,13 @@
                       </a>
                       <ul class="dropdown-menu" role="menu">
                         <li>
-                          <%= link_to edit_user_registration_path, data: { no_turbolink: true } do %>
-                            <i class="glyphicon glyphicon-cog"></i> Settings
+                          <%= link_to '', data: { no_turbolink: true } do %>
+                            <i class="glyphicon glyphicon-tasks"></i> Envoyer Message
                           <% end %> 
                         </li>
                         <li>
-                          <%= link_to '', data: { no_turbolink: true } do %>
-                            <i class="glyphicon glyphicon-info-sign"></i> A propos
+                          <%= link_to edit_user_registration_path, data: { no_turbolink: true } do %>
+                            <i class="glyphicon glyphicon-cog"></i> Settings
                           <% end %> 
                         </li>
                         <li>
@@ -47,6 +50,21 @@
                             <i class="glyphicon glyphicon-log-out"></i> Deconnexion
                           <% end %> 
                         </li>
+                      </ul>     
+                    </li>
+                    <li class="dropdown">
+                       <a href="#" class="dropdown-toggle brow" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret "></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li>
+                            <%= link_to pages_about_path , data: { no_turbolink: true } do %>
+                              <i class="glyphicon glyphicon-info-sign"></i> A propos
+                            <% end %> 
+                          </li>
+                           <li>
+                            <%= link_to pages_contact_path, data: { no_turbolink: true } do %>
+                              <i class="glyphicon glyphicon-phone-alt"></i> Contact Us
+                            <% end %> 
+                          </li>
                       </ul>
                     </li>
                     <li>
@@ -60,3 +78,4 @@
       </div>         
     </div>
 </div>
+

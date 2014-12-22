@@ -28,6 +28,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
     @listing.save
+    flash[:notice]= 'Listing was successfully published.'
     respond_with(@listing)
   end
 

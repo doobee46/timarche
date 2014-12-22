@@ -1,0 +1,56 @@
+
+<li class="trending_listing">
+  <%= link_to listing_path(listing)  do %>
+    <%= image_tag (listing.image(:medium))%>
+    <div class="info clearfix">
+      <span class="listing_title"><%= listing.user.name%></span>
+      <span class="listing_price"><%=number_to_currency(listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: ",")   %></span>
+    </div>  
+  <% end %>
+  <!--<a href=""><img src="http://upload.wikimedia.org/wikipedia/commons/4/48/Camp-Perrin_artisanat.JPG" alt="ads"> 
+    <div class="info clearfix">
+    <span class="listing_title">Lance-Pompons Pois / Dot Pom pom slingshot</span>
+    <span class="listing_price">$250</span>
+    </div>
+  </a>-->
+  <ul class="related_images">
+    <li>
+      <a href="">
+        <div class="thumbnail-outer">
+          <div class="thumbnail-inner">
+            <img src="http://placehold.it/84x84" alt="" >
+          </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <div class="thumbnail-outer">
+          <div class="thumbnail-inner">
+            <img src="http://placehold.it/84x84" alt="" >
+          </div>
+        </div>
+      </a>
+    </li>
+    <li class="price_count">
+     <div class="thumbnail-outer count-box">
+          <div class="thumbnail-inner">
+            <a class="shop-listing-count" href="">        
+              <span class="listing-count"><%= %></span> items  
+            </a>
+          </div>
+      </div>
+    </li>                  
+  </ul>                 
+  <div class="about-shop clear">
+    <a href="">
+      <span class="owner-details">
+        <span class="about-image">
+           <%= image_tag listing.user.avatar.url(:medium), class: "img-circle" %>
+          <!--<img src="https://s3.amazonaws.com/uifaces/faces/twitter/diesellaws/128.jpg" class="img-circle" height="75" width="75">--></span>                          
+          <em>From</em> <span class="shop-name"><%=listing.user.name%></span> <br>
+          <em>in</em> <span class="location">Haiti</span>                          
+      </span>                       
+    </a>
+  </div>            
+</li>

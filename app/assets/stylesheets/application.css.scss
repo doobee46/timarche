@@ -33,6 +33,10 @@ a:hover{
     text-decoration: none;
 }
 
+.alert{
+  margin-bottom:55px;
+}
+
 .mini{
  width: 125px;
  height:30px;
@@ -157,7 +161,7 @@ form.navbar-form .form-group input[type="text"]{
     width: 600px;
     height: 55px;
     border-radius: 8px;
-    color: #e1e5e9;
+    color: #888;
     letter-spacing: 1px;
 }
 
@@ -503,7 +507,7 @@ ul.related_images li a .thumbnail-inner img {
     text-overflow: ellipsis;
     text-align: left;
     white-space: nowrap;
-    width: 190px;
+    width: 150px;
     text-decoration: none;
 }
 
@@ -520,6 +524,7 @@ ul.related_images li a .thumbnail-inner img {
     font-weight: 600;
     font-size: 16px;
     text-decoration: none;
+    margin-left: 25px;
 }
 
 
@@ -539,7 +544,7 @@ ul.trending li.trending_listing .about-shop a {
     text-decoration: none;
 }
 
-ul.trending li.trending_listing .owner-details .about-image img {
+ul.trending li.trending_listing .owner-details span.about-image img {
     border-radius: 50px;
     height: 50px;
     float: left;
@@ -659,7 +664,8 @@ ul.trending li.trending_listing .owner-details em {
     border:none;
     letter-spacing: 1px;
     position: relative;
-    right: 80px; 
+    right: 150px;
+    top: 18px;
 }
 
 .btn-voir:hover{

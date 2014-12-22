@@ -1,11 +1,12 @@
 <body class="pr-show">
+<%= render :partial => 'shared/midsearch'%>	
 <div class="product">
 		<div class="container">
 		    <div class="row">
 				<div class="col-md-12">
-					<div class="title_head">
-						<p class="desc">Velvet Balconette Bralette, More Colors</p>
-						<a href="" class="store">from DWDanielleWood</a> 
+					<div class="title_head centered">
+						<p class="desc"><%=@listing.description%></p>
+						<span class="store"> En vente par :<%=link_to @listing.user.username%></span>
 					</div>
 				</div>
 			</div>
@@ -15,8 +16,30 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="col-md-7">
+					<div class="social_icon">
+					</div>
 					<div class="first_col">
-						<%=image_tag 'showpic.png'%>
+						<%=image_tag @listing.image.url%>
+					</div>
+					<div class="body_desc">
+					   <p><%=@listing.description%></p>
+					</div>
+					<div class="comments">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="mid_col">
+						<%=image_tag @listing.image.url(:thumb)%>
+						<%=image_tag @listing.image.url(:thumb)%>
+						<%=image_tag @listing.image.url(:thumb)%>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="last_col">
+						<div class="show_price">
+						<%=number_to_currency(@listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: ",")%>
+						</div>
+						<button class="btn btn-danger btn-lg btn-price">Buy Now</button>
 					</div>
 				</div>
 			</div>

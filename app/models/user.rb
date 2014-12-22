@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
                     :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
 
-  validates_attachment_content_type :avatar, :content_type => /\Aavatar\/.*\Z/
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
  
 
   devise :database_authenticatable, :registerable,

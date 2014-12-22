@@ -26,155 +26,18 @@
     <div class="row">
       <div class="col-md-12 clearfix">
         <div class="main_listings switcher">
-          <h3>Boutiques Récentes</h3>
+          <h3>Publications Récentes</h3>
           <p>Découvrez les nouveaux produits de partout dans le marché.</p>
         </div>
         <div class="recent_pro clearfix">
           <ul class="trending">
-            <li class="trending_listing">
-              <a href=""><img src="http://upload.wikimedia.org/wikipedia/commons/4/48/Camp-Perrin_artisanat.JPG" alt="ads"> 
-                <div class="info clearfix">
-                <span class="listing_title">Lance-Pompons Pois / Dot Pom pom slingshot</span>
-                <span class="listing_price">$250</span>
-                </div>
-              </a>
-              <ul class="related_images">
-                <li>
-                  <a href="">
-                    <div class="thumbnail-outer">
-                      <div class="thumbnail-inner">
-                        <img src="img/thumbnail.png" alt="84x84" >
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <div class="thumbnail-outer">
-                      <div class="thumbnail-inner">
-                        <img src="http://placehold.it/298x237" alt="" >
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li class="price_count">
-                 <div class="thumbnail-outer count-box">
-                      <div class="thumbnail-inner">
-                        <a class="shop-listing-count" href="">        
-                          <span class="listing-count">80</span> items  
-                        </a>
-                      </div>
-                  </div>
-                </li>                  
-              </ul>                 
-              <div class="about-shop clear">
-                <a href="">
-                  <span class="owner-details">
-                    <span class="about-image"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/diesellaws/128.jpg" class="img-circle" height="75" width="75"></span>                          
-                      <em>From</em> <span class="shop-name">Celushop</span> <br>
-                      <em>in</em> <span class="location">Haiti</span>                          
-                  </span>                       
-                </a>
-              </div>            
-            </li>
-            <li class="trending_listing">
-              <a href=""><img src="http://upload.wikimedia.org/wikipedia/commons/4/48/Camp-Perrin_artisanat.JPG" alt="ads">  
-                <div class="info clearfix">
-                <span class="listing_title">Lance-Pompons Pois / Dot Pom pom slingshot</span>
-                <span class="listing_price">Gdes 15000</span>
-                </div>
-              </a>
-              <ul class="related_images">
-                <li>
-                  <a href="">
-                    <div class="thumbnail-outer">
-                      <div class="thumbnail-inner">
-                        <img class="inner" src="http://placehold.it/84x84" alt="" >
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <div class="thumbnail-outer">
-                      <div class="thumbnail-inner">
-                        <img class="inner" src="http://placehold.it/84x84" alt="" >
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li class="price_count">
-                  <div class="thumbnail-outer count-box">
-                      <div class="thumbnail-inner">
-                        <a class="shop-listing-count" href="">        
-                          <span class="listing-count">107</span> items  
-                        </a>
-                      </div>
-                  </div>
-                </li>       
-              </ul>                 
-              <div class="about-shop clear">
-                <a href="">
-                  <span class="owner-details">
-                    <span class="about-image"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/aaronalfred/128.jpg" class="img-circle" height="75" width="75"></span>                          
-                      <em>From</em> <span class="shop-name">Celushop</span> <br>
-                      <em>in</em> <span class="location">Haiti</span>                          
-                  </span>                       
-                </a>
-              </div>            
-            </li>
-            <li class="trending_listing">
-              <a href=""><img src="img/iphone.JPG" alt="ads"> 
-                <div class="info clearfix">
-                <span class="listing_title">Lance-Pompons Pois / Dot Pom pom slingshot</span>
-                <span class="listing_price">$250</span>
-                </div>
-              </a>
-              <ul class="related_images">
-                <li>
-                  <a href="">
-                    <div class="thumbnail-outer">
-                      <div class="thumbnail-inner">
-                        <img src="http://placehold.it/84x84" alt="84x84" >
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <div class="thumbnail-outer">
-                      <div class="thumbnail-inner">
-                        <img src="http://placehold.it/84x84" alt="" >
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li class="price_count">
-                 <div class="thumbnail-outer count-box">
-                      <div class="thumbnail-inner">
-                        <a class="shop-listing-count" href="">        
-                          <span class="listing-count">1120</span> items  
-                        </a>
-                      </div>
-                  </div>
-                </li>                  
-              </ul>                 
-              <div class="about-shop clear">
-                <a href="">
-                  <span class="owner-details">
-                    <span class="about-image"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/diesellaws/128.jpg" class="img-circle" height="75" width="75"></span>                          
-                      <em>From</em> <span class="shop-name">Celushop</span> <br>
-                      <em>in</em> <span class="location">Haiti</span>                          
-                  </span>                       
-                </a>
-              </div>            
-            </li>
-          </ul>              
-        </div>
-        <div class="voir-plus clear">
-            <%=link_to "Voir plus de produits", listings_path, class: "btn btn-voir" %>
-            <!--<button type="button" class="btn btn-default btn-voir">Voir plus</button>-->
-        </div>           
+           <%= render @listings.limit(3).order('created_at DESC')%>
+          </ul>
+          <div class="voir-plus clear">
+              <%=link_to "Voir plus de produits", listings_path, class: "btn btn-voir" %>
+              <!--<button type="button" class="btn btn-default btn-voir">Voir plus</button>-->
+          </div> 
+        </div>          
       </div>
     </div>
   </div>
@@ -217,22 +80,5 @@
     </div>
   </div>
 </div>
-<div class="invite">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="trial">
-          <%if user_signed_in?%>
-          <%else%>
-           <h4>Rejoignez-nous pour voir une liste personnalisé de produits en fonction de votre style et les marques que vous aimez</h4> 
-           <h3>Essayer gratuitement notre plateforme.</h3>
-           <div class="trialbox clear">
-            <button type="button" class="btn btn-default btn-trial">inscrivez-vous à la boutique</button>
-           </div>
-          <%end%> 
-        </div>           
-      </div>
-    </div>
-  </div>
-</div>
+<%= render :partial => 'pages/invite'%>
 

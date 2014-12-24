@@ -57,7 +57,7 @@ span.store{
 
 .first_col{
    padding:8px;
-   border: 1px dashed #e1e5e9;
+   border: 1px dashed #D8DAE4;
    margin-top: 25px;
 }
 
@@ -72,7 +72,7 @@ span.store{
   width: 100%;
   height: auto;
   padding: 8px 5px;
-  border-bottom: 1px dashed #596377;
+  border-bottom: 1px dashed #D8DAE4;
 
 }
 
@@ -89,7 +89,7 @@ span.store{
     width: 120px;
     height: 369px;
     display: block;
-    border: 1px dashed #e1e5e9;
+    border: 1px dashed #D8DAE4;
     margin-top: 25px;
     margin-left: -20px;
     padding: 4px;
@@ -136,4 +136,49 @@ span.store{
 .btn-price{
     margin: 0px auto 20px 20px;
     width: 236px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-cont {
+    margin: 0px auto 20px 20px;
+    width: 236px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #888;
+}
+
+.contact{
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin:25px 0px 15px 0px;
+}
+
+.listing_author{
+    float: right;
+    position:relative;
+    top: 25px;
+    right: 50px;
+}
+
+.listing_author h3 a{
+   font-size:18px;
+   color: #3F465E;
+   font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.contact img{
+  width: 70px;
+  height:70px;
+  margin-left: 25px;
+
 }

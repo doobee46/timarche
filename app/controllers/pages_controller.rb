@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   
-  before_filter :authenticate_user!, except: [:about, :index]
+  before_filter :authenticate_user!, except: [:about, :index, :contact]
   respond_to :html
 
   def index

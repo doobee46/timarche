@@ -1,4 +1,5 @@
 class Listing < ActiveRecord::Base
+  acts_as_commontable
   belongs_to :user
   belongs_to :category
   if Rails.env.development?

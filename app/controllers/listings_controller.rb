@@ -13,6 +13,7 @@ class ListingsController < ApplicationController
 
 
   def show
+    commontator_thread_show(@listing)
     respond_with(@listing)
   end
 

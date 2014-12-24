@@ -25,6 +25,7 @@
 					   <p><%=@listing.description%></p>
 					</div>
 					<div class="comments">
+					   <%= commontator_thread(@listing) %>
 					</div>
 				</div>
 				<div class="col-md-2">
@@ -39,7 +40,16 @@
 						<div class="show_price">
 						<%=number_to_currency(@listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: ",")%>
 						</div>
-						<button class="btn btn-danger btn-lg btn-price">Buy Now</button>
+						<button class="btn btn-danger btn-lg btn-price">Acheter</button>
+					</div>
+					<div class="last_col">
+						<div class="contact">
+						  <%= image_tag @listing.user.avatar.url(:medium), class: "img-circle"%>
+						</div>
+						<div class="listing_author">
+						  <h3><%= link_to @listing.user.username%></h3>
+						</div>
+						<button class="btn btn-danger btn-lg btn-cont">Contacter</button>
 					</div>
 				</div>
 			</div>

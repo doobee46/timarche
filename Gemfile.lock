@@ -71,6 +71,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    commontator (4.10.3)
+      jquery-rails
+      rails (>= 3.1)
     daemons (1.1.9)
     debug_inspector (0.0.2)
     dropbox-sdk (1.6.4)
@@ -387,6 +390,7 @@ DEPENDENCIES
   bootstrap_flash_messages (~> 1.0.0)
   bundler
   coffee-rails (~> 4.0.0)
+  commontator (~> 4.10.0)
   devise!
   faker
   figaro

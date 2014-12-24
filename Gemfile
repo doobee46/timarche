@@ -40,6 +40,8 @@ gem 'omniauth-facebook'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'animate.css-rails', '~> 3.2.0'
+gem 'commontator', '~> 4.10.0'
+
 
 group :production do
   gem 'pg'

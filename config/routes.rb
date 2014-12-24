@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :listings
+  
+  mount Commontator::Engine => '/commontator'
 
   get 'pages/index'
   get 'pages/about'

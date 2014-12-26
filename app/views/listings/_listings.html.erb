@@ -12,7 +12,7 @@
       </div>
       <div class="item_box">
         <h3 class="pull-left">Produits en vedette</h3>
-        <%= link_to "Voir plus de cette categorie >>",pages_browse_path , class: 'pull-right' %>
+        <%= link_to "Voir plus de cette categorie >>",browse_path , class: 'pull-right' %>
       </div>
       <div class="item_list">
           <ul>
@@ -21,12 +21,24 @@
                     <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
                   <div class="info">
                     <span class="item_title"><%= listing.name %></span>
-                    <a class="store" href=""><%= listing.user.name%></a>
+                    <% if listing.like.blank?%>
+                    <span></span>
+                    <%else%>
+                    <span class="like"><%= listing.like.size%>likes</span>
+                    <%end%>
+                    <span class="avatar_info">
+                       <%=link_to "" do %>
+                       <%=image_tag listing.user.avatar.url(:medium), size: "20x20", alt: "avatar",class: "img-circle"%>
+                       <p><%=listing.user.name%></p>
+                       <%end%>
+                    </span>
                     <span class="item_price"> <%=number_to_currency(listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: ",")   %></span>
                   </div>
                   <div class="block-actions">
-                    <button type="button" class="btn btn-primary btn-xs "><i class="fa fa-heart "></i>Like</button>
-                    <button type="button" class="btn btn-primary btn-xs "><i class="fa fa-share "></i>Share</button>
+                    <%=form_for(Like.new) do |f| %>
+                    <%= f.hidden_field :listing_id, value: listing.id %>
+                    <%=f.submit "like", class: "btn btn-success btn-xs " %>
+                    <%end%>
                   </div>                                   
               </li>
              <% end %>  

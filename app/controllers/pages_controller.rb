@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
-  
+ 
   before_filter :authenticate_user!, except: [:about, :index, :contact]
   respond_to :html
 
   def index
-    @listings = Listing.all
-    @indexes = @listings.order('created_at DESC').limit(3)
+   @listings = Listing.all
+   @users=User.all
   end
 
   def about
@@ -20,6 +20,10 @@ class PagesController < ApplicationController
 
     respond_with(@listings)
 
+  end
+
+  def set_picture
+    @listing =Listing.friendly.find(params[:picture][:listing_id]) 
   end
   
 end

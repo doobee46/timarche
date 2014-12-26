@@ -254,43 +254,44 @@ ul li.item:last-of-type{
 }
 
 ul li.item .info span.item_title{
-	text-align: left;
+	  text-align: left;
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 13px; 
-    margin:0px 0px 10px 8px;
-    color: #666;
+    /*margin:0px 0px 10px 8px;*/
+    color:#596377;
     display: block;
     float: left;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: left;
     white-space: nowrap;
     width:205px;
     text-decoration: none;
-    margin:5px 0px 4px 5px;
+    margin:5px 0px 4px 7px;
     padding-right:3px;
+    text-transform: capitalize;
 }
 
 ul li.item .info span.item_price{
     color: #78C042;
-    right: 4px;
+    /*right: 4px*/
     bottom: 0px;
     text-align: right;
     white-space: nowrap;
     overflow: hidden;
     float: right;
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 600;
-    font-size:14px;
+    font-weight: 400;
+    font-size:13px;
     text-decoration: none;
     letter-spacing: 1px;
     margin-right:5px;
+    margin-top: 3px;
 }
 
 ul li.item .info a.store{
-	margin: 4px 0px 0px 4px;
-	font-family: 'Source Sans Pro', sans-serif;
+	  margin: 4px 0px 0px 4px;
+	  font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 11px; 
     letter-spacing: 1px;
@@ -381,9 +382,9 @@ ul li.item .info a.store{
 }
 
 .block-actions{
-	display: none;
-    left: 45px;
-    top:-130px;
+	  display: none;
+    left: 30px;
+    top: -140px;
     position:relative;
 }
 
@@ -428,4 +429,27 @@ ul li.item a img:hover{
 	width:720px;
 	margin-right:auto;
 	margin-left:auto;
+}
+.info span.avatar_info{
+  float: left;
+}
+
+.info span.avatar_info a img{
+  width: 20px;
+  height: 20px;
+  float:left;
+  margin: 0px 4px 0px 3px;
+}
+.info span.avatar_info a p{
+    margin:8px 0px 0px 6px;
+    font-family: 'open sans', sans-serif;
+    font-weight: 400;
+    color:#596377;
+    font-size: 8px; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    text-align: left;
+    white-space: nowrap;
+    width: 40px;
 }

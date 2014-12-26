@@ -497,8 +497,8 @@ ul.related_images li a .thumbnail-inner img {
  .listing_title{
     text-align: left;
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 300;
-    font-size: 14px; 
+    font-weight: 400;
+    font-size: 16px; 
     margin:0px 0px 10px 8px;
     color: #666;
     display: block;
@@ -507,8 +507,10 @@ ul.related_images li a .thumbnail-inner img {
     text-overflow: ellipsis;
     text-align: left;
     white-space: nowrap;
-    width: 150px;
+    width: 130px;
     text-decoration: none;
+    text-transform:capitalize;
+    
 }
 
 .listing_price {
@@ -519,7 +521,7 @@ ul.related_images li a .thumbnail-inner img {
     text-align: right;
     white-space: nowrap;
     overflow: hidden;
-    float: left;    
+    float: right;    
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 16px;

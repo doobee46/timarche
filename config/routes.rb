@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
+  
+  get 'likes/create'
+
+  #get 'like/create'
+
+  resources :pictures
+
   resources :categories
 
   resources :listings
+
+  resources :likes, only: :create
   
   mount Commontator::Engine => '/commontator'
 
   get 'pages/index'
-  get 'pages/about'
-  get 'pages/browse'
-  get 'pages/contact'
+  get 'about'   => "pages#about"
+  get 'browse'  => "pages#browse"
+  get 'contact' => "pages#contact"
+  get 'seller'  => "listings#seller"
 
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]

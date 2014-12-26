@@ -15,59 +15,44 @@
           </div>
         <% end %>
           <fieldset>
-
           <!-- Form Name -->
           <legend>Publier une annonce</legend>
-
-          <!-- Text input-->
-          <div class="control-group">
-            <%= f.label :name, class: "control-label" %><br>
-            <div class="controls">
-              <%= f.text_field :name, class: "form-control" %>              
+            <div class="form-group">
+              <%= f.label :name%><br>
+              <%= f.text_field :name, class: "form-control" %>
             </div>
-          </div>
-
-          <!-- File Button --> 
-          <div class="control-group">
-            <%= f.label :image %><br>
-            <div class="controls">
-            <%= f.file_field :image, class: "form-control" %>
+            <div class="form-group">
+              <%= f.label :image %><br>
+              <%= f.file_field :image %>
             </div>
-          </div>
-
-          <!-- Textarea -->
-          <div class="control-group">
-            <%= f.label :description %><br>
-            <div class="controls">                     
-            <%= f.text_area :description, class: "form-control" %>
+            <div class="form-group">
+             <label>Images additionel du produit</label>
+              <%= file_field_tag "images[]", type: :file, multiple: true %>
             </div>
-          </div>
-
-          <div class="control-group">
-            <%= f.label :price %><br>
-            <div class="controls">                     
-            <%= f.text_field :price, class: "form-control" %>
+            <div class="form-group">
+              <%= f.label :description %><br>
+              <%= f.text_area :description, class: "form-control" %>
             </div>
-          </div>
-
-          <!-- Select Basic -->
-          <div class="control-group">
-            <%= f.label :category_id %><br>
-            <div class="controls">
+            <div class="form-group">
+              <%= f.label :price %><br>
+              <%= f.text_field :price, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :category_id %><br>
               <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "btn btn-default dropdown-toggle form-control"}%>
             </div>
-          </div>
 
-          <!-- Button -->
-          <div class="control-group">          
-            <div class="controls">
-             <%= f.button "Publier Annonce" , class: 'btn btn-login', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publication en cours..."} %>
+            <div class="form-group">
+              <%= f.button "Publier Annonce" , class: 'btn btn-login', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publication en cours..."} %>
             </div>
-          </div>
 
-          </fieldset>
        <% end %>     
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224044759) do
+ActiveRecord::Schema.define(version: 20141225235416) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -61,6 +61,27 @@ ActiveRecord::Schema.define(version: 20141224044759) do
 
   add_index "commontator_threads", ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true
 
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "likes", force: true do |t|
+    t.integer  "listing_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "likes", ["listing_id"], name: "index_likes_on_listing_id"
+
   create_table "listings", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -73,7 +94,11 @@ ActiveRecord::Schema.define(version: 20141224044759) do
     t.datetime "image_updated_at"
     t.integer  "category_id"
     t.integer  "user_id"
+    t.string   "slug"
+    t.string   "listing_number"
   end
+
+  add_index "listings", ["slug"], name: "index_listings_on_slug", unique: true
 
   create_table "mailboxer_conversation_opt_outs", force: true do |t|
     t.integer "unsubscriber_id"
@@ -127,6 +152,19 @@ ActiveRecord::Schema.define(version: 20141224044759) do
 
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+
+  create_table "pictures", force: true do |t|
+    t.string   "description"
+    t.integer  "listing_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "pictures", ["listing_id"], name: "index_pictures_on_listing_id"
 
   create_table "products", force: true do |t|
     t.string   "name"

@@ -12,11 +12,11 @@
                 </div>
                   <ul class="nav navbar-nav pull-right">
                     <% unless @title == "browse" %>
-                    <li><%=link_to "Browse", pages_browse_path , class: 'brow'%></li>
+                    <li><%=link_to "Browse", browse_path , class: 'brow'%></li>
                     <%end%>
                     <li>
                        <%= link_to conversations_path, data: { no_turbolink: true } do %>
-                          <i class="glyphicon glyphicon-envelope"><span class="badge"><%=@messages_count%></span></i>
+                          <i class="glyphicon glyphicon-envelope"><span class="badge"><%=current_user.mailbox.inbox({:read => false}).count%></span></i>
                         <%end%>
                       <!--<a href="">
                         <i class="mail fa fa-inbox fa-2x"><span class="badge">42</span></i>
@@ -40,11 +40,13 @@
                             <i class="glyphicon glyphicon-cog"></i> Settings
                           <% end %> 
                         </li>
+                        <% if current_user.listings.exists?%>
                         <li>
-                          <%= link_to '', data: { no_turbolink: true } do %>
+                          <%= link_to seller_path, data: { no_turbolink: true } do %>
                             <i class="glyphicon glyphicon-tasks"></i> Admin
                           <% end %> 
                         </li>
+                        <%end%>
                         <li>
                           <%= link_to destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
                             <i class="glyphicon glyphicon-log-out"></i> Déconnexion
@@ -56,12 +58,12 @@
                        <a href="#" class="dropdown-toggle brow" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret "></span></a>
                       <ul class="dropdown-menu" role="menu">
                           <li>
-                            <%= link_to pages_about_path , data: { no_turbolink: true } do %>
+                            <%= link_to about_path , data: { no_turbolink: true } do %>
                               <i class="glyphicon glyphicon-info-sign"></i> A propos
                             <% end %> 
                           </li>
                            <li>
-                            <%= link_to pages_contact_path, data: { no_turbolink: true } do %>
+                            <%= link_to contact_path, data: { no_turbolink: true } do %>
                               <i class="glyphicon glyphicon-phone-alt"></i> Contact Us
                             <% end %> 
                           </li>

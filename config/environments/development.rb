@@ -34,4 +34,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for Mandrill
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.mandrillapp.com",
+   :port                 => 587,
+   :user_name            => ENV["MANDRILL_USERNAME"],
+   :password             => ENV["MANDRILL_API_KEY"],
+  :enable_starttls_auto => true
+}
+
 end

@@ -4,7 +4,8 @@
 		<div class="container">
 		    <div class="row">
 				<div class="col-md-12">
-					<div class="title_head centered">
+					<div class="title_head">
+						<span class="label label-default">Publication Id:<%=@listing.listing_number%></span>
 						<p class="desc"><%=@listing.description%></p>
 						<span class="store"> En vente par :<%=link_to @listing.user.username%></span>
 					</div>
@@ -30,15 +31,18 @@
 				</div>
 				<div class="col-md-2">
 					<div class="mid_col">
-						<%=image_tag @listing.image.url(:thumb)%>
-						<%=image_tag @listing.image.url(:thumb)%>
-						<%=image_tag @listing.image.url(:thumb)%>
+						<% @listing.pictures.each do |picture| %>
+						<%= image_tag picture.image.url(:medium)%>
+						<%end %>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="last_col">
 						<div class="show_price">
-						<%=number_to_currency(@listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: ",")%>
+						<%=number_to_currency(@listing.price, precision: 2, unit: "Gdes", delimiter: " ",separator: ",")%>
+						</div>
+						<div class="card_logo">
+						<%= image_tag 'card_logos.jpg'%>
 						</div>
 						<button class="btn btn-danger btn-lg btn-price">Acheter</button>
 					</div>

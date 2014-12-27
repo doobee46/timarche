@@ -1,6 +1,7 @@
 class Listing < ActiveRecord::Base
   before_save :set_listing_number
   
+  is_impressionable
   acts_as_commontable
   belongs_to :user
   belongs_to :category

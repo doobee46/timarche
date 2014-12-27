@@ -24,7 +24,7 @@
                     <% if listing.like.blank?%>
                     <span></span>
                     <%else%>
-                    <span class="like"><%= listing.like.size%>likes</span>
+                    <span class="like"><%= pluralize(listing.like.count, 'Like' )%></span>
                     <%end%>
                     <span class="avatar_info">
                        <%=link_to "" do %>

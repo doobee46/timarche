@@ -16,6 +16,8 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
 gem 'quiet_assets'
+gem 'impressionist'
+gem 'newrelic_rpm'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 

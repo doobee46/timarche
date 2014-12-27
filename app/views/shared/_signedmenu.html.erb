@@ -12,15 +12,12 @@
                 </div>
                   <ul class="nav navbar-nav pull-right">
                     <% unless @title == "browse" %>
-                    <li><%=link_to "Browse", browse_path , class: 'brow'%></li>
+                    <li><%=link_to "Nos annonces", browse_path , class: 'brow'%></li>
                     <%end%>
                     <li>
                        <%= link_to conversations_path, data: { no_turbolink: true } do %>
                           <i class="glyphicon glyphicon-envelope"><span class="badge"><%=current_user.mailbox.inbox({:read => false}).count%></span></i>
                         <%end%>
-                      <!--<a href="">
-                        <i class="mail fa fa-inbox fa-2x"><span class="badge">42</span></i>
-                      </a>-->
                     </li>
                     <li class="dropdown">
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

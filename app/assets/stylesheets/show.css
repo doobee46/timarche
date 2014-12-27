@@ -13,45 +13,54 @@
 }
 
 .title_head{
-    margin-top: -15px;
+    margin-top: -5px;
+    width: 820px;
 }
 
 
 .desc{
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 1px;
-    margin-top: 25px;
-    margin-bottom: 0px;
-    position: relative;
     color: #596377;
-    font-size: 28px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 28px;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
     text-transform:capitalize;
-    padding:10px 0px 10px 0px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
 }
 
-.span a{
-    text-transform: capitalize;
+.desc_title{
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+    color: #596377;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform:capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+span.store a{
     text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: capitalize;
 }
 
 
 span.store{
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 1px;
-    margin-top: 5px;
-    margin-bottom: 0px;
+    margin-top: -10px;
     color: #596377;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
-    text-align: center;
-    position: relative;
-    left: 250px;
     text-transform: capitalize;
 }
 
@@ -77,12 +86,14 @@ span.store{
 }
 
 .body_desc p{
-    font-size: 15px;
+    font-size: 13px;
     color: #596377;
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 1px;
     text-transform: capitalize;
     margin-top: 12px;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .mid_col {
@@ -192,3 +203,12 @@ span.store{
     margin-top: -10px;
     margin-bottom: 10px;
 }
+
+.label_id{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal ;
+  font-size:16; 
+  border-radius: none;
+  margin-top: 10px;
+}
+

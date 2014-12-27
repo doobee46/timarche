@@ -1,5 +1,6 @@
+
 <li class="trending_listing">
-  <%= link_to listing_path(listing)  do %>
+    <%= link_to listing_path(listing)  do %>
     <%= image_tag (listing.image(:medium))%>
     <div class="info clearfix">
       <span class="listing_title"><%= listing.name%></span>
@@ -22,12 +23,13 @@
      <div class="thumbnail-outer count-box">
           <div class="thumbnail-inner">
             <a class="shop-listing-count" href="">        
-              <span class="listing-count">          
+              <span class="listing-count">
+                  
               </span> items  
             </a>
           </div>
       </div>
-    </li>                  
+    </li>                 
   </ul>                 
   <div class="about-shop clear">
     <a href="">
@@ -36,7 +38,7 @@
            <%= image_tag listing.user.avatar.url(:medium), class: "img-circle" %>
          </span>                          
           <em>From</em> <span class="shop-name"><%=listing.user.name%></span> <br>
-          <em>in</em> <span class="location">Haiti</span>                          
+          <em>in</em> <span class="location"><%=%></span>                          
       </span>                       
     </a>
   </div>            

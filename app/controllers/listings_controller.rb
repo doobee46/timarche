@@ -5,12 +5,10 @@ class ListingsController < ApplicationController
 
   def seller
     @listings = Listing.where(user: current_user).paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
-    @users=User.all
-    @user = User.find(params[:id])
   end
 
   def index
-    @listings = Listing.all.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
+    @listings = Listing.find(:all. :include => :pictures).paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
     @featured = @listings.limit(5)
     @users=User.all
     respond_with(@listings)

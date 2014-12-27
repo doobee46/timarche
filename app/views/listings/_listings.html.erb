@@ -21,23 +21,28 @@
                     <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
                   <div class="info">
                     <span class="item_title"><%= listing.name %></span>
-                    <% if listing.like.blank?%>
-                    <span></span>
-                    <%else%>
-                    <span class="like"><%= pluralize(listing.like.count, 'Like' )%></span>
-                    <%end%>
                     <span class="avatar_info">
                        <%=link_to "" do %>
                        <%=image_tag listing.user.avatar.url(:medium), size: "20x20", alt: "avatar",class: "img-circle"%>
                        <p><%=listing.user.name%></p>
                        <%end%>
                     </span>
-                    <span class="item_price"> <%=number_to_currency(listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: ",")   %></span>
+                    <span class="item_price"> <%=number_to_currency(listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: ",")   %>
+                    </span>
+                    <!--<div class="like-action clearfix">
+                      <%if listing.like.blank?%>
+                      <span></span>
+                      <%else%>
+                      <span class="like"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <%= pluralize(listing.like.count, 'like' )%></span>
+                      <%end%>
+                    </div>-->
                   </div>
+                 
                   <div class="block-actions">
                     <%=form_for(Like.new) do |f| %>
                     <%= f.hidden_field :listing_id, value: listing.id %>
-                    <%=f.submit "like", class: "btn btn-success btn-xs " %>
+                    <%= f.button "like" , class: 'btn btn-success', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> saving..."} do %><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> like
+                    <%end%>   
                     <%end%>
                   </div>                                   
               </li>

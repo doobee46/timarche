@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   extend FriendlyId
-  friendly_id :name, use: :slugged
-  
+  friendly_id :name, use: :slugged  
+
+
   if Rails.env.development?
      has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "30x30#" }, :default_url => "avatar.png"
   else
@@ -41,6 +42,7 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
      email
   end
+
 
 
 end

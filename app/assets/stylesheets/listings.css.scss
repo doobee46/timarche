@@ -382,10 +382,11 @@ ul li.item .info a.store{
 }
 
 .block-actions{
-	  display: none;
-    left: 30px;
-    top: -140px;
-    position:relative;
+    display:none;
+    left: 15%;
+    top: -150px;
+    position: relative;
+
 }
 
 .btn-heart{
@@ -452,4 +453,19 @@ ul li.item a img:hover{
     text-align: left;
     white-space: nowrap;
     width: 40px;
+}
+
+.like{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal ;
+  font-size:9;
+  color: #596377;  
+}
+
+
+
+.like-action{
+  position: relative;
+  top: -25px;
+  left: 95px;
 }

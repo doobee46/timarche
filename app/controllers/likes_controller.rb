@@ -4,7 +4,7 @@ class LikesController < ApplicationController
   def create
   	 @like = Like.new(like_params)
   	 if@like.save
-  	 	redirect_to @like.listing, notice:"save successfully"
+  	 	redirect_to :back, notice:"save successfully"
   	 else
   	    redirect_to root_url , notice:"Unable to proceed"
   	 end

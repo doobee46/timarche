@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				  <ul class="nav nav-tabs" role="tablist">
+				    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+				    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+				    <li role="presentation"><a href="#listing" aria-controls="messages" role="tab" data-toggle="tab">Listings</a></li>
+				    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+				  </ul>
+
+				  <!-- Tab panes -->
+				  <div class="tab-content">
+				    <div role="tabpanel" class="tab-pane fade in active" id="home">...</div>
+				    <div role="tabpanel" class="tab-pane" id="profile">...</div>
+				    <div role="tabpanel" class="tab-pane" id="listings">
+				    	<%= render @listings %>
+				    </div>
+				    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+				  </div>
+
+				</div>
+		</div>
+	</div>
+</div>

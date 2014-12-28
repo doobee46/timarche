@@ -43,8 +43,10 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
      email
   end
+
 def self.from_omniauth(auth, signed_in_resource=nil)
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    user = User.where(:email => auth.email).first() 
+    #user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
     user = User.create(name:auth.extra.raw_info.name,
                          provider:auth.provider,
@@ -73,7 +75,5 @@ def self.from_omniauth(auth, signed_in_resource=nil)
     end
   end
 
-
-
-
+ 
 end

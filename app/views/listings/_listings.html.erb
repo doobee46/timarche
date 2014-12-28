@@ -39,10 +39,11 @@
                   </div>
                  
                   <div class="block-actions">
-                    <%=form_for(Like.new) do |f| %>
+                    <%=form_for(Like.new,:remote => true) do |f| %>
                     <%= f.hidden_field :listing_id, value: listing.id %>
-                    <%= f.button "like" , class: 'btn btn-success', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> saving..."} do %><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> like
-                    <%end%>   
+                    <%= f.button " " , class: 'btn btn-success btn-sm', data: {disable_with: " saving..."} do %>
+                       <span class="glyphicon glyphicon-heart"></span>like
+                        <%end%>   
                     <%end%>
                   </div>                                   
               </li>

@@ -9,9 +9,7 @@
         Se connecter avec twitter 
         </button>
         <div class="separator"></div>
-        <button type="button" class="btn btn-fa-social"data-toggle="popover" title="Popover title" data-content=" Pour poster une annonce , cliquer ici pour aussi faire l'enregistrement"><i class="fa fa-facebook fa-lg"></i>
-        Se connecter avec facebook 
-        </button><br>       
+        <%= link_to " Se connecter avec facebook", user_omniauth_authorize_path(:facebook),class: "btn btn-fa-social"%><br>     
         <p>...Ou avec votre nom d'utilisateur et votre mot de passe :</p>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">

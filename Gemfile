@@ -18,6 +18,7 @@ gem 'will_paginate-bootstrap'
 gem 'quiet_assets'
 gem 'impressionist'
 gem 'newrelic_rpm'
+gem 'open_uri_redirections'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -29,12 +30,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
 gem 'bundler'
-
 gem 'rails_config'
 gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth'
@@ -43,6 +42,7 @@ gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'animate.css-rails', '~> 3.2.0'
 gem 'commontator', '~> 4.10.0'
+gem 'omniauth-twitter'
 
 
 group :production do

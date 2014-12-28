@@ -3,11 +3,14 @@ class LikesController < ApplicationController
 
   def create
   	 @like = Like.new(like_params)
+     respond_to do|format|
   	 if@like.save
-  	 	redirect_to :back, notice:"save successfully"
+       format.js
   	 else
-  	    redirect_to root_url , notice:"Unable to proceed"
+  	    format.html (redirect_to root_url , notice:"Unable to proceed")
+        format.js
   	 end
+    end
   end
 
   private

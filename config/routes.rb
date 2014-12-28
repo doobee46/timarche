@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
+
   
   get 'likes/create'
-
-  #get 'like/create'
 
   resources :pictures
 
@@ -21,7 +20,8 @@ Rails.application.routes.draw do
   get 'seller'  => "listings#seller"
 
 
-  devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
+  devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks",registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
+  
   
   root 'pages#index'
 

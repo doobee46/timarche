@@ -8,7 +8,7 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @listings = Listing.find(:all. :include => :pictures).paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
+    @listings = Listing.all.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
     @featured = @listings.limit(5)
     @users=User.all
     respond_with(@listings)

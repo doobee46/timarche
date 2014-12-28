@@ -34,7 +34,7 @@ namespace :db do
        	10.times do|n|
           name = Faker::Lorem.word   	 
           price= Faker::Number.number(2)
-          image = File.open(Dir.glob(File.join(Rails.root, 'sampleimages','*')).sample)
+          #image = File.open(Dir.glob(File.join(Rails.root, 'sampleimages','*')).sample)
        	  description = Faker::Lorem.sentence
        	  user.listings.create!(name: name, description: description, price: price)
         end    

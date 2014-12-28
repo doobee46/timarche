@@ -35,10 +35,10 @@
     <a href="">
       <span class="owner-details">
         <span class="about-image">
-           <%= image_tag listing.user.avatar.url(:medium), class: "img-circle" %>
+           <%=image_tag listing.user.avatar.url(:avatar)%>
          </span>                          
-          <em>From</em> <span class="shop-name"><%=user.name%></span> <br>
-          <em>in</em> <span class="location"><%=%></span>                          
+          <em>From</em> <span class="shop-name"><%=listing.user.name%></span> <br>
+          <em>in</em> <span class="location">Delmas</span>                          
       </span>                       
     </a>
   </div>            

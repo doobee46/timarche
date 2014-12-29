@@ -1,26 +1,119 @@
+
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<div role="tabpanel">
-				<!-- Nav tabs -->
-				  <ul class="nav nav-tabs" role="tablist">
-				    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-				    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-				    <li role="presentation"><a href="#listing" aria-controls="messages" role="tab" data-toggle="tab">Listings</a></li>
-				    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-				  </ul>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-8 column">
+															
+					<div class="page-header">
+						<h1>
+							Order Management Dashboard <small class="smaller"><%=Time.now.strftime("%B %e, %Y at %I:%M %p")%></small>
+						</h1>
+					</div>
+					<h3 class="text-left">
+					  Listings Published and Active 
+					</h3>
+					<table class="table table-striped table-hover table-condensed">						
+						<thead>
+							<tr>
+								<th >
+									Listing number
+								</th>
+								<th>
+									Product name
+								</th>
+								<th>
+									Date creation
+								</th>
+								<th>
+									Actions
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+						<% @listings.each do|listing|%>
+							<tr>
+								<td class="success">
+								  <%=listing.listing_number%>
+								</td>
+								<td>
+								  <%=listing.name%>
+								</td>
+								<td>
+								  <%=listing.created_at%>
+								</td>
+								<td>
+								  <%= link_to "" , class: "btn btn-primary" do %>
+								  <span class="glyphicon glyphicon-edit" aria-hidden="true">
+								  <%end%>
 
-				  <!-- Tab panes -->
-				  <div class="tab-content">
-				    <div role="tabpanel" class="tab-pane fade in active" id="home">...</div>
-				    <div role="tabpanel" class="tab-pane" id="profile">...</div>
-				    <div role="tabpanel" class="tab-pane" id="listings">
-				    	<%= render @listings %>
-				    </div>
-				    <div role="tabpanel" class="tab-pane" id="settings">...</div>
-				  </div>
-
+								  <%= link_to "", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" do %>
+								   <span class="glyphicon glyphicon-trash" aria-hidden="true">
+								   <%end%>
+								</td>
+							</tr>
+						
+						</tbody>
+						<%end%>
+					</table>
+					<div>
+					 <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
+                     </div>   
+					<h3>
+						h3. Lorem ipsum dolor sit amet.
+					</h3>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>
+									#
+								</th>
+								<th>
+									Product
+								</th>
+								<th>
+									Payment Taken
+								</th>
+								<th>
+									Status
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									1
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									01/04/2012
+								</td>
+								<td>
+									Default
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				    <div>
+					 <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
+                    </div> 
 				</div>
+				<div class="col-md-4 column">
+					<%=image_tag current_user.avatar.url(:amedium), class: 'img-circle', size: "140x140"%>
+					<h2>
+						About me 
+					</h2>
+					<p>
+						Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+					</p>
+					<p>
+						<a class="btn" href="#">View details »</a>
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

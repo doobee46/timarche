@@ -23,19 +23,12 @@
                     <span class="item_title"><%= listing.name %></span>
                     <span class="avatar_info">
                        <%=link_to "" do %>
-                       <%=image_tag listing.user.avatar.url(:medium), size: "20x20", alt: "avatar",class: "img-circle"%>
+                       <%=image_tag listing.user.avatar.url(:athumb), size: "20x20", alt: "avatar",class: "img-circle"%>
                        <p><%=listing.user.name%></p>
                        <%end%>
                     </span>
                     <span class="item_price"> <%=number_to_currency(listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: ",")   %>
                     </span>
-                    <!--<div class="like-action clearfix">
-                      <%if listing.like.blank?%>
-                      <span></span>
-                      <%else%>
-                      <span class="like"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <%= pluralize(listing.like.count, 'like' )%></span>
-                      <%end%>
-                    </div>-->
                   </div>
                  
                   <div class="block-actions">

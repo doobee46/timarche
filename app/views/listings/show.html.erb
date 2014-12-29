@@ -21,8 +21,13 @@
 					<div class="social_icon">
 					</div>
 					<div class="first_col">
-						<%=image_tag @listing.image.url%>
+						<%=image_tag @listing.image.url(:large)%>
 					</div>
+					<div class="stats">
+					<%= render :partial => 'listings/like'%>	
+					<%= render :partial => 'listings/viewcount'%>
+					</div>
+					<%= social_share_button_tag(@listing.description, :popup => "true")%>
 					<div class="body_desc">
 					   <p><%=@listing.description%></p>
 					</div>
@@ -49,7 +54,7 @@
 					</div>
 					<div class="last_col">
 						<div class="contact">
-						  <%= image_tag @listing.user.avatar.url(:medium), class: "img-circle"%>
+						  <%= image_tag @listing.user.avatar.url(:amedium), class: "img-circle"%>
 						</div>
 						<div class="listing_author">
 						  <h3><%= link_to @listing.user.username%></h3>

@@ -14,5 +14,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require wufoo.js
+//= require social-share-button
 //= require turbolinks
 //= require_tree .

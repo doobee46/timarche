@@ -19,6 +19,8 @@ gem 'quiet_assets'
 gem 'impressionist'
 gem 'newrelic_rpm'
 gem 'open_uri_redirections'
+gem 'social-share-button'
+gem 'attribute-defaults'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 

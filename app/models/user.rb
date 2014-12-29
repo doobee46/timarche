@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
 
 
   if Rails.env.development?
-     has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "30x30#" }, :default_url => "avatar.png"
+     has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#" }, :default_url => "default_:style.png"
   else
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "30x30#" }, :default_url => "avatar.png",
+  has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#" }, :default_url => "default_:style.png",
                     :storage => :dropbox,
                     :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
@@ -65,6 +65,7 @@ def self.new_with_session(params, session)
       user.email = auth.info.email
       user.name = auth.info.name
       user.avatar = auth.info.image
+      user.username= auth.info.nickname
     end
   end
 end

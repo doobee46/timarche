@@ -12,6 +12,7 @@ font-weight: 18px;
 text-transform: capitalize;
 position: relative;
 left: 80px;
+letter-spacing: 1px;
 }
 .btn-fa-social:hover{
 background-color:#384F7E;

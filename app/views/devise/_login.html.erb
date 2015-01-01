@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="wrapper_form">
+                <div class="col-md-4">
+                    <div id="log_form">
+                        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
+                        <fieldset>
+                            <h3 class="form_title">Se connecter</h3>
+                            <p class="form_sub">Se connecter aved nom d'utilisateur et mot de passe</p>
+                            <label>Username</label>
+                            <%= f.email_field :email, :placeholder => "Email address"%>
+                            <label>Password</label>
+                            <%= f.password_field :password, :placeholder => "Password"%> 
+                            <% if devise_mapping.rememberable? -%>
+                            <label class="checkbox">
+                                <%= f.check_box :remember_me %> Remember me
+                            </label> <br>
+                            <% end -%>
+                            <%= f.button "Connecter" , class: 'btn btn-login', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Connexion en cours..."} %>
+                        </fieldset>
+                        <% end %>
+                        <div class="retrieve">
+                           <%= render "devise/shared/links" %>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="new_account">
+                         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"}) do |f| %>
+                        <fieldset>
+                            <h3 class="form_title">Creer nouveau compte</h3>
+                            <p class="form_sub">S'il vous plaît remplir les informations ci-dessous pour configurer votre compte</p>
+                            <label>Nom complet</label>
+                            <%= f.text_field :name, :placeholder => "Nom complet",:required => "true" %>
+                            <label>Email</label>
+                            <%= f.email_field :email, :placeholder => "Email address", :required => "true" %>
+                            <label>Password</label>
+                            <%= f.password_field :password, :placeholder => "Password", :required => "true" %>
+                            <label> Comfirmation Password </label>
+                            <%= f.password_field :password_confirmation, :placeholder => "Password confirmation", :required => "true" %>
+                            <br>
+
+                            <span class="agreed">
+                                By signing up, you agree to our <a href="">terms of use</a> and<a>privacy policy</a>
+
+                            </span><br>
+                            <%= f.button "Connecter" , class: 'btn btn-login', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Connexion en cours..."} %>
+                        </fieldset>
+                        <% end %>
+                    </div>
+               </div>
+               <div class="md-col-4">
+                    <div id="social_connect">
+                            <div class="facebook">
+                                <h3 class="form_title">Log in with Facebook</h3>
+                                <p class="form_sub">It's fast and easy</p>
+                                <div class="facebook_btn">
+                                    <%= link_to (image_tag('/assets/facebook.png'))+"log in with Facebook", user_omniauth_authorize_path(:facebook) %>
+                                </div>
+                                <p class="form_sub">we will never post anything without permision</p>
+                            </div> 
+                        <div class="twitter_connect">
+                            <h3 class="form_title">Log in with Twitter</h3>
+                            <p class="form_sub">It's fast and easy</p>
+                            <div class="twitter_btn">
+                             <a href="/auth/twitter" ><%= image_tag "/assets/twitter.png", :alt=>"twitter" %> log in with Twitter </a>
+                        </div>
+                         <p class="form_sub">we will never post anything without permision</p>
+
+                    </div>
+
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+              

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_filter :authenticate_user!, except: [:about, :index, :contact]
+  before_filter :authenticate_user!, except: [:about, :index, :contact, :signin]
   respond_to :html, :json
 
   def index
@@ -23,5 +23,6 @@ class PagesController < ApplicationController
   def set_picture
     @listing =Listing.friendly.find(params[:picture][:listing_id]) 
   end
-  
+
+
 end

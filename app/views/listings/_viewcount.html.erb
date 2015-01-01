@@ -1,0 +1,11 @@
+
+<div class="like-action clearfix">
+  <%if @listing.impressions.blank?%>
+  <span></span>
+  <%else%>
+  <span class="like">
+	  <i class="fa fa-eye"></i>
+	  <%= pluralize(@listing.impressions.count, 'view' )%>
+  </span>
+  <%end%>
+</div>

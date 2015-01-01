@@ -64,8 +64,12 @@ def self.new_with_session(params, session)
     if omniauth = session["devise.facebook_data"]
       user.email = auth.info.email
       user.name = auth.info.name
+<<<<<<< HEAD
       user.avatar = auth.info.image
       user.username= auth.info.nickname
+=======
+      user.remote_avatar_url = auth.info.image
+>>>>>>> master
     end
   end
 end

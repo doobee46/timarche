@@ -23,5 +23,6 @@ class PagesController < ApplicationController
   def set_picture
     @listing =Listing.friendly.find(params[:picture][:listing_id]) 
   end
-  
+
+
 end

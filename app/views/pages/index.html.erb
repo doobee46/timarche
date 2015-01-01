@@ -36,8 +36,7 @@
            <%= render @listings.limit(3).order('created_at DESC')%>
           </ul>
           <div class="voir-plus clear">
-              <%=link_to "Voir plus de produits", listings_path, class: "btn btn-voir" %>
-              <!--<button type="button" class="btn btn-default btn-voir">Voir plus</button>-->
+              <%=link_to "Voir les annonces", listings_path, class: "btn btn-voir" %>
           </div> 
           <%end%>
         </div>          

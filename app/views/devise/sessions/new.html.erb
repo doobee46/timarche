@@ -1,27 +1,27 @@
 <% @title = "signin" %>
-<%= render :partial => 'shared/connected'%>
+<body class="signin">
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+         <div class="separator"></div>
+         <div class="fa-btn centered-login">
+           <%= button_to user_omniauth_authorize_path(:facebook), :class => "btn-fa-social" do%>
+           <i class="fa fa-facebook fa-lg"></i>Login with facebook
+           <%end%>
+         </div>
+         <div class="hr">
+          <div class="inner">or</div> 
+         </div>
       <div class="login centered-login">
-           <%= devise_error_messages! %>
-        <button type="button" class="btn btn-twt-social"data-toggle="popover" title="Popover title" data-content=" Pour poster une annonce , cliquer ici pour aussi faire l'enregistrement"><i class="fa fa-twitter fa-lg"></i>
-        Se connecter avec twitter 
-        </button>
-        <div class="separator"></div>
-        <%= link_to " Se connecter avec facebook", user_omniauth_authorize_path(:facebook),class: "btn btn-fa-social"%><br>     
-        <p>...Ou avec votre nom d'utilisateur et votre mot de passe :</p>
+      <%= devise_error_messages! %>   
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
-            <div class="input-group">
               <%= f.label :Username %><br/>
-              <!--<div class="input-group-addon">@</div>-->
-              <%= f.text_field :login, class: 'log' %>
-            </div>
+              <%= f.text_field :login,class: "form-control" %>
           </div>
           <div class="form-group">
             <%= f.label :password %><br/>
-            <%= f.password_field :password, autocomplete: "off", class: 'pass' %>
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
           </div>
           <% if devise_mapping.rememberable? -%>
             <div class="checkbox">
@@ -32,8 +32,11 @@
           <% end -%>
           <%= f.button "Connecter" , class: 'btn btn-login', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Connexion en cours..."} %>
         <% end %>
-        <%= render "devise/shared/links" %>
+        <div class="retrieve">
+          <%= render "devise/shared/links" %>
+        </div> 
       </div>
     </div>
   </div>
 </div>
+<div class="hr"></div>

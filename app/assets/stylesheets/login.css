@@ -1,0 +1,128 @@
+.btn-fa-social{
+background-color:#46629E;
+color:#fff;
+border-radius: 1px;
+display: inline-block;
+padding: 16px 40px 15px;
+border: medium none;
+border-radius: 3px;
+font-family: "open sans ", sans-serif;
+font-size: 18px ;
+font-weight: 18px;
+text-transform: capitalize;
+position: relative;
+left: 80px;
+letter-spacing: 1px;
+}
+.btn-fa-social:hover{
+background-color:#384F7E;
+color:#fff;
+}
+.separator{
+display: block;
+height: 20px;
+width: 100%;
+}
+
+.center-block{
+float: none
+}
+.btn-login{
+background-color:#7C303C;
+color:#fff;
+padding: 9px 25px 9px 25px;
+margin: 5px 0px 15px 0px ;
+border-radius: 8px;
+letter-spacing: 1px;
+font-size: 16px;
+font-family: 'Source Sans Pro', sans-serif;
+font-weight: 400;
+}
+.btn-login:hover{
+background-color: #5C232C;
+color:#fff !important;
+}
+.centered-login{
+width: 420px;
+margin-left:auto;
+margin-right:auto;
+}
+.login{
+width: 420px;
+border:1px solid #e1e5e9;
+padding: 25px 30px 20px;
+text-align: left;
+margin-top: 25px;
+background-color:#fff;
+}
+.login p {
+color:#333;
+font-family:'Source Sans Pro', sans-serif;
+font-weight: 400;
+font-size: 16px;
+letter-spacing: 1px;
+text-align: left;
+}
+.login form{
+margin-top: 10px;
+}
+.login a{
+font-family:'Source Sans Pro', sans-serif;
+font-weight: 300;
+font-size: 13px;
+letter-spacing: 1px;
+}
+.input-group input.log[type="text"]{
+width: 400px;
+height:45px;
+padding-left:10px;
+text-transform:uppercase;
+font-family:'Source Sans Pro', sans-serif;
+font-weight: 400;
+font-size: 14px;
+}
+.form-group input.pass[type="password"]{
+width: 400px;
+height:45px;
+padding-left:10px;
+background-color: none;
+}
+
+.btn-fa-social > i:nth-child(1){
+    margin-right: 10px;
+}
+
+
+.retrieve{
+margin-top: 8px;
+}
+
+.retrieve a {
+color: rgb(0, 150, 187);
+text-decoration: none;
+font-size: 10px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.hr{
+position: relative;
+width: 70%;
+height: 8px;
+margin: 21px 15% 30px;
+box-shadow: 0px 1px 0px #FFF, 0px 0px 0px transparent;
+border-bottom: 1px solid #C3C4C7;
+text-align: center;
+}
+
+.inner{
+background: none repeat scroll 0% 0% #F4F4F4;
+border-radius: 100px;
+display: inline-block;
+width: auto;
+padding: 9px 10px;
+font-family: Georgia,Times,"Times New Roman",serif;
+font-size: 16px;
+font-style: italic;
+line-height: 0;
+}
+

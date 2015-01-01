@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
 
 
   if Rails.env.development?
-     has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "30x30#" }, :default_url => "avatar.png"
+     has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#" }, :default_url => "default_:style.png"
   else
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "30x30#" }, :default_url => "avatar.png",
+  has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#" }, :default_url => "default_:style.png",
                     :storage => :dropbox,
                     :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
@@ -64,7 +64,12 @@ def self.new_with_session(params, session)
     if omniauth = session["devise.facebook_data"]
       user.email = auth.info.email
       user.name = auth.info.name
+<<<<<<< HEAD
+      user.avatar = auth.info.image
+      user.username= auth.info.nickname
+=======
       user.remote_avatar_url = auth.info.image
+>>>>>>> master
     end
   end
 end

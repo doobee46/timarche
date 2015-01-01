@@ -41,6 +41,8 @@ GEM
       tzinfo (~> 1.1)
     animate.css-rails (3.2.0)
     arel (5.0.1.20140414130214)
+    attribute-defaults (0.7.0)
+      activerecord (>= 4.0.0, < 5.0.0)
     autoprefixer-rails (4.0.2.1)
       execjs
     bcrypt (3.1.9)
@@ -200,6 +202,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    social-share-button (0.1.8)
+      coffee-rails
+      sass-rails
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -399,6 +404,7 @@ PLATFORMS
 
 DEPENDENCIES
   animate.css-rails (~> 3.2.0)
+  attribute-defaults
   autoprefixer-rails
   better_errors
   binding_of_caller
@@ -430,6 +436,7 @@ DEPENDENCIES
   rails_config
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  social-share-button
   spring
   sqlite3
   thin

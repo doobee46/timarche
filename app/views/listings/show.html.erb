@@ -57,7 +57,7 @@
 						  <%= image_tag @listing.user.avatar.url(:amedium), class: "img-circle"%>
 						</div>
 						<div class="listing_author">
-						  <h3><%= link_to @listing.user.username%></h3>
+						  <h3><%= link_to"En vente par : #{@listing.user.username}"%></h3>
 						</div>
 						<button class="btn btn-danger btn-lg btn-cont">Contacter</button>
 					</div>

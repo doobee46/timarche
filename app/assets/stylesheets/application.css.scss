@@ -21,7 +21,10 @@
 
 body{
     padding-top:60px;
+
 }
+
+body.modal-open { overflow:inherit; padding-right:inherit !important; }
 
 body.signin{
     background-color:#F4F4F4;

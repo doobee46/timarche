@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   def index
    @listings = Listing.all
-   @users=User.all
+   @indexes = @listings.order("created_at DESC").limit(3)
    respond_with(@listings)
   end
 

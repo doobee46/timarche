@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141227210831) do
+ActiveRecord::Schema.define(version: 20141228174328) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 20141227210831) do
     t.string   "listing_number"
   end
 
+  add_index "listings", ["listing_number"], name: "index_listings_on_listing_number"
   add_index "listings", ["slug"], name: "index_listings_on_slug", unique: true
 
   create_table "mailboxer_conversation_opt_outs", force: true do |t|

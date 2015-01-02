@@ -1,19 +1,13 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="login centered-login">
-        <%= form_for(@listing,:html => { :multipart => true }) do |f| %>
-        <% if @listing.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
-
-            <ul>
-            <% @listing.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-            </ul>
-          </div>
-        <% end %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Poster des Annonces</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for :listing, :url => {:action => :create}, html: {class: "form-inline"} do |f| %>
+       
           <fieldset>
           <!-- Form Name -->
           <legend>Publier une annonce</legend>
@@ -48,11 +42,10 @@
 
        <% end %>     
       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
 </div>
-
-
-
-
-

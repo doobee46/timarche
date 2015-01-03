@@ -16,7 +16,7 @@
            <h4>Rejoignez-nous pour voir une liste personnalisé de produits en fonction de votre style et les marques que vous aimez</h4> 
            <h3>Essayer gratuitement notre plateforme.</h3>
            <div class="trialbox clear">
-            <button type="button" class="btn btn-default btn-trial">Essayer notre plateforme</button>
+            <%= button_to "Essayer notre plateforme", user_registration_path, :method => :get, class: 'btn  btn-trial'%>
            </div>
           <%end%> 
         </div>           

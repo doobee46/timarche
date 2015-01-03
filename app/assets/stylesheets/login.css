@@ -1,19 +1,26 @@
 .btn-fa-social{
 background-color:#46629E;
 color:#fff;
-border-radius: 1px;
 display: inline-block;
 padding: 16px 40px 15px;
-border: medium none;
-border-radius: 3px;
 font-family: "open sans ", sans-serif;
 font-size: 18px ;
-font-weight: 18px;
+font-weight:bold;
 text-transform: capitalize;
 position: relative;
-left: 80px;
+left: 65px;
 letter-spacing: 1px;
+border: 1px solid rgba(0,0,0,0.15);
+border-radius: 4px;
+transition: all 0.3s ease-out;
+box-shadow:inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2);
+  /* Font styles */
+text-decoration: none;
+text-shadow: 0 1px rgba(255,255,255,0.7);
 }
+
 .btn-fa-social:hover{
 background-color:#384F7E;
 color:#fff;

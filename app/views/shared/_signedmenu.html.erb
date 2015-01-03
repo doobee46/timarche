@@ -12,7 +12,7 @@
                 </div>
                   <ul class="nav navbar-nav pull-right">
                     <% unless @title == "browse" %>
-                    <li><%=link_to "Nos annonces", browse_path , class: 'brow'%></li>
+                    <li><%=link_to "Publications", browse_path , class: 'brow'%></li>
                     <%end%>
                     <li>
                        <%= link_to conversations_path, data: { no_turbolink: true } do %>

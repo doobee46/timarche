@@ -14,7 +14,10 @@
             </button>
           </form>
           <% unless user_signed_in?%>
-             <%= button_to "Ouvrir une boutique", user_registration_path, :method => :get, class: 'btn btn-action'%>
+          <div class="hr">
+             <div class="inner">or</div> 
+          </div>
+             <%= button_to "Voir Publications", listings_path, :method => :get, class: 'btn btn-action'%>
           <%end%>
         </div>
       </div>

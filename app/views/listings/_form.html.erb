@@ -36,16 +36,12 @@
               <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "btn btn-default dropdown-toggle form-control"}%>
             </div>
 
-            <div class="form-group">
-              <%= f.button "Publier Annonce" , class: 'btn btn-login', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publication en cours..."} %>
-            </div>
-
-       <% end %>     
-      </div>
+        </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <%= f.button "Publier Annonce" , class: 'btn btn-login', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publication en cours..."} %>
       </div>
+    <% end %>
     </div>
   </div>
 </div>

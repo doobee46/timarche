@@ -2,7 +2,7 @@ class Listing < ActiveRecord::Base
    
   is_impressionable
   acts_as_commontable
-  belongs_to :user
+  belongs_to :user, counter_cache: :listings_count
   belongs_to :category
   has_many   :pictures
   has_many   :like

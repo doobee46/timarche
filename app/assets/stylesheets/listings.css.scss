@@ -57,16 +57,17 @@
 	margin-top:12px;
 }
 
-form.navbar-form .form-group input.med[type="text"]{
+form.navbar-form .form-group input.med[type="search"]{
    font-size: 15px;
    line-height: 17px;
    font-weight: 400;
    width: 600px;
    height: 35px;
-   border-radius: 8px;
+   border-radius: 3px;
    color:#888;
    letter-spacing: 1px;
    padding-left:6px;
+   border:medium none;
 }
 
 .btn-midjumbo{

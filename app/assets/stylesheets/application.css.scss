@@ -165,7 +165,7 @@ form.navbar-form {
     margin-bottom:45px;
 }
 
-form.navbar-form .form-group input[type="text"]{
+form.navbar-form .form-group input[type="search"]{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     line-height: 15px;
@@ -175,6 +175,8 @@ form.navbar-form .form-group input[type="text"]{
     border-radius: 8px;
     color: #888;
     letter-spacing: 1px;
+    border:medium none;
+    padding-left:10px;
 }
 
 .switcher{

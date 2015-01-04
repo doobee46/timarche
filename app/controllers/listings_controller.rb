@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  before_filter :set_search
   before_filter :authenticate_user!, except: [:index]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json
@@ -8,7 +9,8 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @listings = Listing.all.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
+    @q = Listing.search(params[:q])
+    @listings= @q.result.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
     @featured = @listings.limit(5)
     @users=User.all
     respond_with(@listings)
@@ -16,6 +18,7 @@ class ListingsController < ApplicationController
 
 
   def show
+    @listings= @q.result
     commontator_thread_show(@listing)
     impressionist(@listing) 
     respond_with(@listing)
@@ -55,6 +58,10 @@ class ListingsController < ApplicationController
   end
 
   private
+    def set_search
+      @q=Listing.search(params[:q])
+    end
+
     def set_listing
       @listing = Listing.friendly.find(params[:id])
     end

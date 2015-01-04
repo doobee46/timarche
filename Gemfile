@@ -21,6 +21,7 @@ gem 'newrelic_rpm'
 gem 'open_uri_redirections'
 gem 'social-share-button'
 gem 'attribute-defaults'
+gem 'ransack'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 

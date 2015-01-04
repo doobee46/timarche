@@ -3,15 +3,14 @@
     <div class="row">
       <div class="col-md-12">
         <div class="centered">
-          <form class="navbar-form"  role="search">
+          <%= search_form_for @q , :class => "navbar-form" do  |f| %>
               <div class=" med-group form-group">
-                <%=text_field_tag 'search', nil, placeholder: 'Search Products, Stores, Collections, & People...', class: 'med'%>
-                <!--<input type="text" class="form-control" placeholder="Search">-->
+                <%= f.search_field :name_cont, placeholder: 'Search Products, Stores, Collections, & People...', class: 'med' %>
               </div>
-              <button type="submit" class="btn btn-midjumbo">
+              <%= f.button "Submit" , :class =>'btn btn-midjumbo' do %>
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-              </button>
-          </form>          
+              <%end%>
+          <% end %> 
         </div>
       </div>
     </div>     

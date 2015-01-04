@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
+  before_filter :set_search
   before_filter :authenticate_user!, except: [:about, :index, :contact]
   respond_to :html, :json
 
   def index
-   @listings = Listing.all
+   @listings= @q.result
    @indexes = @listings.order("created_at DESC").limit(3)
    respond_with(@listings)
   end
@@ -15,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   def browse
-  	@listings = Listing.all.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
+  	@listings= @q.result.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
     @messages_count = current_user.mailbox.inbox({:read => false}).count
     respond_with(@listings)
   end
@@ -24,5 +25,8 @@ class PagesController < ApplicationController
     @listing =Listing.friendly.find(params[:picture][:listing_id]) 
   end
 
+  def set_search
+    @q=Listing.search(params[:q])
+  end
 
 end

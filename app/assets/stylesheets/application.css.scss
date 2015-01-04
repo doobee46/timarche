@@ -79,7 +79,7 @@ a:hover{
 ul.nav li a.dropdown-toggle{
     color: #333;
     font-weight: 400;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     letter-spacing: 1px;
 }
@@ -101,12 +101,13 @@ li.dropdown.open{
     font-weight: 400;
     line-height: 1.42857;
     white-space: nowrap;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     color: #fff;
     padding: 10px 25px;
     letter-spacing: 1px;
 }
+
 
 .dropdown-menu > li > a:hover{
     background-color: #5C232C;
@@ -862,8 +863,18 @@ ul.nav li a i.mail{
 
 .navbar-default .navbar-nav > li > a.brow{
     margin-top:5px;
-    font-weight: 600;
-    font-size:16;
+    font-weight: 400;
+    font-size:15;
     letter-spacing:1px;
-    color:#333;
+    color:#888;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-default .navbar-nav > li > a{
+    margin-top:5px;
+    font-weight: 400;
+    font-size:15;
+    letter-spacing:1px;
+    color:#888;
+    font-family: 'Montserrat', sans-serif;
 }

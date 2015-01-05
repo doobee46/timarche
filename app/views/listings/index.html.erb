@@ -2,9 +2,7 @@
 <%= render :partial => 'shared/midsearch'%>
 <%= render :partial => 'listings/category'%>
 <%= render :partial => 'listings/listings'%>
-<% unless user_signed_in? %>
-  <%= render :partial => 'shared/intro'%>
-<%end%>
+<%= render :partial => 'shared/intro' unless user_signed_in?%>
 <%= render :partial => 'listings/form'%>
 <%= render :partial => 'pages/payment'%>
 

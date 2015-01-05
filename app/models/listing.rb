@@ -1,11 +1,15 @@
 class Listing < ActiveRecord::Base
    
-  is_impressionable
+  is_impressionable :counter_cache => true, :column_name => :impressions_count, :unique => true
   acts_as_commontable
   belongs_to :user, counter_cache: :listings_count
   belongs_to :category
   has_many   :pictures
   has_many   :like
+  
+  scope :published,->{where("listings.created_at IS NOT NULL ")}
+  scope :recent, lambda{published.where("listings.created_at > ?", 1.week.ago.to_date)}
+  scope :popular, ->{where("listings.impressions_count >= 5").order("impressions_count desc")}
 
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -18,6 +22,7 @@ class Listing < ActiveRecord::Base
                       :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
 =begin
   def set_listing_number
     listing_number=("TM#{year}HT#{n+1}#{id}").to_s

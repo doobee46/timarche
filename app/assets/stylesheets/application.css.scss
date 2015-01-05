@@ -70,6 +70,7 @@ a:hover{
 .navbar-default .navbar-nav > .open > a{
     color:#fff;
     background-color: #444;
+
 }
 
 .nav > li {
@@ -80,7 +81,7 @@ ul.nav li a.dropdown-toggle{
     color: #333;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 12px;
     letter-spacing: 1px;
 }
 
@@ -126,7 +127,7 @@ li.dropdown.open{
 }
 
 .jumbotron{
-    background-image: url(image_path("coverBG_alt2.jpg"));
+    background-image: url(image_path("coverBG_alt3.jpg"));
     background-size: cover;
     background-position: center-top;
     height: 550px;
@@ -366,7 +367,11 @@ form.navbar-form .form-group input[type="search"]{
 .recent{
     width: 100%;
     display:block;
-    background-color:#EFEFEB; 
+    /*background-color:#EFEFEB*/; 
+    background-image: url(image_path("sativa.png"));
+    background-repeat: repeat-y repeat-x;
+
+    
 }
 
 .main_listings h3{
@@ -864,7 +869,7 @@ ul.nav li a i.mail{
 .navbar-default .navbar-nav > li > a.brow{
     margin-top:5px;
     font-weight: 400;
-    font-size:15;
+    font-size:12;
     letter-spacing:1px;
     color:#888;
     font-family: 'Montserrat', sans-serif;
@@ -873,7 +878,7 @@ ul.nav li a i.mail{
 .navbar-default .navbar-nav > li > a{
     margin-top:5px;
     font-weight: 400;
-    font-size:15;
+    font-size:12;
     letter-spacing:1px;
     color:#888;
     font-family: 'Montserrat', sans-serif;

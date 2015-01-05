@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_filter :set_search
-  before_filter :authenticate_user!, except: [:index]
+  before_filter :authenticate_user!, except: [:index, :recent, :popular]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json
 
@@ -9,7 +9,7 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @q = Listing.search(params[:q])
+    @q = Listing.includes(:user, :impressions, :like, :category).search(params[:q])
     @listings= @q.result.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
     @featured = @listings.limit(5)
     @users=User.all
@@ -55,6 +55,17 @@ class ListingsController < ApplicationController
   def destroy
     @listing.destroy
     respond_with(@listing)
+  end
+
+   
+  def recent
+    @recent = Listing.recent.order("created_at desc").page(params[:page]).per_page(30)
+    respond_with(@recent)
+  end
+
+  def popular
+    @popular = Listing.popular.order("created_at desc").page(params[:page]).per_page(30)
+    respond_with(@popular)
   end
 
   private

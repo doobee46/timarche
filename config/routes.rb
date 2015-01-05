@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   get 'browse'  => "pages#browse"
   get 'contact' => "pages#contact"
   get 'seller'  => "listings#seller"
-
+  get 'recent', :to =>"listings#recent",  :as => :recent
+  get 'popular',:to =>"listings#popular", :as => :popular
 
 
   devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks",registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]

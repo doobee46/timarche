@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   mount Commontator::Engine => '/commontator'
 
   get 'pages/index'
-  get 'about'   => "pages#about"
-  get 'browse'  => "pages#browse"
-  get 'contact' => "pages#contact"
-  get 'seller'  => "listings#seller"
+  get 'about'       => "pages#about"
+  get 'browse'      => "pages#browse"
+  get 'contact'     => "pages#contact"
+  get 'seller'      => "listings#seller"
   get 'recent', :to =>"listings#recent",  :as => :recent
   get 'popular',:to =>"listings#popular", :as => :popular
 
@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get    "login"   => "users/sessions#new",         as: :new_user_session
     post   "login"   => "users/sessions#create",      as: :user_session
-    delete "signout" => "users/sessions#destroy",      as: :destroy_user_session
+    delete "signout" => "users/sessions#destroy",     as: :destroy_user_session
     
     get    "signup"  => "users/registrations#new",    as: :new_user_registration
     post   "signup"  => "users/registrations#create", as: :user_registration

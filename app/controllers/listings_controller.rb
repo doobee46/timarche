@@ -42,7 +42,7 @@ class ListingsController < ApplicationController
             @listing.pictures.create(image: image)
           }
        end
-    flash[:notice]= 'Listing <%=listing.id %> was successfully published.'
+    flash[:notice]= "L'annonce #{@listing.listing_number} a eté publiee avec succes."
     respond_with(@listing)
      end
   end

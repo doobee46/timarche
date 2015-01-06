@@ -7,7 +7,7 @@
               <div class="col-md-12">
                 <div class="navbar-header">
                   <div class="navbar-brand" href="#">
-                    <%= link_to image_tag("reverse_logo.png", class: ' animated bounce'), root_path %> 
+                    <%= link_to image_tag("logo.png", class: ' animated bounce'), root_path %> 
                   </div>
                 </div>
                   <ul class="nav navbar-nav pull-right">
@@ -37,13 +37,11 @@
                             <i class="glyphicon glyphicon-cog"></i> Settings
                           <% end %> 
                         </li>
-                        <% if current_user.listings.exists?%>
                         <li>
                           <%= link_to seller_path, data: { no_turbolink: true } do %>
-                            <i class="glyphicon glyphicon-tasks"></i> Admin
+                            <i class="glyphicon glyphicon-tasks"></i> Dashboard
                           <% end %> 
                         </li>
-                        <%end%>
                         <li>
                           <%= link_to destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
                             <i class="glyphicon glyphicon-log-out"></i> Déconnexion
@@ -66,9 +64,11 @@
                           </li>
                       </ul>
                     </li>
+                   <% if @title == "seller"%>
                     <li>
                       <button type="button" class="btn btn-post" data-toggle="modal" data-target="#myModal">Poster des Annonces</button>                  
                     </li>
+                  <%end%>
                   </ul>
               </div>
             </div>                

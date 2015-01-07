@@ -38,7 +38,7 @@ float: none
 background-color:#7C303C;
 color:#fff;
 padding: 9px 25px 9px 25px;
-margin: 5px 0px 15px 0px ;
+margin: 10px 0px 15px 0px ;
 border-radius: 8px;
 letter-spacing: 1px;
 font-size: 16px;
@@ -133,3 +133,15 @@ font-style: italic;
 line-height: 0;
 }
 
+.agreed {
+color: #999999;
+font-size: 10px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.agreed a {
+color: rgb(0, 150, 187);
+text-decoration: none;
+font-size: 10px;
+font-family: Arial, Helvetica, sans-serif;
+}

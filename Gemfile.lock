@@ -102,6 +102,8 @@ GEM
     impressionist (1.5.1)
       httpclient (~> 2.2)
       nokogiri (~> 1.5)
+    intercom-rails (0.2.27)
+      activesupport (> 3.0)
     jbuilder (2.2.5)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -427,6 +429,7 @@ DEPENDENCIES
   font-awesome-rails
   friendly_id (~> 5.0.0)
   impressionist
+  intercom-rails
   jbuilder (~> 2.0)
   jquery-rails
   mailboxer

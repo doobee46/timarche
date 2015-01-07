@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_filter :set_search
-  before_filter :authenticate_user!, except: [:about, :index, :contact]
+  before_filter :authenticate_user!, except: [:about, :index, :contact, :privacy]
   respond_to :html, :json
 
   def index
@@ -13,6 +13,10 @@ class PagesController < ApplicationController
   end
 
   def contact
+  end
+
+  def privacy
+    
   end
 
   def browse

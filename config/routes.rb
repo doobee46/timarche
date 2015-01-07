@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'about'       => "pages#about"
   get 'browse'      => "pages#browse"
   get 'contact'     => "pages#contact"
+  get 'privacy'     => "pages#privacy"
   get 'seller'      => "listings#seller"
   get 'recent', :to =>"listings#recent",  :as => :recent
   get 'popular',:to =>"listings#popular", :as => :popular

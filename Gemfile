@@ -22,6 +22,7 @@ gem 'open_uri_redirections'
 gem 'social-share-button'
 gem 'attribute-defaults'
 gem 'ransack'
+gem 'intercom-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 

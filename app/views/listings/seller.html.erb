@@ -22,6 +22,8 @@
 
                                         <th>Product name</th>
 
+                                        <th>Product Price</th>
+
                                         <th>Date creation</th>
 
                                         <th>Actions</th>
@@ -37,15 +39,21 @@
 
                                         <td><%=listing.name%></td>
 
+                                        <td><%=listing.price%></td>
+
                                         <td><%=listing.created_at%></td>
 
                                         <td>
-                                        <%= link_to "" , class: "btn btn-primary btn-xs" do %><span class="glyphicon glyphicon-edit"><%end%>
-                                        <%= link_to "", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs" do %>
-                                        <span class=
-                                        "glyphicon glyphicon-trash"><%end%></span></span></td>
+                                        <%= link_to edit_listing_path(listing), class: "btn btn-primary btn-xs" do %>
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                        <%end%>
+                                        <%= link_to listing, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs" do %>
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                        <%end%>
+                                        </td>
                                     </tr>
-                                </tbody><%end%>
+                                    <%end%>
+                                </tbody>
                             </table>
                         </div>
 

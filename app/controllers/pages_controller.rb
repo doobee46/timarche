@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def index
    @listings= @q.result
-   @indexes = @listings.order("created_at DESC").limit(3)
+   @indexes = @listings.shuffle.sample(3)
    respond_with(@listings)
   end
 

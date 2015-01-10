@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104224835) do
+ActiveRecord::Schema.define(version: 20150109014225) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -60,6 +60,13 @@ ActiveRecord::Schema.define(version: 20150104224835) do
   end
 
   add_index "commontator_threads", ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true
+
+  create_table "coupons", force: true do |t|
+    t.string   "code"
+    t.string   "free_trial_length"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -193,9 +200,33 @@ ActiveRecord::Schema.define(version: 20150104224835) do
 
   add_index "pictures", ["listing_id"], name: "index_pictures_on_listing_id"
 
+  create_table "plans", force: true do |t|
+    t.string   "name"
+    t.string   "stripe_id"
+    t.float    "price"
+    t.string   "interval"
+    t.text     "features"
+    t.boolean  "highlight"
+    t.integer  "display_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "products", force: true do |t|
     t.string   "name"
     t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subscriptions", force: true do |t|
+    t.string   "stripe_id"
+    t.integer  "plan_id"
+    t.string   "last_four"
+    t.integer  "coupon_id"
+    t.string   "card_type"
+    t.float    "current_price"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

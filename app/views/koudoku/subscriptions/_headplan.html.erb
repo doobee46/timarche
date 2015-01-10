@@ -1,0 +1,13 @@
+<%if plan.name == "free"%>
+  <div class="plan_head">
+    <h3><%= plan.name %></h3>
+  </div>
+  <%elsif plan.name == "store"%>
+  <div class="plan_head store">
+    <h3><%= plan.name %></h3>
+  </div>
+  <%elsif plan.name =="enterprise"%>
+   <div class="plan_head enterprise">
+    <h3><%= plan.name %></h3>
+  </div>
+<%end%>

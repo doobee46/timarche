@@ -1,0 +1,158 @@
+.whole{
+ margin-right: 30px;
+ display: inline-block;
+}
+
+.plan_head{
+	background-color:rgb(100,182,80);
+	width:253px;
+	height:55px;
+}
+
+.plan_head h3{
+	font-family: 'Open Sans', sans-serif;
+	font-size:25px;
+	font-weight:bold;
+	line-height: 55px;
+	color:rgb(255,255,255);
+	text-align:center;
+	text-transform: uppercase;
+ 
+}
+
+.store{
+	background-color:rgb(26,188,156);
+	width:253px;
+	height:55px;
+}
+
+.store h3{
+	font-family: 'Open Sans', sans-serif;
+	font-size:25px;
+	font-weight:bold;
+	line-height: 55px;
+	color:rgb(255,255,255);
+	text-align:center;
+	text-transform: uppercase;
+ 
+}
+
+.enterprise{
+	background-color:rgb(1,153,201);
+	width:253px;
+	height:55px;
+}
+
+.enterprise h3{
+	font-family: 'Open Sans', sans-serif;
+	font-size:25px;
+	font-weight:bold;
+	line-height: 55px;
+	color:rgb(255,255,255);
+	text-align:center;
+	text-transform: uppercase;
+ 
+}
+
+.plan_body{
+	background-color:rgb(51,51,51);
+	width:253px;
+	height:100%;
+}
+
+span.dollar_sign{
+	font-family: 'Open Sans', sans-serif;
+	font-size:23px;
+	font-weight:bold;
+	color:rgb(255,255,255);
+    margin-right: 3px;
+}
+
+span.price_monthly{
+	font-family: 'Open Sans', sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	color:rgb(255,255,255);
+    position: relative;
+    left: 58px;
+}
+
+.month_price{
+	padding:8px 0px 10px 0px;
+}
+
+.month_price sup{
+	font-family: 'Open Sans', sans-serif;
+	font-size:23px;
+	font-weight:bold;
+	color:rgb(255,255,255);
+	margin-left: 5px;
+	position: relative;
+	top:-25px;
+}
+
+.month_price p{
+	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+	color:rgb(102,102,102);
+	text-align:center;
+}
+
+ul.plan_features{
+	list-style-type: none;
+	margin:0px; padding: 0px;
+	border-top: 1px solid rgb(68,68,68);
+}
+
+ul.plan_features li{
+    border-bottom: 1px dashed rgb(68,68,68);
+  	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+	line-height:120%;
+	color:rgb(135,135,135);
+	text-align:center;
+	padding:8px 0px 8px 0px;
+	margin-bottom:0px;
+	text-transform: capitalize;
+}
+
+.plan_action{
+	width:253px;
+	background-color:rgb(51,51,51);
+	height: auto;
+	padding: 10px 0px 15px 0px;
+}
+
+.call_action{
+	width: 90px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.btn-subscribe{
+	color: #FFF;
+    border-color: #2E6DA4;
+    background-color:rgb(178,45,0);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+.btn-subscribe:hover{
+	color: #FFF !important;
+	background-color:#932500;
+}
+
+.plan_wrapper{
+	width: 860px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.plan_wrapper h1{
+	font-size: 30px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 200;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}

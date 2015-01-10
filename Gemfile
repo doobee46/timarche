@@ -23,6 +23,7 @@ gem 'social-share-button'
 gem 'attribute-defaults'
 gem 'ransack'
 gem 'intercom-rails'
+gem 'koudoku',github: 'doobee46/koudoku'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 

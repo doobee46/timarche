@@ -1,0 +1,48 @@
+<% @plans.each do |plan| %>
+<div class="whole">
+  <% if plan.name == "Free"%>
+  <div class="plan_head">
+    <h3><%= plan.name %></h3>
+  </div> <% elsif plan.name == "Store"%>
+  <div class="store">
+    <h3><%= plan.name %></h3>
+  </div>
+  <% elsif plan.name =="Enterprise"%>
+   <div class="enterprise">
+    <h3><%= plan.name %></h3>
+  </div>
+<% end%>
+  <div class="plan_body">
+    <div class="month_price">
+      <!--<span class="dollar_sign">$</span>--><span class="price_monthly"><%= plan_price(plan) %></span><!--<sup>.99</sup>
+      <p>par mois</p>-->
+    </div>
+    <ul class="plan_features">
+       <% if Koudoku.free_trial? %>
+      <li class='muted'><%= Koudoku.free_trial_length %>-day Free Trial</li>
+      <% end %>
+      <%= BlueCloth.new(plan.features.gsub(/\n/, "\n\n")).to_html.gsub(/<(\/?)p>/, '<\1li>').html_safe %>
+    </ul>
+  </div>
+  <div class="plan_action">
+    <div class="call_action">
+      <% if @subscription.nil? %>
+        <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Sign Up', koudoku.new_subscription_path(plan: plan.id), class: "btn btn-subscribe" %>
+      <% elsif @subscription.persisted? %>
+        <% if @subscription.plan == plan %>
+          <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>
+            <%= f.submit 'Selected', class: "btn  btn-subscribe", disabled: 'disabled' %>
+          <% end %>
+        <% else %>
+          <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>
+            <%= f.hidden_field :plan_id, value: plan.id %>
+            <%= f.submit @subscription.describe_difference(plan), class: "btn  btn-subscribe" %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Upgrade', new_owner_subscription_path(@owner, plan: plan.id), class: "btn  btn-subscribe" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>

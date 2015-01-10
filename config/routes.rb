@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+ mount Koudoku::Engine, at: 'koudoku'
+ scope module: 'koudoku' do
+ get 'pricing', :to => 'subscriptions#index', as: 'pricing'
+ end
   
   get 'likes/create'
 
@@ -45,6 +49,8 @@ Rails.application.routes.draw do
   end
  end
 
+
+
  
   #->Prelang (user_login:devise/stylized_paths)
 
@@ -57,7 +63,7 @@ Rails.application.routes.draw do
     post   "signup"  => "users/registrations#create", as: :user_registration
     put    "signup"  => "users/registrations#update", as: :update_user_registration
     get    "account" => "users/registrations#edit",   as: :edit_user_registration
-   
+
   end
 
 

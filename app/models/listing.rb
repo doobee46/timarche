@@ -21,18 +21,21 @@ class Listing < ActiveRecord::Base
                       :storage => :dropbox,
                       :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
-   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  #validate :listing_limit, :on => :create
 
-=begin
-  def set_listing_number
-    listing_number=("TM#{year}HT#{n+1}#{id}").to_s
-  end
-=end
-  
   attr_default :listing_number do
     year=Date.current.year
-    "TM#{year}HT#{id}".to_s
+    "TM#{year}HT".to_s
   end
+
+=begin
+  def listing_limit
+    if self.user.listings(:reload).count >= 1
+      errors.add(:base, "Exceeded thing limit")
+    end
+  end
+=end
 
 
 

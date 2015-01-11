@@ -236,7 +236,7 @@ form.navbar-form .form-group input[type="search"]{
 
 .btn-post{
     background-color:#7C303C;
-    color:#fff;
+    color:#fff !important;
     padding: 8px 15px 8px 15px;
     margin-top: 5px;
     border-radius: 8px;
@@ -884,10 +884,14 @@ ul.nav li a i.mail{
 }
 
 .navbar-default .navbar-nav > li > a{
-   /* margin-top:5px;*/
+   /*margin-top:5px;*/
     font-weight: 400;
     font-size:12px;
     letter-spacing:1px;
     color:#888;
     font-family: 'Montserrat', sans-serif;
+}
+
+.nav .open > a{
+    background-color:none;
 }

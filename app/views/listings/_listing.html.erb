@@ -4,7 +4,7 @@
     <%= image_tag (listing.image(:medium))%>
     <div class="info clearfix">
       <span class="listing_title"><%= listing.name%></span>
-      <span class="listing_price"><%=number_to_currency(listing.price, precision: 2, unit: "Gdes", delimiter: "",separator: "," )%></span>
+      <span class="listing_price">Gdes <%=(listing.price)%></span>
     </div>  
   <% end %>
   <ul class="related_images">

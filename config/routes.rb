@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
- mount Koudoku::Engine, at: 'koudoku'
- scope module: 'koudoku' do
- get 'pricing', :to => 'subscriptions#index', as: 'pricing'
- end
+ 
   
   get 'likes/create'
 
@@ -65,6 +62,13 @@ Rails.application.routes.draw do
     get    "account" => "users/registrations#edit",   as: :edit_user_registration
 
   end
+
+
+
+mount Koudoku::Engine, at: 'koudoku'
+ scope module: 'koudoku' do
+ get 'pricing', :to => 'subscriptions#index', as: 'pricing'
+end
 
 
 end

@@ -236,7 +236,7 @@ form.navbar-form .form-group input[type="search"]{
 
 .btn-post{
     background-color:#7C303C;
-    color:#fff;
+    color:#fff !important;
     padding: 8px 15px 8px 15px;
     margin-top: 5px;
     border-radius: 8px;
@@ -373,13 +373,11 @@ form.navbar-form .form-group input[type="search"]{
 }
 
 .recent{
+    background:url(image_path("sativa.png"));
+    background-repeat: repeat-y repeat-x;
     width: 100%;
     display:block;
-    /*background-color:#EFEFEB*/; 
-    background-image: url(image_path("sativa.png"));
-    background-repeat: repeat-y repeat-x;
-
-    
+   
 }
 
 .main_listings h3{
@@ -884,10 +882,14 @@ ul.nav li a i.mail{
 }
 
 .navbar-default .navbar-nav > li > a{
-   /* margin-top:5px;*/
+   /*margin-top:5px;*/
     font-weight: 400;
     font-size:12px;
     letter-spacing:1px;
     color:#888;
     font-family: 'Montserrat', sans-serif;
+}
+
+.nav .open > a{
+    background-color:none;
 }

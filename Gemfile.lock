@@ -105,6 +105,7 @@ GEM
       activerecord (>= 3.0.0)
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
+    google-analytics-rails (0.0.6)
     hashie (3.3.2)
     hike (1.2.3)
     httpclient (2.5.3.3)
@@ -290,6 +291,7 @@ DEPENDENCIES
   figaro
   font-awesome-rails
   friendly_id (~> 5.0.0)
+  google-analytics-rails
   impressionist
   intercom-rails
   jbuilder (~> 2.0)

@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
 
   # Added by Koudoku.
   has_one :subscription
-
-
   devise :omniauthable, :omniauth_providers => [:facebook]
   has_many :listings, dependent: :destroy
   acts_as_commontator

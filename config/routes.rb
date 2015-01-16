@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'pages#index'
  
-  
   get 'likes/create'
 
   resources :pictures
@@ -14,20 +14,21 @@ Rails.application.routes.draw do
   
   mount Commontator::Engine => '/commontator'
 
+
   get 'pages/index'
   get 'about'       => "pages#about"
   get 'browse'      => "pages#browse"
   get 'contact'     => "pages#contact"
   get 'privacy'     => "pages#privacy"
-  get 'seller'      => "listings#seller"
+  get 'sellers'     => "sellers#index"
+  get 'dashboard'   => "listings#seller"
   get 'recent', :to =>"listings#recent",  :as => :recent
   get 'popular',:to =>"listings#popular", :as => :popular
+  match '/sellers/:id',     to: 'sellers#show',       via: 'get'
 
 
-  devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks",registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
-  
-  
-  root 'pages#index'
+  devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks",registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords",:path_prefix => 'd'}, skip: [:sessions, :registrations]
+  resources :sellers, :only =>[:show]
 
   resources :messages do
     member do

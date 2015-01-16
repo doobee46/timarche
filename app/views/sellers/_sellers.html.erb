@@ -1,0 +1,22 @@
+<% @sellers.each do |seller| %>
+<div class="sellers_box">
+	<div class="sellers_info">
+		<%= image_tag seller.avatar.url(:athumb), class: "img-circle pull-left"%>
+		<div class="demo">
+		 <h3><%=link_to seller.name , seller_path(seller)%></h3>
+		 <span class="glyphicon glyphicon-map-marker" aria-hidden="true"><p>location</p></span>
+		</div>
+	</div>
+	<div class="seller_item">
+		<h3><%=seller.listings_count%> <span>items</span></h3>
+	</div>
+	<div class="items_pic">
+     <% seller.listings.limit(6).each do |listing|%>
+     <%= link_to (image_tag listing.image.url(:thumb)), listing_path(listing)%>
+     <%end%>
+	</div>
+	<div class="seller_foot">
+		<button class="btn-follow">Follow</button>
+	</div>
+</div>
+<%end%>

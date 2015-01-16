@@ -21,9 +21,9 @@
                   <div class="info">
                     <span class="item_title"><%= listing.name %></span>
                     <span class="avatar_info">
-                       <%=link_to "" do %>
+                       <%=link_to seller_path(listing.user) do %>
                        <%=image_tag listing.user.avatar.url(:athumb), size: "20x20", alt: "avatar",class: "img-circle"%>
-                       <p><%=listing.user.name%></p>
+                       <p><%=listing.user.username %></p>
                        <%end%>
                     </span>
                     <span class="item_price">Gdes <%=(listing.price)%>

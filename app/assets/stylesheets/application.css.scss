@@ -373,13 +373,11 @@ form.navbar-form .form-group input[type="search"]{
 }
 
 .recent{
+    background:url(image_path("sativa.png"));
+    background-repeat: repeat-y repeat-x;
     width: 100%;
     display:block;
-    /*background-color:#EFEFEB*/; 
-    background-image: url(image_path("sativa.png"));
-    background-repeat: repeat-y repeat-x;
-
-    
+   
 }
 
 .main_listings h3{

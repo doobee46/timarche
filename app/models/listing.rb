@@ -4,8 +4,8 @@ class Listing < ActiveRecord::Base
   acts_as_commontable
   belongs_to :user, counter_cache: :listings_count
   belongs_to :category
-  has_many   :pictures
-  has_many   :like
+  has_many   :pictures, dependent: :destroy
+  has_many   :like, dependent: :destroy
   
   scope :published,->{where("listings.created_at IS NOT NULL ")}
   scope :recent, lambda{published.where("listings.created_at > ?", 1.week.ago.to_date)}

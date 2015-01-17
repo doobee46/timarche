@@ -114,7 +114,7 @@
  }
 
  .btn-follow:hover{
- 	background-color: #596377;
+ 	background-color:#1ABC9C /*#5C232C #596377*/;
  	color:#fff;
  	text-transform: uppercase;
  }

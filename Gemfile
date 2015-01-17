@@ -62,4 +62,5 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'faker'
   gem 'thin'
+  gem 'ruby-progressbar'
 end

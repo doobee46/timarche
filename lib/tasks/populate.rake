@@ -2,7 +2,7 @@ namespace :db do
     desc " Fill database with sample data"
     task populate: :environment do
 
-      Category.create([
+    Category.create([
                {name: 'Electronique'},
                {name: 'Artisanat'},
                {name:'fashion'},

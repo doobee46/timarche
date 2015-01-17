@@ -2,7 +2,7 @@
 <% @sellers.each do |seller| %>
 <div class="sellers_box">
 	<div class="sellers_info">
-		<%= image_tag seller.avatar.url(:athumb), class: "img-circle pull-left"%>
+	<%= image_tag seller.avatar.url(:amedium), class: "img-circle pull-left",size: "64x64"%>
 		<div class="demo">
 		 <h3><%=link_to seller.name , seller_path(seller)%></h3>
 		 <span class="glyphicon glyphicon-map-marker" aria-hidden="true"><p>location</p></span>

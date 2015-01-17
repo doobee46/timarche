@@ -1,0 +1,29 @@
+<div class="item_list">
+    <ul>
+      <% @listings.each do |listing| %>
+        <li class="item">
+              <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
+            <div class="info">
+              <span class="item_title"><%= listing.name %></span>
+              <span class="avatar_info">
+                 <%=link_to seller_path(listing.user) do %>
+                 <%=image_tag listing.user.avatar.url(:athumb), size: "20x20", alt: "avatar",class: "img-circle"%>
+                 <p><%=listing.user.username %></p>
+                 <%end%>
+              </span>
+              <span class="item_price">Gdes <%=(listing.price)%>
+              </span>
+            </div>
+           
+            <div class="block-actions">
+              <%=form_for(Like.new,:remote => true) do |f| %>
+              <%= f.hidden_field :listing_id, value: listing.id %>
+              <%= f.button " " , class: 'btn btn-success btn-sm', data: {disable_with: " saving..."} do %>
+                 <span class="glyphicon glyphicon-heart"></span> like
+              <%end%>   
+              <%end%>
+            </div>                                 
+        </li>
+       <% end %>  
+    </ul>  
+</div>

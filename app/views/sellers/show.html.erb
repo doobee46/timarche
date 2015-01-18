@@ -8,12 +8,13 @@
 				</div>		   
 				<div class="show_info">
 					<h3><%=@user.name%></h3>
-					<p>the best online store , you will find all you need</p>
+					<p><%=@user.bio%></p>
 		            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"><p>location</p>
 		            </span>
 				</div>
 			</div>
-			<button class="btn-follow pull-right move_up"> follow </button>
+			<%= render :partial => 'shared/stats'%>
+			<%= render :partial => 'sellers/follow_form' if user_signed_in? %>
 			<h3 class="seller">Mes Produits</h3>
 			<%=render :partial => 'sellers/userlistings'%>
 			 <div>

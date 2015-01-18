@@ -1,11 +1,23 @@
 class User < ActiveRecord::Base
-
-  # Added by Koudoku.
-  has_one :subscription
-  devise :omniauthable, :omniauth_providers => [:facebook]
-  has_many :listings, dependent: :destroy
   acts_as_commontator
   acts_as_messageable
+  # Added by Koudoku.
+  has_one  :subscription
+
+  devise   :omniauthable, :omniauth_providers => [:facebook]
+
+  has_many :listings, dependent: :destroy
+
+  has_many :relationships,foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+
+  has_many :reverse_relationships, class_name: "Relationship",
+                                   foreign_key: "followed_id",
+                                   dependent: :destroy                               
+  
+  has_many :followers, through: :reverse_relationships, source: :follower
+  
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   extend FriendlyId
@@ -73,6 +85,20 @@ class User < ActiveRecord::Base
     end
   end
 
+
+ 
+  def following?(other_user)
+  relationships.find_by(followed_id: other_user.id)
+  end
+  
+  def follow!(other_user)
+  relationships.create!(followed_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+  relationships.find_by(followed_id: other_user.id).destroy
+  end
+
  
   private
 
@@ -84,7 +110,7 @@ class User < ActiveRecord::Base
     end
   end
 
- 
+
 
 
  

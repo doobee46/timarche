@@ -20,6 +20,11 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body.welcome{
+    padding-top:0px;
+
+}
+
 body{
     padding-top:60px;
 
@@ -54,74 +59,7 @@ a:hover{
  height:30px;
 }
 
-.navbar-default {
-    background-color: #FFF;
-    border-color: none;
-}
 
-.navbar-brand a img{
-    margin-top: -10px;
-}
-
-.navbar {
-    border: none;
-}
-
-.navbar-default .navbar-nav > .open > a{
-    color:#fff;
-    background-color: #444;
-
-}
-
-.navbar-nav{
-    margin-top:12px;
-}
-
-.nav > li {
-   margin-right: 10px;
-}
-
-.navbar-nav > li > a{
-    padding:0px 15px 0px 15px ;
-}
-
-ul.nav li a.dropdown-toggle{
-    color: #333;
-    font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    letter-spacing: 1px;
-}
-
-li.dropdown.open{
-    background-color:none;
-}
-
-.dropdown-menu{
-    background-color: #333;
-    border-radius: none;
-    margin-top: -2px;
-
-}
-
-.dropdown-menu > li > a {
-    display: block;
-    clear: both;
-    font-weight: 400;
-    line-height: 1.42857;
-    white-space: nowrap;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    color: #fff;
-    padding: 10px 25px;
-    letter-spacing: 1px;
-}
-
-
-.dropdown-menu > li > a:hover{
-    background-color: #5C232C;
-    color:#fff;
-}
 
 .glyphicon-envelope{
     font-size:25px;
@@ -133,12 +71,60 @@ li.dropdown.open{
 .icon_header{
     padding-right: 15px;
 }
+/***************welcome_nav**************/
+.header{
+ width: 100%;
+ position: relative;
+}
+
+.header img{
+  float:left;
+  position: relative;
+  top: -19px;
+}
+
+.btn-log{
+    background-color: none;
+    border: 1px solid #fff;
+    color:#fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+
+}
+
+.btn-log:hover{
+    color:#1ABC9C;
+}
+
+.login_block{
+    width: 100%;
+    float:right;
+    position: relative;
+    top: -25px;
+}
+
+.login_block ul{
+    list-style-type: none;
+    margin:0px 20px 0px 0px;
+    padding:0px;
+    position: relative;
+    top:-20px;
+}
+
+.login_block ul li{
+    display: inline-block;
+    
+}
+
+
+
+
 
 .jumbotron{
     background-image: url(image_path("coverBG_alt3.jpg"));
     background-size: cover;
     background-position: center-top;
-    height: 550px;
+    height: 680px;
     background-repeat: no-repeat;
     margin:-20px 0px 0px 0px;
 }
@@ -147,6 +133,7 @@ li.dropdown.open{
     text-align: center;
     /*padding-top:45px;*/
     width: 780px;
+    margin-top:105px;
 }
 
 .jumbo_center form.navbar-form{
@@ -858,12 +845,6 @@ ul.trending li.trending_listing .owner-details em {
     color: #999;
 }
 
-ul.nav li a i.mail{
-    position:relative;
-    top:2px;
-    left:10px;
-}
-
 .mbox{
     position: relative;
     top: -15px;
@@ -873,24 +854,3 @@ ul.nav li a i.mail{
 }
 
 
-.navbar-default .navbar-nav > li > a.brow{
-    /*margin-top:5px;*/
-    font-weight: 400;
-    font-size:12px;
-    letter-spacing:1px;
-    color:#888;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.navbar-default .navbar-nav > li > a{
-   /*margin-top:5px;*/
-    font-weight: 400;
-    font-size:12px;
-    letter-spacing:1px;
-    color:#888;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.nav .open > a{
-    background-color:none;
-}

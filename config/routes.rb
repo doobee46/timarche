@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'contact'     => "pages#contact"
   get 'privacy'     => "pages#privacy"
   get 'sellers'     => "sellers#index"
-  get 'dashboard'   => "listings#seller"
+  get 'dashboard'   => "listings#dashboard"
   get 'recent', :to =>"listings#recent",  :as => :recent
   get 'popular',:to =>"listings#popular", :as => :popular
   match '/sellers/:id',     to: 'sellers#show',       via: 'get'

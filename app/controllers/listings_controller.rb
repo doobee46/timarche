@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json
 
-  def seller
+  def dashboard
     @listings = Listing.where(user: current_user).paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
   end
 

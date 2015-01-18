@@ -1,0 +1,19 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= following_seller_path(@user) %>">
+    <strong id="following" class="stat">
+      <button class="btn-follow pull-right move_up">
+        <span class="badge"><%=@user.followed_users.count %></span>
+        following
+      </button>
+    </strong>
+  </a>
+  <a href="<%= followers_seller_path(@user) %>">
+    <strong id="followers" class="stat">
+      <button class="btn-follow pull-right move_up">
+          <span class="badge"><%=@user.followers.count %></span>
+          followers
+      </button>
+    </strong>
+  </a>
+</div>

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :listings
 
   resources :likes, only: :create
+
+  resources :relationships, only: [:create, :destroy]
   
   mount Commontator::Engine => '/commontator'
 
@@ -27,8 +29,17 @@ Rails.application.routes.draw do
   match '/sellers/:id',     to: 'sellers#show',       via: 'get'
 
 
-  devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks",registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords",:path_prefix => 'd'}, skip: [:sessions, :registrations]
-  resources :sellers, :only =>[:show]
+  devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks",
+                                   registrations: "users/registrations", 
+                                   sessions: "users/sessions", 
+                                   passwords: "users/passwords",
+                                   :path_prefix => 'd'}, skip: [:sessions, :registrations]
+
+  resources  :sellers, :only =>[:show] do
+    member do
+      get :following, :followers
+    end
+  end
 
   resources :messages do
     member do
@@ -46,8 +57,7 @@ Rails.application.routes.draw do
     post :empty_trash
   end
  end
-
-
+ 
 
  
   #->Prelang (user_login:devise/stylized_paths)
@@ -61,7 +71,7 @@ Rails.application.routes.draw do
     post   "signup"  => "users/registrations#create", as: :user_registration
     put    "signup"  => "users/registrations#update", as: :update_user_registration
     get    "account" => "users/registrations#edit",   as: :edit_user_registration
-
+    
   end
 
 

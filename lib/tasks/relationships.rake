@@ -1,4 +1,3 @@
-require 'ruby-progressbar'
 namespace :relationships do
   desc "fill relationships between users"
   task follow: :environment do

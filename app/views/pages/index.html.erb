@@ -8,12 +8,24 @@
             <%=image_tag 'new_logo.png'%> 
             <div class="login_block">
               <ul class="pull-right">
+                <% if user_signed_in? %>
+                  <li>
+                    <p class="btn btn-log">Welcome back , 
+                      <span>
+                          <%= link_to main_app.destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
+                            <i class="glyphicon glyphicon-log-out"></i> Sign out
+                          <% end %> 
+                       </span>
+                     </p>
+                  </li>
+                <%else%>
                   <li>
                     <%= link_to "S'inscrire",main_app.user_registration_path, class: 'btn btn-log' %> 
                   </li>
                   <li>
                     <%= link_to "Se connecter",main_app.user_session_path,class: 'btn btn-log' %> 
                   </li>
+                <%end%>
               </ul>
             </div>
           </div>
@@ -28,12 +40,10 @@
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
               <%end%>
           <% end %> 
-          <% unless user_signed_in?%>
           <div class="hr">
              <div class="inner">or</div> 
           </div>
              <%= button_to "Voir Publications", listings_path, :method => :get, class: 'btn btn-action'%>
-          <%end%>
         </div>
       </div>
     </div>     

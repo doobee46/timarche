@@ -1,54 +1,128 @@
-<% if user_signed_in? %>
-<%= render :partial => 'shared/signedmenu'%>
-<%else%>
-<div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="navbar-header">
-                  <div class="navbar-brand" href="#">
-                    <%= link_to image_tag("logo.png", class: ' animated bounce'), main_app.root_path%>
-                  </div>
-                </div>
-                 <ul class="nav navbar-nav pull-right">
+<div class="header">
+  <div class="mini_header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="mini_nav clearfix">
+             <%if user_signed_in?%>
+              <li class="clearfix">
+                <a href="">
+                  <span class="fa fa-bell">
+                  </span>
+                  <span class="circle"></span>
+                </a>
+              </li>
+              <li>
+                <%= link_to main_app.conversations_path do%>
+                <span class="fa fa-envelope"></span>
+                  <% unless current_user.mailbox.inbox.blank?%>
+                      <span class="circle"></span>
+                  <%end%>
+                <%end%>
+              </li>
+              <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                  <%=current_user.name%><span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
                   <li>
-                    <%= link_to "S'inscrire",main_app.user_registration_path %> <span class="sr-only">(current)</span>
+                    <%= link_to main_app.dashboard_path, data: { no_turbolink: true } do %>
+                      <span class="glyphicon glyphicon-tasks"></span> Dashboard
+                    <% end %> 
                   </li>
                   <li>
-                    <%= link_to "Se connecter",main_app.user_session_path %> 
+                    <%= link_to main_app.edit_user_registration_path, data: { no_turbolink: true } do %>
+                      <span class="fa fa-pencil-square-o"></span> Edit Account
+                    <% end %> 
                   </li>
-                  <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                          <%= link_to main_app.about_path, data: { no_turbolink: true } do %>
-                            <i class="glyphicon glyphicon-info-sign"></i> A propos
-                          <% end %> 
-                        </li>
-                         <li>
-                          <%= link_to main_app.contact_path, data: { no_turbolink: true } do %>
-                            <i class="glyphicon glyphicon-phone-alt"></i> Contact Us
-                          <% end %> 
-                        </li>
-                    </ul>
-                  </li>
-                  <%if user_signed_in?%>
                   <li>
-                    <button type="button" class="btn btn-post" data-toggle="modal" data-target="#myModal">
-                      Launch demo modal
-                    </button>
-                   
+                    <%= link_to main_app.destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
+                      <span class="fa fa-sign-out"></span> Déconnexion
+                    <% end %> 
                   </li>
-                  <% end %>
                 </ul>
-              </div>
-            </div>                
-          </div>
-        </nav>
-      </div>         
+              </li>
+              <% else %>
+              <li>
+                <%= link_to "S'inscrire",main_app.user_registration_path %>
+              </li>
+              <li>
+                <%= link_to "Se connecter",main_app.user_session_path %> 
+              </li>
+            <%end%>
+          </ul>
+        </div>
+      </div>
     </div>
-</div>
-<%end%>
+  </div>
+  <div class="main_header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="head_brand col-md-2">
+             <%= link_to image_tag("logo.png", class: ' animated bounce'), main_app.root_path %>
+          </div>
+          <div class="col-md-5">
+            <div class="form_nav">
+              <%= search_form_for @q , :class => "topnav-form" do  |f| %>
+                  <div class="topnav_search">
+                    <%= f.search_field :name_cont, placeholder: 'Search Products, Stores, Collections, & People...', class: 'topnav_inp' %>
+                  </div>
+                  <%= f.button "Submit" , :class =>'search-button' do %>
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                  <%end%>
+              <% end %> 
+            </div>            
+          </div>
+          <div class="main_menu col-md-5">
+            <ul class="main_nav pull-right">
+               <li><%=link_to main_app.browse_path, data: { no_turbolink: true } do %>
+                  <span class="glyphicon glyphicon-list-alt"></span>Publications
+                <%end%>
+               </li>
+               <li>
+                  <%= link_to main_app.sellers_path , data: { no_turbolink: true } do %>
+                    <span class="glyphicon glyphicon-th"></span> Les vendeurs
+                  <% end %> 
+                </li>
+               <li><a href=""><span class="fa fa-fire"></span>Trending</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+    </div>        
+  </div>
+  <div class="category">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+              <div class="topnav">
+                  <ul>
+                      <li><a href="">Antiquités</a></li>
+                      <li><a href="">Fashion</a></li>
+                      <li><a href="">Electroniques</a></li>
+                      <li><a href="">Artisanats</a></li>
+                      <li><a href="">Enfants</a></li>
+                      <li><a href="">Music</a></li>
+                      <li><a href="">Pour Homme</a></li>
+                      <li><a href="">Pour Femme</a></li>
+                      <li><a href="">Maisons</a></li>
+                      <li><a href="">Vendeurs vedette</a></li>
+                      <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                          About<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#"><span class="fa fa-list-ul"></span>Contact</a></li>
+                          <li><a href="#"><span class="fa fa-pencil-square-o"></span>Ouvrir une boutique</a></li>
+                          <li><a href="#"><span class="fa fa-sign-out"></span>Jobs</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="">>></a></li>
+                  </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div> 

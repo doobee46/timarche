@@ -1,6 +1,8 @@
 class SellersController < ApplicationController
+  before_filter :set_search
   def index
-  	@sellers  = User.all.paginate(:page => params[:page], :per_page => 30)
+    @q = User.all
+  	@sellers  =@q.result.paginate(:page => params[:page], :per_page => 30)
     @listings = Listing.all.paginate(:page => params[:page], :per_page => 30)
   end
 
@@ -21,5 +23,10 @@ class SellersController < ApplicationController
     render 'show_follow'
   end
 
+  private
+
+    def set_search
+      @q=Listing.search(params[:q])
+    end
 
 end

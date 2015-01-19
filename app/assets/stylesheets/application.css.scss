@@ -25,10 +25,10 @@ body.welcome{
 
 }
 
-body{
+/*body{
     padding-top:60px;
 
-}
+}*
 
 body.modal-open { 
 overflow:inherit; 
@@ -43,6 +43,10 @@ a{
     color:#444;
     text-decoration: none;
 
+}
+
+a {
+   outline: 0;
 }
 
 a:hover{
@@ -116,9 +120,27 @@ a:hover{
     
 }
 
+.login_block ul li p{
+    color:#fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px; 
+}
+
+.login_block ul li p span a{
+    font-size: 15px; 
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: "open sans", sans-serif;
+    color:#fff;
+    text-decoration:none;
+}
+.login_block ul li p span a:hover{
+    color:inherit;
+}
 
 
 
+/***************end**************/
 
 .jumbotron{
     background-image: url(image_path("coverBG_alt3.jpg"));

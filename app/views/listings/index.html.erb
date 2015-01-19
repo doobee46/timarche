@@ -1,7 +1,5 @@
 <% @title = "listings" %>
 <body class="pr-show">
-<%= render :partial => 'shared/midsearch'%>
-<%= render :partial => 'listings/category'%>
 <%= render :partial => 'listings/listings'%>
 <%= render :partial => 'shared/intro' unless user_signed_in?%>
 <%= render :partial => 'listings/form'%>

@@ -830,6 +830,12 @@ ul.trending li.trending_listing .owner-details em {
     font-size: 12px;
     text-transform: capitalize; 
     letter-spacing: 2px;
+    color:#666;
+    text-decoration:none
+}
+
+.foot-wrapper ul.foot-list li a:hover{
+    color:#5C232C;
 }
 
 .foot-wrapper ul.foot-list li a i{

@@ -15,8 +15,7 @@
 			</div>
 			<%= render :partial => 'shared/stats'%>
 			<%= render :partial => 'sellers/follow_form' if user_signed_in? %>
-			<h3 class="seller">Mes Produits</h3>
-			<%=render :partial => 'sellers/userlistings'%>
+			<%= render :partial => 'sellers/userlistings'%>
 			 <div>
 			 	<%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
             </div>

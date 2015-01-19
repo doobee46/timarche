@@ -1,9 +1,10 @@
 class SellersController < ApplicationController
-  before_filter :set_search
+  
   def index
-    @q = User.all
-  	@sellers  =@q.result.paginate(:page => params[:page], :per_page => 30)
-    @listings = Listing.all.paginate(:page => params[:page], :per_page => 30)
+    @users = User.all
+  	@sellers  =@users.paginate(:page => params[:page], :per_page => 30)
+    @q = Listing.includes(:user, :impressions, :like, :category).search(params[:q])
+    @listings= @q.result.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
   end
 
   def show
@@ -23,10 +24,5 @@ class SellersController < ApplicationController
     render 'show_follow'
   end
 
-  private
-
-    def set_search
-      @q=Listing.search(params[:q])
-    end
-
+  
 end

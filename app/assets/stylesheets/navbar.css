@@ -1,7 +1,8 @@
 .header{
     position: fixed;
-    z-index: 1000;
+    top: 0;
     width: 100%;
+    z-index: 100;
 }
 
 .mini_header{
@@ -9,6 +10,12 @@
     height:30px;
     background-color: #2E2E2E;
     
+}
+
+
+span.mini_avatar img.img-circle{
+    position: relative;
+    top:3px;
 }
 
 ul.mini_nav{
@@ -23,6 +30,7 @@ ul.mini_nav li{
     padding-right: 5px 
 }
 
+
 ul.mini_nav li:last-child{
     margin-right: 0;
     border-right:none;
@@ -31,11 +39,28 @@ ul.mini_nav li:last-child{
 ul.mini_nav li a{
     font-family: "open sans",sans-serif;
     font-size: 12px;
-    font-weight:bold;
+    font-weight: 400;
     color:#fff;
     line-height: 30px;
     padding: 10px;
+    text-transform: capitalize;
+    text-decoration: none;
 }
+
+ul.mini_nav li a:hover{
+    color:#1ABC9C;
+}
+
+ul.mini_nav li a.avat{
+    position: relative;
+    left: -10px;
+}
+
+ul.mini_nav li a span.notification{
+    position:absolute;
+    top:10px;
+}
+ 
 
 ul.mini_nav li a span{
     margin-right: 5px;
@@ -85,10 +110,7 @@ ul.dropdown-menu li :hover{
     border-radius: 50%;
     width:5px;
     height:5px;
-    background-color: red;
-    position:absolute;
-    top:10px;
-
+    background-color: red;  
 }
 
 /**********************main**************/
@@ -277,7 +299,7 @@ ul.main_nav li a span{
 .topnav ul li.dropdown ul.dropdown-menu li a:hover{
     display: block;
     background-color:#f5f5f5;
-    color:#5C232C;
+    color:#1ABC9C;
 }
 
 .topnav ul li.dropdown ul.dropdown-menu li a:last-child{

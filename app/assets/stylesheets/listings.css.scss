@@ -19,7 +19,7 @@
     font-weight: 700;
     font-size: 28px; 
     margin-top: -25px;
-    color:#333;
+    color: #596377
 }
 
 .main_pages p{
@@ -454,19 +454,25 @@ ul li.item a img:hover{
     text-align: left;
     white-space: nowrap;
     width: 40px;
+    text-decoration:none;
 }
 
 .like{
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal ;
-  font-size:9;
-  color: #596377;  
+  font-family: 'open sans', sans-serif;
+  font-weight:bold;
+  font-size:12px;
+  color: #596377; 
+  margin-right:5px;
+  border:1px solid #596377;
+  padding:3px;
+  border-radius:2px;
 }
 
 .like-action{
   position: relative;
-  top: -25px;
-  left: 95px;
+  top: 10px;
+  left: 0px;
+  margin-bottom: 20px;
 }
 
 .smaller{

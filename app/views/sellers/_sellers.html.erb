@@ -5,7 +5,7 @@
 	<%= image_tag seller.avatar.url(:amedium), class: "img-circle pull-left",size: "64x64"%>
 		<div class="demo">
 		 <h3><%=link_to seller.name , seller_path(seller)%></h3>
-		 <span class="glyphicon glyphicon-map-marker" aria-hidden="true"><p>location</p></span>
+		 <span class="glyphicon glyphicon-map-marker" aria-hidden="true"><p><%= seller.location%></p></span>
 		</div>
 	</div>
 	<div class="seller_item">
@@ -16,8 +16,8 @@
      <%= link_to (image_tag listing.image.url(:thumb)), listing_path(listing)%>
      <%end%>
 	</div>
-	<div class="seller_foot">
-	   
+	<div class="seller_foot">	
+	  
 	</div>
 </div>
 <%end%>

@@ -7,15 +7,19 @@
              <%if user_signed_in?%>
               <li class="clearfix">
                 <a href="">
-                  <span class=" bell fa fa-bell">
-                  </span>
-                  <span class=" notification circle"></span>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                  <span class=" bell fa fa-bell"><span class=" notification circle"></span></span>
+                  </a>
+                  <ul class="activ dropdown-menu" role="menu">
+                    <li><a href="#"><span class="fa fa-mobile"></span>Contact</a></li>
+                    <li><a href="#"><span class="fa fa-sign-out"></span>Jobs</a></li>
+                  </ul>
                 </a>
               </li>
               <li>
                 <%= link_to main_app.conversations_path do%>
                 <span class=" env fa fa-envelope"></span>
-                  <% unless current_user.mailbox.inbox.blank?%>
+                  <% if current_user.mailbox.receipts.count %>
                       <span class="circle"></span>
                   <%end%>
                 <%end%>
@@ -30,8 +34,8 @@
                 <ul class="dropdown-menu" role="menu">
                   <li>
                     <%= link_to main_app.dashboard_path, data: { no_turbolink: true } do %>
-                      <span class="glyphicon glyphicon-tasks"></span> Dashboard
-                    <% end %> 
+                    <span class="glyphicon glyphicon-tasks"></span> Dashboard
+                    <% end %>
                   </li>
                   <li>
                     <%= link_to main_app.edit_user_registration_path, data: { no_turbolink: true } do %>
@@ -95,37 +99,7 @@
       </div>
     </div>        
   </div>
-  <div class="category">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-              <div class="topnav">
-                  <ul>
-                      <li><a href="">Antiquités</a></li>
-                      <li><a href="">Fashion</a></li>
-                      <li><a href="">Electroniques</a></li>
-                      <li><a href="">Artisanats</a></li>
-                      <li><a href="">Enfants</a></li>
-                      <li><a href="">Music</a></li>
-                      <li><a href="">Pour Homme</a></li>
-                      <li><a href="">Pour Femme</a></li>
-                      <li><a href="">Maisons</a></li>
-                      <li><a href="">Vendeurs vedette</a></li>
-                      <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                          About<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#"><span class="fa fa-list-ul"></span>Contact</a></li>
-                          <li><a href="#"><span class="fa fa-pencil-square-o"></span>Ouvrir une boutique</a></li>
-                          <li><a href="#"><span class="fa fa-sign-out"></span>Jobs</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="">>></a></li>
-                  </ul>
-              </div>
-          </div>
-        </div>
-      </div>
-  </div>
+  <% unless @title != "browse" %>
+  <%= render :partial => 'shared/category'%>
+  <%end%>
 </div> 

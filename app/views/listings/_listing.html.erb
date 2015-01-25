@@ -38,7 +38,7 @@
           <%= image_tag listing.user.avatar.url(:amedium),size: "64x64", class: "img-circle"%>
          </span>                          
           <em>From</em> <span class="shop-name"><%=listing.user.username%></span> <br>
-          <em>in</em> <span class="location">Delmas</span>                          
+          <em>in</em> <span class="location"><%=listing.user.location%></span>                          
       </span>                       
     </a>
   </div>            

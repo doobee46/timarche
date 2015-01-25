@@ -136,9 +136,7 @@
 
 .show_info{
   width: 100%; 
-  position: relative;
-  top:5px;
-}
+ }
 
 .show_info h3{
 	font-family:"Open Sans",sans-serif;
@@ -161,6 +159,10 @@
 	text-align:left;
     text-transform: capitalize;
     margin-top: -5px;
+    overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 850px;
 }
 
 .show_info span{
@@ -174,13 +176,15 @@
 	left: -2px;
 }
 
-.show_info span p{
+.show_info span.map-loc{
     display: inline-block;
     height: 18px;
     color: #999;
     font-size: 13px;
     text-transform: capitalize;
     font-family: "open sans",sans-serif;
+    position: relative;
+    top:-1px;
   
 }
 

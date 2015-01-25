@@ -46,6 +46,9 @@ outline: 0;
 
 }
 
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
 a:hover{
     color:#5C232C;
     text-decoration: none;
@@ -60,7 +63,9 @@ a:hover{
  height:30px;
 }
 
-
+a:focus{
+   outline: 0;
+}
 
 .glyphicon-envelope{
     font-size:25px;
@@ -72,6 +77,11 @@ a:hover{
 .icon_header{
     padding-right: 15px;
 }
+
+#follow_form{
+    margin-top:20px;
+}
+
 /***************welcome_nav**************/
 .header{
  width: 100%;

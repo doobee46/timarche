@@ -5,9 +5,14 @@ namespace :db do
     Category.create([
                {name: 'Electronique'},
                {name: 'Artisanat'},
-               {name:'fashion'},
-               {name: 'Jouets'},
-               {name: 'Deals'}
+               {name: 'fashion'},
+               {name: 'Maisons'},
+               {name: 'Pour homme'},
+               {name: 'Pour femme'},
+               {name: 'Aantiquités'},
+               {name: 'Enfants'},
+               {name: 'Music'},
+               {name: 'vendeurs vedettes'},
                ])
 
      Plan.create({
@@ -15,7 +20,7 @@ namespace :db do
           price: 0.00,
           interval: 'month',
           stripe_id: '1',
-          features: ['10 annonce', '1 Utilisateur', 'Support par email'].join("\n\n"),
+          features: ['10 annonces', '1 Utilisateur', 'Support par email'].join("\n\n"),
           display_order: 1
         })
 
@@ -46,32 +51,36 @@ namespace :db do
       puts "---- users  ----"
       puts "----------------"
 
-    	10.times do |n|
+    	50.times do |n|
     		puts"[DEBUG] creating user #{n+1} of 10"
     		name = Faker::Name.name
         username = Faker::Internet.user_name
-        avatar =  Faker::Avatar.image("avatar", "30x30", "jpg")
+        avatar = Faker::Avatar.image("30x30")
     		email ="user-#{n+1}@example.com"
     		password ="password"
+        location =Faker::Address.city
+        bio =Faker::Lorem.paragraph
     		User.create!( name: name,
     			          email: email,
                     username: username,
     			          password: password,
     			          password_confirmation: password,
+                    bio: bio,
+                    location:location
                     )
     
        
-       User.all.each do |user|
-          puts "----------------"
-          puts "----listings----"
-          puts "----------------"
-       	  puts "[DEBUG] Creating listings for user #{user.id} of #{User.last.id}"
+        User.all.each do |user|
+          puts "----------------------------------------------------------------"
+          puts "---------------------listings-----------------------------------"
+          puts "----------------------------------------------------------------"
+       	  puts "[DEBUG] Creating listings for user #{user.id} of #{Listing.last.id}"
           
-       	10.times do|n|
+       	50.times do|n|
           name = Faker::Lorem.word   	 
           price= Faker::Number.number(4)
           image = File.open(Dir.glob(File.join(Rails.root, 'sampleimages','*')).sample)
-       	  description = Faker::Lorem.sentence
+       	  description = Faker::Lorem.paragraph
        	  user.listings.create!(name: name, description: description, price: price)
         end    
      end 

@@ -1,0 +1,26 @@
+<div class="category">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="topnav">
+                <ul>
+                   <% @categories.each do |category| %>
+                    <li><%= link_to category.name %></li>
+                    <%end%>
+                    <li role="presentation" class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                        About<span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="fa fa-phone-square"></span>Contact</a></li>
+                        <li><a href="#"><span class="fa fa-pencil-square-o"></span>Ouvrir une boutique</a></li>
+                        <li><a href="#"><span class="fa fa-briefcase"></span>Jobs</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="">>></a></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

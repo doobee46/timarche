@@ -11,12 +11,12 @@
                 <% if user_signed_in? %>
                   <li>
                     <p class="btn btn-log">Welcome back , 
-                      <span>
+                        <span>
                           <%= link_to main_app.destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
-                            <i class="glyphicon glyphicon-log-out"></i> Sign out
-                          <% end %> 
-                       </span>
-                     </p>
+                          <i class="glyphicon glyphicon-log-out"></i> Sign out
+                          <% end %>
+                        </span>
+                    </p>
                   </li>
                 <%else%>
                   <li>

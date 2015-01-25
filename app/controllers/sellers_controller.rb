@@ -4,7 +4,7 @@ class SellersController < ApplicationController
     @users = User.all
   	@sellers  =@users.paginate(:page => params[:page], :per_page => 30)
     @q = Listing.includes(:user, :impressions, :like, :category).search(params[:q])
-    @listings= @q.result.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
+    @listings= @q.result.paginate(:page => params[:page], :per_page => 30)
   end
 
   def show
@@ -24,5 +24,6 @@ class SellersController < ApplicationController
     render 'show_follow'
   end
 
-  
+
+ 
 end

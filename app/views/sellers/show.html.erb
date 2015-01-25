@@ -9,8 +9,7 @@
 				<div class="show_info">
 					<h3><%=@user.name%></h3>
 					<p><%=@user.bio%></p>
-		            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"><p>location</p>
-		            </span>
+		            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"><span class="map-loc"><%=@user.location%></span></span>
 				</div>
 			</div>
 			<%= render :partial => 'shared/stats'%>

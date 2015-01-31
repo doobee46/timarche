@@ -8,8 +8,8 @@ class SellersController < ApplicationController
   end
 
   def show
-  	@user = User.find_by_username(params[:id]) or not_found
-  	@listings = @user.listings.paginate(:page => params[:page], :per_page => 30)
+  	@user = User.find_by_username(params[:id]) 
+    @listings= @user.listings.paginate(:page => params[:page], :per_page => 30)
   end
 
   def following

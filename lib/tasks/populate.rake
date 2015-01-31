@@ -51,17 +51,18 @@ namespace :db do
       puts "---- users  ----"
       puts "----------------"
 
-    	50.times do |n|
+    	10.times do |n|
     		puts"[DEBUG] creating user #{n+1} of 10"
     		name = Faker::Name.name
         username = Faker::Internet.user_name
-        avatar = Faker::Avatar.image("30x30")
+        avatar = File.open(Dir.glob(File.join(Rails.root, 'sampleavatar','*')).sample)
     		email ="user-#{n+1}@example.com"
     		password ="password"
         location =Faker::Address.city
         bio =Faker::Lorem.paragraph
     		User.create!( name: name,
     			          email: email,
+                    avatar: avatar,
                     username: username,
     			          password: password,
     			          password_confirmation: password,
@@ -74,14 +75,14 @@ namespace :db do
           puts "----------------------------------------------------------------"
           puts "---------------------listings-----------------------------------"
           puts "----------------------------------------------------------------"
-       	  puts "[DEBUG] Creating listings for user #{user.id} of #{Listing.last.id}"
+       	  puts "[DEBUG] Creating listings for user #{user.id} of #{User.last.id}"
           
-       	50.times do|n|
+       	10.times do|n|
           name = Faker::Lorem.word   	 
           price= Faker::Number.number(4)
           image = File.open(Dir.glob(File.join(Rails.root, 'sampleimages','*')).sample)
        	  description = Faker::Lorem.paragraph
-       	  user.listings.create!(name: name, description: description, price: price)
+       	  user.listings.create!(name: name, description: description, price: price, image:image)
         end    
      end 
    end

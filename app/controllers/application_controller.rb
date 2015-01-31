@@ -15,10 +15,6 @@ class ApplicationController < ActionController::Base
     @q = Listing.search(params[:q])
   end
 
-  def not_found
-    raise ActionController::RoutingError.new('Not Found')
-  end
-
 
   protected
 

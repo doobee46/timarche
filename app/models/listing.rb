@@ -23,6 +23,7 @@ class Listing < ActiveRecord::Base
   end
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   #validate :listing_limit, :on => :create
+  do_not_validate_attachment_file_type :image
 
   attr_default :listing_number do
     year=Date.current.year

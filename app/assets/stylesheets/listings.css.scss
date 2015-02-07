@@ -302,6 +302,21 @@ ul li.item .info a.store{
     width:100%;
 }
 
+ul li.item span.label{
+  position: absolute;
+  top: -8px;
+  left: 5px;
+}
+
+.label-green{
+  background-color:#192D43;
+  font-size:16px;
+  font-weight:bold;
+  font-family: 'open sans', sans-serif;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
 .intro{
 	background-image:url(image_path("intro_bg.png"));
 	background-size: cover;
@@ -382,8 +397,8 @@ ul li.item .info a.store{
 }
 
 .block-actions{
-    display:none;
-    left: 15%;
+    display: none;
+    left: 25px;
     top: -150px;
     position: relative;
 

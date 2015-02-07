@@ -2,14 +2,15 @@ class Listing < ActiveRecord::Base
    
   is_impressionable :counter_cache => true, :column_name => :impressions_count, :unique => true
   acts_as_commontable
+
   belongs_to :user, counter_cache: :listings_count
   belongs_to :category
   has_many   :pictures, dependent: :destroy
   has_many   :like, dependent: :destroy
   
   scope :published,->{where("listings.created_at IS NOT NULL ")}
-  scope :recent, lambda{published.where("listings.created_at > ?", 1.week.ago.to_date)}
-  scope :popular, ->{where("listings.impressions_count >= 5").order("impressions_count desc")}
+  scope :recent, lambda{published.where("created_at >= ?", Time.zone.now.beginning_of_day)}
+  scope :popular, ->{where("listings.impressions_count >= 2").order("impressions_count desc")}
 
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -21,6 +22,7 @@ class Listing < ActiveRecord::Base
                       :storage => :dropbox,
                       :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
+  #validates_attachment :image, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png","image/jpg"] }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   #validate :listing_limit, :on => :create
   do_not_validate_attachment_file_type :image
@@ -37,7 +39,6 @@ class Listing < ActiveRecord::Base
     end
   end
 =end
-
 
 
 end

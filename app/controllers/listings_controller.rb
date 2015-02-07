@@ -68,6 +68,10 @@ class ListingsController < ApplicationController
     respond_with(@popular)
   end
 
+  def today
+     where("listing.created_at >= ?", Time.zone.now.beginning_of_day)
+  end
+
   private
     def set_search
       @q=Listing.search(params[:q])

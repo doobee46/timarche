@@ -5,13 +5,22 @@
         <h3>Touts les Produits</h3>
         <p>Découvrez les produits de partout dans le marché.</p>
         <div class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-default">Recent</button>
-          <button type="button" class="btn btn-default">Populaire</button>
+          <%= link_to browse_path, class: "btn btn-default" do %>
+            <span class="fa fa-home"></span>Home
+          <%end%>
+          <%= link_to recent_path ,class: "btn btn-default" do %>
+            <span class="fa fa-clock-o"></span>Recent
+          <%end%>
+          <%= link_to popular_path , class: "btn btn-default" do %>
+            <span class="fa fa-fire"></span>Trending
+          <%end%>
         </div>
       </div>
       <div class="item_box">
         <!--<h3 class="pull-left">Produits en vedette</h3>-->
-        <%= link_to "Voir plus >>",browse_path , class: 'pull-right' %>
+        <%= link_to browse_path , class: 'pull-right' do %>
+          <span class="glyphicon glyphicon-plus"></span>more
+        <%end%>
       </div>
       <div class="item_list">
           <ul>
@@ -29,8 +38,12 @@
                     <span class="item_price">Gdes <%=(listing.price)%>
                     </span>
                   </div>
+
+                  <% if listing.created_at >= (2.days.ago.to_date) %>
+                    <span class="label label-green">New</span>
+                  <%end%>
                  
-                  <div class="block-actions">
+                  <div class="block-actions clearfix">
                     <%=form_for(Like.new,:remote => true) do |f| %>
                     <%= f.hidden_field :listing_id, value: listing.id %>
                     <%= f.button " " , class: 'btn btn-success btn-sm', data: {disable_with: " saving..."} do %>
@@ -43,8 +56,8 @@
           </ul>  
       </div>
     </div>
-     <div>
-        <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
-     </div>   
+    <div>
+      <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
+    </div>   
   </div>
 </div>

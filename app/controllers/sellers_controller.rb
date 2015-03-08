@@ -1,10 +1,12 @@
 class SellersController < ApplicationController
-  
+  respond_to :html, :json
+
   def index
     @users = User.all
   	@sellers  =@users.paginate(:page => params[:page], :per_page => 30)
     @q = Listing.includes(:user, :impressions, :like, :category).search(params[:q])
     @listings= @q.result.paginate(:page => params[:page], :per_page => 30)
+    respond_with(@sellers)
   end
 
   def show

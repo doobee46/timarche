@@ -26,6 +26,16 @@ class PagesController < ApplicationController
     respond_with(@listings)
   end
 
+  def recent
+    @recent = Listing.recent.order("created_at desc").page(params[:page]).per_page(30)
+    respond_with(@recent)
+  end
+
+  def popular
+    @popular = Listing.popular.order("created_at desc").page(params[:page]).per_page(30)
+    respond_with(@popular)
+  end
+
   def set_picture
     @listing =Listing.friendly.find(params[:picture][:listing_id]) 
   end

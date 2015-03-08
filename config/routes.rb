@@ -1,3 +1,5 @@
+require 'api_constraints'
+
 Rails.application.routes.draw do
 
   root 'pages#index'
@@ -26,7 +28,7 @@ Rails.application.routes.draw do
   get 'dashboard'   => "listings#dashboard"
   get 'recent', :to =>"listings#recent",  :as => :recent
   get 'popular',:to =>"listings#popular", :as => :popular
-  match '/sellers/:id',     to: 'sellers#show',       via: 'get'
+  match '/sellers/:id',to: 'sellers#show', via: 'get'
 
 
   devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks",
@@ -73,6 +75,15 @@ Rails.application.routes.draw do
     get    "account" => "users/registrations#edit",   as: :edit_user_registration
     
   end
+
+
+namespace :api, defaults: { format: :json } ,
+                              constraints: { subdomain: 'api' }, path: '/'  do
+  scope module: :v1 ,
+              constraints: ApiConstraints.new(version: 1, default: true) do
+
+  end
+end
 
 
 

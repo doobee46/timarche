@@ -16,7 +16,7 @@
 			<%= render :partial => 'sellers/follow_form' if user_signed_in? %>
 			<%= render :partial => 'sellers/userlistings'%>
 			 <div>
-			 	<%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
+			 <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
             </div>
 		</div>
 	</div>

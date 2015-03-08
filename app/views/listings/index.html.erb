@@ -1,8 +1,23 @@
 <% @title = "listings" %>
 <body class="pr-show">
-<%= render :partial => 'listings/listings'%>
+<div id="listing">
+	<%= render :partial => 'listings/listings'%>
+</div>
 <%= render :partial => 'shared/intro' unless user_signed_in?%>
 <%= render :partial => 'listings/form'%>
 <%= render :partial => 'pages/payment'%>
 
+<div data-onboarded-token="wRs4nPKtT4ufYbl2tflpsQ" style="display: none;" data-onboarded-user="email">
+    <div data-onboarded-flow="My Awesome New Flow">
+        <div data-step="1. Welcome">
+            <p>this is where you have access to all marketplace products and buy and sell</p>
+            <button data-name="Go To Second Step" data-action-next="2. Second Step">Go to 2nd step</button>
+        </div>
+        <div data-step="2. Second Step">
+            <!-- Step 2 content -->
+            <button data-name="End Flow" data-action-complete>Finish</button>
+        </div>
+        <div data-complete>Congratulations, you're done!</div>
+    </div>
+</div>
 

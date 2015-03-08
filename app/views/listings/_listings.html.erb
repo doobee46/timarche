@@ -39,7 +39,7 @@
                     </span>
                   </div>
 
-                  <% if listing.created_at >= (2.days.ago.to_date) %>
+                  <% if listing.created_at >= (Date.today) %>
                     <span class="label label-green">New</span>
                   <%end%>
                  

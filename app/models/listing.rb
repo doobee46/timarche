@@ -9,7 +9,7 @@ class Listing < ActiveRecord::Base
   has_many   :like, dependent: :destroy
   
   scope :published,->{where("listings.created_at IS NOT NULL ")}
-  scope :recent, lambda{published.where("created_at >= ?", Time.zone.now.beginning_of_day)}
+  scope :recent, lambda{published.where("created_at >= ?", (Date.today))}
   scope :popular, ->{where("listings.impressions_count >= 2").order("impressions_count desc")}
 
   extend FriendlyId

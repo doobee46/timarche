@@ -4,6 +4,9 @@
 		<div class="col-md-12">
 			<h3 class="seller">Tous les vendeurs</h3>
 		     <%= render :partial => 'sellers/sellers'%>
+		     <div>
+		      <%= will_paginate @sellers, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
+		    </div>   
 		</div>   
 	</div>
 </div>

@@ -69,7 +69,7 @@ class ListingsController < ApplicationController
   end
 
   def today
-     where("listing.created_at >= ?", Time.zone.now.beginning_of_day)
+     where("listing.created_at >= ?", (Date.today))
   end
 
   private

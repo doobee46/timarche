@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
                     :storage => :dropbox,
                     :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
-
+  #validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png","image/jpg"] }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   do_not_validate_attachment_file_type :avatar
  
@@ -69,7 +69,7 @@ class User < ActiveRecord::Base
     else # Create a user with a stub password. 
       User.create!(:email => auth.info.email,
                    :name => auth.info.name,
-                   :username => auth.info.name,
+                   :username => auth.info.nickname,
                    :password => Devise.friendly_token[0,20],
                    :avatar => process_uri(auth.info.image))
     end

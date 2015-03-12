@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery-onboarded-0.0.8.min.js
 //= require wufoo.js
 //= require social-share-button
 //= require turbolinks

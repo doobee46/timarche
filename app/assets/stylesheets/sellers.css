@@ -59,6 +59,10 @@
     font-size: 11px;
     text-transform: capitalize;
     font-family: "open sans",sans-serif;
+    overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 80px;
 
 }
 

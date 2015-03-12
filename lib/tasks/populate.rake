@@ -9,7 +9,7 @@ namespace :db do
                {name: 'Maisons'},
                {name: 'Pour homme'},
                {name: 'Pour femme'},
-               {name: 'Aantiquités'},
+               {name: 'Antiquités'},
                {name: 'Enfants'},
                {name: 'Music'},
                {name: 'vendeurs vedettes'},
@@ -51,10 +51,10 @@ namespace :db do
       puts "---- users  ----"
       puts "----------------"
 
-    	10.times do |n|
-    		puts"[DEBUG] creating user #{n+1} of 10"
+    	100.times do |n|
+    		puts"[DEBUG] creating user #{n+1} of 100"
     		name = Faker::Name.name
-        username = Faker::Internet.user_name
+        username = Faker::Internet.user_name(%w(_))
         avatar = File.open(Dir.glob(File.join(Rails.root, 'sampleavatar','*')).sample)
     		email ="user-#{n+1}@example.com"
     		password ="password"
@@ -62,7 +62,7 @@ namespace :db do
         bio =Faker::Lorem.paragraph
     		User.create!( name: name,
     			          email: email,
-                    avatar: avatar,
+                    #avatar: avatar,
                     username: username,
     			          password: password,
     			          password_confirmation: password,
@@ -77,12 +77,14 @@ namespace :db do
           puts "----------------------------------------------------------------"
        	  puts "[DEBUG] Creating listings for user #{user.id} of #{User.last.id}"
           
-       	10.times do|n|
+       	2.times do|n|
           name = Faker::Lorem.word   	 
           price= Faker::Number.number(4)
           image = File.open(Dir.glob(File.join(Rails.root, 'sampleimages','*')).sample)
        	  description = Faker::Lorem.paragraph
-       	  user.listings.create!(name: name, description: description, price: price, image:image)
+       	  user.listings.create!(name: name, 
+                                description: description, 
+                                price: price)
         end    
      end 
    end

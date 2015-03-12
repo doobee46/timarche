@@ -328,7 +328,7 @@ form.topnav-form{
     font-family: "open sans",sans-serif;
     background: none repeat scroll 0% 0% #FFF;
     height: 32px;
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 0px;
     color: #3F465E;
     border: 1px solid #BABFCE;
@@ -337,7 +337,7 @@ form.topnav-form{
 }
 
 input[type="search"].topnav_inp{
-    padding: 10px;
+    padding: 4px;
     display: block;
     width: 100%;
     box-sizing: border-box;

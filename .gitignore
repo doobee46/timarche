@@ -23,6 +23,7 @@ doc/
 
 #Ignore sampleimages
 /sampleimages
+/sampleavatar
 
 
 config/settings.local.yml

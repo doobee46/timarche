@@ -8,6 +8,7 @@
   <%= analytics_init if Rails.env.production? %>
   <%= render :partial => 'layouts/googlefonts'%>
   <%= render :partial => 'layouts/zopim'%>
+  <%= render :partial => 'layouts/inlinemanual'%>
 </head>
 	<body>
 		<% unless @title == "welcome" %>
@@ -20,6 +21,5 @@
 		<%= yield :koudoku %>
 		<%= yield %>
 		<%= render :partial => 'shared/footer'%>
-		
 	</body>
 </html>

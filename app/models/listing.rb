@@ -28,8 +28,11 @@ class Listing < ActiveRecord::Base
   do_not_validate_attachment_file_type :image
 
   attr_default :listing_number do
+    t = Time.now
     year=Date.current.year
-    "TM#{year}HT".to_s
+    hour = t.strftime('%m%d%H%M%S')
+    
+    "TM#{year}-HT#{hour}".to_s
   end
 
 =begin

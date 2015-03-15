@@ -13,6 +13,21 @@
 
 }
 
+.trending {
+  position:relative;
+  left:10px;
+}
+
+.trending h3{
+  text-align:left;
+  font-family: 'arvo', sans-serif;
+  font-weight: 700;
+  font-size: 15px; 
+  color: #596377;
+  text-transform:uppercase;
+  letter-spacing:1x;
+}
+
 .main_pages h3{
     text-align: center;
     font-family: 'arvo', sans-serif;
@@ -109,8 +124,10 @@ ul.list_cat li.electro{
 	display: inline;
 	margin-right: 5px;
 	background-image:url(image_path("store_bg_1.png"));
-    width: 222px;
-    height: 74px;
+  width: 222px;
+  height: 74px;
+  left: -5px;
+  position: relative;
 }
 
 ul.list_cat li.artisanat{
@@ -178,11 +195,12 @@ ul.list_cat li:last-child{
 }
 
 .index_cat h3{
-	font-weight: 700;
 	font-family: 'arvo', sans-serif;
-	font-size: 18px;
+  font-weight: 700;
+  font-size: 15px; 
+  color: #596377;
 	letter-spacing: 1px;
-	text-align: center;
+	text-align: left;
 	text-transform: uppercase;
 	margin-bottom: 10px;
 

@@ -28,7 +28,7 @@
                 <a class="dropdown-toggle avat" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
                   <span class="mini_avatar">
                      <%= image_tag current_user.avatar.url(:athumb), class: "img-circle",size: "22x22" %>
-                  </span>
+                  </span><%= current_user.username%>
                   <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
@@ -40,6 +40,11 @@
                   <li>
                     <%= link_to main_app.edit_user_registration_path, data: { no_turbolink: true } do %>
                       <span class="fa fa-pencil-square-o"></span> Edit Account
+                    <% end %> 
+                  </li>
+                  <li>
+                    <%= link_to main_app.conversations_path, data: { no_turbolink: true } do %>
+                      <span class="fa fa-comment"></span> Conversations
                     <% end %> 
                   </li>
                   <li>

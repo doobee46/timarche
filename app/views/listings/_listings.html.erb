@@ -1,30 +1,13 @@
-<div class="container clearfix">
+<div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="main_pages switcher">
-        <h3>Touts les Produits</h3>
-        <p>Découvrez les produits de partout dans le marché.</p>
-        <div class="btn-group" role="group" aria-label="...">
-          <%= link_to browse_path, class: "btn btn-default" do %>
-            <span class="fa fa-home"></span>Home
-          <%end%>
-          <%= link_to recent_path ,class: "btn btn-default" do %>
-            <span class="fa fa-clock-o"></span>Recent
-          <%end%>
-          <%= link_to popular_path , class: "btn btn-default" do %>
-            <span class="fa fa-fire"></span>Trending
-          <%end%>
-        </div>
-      </div>
-      <div class="item_box">
-        <!--<h3 class="pull-left">Produits en vedette</h3>-->
-        <%= link_to browse_path , class: 'pull-right' do %>
-          <span class="glyphicon glyphicon-plus"></span>more
-        <%end%>
-      </div>
-      <div class="item_list">
-          <ul>
-            <% @listings.each do |listing| %>
+      <div class="trending">
+        <h3>Trending</h3>
+        <% if @trend.blank?%>
+         <p> we don't have data to show you yet </p>
+         <%else%>
+        <ul>
+            <% @trend.each do |listing| %>
               <li class="item">
                     <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
                   <div class="info">
@@ -53,11 +36,30 @@
                   </div>                                 
               </li>
              <% end %>  
-          </ul>  
+          </ul>
+         <%end%>  
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+              <div class="index_cat">
+              <h3>Plus de catégories pour faire du shopping</h3>
+                <div class="cat_list ">
+                  <ul class="list_cat ">
+                  <li class="electro"><a href="">Electroniques</a></li>
+                  <li class="artisanat"><a href="">Artisanats</a></li>
+                  <li class="fashion"><a href="">Fashion</a></li>
+                  <li class="jouet"><a href="">Jouets</a></li>
+                  <li class="deal"><a href="">Deals</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="deal">
+        <h3>Deal</h3>
       </div>
     </div>
-    <div>
-      <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
-    </div>   
   </div>
 </div>

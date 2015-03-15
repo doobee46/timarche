@@ -10,7 +10,7 @@ class Listing < ActiveRecord::Base
   
   scope :published,->{where("listings.created_at IS NOT NULL ")}
   scope :recent, lambda{published.where("created_at >= ?", (Date.today))}
-  scope :popular, ->{where("listings.impressions_count >= 2").order("impressions_count desc")}
+  scope :popular, ->{where("listings.impressions_count >=5").order("impressions_count DESC")}
 
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -30,8 +30,7 @@ class Listing < ActiveRecord::Base
   attr_default :listing_number do
     t = Time.now
     year=Date.current.year
-    hour = t.strftime('%m%d%H%M%S')
-    
+    hour = t.strftime('%m%d%H%M%S') 
     "TM#{year}-HT#{hour}".to_s
   end
 

@@ -1,0 +1,46 @@
+.dash_logo{
+	max-width: 80%;
+    margin: 10px 48px 0px;
+}
+
+.sidetitle{
+	text-align: center;
+	font-family: "open sans", sans-serif;
+	font-size: 13px;
+	margin:5px 0px;
+}
+
+.dash-img{
+	max-width: 80%;
+    margin: 40px 48px 0px;
+}
+
+.dash-logout{
+background-color:#fff;
+	position: relative;
+	top:-35px;
+	left:128px;
+	border-radius: 20px;
+	width: 20px;
+	border-color: red;
+
+}
+.dash-logout:hover{
+	background-color:#5C232C;
+	color:#fff;
+}
+
+.dash-logout a{
+	color:#383E4B;
+	font-size:16px;
+}
+
+.dash-logout a:hover{
+	color:#fff;
+}
+
+.dash-logout i{
+	position: relative;
+	left: 3px;
+	top:1px;
+}

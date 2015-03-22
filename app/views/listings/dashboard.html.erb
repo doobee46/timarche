@@ -1,5 +1,31 @@
- <% @title = "seller" %>
- <div class="container">
+<html>
+<head>
+<style type='text/css'>
+   html, body {height: 100%; margin: 0}
+   #content {width: 100%; height: 100%}
+   #left {width: 212px; height: 100%; float: left; background-color: rgb(255,255,255)}
+   #right {margin-left: 212px; height: 100%; background-color: #F0F0F0}
+</style>
+</head>
+<body>
+<div id='content'>
+   <div id='left'>
+	   	<%= link_to image_tag("logo.png", class: 'dash_logo'), main_app.root_path %>
+	   	<p class="sidetitle smaller">Listings Dashboard</p>
+	   	<div class="dash-avatar">
+	   		<%=image_tag current_user.avatar.url(:amedium), class: 'dash-img img-circle', size: "100x100"%>
+	   	    <h3 class="sidetitle"><%= current_user.name%></h3>
+	   	    <div class="dash-logout ">
+	   	    	<%= link_to main_app.destroy_user_session_path, data: { no_turbolink: true } do %>
+                <i class="fa fa-power-off"></i>
+                <% end %>
+	   	    </div>
+   	    	
+	   	    
+	   	</div>   	
+   </div>
+   <div id='right'>
+   	<div class="container">
         <div class="row clearfix">
             <div class="col-md-12 column">
                 <div class="row clearfix">
@@ -102,21 +128,18 @@ h3. Lorem ipsum dolor sit amet.
                     </div>
 
                     <div class="col-md-4 column">
-                        <%=image_tag current_user.avatar.url(:amedium), class: 'img-circle', size: "140x140"%>
-
-                        <h2>About me</h2>
-
-                        <p>Donec id elit non mi porta gravida at eget metus.
-                        Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                        condimentum nibh, ut fermentum massa justo sit amet
-                        risus. Etiam porta sem malesuada magna mollis euismod.
-                        Donec sed odio dui.</p>
-
-                        <p><a class="btn" href="#">View details »</a></p>
+                      	<ul class="statbox">
+					   		<li></li>
+					   		<li></li>
+					   	</ul>  
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<%= render :partial => 'listings/form'%>
+   <%= render :partial => 'listings/form'%>
+   </div>
+</div>
+</body>
+</html>
 

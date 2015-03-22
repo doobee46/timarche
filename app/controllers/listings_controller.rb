@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  
   before_filter :set_search
   before_filter :authenticate_user!, except: [:index, :recent, :popular]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
@@ -6,6 +7,7 @@ class ListingsController < ApplicationController
 
   def dashboard
     @listings = Listing.where(user: current_user).paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
+    render layout: "dashboard"
   end
 
   def index

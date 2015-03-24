@@ -20,23 +20,17 @@
 @import "bootstrap";
 @import "font-awesome";
 
-#peek {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-}
+
 
 body.welcome{
     padding-top:0px;
 
 }
 
-/*body{
-    padding-top:60px;
-
-}*
+body{
+    padding-top:130px;
+    z-index:-10;
+}
 
 body.modal-open { 
 overflow:inherit; 
@@ -91,12 +85,12 @@ a:focus{
 }
 
 /***************welcome_nav**************/
-.header{
+.header_welcome{
  width: 100%;
  position: relative;
 }
 
-.header img{
+.header_welcome img{
   float:left;
   position: relative;
   top: -19px;

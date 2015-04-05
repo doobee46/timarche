@@ -21,7 +21,7 @@ class PagesController < ApplicationController
 
   def browse
     @categories = Category.all
-  	@listings= @q.result.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
+  	@listings= @q.result.paginate(:page => params[:page], :per_page => 29).order('created_at DESC')
     @messages_count = current_user.mailbox.inbox({:read => false}).count
     respond_with(@listings)
   end

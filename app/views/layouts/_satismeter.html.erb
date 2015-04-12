@@ -4,10 +4,10 @@
 satismeter({
   token: "EypT-1QW",
   user: {
-    id: "user.id", // TODO: Current user unique ID (required)
-    name: "user.name", // TODO: Current user name (optional)
-    email: "user.email", // TODO: Current user email (optional)
-    signUpDate: "user.created_at" // TODO: Date when user was registered (optional)
+    id: <%=current_user.id%>, // TODO: Current user unique ID (required)
+    name: <%=current_user.name%>, // TODO: Current user name (optional)
+    email: <%=current_user.email%>, // TODO: Current user email (optional)
+    signUpDate:<%=current_user.created_at%> // TODO: Date when user was registered (optional)
   }
 });
 </script>

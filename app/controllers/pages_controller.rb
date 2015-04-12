@@ -6,7 +6,10 @@ class PagesController < ApplicationController
   def index
    @listings= @q.result
    @indexes = @listings.shuffle.sample(3)
-   respond_with(@listings)
+   @user = current_user.name
+   @id = current_user.id
+   @email =current_user.email
+   @date = current_user.created_at   
   end
 
   def about

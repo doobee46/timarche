@@ -49,6 +49,7 @@ gem 'animate.css-rails', '~> 3.2.0'
 gem 'commontator', '~> 4.10.0'
 gem 'omniauth-twitter'
 gem 'google-analytics-rails'
+gem 'gon'
 
 
 group :production do

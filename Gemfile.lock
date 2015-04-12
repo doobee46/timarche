@@ -105,6 +105,11 @@ GEM
       activerecord (>= 3.0.0)
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
+    gon (5.2.3)
+      actionpack (>= 2.3.0)
+      json
+      multi_json
+      request_store (>= 1.0.5)
     google-analytics-rails (0.0.6)
     hashie (3.3.2)
     hike (1.2.3)
@@ -213,6 +218,7 @@ GEM
       polyamorous (~> 1.1)
     rdoc (4.2.0)
       json (~> 1.4)
+    request_store (1.1.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rest-client (1.7.2)
@@ -292,6 +298,7 @@ DEPENDENCIES
   figaro
   font-awesome-rails
   friendly_id (~> 5.0.0)
+  gon
   google-analytics-rails
   impressionist
   intercom-rails

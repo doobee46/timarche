@@ -9,6 +9,10 @@ class PagesController < ApplicationController
    respond_with(@listings)
   end
 
+  def ads
+    
+  end
+
   def about
   end
 

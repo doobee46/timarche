@@ -6,10 +6,7 @@ class PagesController < ApplicationController
   def index
    @listings= @q.result
    @indexes = @listings.shuffle.sample(3)
-   @user = current_user.name
-   @id = current_user.id
-   @email =current_user.email
-   @date = current_user.created_at   
+   respond_with(@listings)
   end
 
   def about
@@ -26,7 +23,7 @@ class PagesController < ApplicationController
     @categories = Category.all
   	@listings= @q.result.paginate(:page => params[:page], :per_page => 29).order('created_at DESC')
     @messages_count = current_user.mailbox.inbox({:read => false}).count
-    respond_with(@listings)
+    
   end
 
   def recent

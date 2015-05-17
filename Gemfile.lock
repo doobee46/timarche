@@ -332,3 +332,6 @@ DEPENDENCIES
   validates_formatting_of
   will_paginate (~> 3.0.6)
   will_paginate-bootstrap
+
+BUNDLED WITH
+   1.10.0.pre.2

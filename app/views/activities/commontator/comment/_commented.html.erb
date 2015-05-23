@@ -1,6 +1,6 @@
 <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-follow">
-        <%=image_tag ("cd-icon-follow.png")%>
+    <div class="cd-timeline-img cd-comment">
+        <%=image_tag ("cd-icon-comment.png")%>
         <!--<img src="assets/images/cd-icon-picture.svg" alt="Picture">-->
     </div> <!-- cd-timeline-img -->
 
@@ -14,7 +14,7 @@
             </div>
             <div class="media-body">
               <h4 class="media-heading"><%=activity.user.name%></h4>
-              <p><%=activity.user.name %> started following you</p>
+              <p>posted a <%= link_to "comment" , listing_path(activity.targetable_id)%><p>
             </div>
           </li>
         </ul>

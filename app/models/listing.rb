@@ -7,6 +7,7 @@ class Listing < ActiveRecord::Base
   belongs_to :category
   has_many   :pictures, dependent: :destroy
   has_many   :like, dependent: :destroy
+  has_many   :activities
   
   scope :published,->{where("listings.created_at IS NOT NULL ")}
   scope :recent, lambda{published.where("created_at >= ?", (Date.today))}

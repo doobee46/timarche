@@ -1,2 +1,25 @@
-<p> viewed a listing </p>
-<small><%=time_ago_in_words(activity.created_at)%></small>
+<div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-view">
+        <%=image_tag ("cd-icon-view.png")%>
+        <!--<img src="assets/images/cd-icon-picture.svg" alt="Picture">-->
+    </div> <!-- cd-timeline-img -->
+
+    <div class="cd-timeline-content">
+        <ul class="media-list">
+          <li class="media">
+            <div class="media-left">
+              <a href="#">
+                <%= image_tag activity.user.avatar.url(:amedium), class: "img-circle pull-left",size: "64x64"%>
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><%=activity.user.name%></h4>
+              <p>viewed a <%= link_to "listing" , listing_path(activity.targetable_id)%><p>
+            </div>
+          </li>
+        </ul>
+        <span class="cd-date"><%=time_ago_in_words(activity.created_at)+" "+ "ago"%> </span>
+    </div> <!-- cd-timeline-content -->
+</div> <!-- cd-timeline-block -->
+
+

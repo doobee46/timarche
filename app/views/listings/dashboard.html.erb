@@ -1,3 +1,4 @@
+<body class="dash">
 <% @title = "Dashboard" %>
 <%= render :partial => 'listings/form'%>
 <div class ="container">
@@ -7,7 +8,7 @@
                 <h3 class="dash_h3">Dashboard<small> Vue general</small><small class=" smaller pull-right"> <%=Time.now.strftime("%B %e, %Y at %I:%M %p")%></small></h3>
                 <div role="tabpanel">
                   <!-- Nav tabs -->
-                  <ul class="nav nav-pills" role="tablist">
+                  <ul class="nav nav-tabs" role="tablist">
                      <li role="presentation" class="active">
                         <a href="#Overview" aria-controls="Overview" role="tab" data-toggle="tab">
                             <i class="fa fa-binoculars"></i>Overview

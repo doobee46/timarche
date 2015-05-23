@@ -1,6 +1,6 @@
 <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-follow">
-        <%=image_tag ("cd-icon-follow.png")%>
+    <div class="cd-timeline-img cd-send">
+        <%=image_tag ("cd-icon-message.png")%>
         <!--<img src="assets/images/cd-icon-picture.svg" alt="Picture">-->
     </div> <!-- cd-timeline-img -->
 
@@ -14,12 +14,11 @@
             </div>
             <div class="media-body">
               <h4 class="media-heading"><%=activity.user.name%></h4>
-              <p><%=activity.user.name %> started following you</p>
+              <p>send you a <%= link_to "message" , converstion_path(activity.targetable_id)%><p>
             </div>
           </li>
         </ul>
         <span class="cd-date"><%=time_ago_in_words(activity.created_at)+" "+ "ago"%> </span>
     </div> <!-- cd-timeline-content -->
 </div> <!-- cd-timeline-block -->
-
 

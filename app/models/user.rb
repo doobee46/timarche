@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   devise   :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :listings, dependent: :destroy
+  has_many :activities
 
   has_many :relationships,foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
@@ -25,7 +26,7 @@ class User < ActiveRecord::Base
 
 
   if Rails.env.development?
-     has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#" }, :default_url => "default_:style.png"
+      has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#", :feed =>"64x64" }, :default_url => "default_:style.png"
   else
   has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#" }, :default_url => "default_:style.png",
                     :storage => :dropbox,
@@ -99,6 +100,14 @@ class User < ActiveRecord::Base
   def unfollow!(other_user)
   relationships.find_by(followed_id: other_user.id).destroy
   end
+    
+    def create_activity(item, action)
+        activity = activities.new 
+        activity.targetable = item
+        activity.action =action
+        activity.save
+        activity 
+    end
 
  
   private

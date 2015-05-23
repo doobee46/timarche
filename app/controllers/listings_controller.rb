@@ -7,6 +7,8 @@ class ListingsController < ApplicationController
 
   def dashboard
     @listings = Listing.where(user: current_user).paginate(:page => params[:page], :per_page => 29).order('created_at DESC')
+    followers_ids = current_user.followers.map(&:id)
+    @activities =Activity.where("user_id in (?)",followers_ids.push(current_user.id)).order("created_at desc").all 
     render layout: "dashboard"
   end
 
@@ -24,7 +26,8 @@ class ListingsController < ApplicationController
   def show
     @listings= @q.result
     commontator_thread_show(@listing)
-    impressionist(@listing) 
+    impressionist(@listing)
+    current_user.create_activity(@listing, "viewed")
     respond_with(@listing)
   end
 
@@ -47,8 +50,9 @@ class ListingsController < ApplicationController
           }
        end
     flash[:notice]= "L'annonce #{@listing.listing_number} a eté publiee avec succes."
-    respond_with(@listing)
-     end
+     respond_with(@listing)
+    current_user.create_activity(@listing, "published")
+    end
   end
 
   def update

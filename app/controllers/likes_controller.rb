@@ -5,6 +5,7 @@ class LikesController < ApplicationController
   	 @like = Like.new(like_params)
      respond_to do|format|
   	 if@like.save
+         current_user.create_activity(@like, "like")
        format.js
   	 else
   	    format.html (redirect_to root_url , notice:"Unable to proceed")

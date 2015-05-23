@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <% @activities.each do |activity|%>
+            <div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <%= image_tag activity.user.avatar.url(:amedium), class: "img-circle pull-left",size: "30x30"%>
+                  <!--<img class="media-object" src="http://placehold.it/64x64" alt="avatar">-->
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading"><%=activity.user.name%></h4>
+               <%= render partial: "activities/#{activity.targetable_type.underscore}/#{activity.action}", locals:{activity: activity}%>
+              </div>
+            </div>
+            <%end%>
+        </div>
+    </div>
+</div>

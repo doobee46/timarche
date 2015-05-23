@@ -28,7 +28,7 @@
                 <a class="dropdown-toggle avat" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
                   <span class="mini_avatar">
                      <%= image_tag current_user.avatar.url(:athumb), class: "img-circle",size: "22x22" %>
-                  </span><%= current_user.username%>
+                  </span>Account
                   <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
@@ -88,6 +88,19 @@
           </div>
           <div class="main_menu col-md-5">
             <ul class="main_nav pull-right">
+                <% if @title == "Dashboard"%>
+                <li><%=link_to main_app.browse_path, data: { no_turbolink: true } do %>
+                  <span class="glyphicon glyphicon-list-alt"></span>Shopping
+                <%end%>
+               </li>
+                <li>
+                    <div class="btn_box">
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                          <i class="fa fa-plus"></i>Poster annonces
+                        </button>                  
+                   </div>                    
+               </li>
+                <%else%>
                <li><%=link_to main_app.browse_path, data: { no_turbolink: true } do %>
                   <span class="glyphicon glyphicon-list-alt"></span>Publications
                 <%end%>
@@ -97,7 +110,7 @@
                     <span class="glyphicon glyphicon-th"></span> Les vendeurs
                   <% end %> 
                 </li>
-               <!--<li><button type="button" class="btn btn-post" data-toggle="modal" data-target="#myModal">Poster des Annonces</button></li>-->
+                <%end%>
             </ul> 
           </div>
         </div>

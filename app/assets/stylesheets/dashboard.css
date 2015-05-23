@@ -1,63 +1,78 @@
-html.dash, body.dash {height: 100%; margin: 0; padding-top: 0px;}
-#content {width: 100%; height: 100%}
-#top{
-	width:212px; 
-	height:auto; 
-    background-color: #5C232C;
-    padding:1px;
-}
-#left {width: 212px; height: 100%; float: left; background-color: rgb(255,255,255);}
-#right {margin-left: 212px; height: 100%; background-color: #F0F0F0;}
-
-.fixed{
-	position: fixed;
-	z-index: 2000;
-}
-.dash_logo{
-	max-width: 80%;
-    margin: 10px 48px 0px;
+ul.nav.nav-pills li a{
+    font-family: "open sans",sans-serif;
+    font-size: 12px;
+    font-weight: bold; 
 }
 
-.sidetitle{
-	text-align: center;
-	font-family: "open sans", sans-serif;
-	font-size: 13px;
-	margin:5px 0px 2px 0px;
-	padding-bottom: 5px;
-	color:#fff;
+.tabs_link{
+    padding-bottom:8px;
+    border-bottom:1 px solid #e1e5e9;
 }
 
-.dash-img{
-	max-width: 80%;
-    margin: 40px 48px 0px;
+ul.nav.nav-pills li a i{
+    margin-right:3px;
+}
+.btn_box{
+   position:relative;
+   top: 7px;
+   left:12px;
 }
 
-.dash-logout{
-    background-color:#fff;
-	position: relative;
-	top:-50px;
-	left:128px;
-	border-radius: 20px;
-	width: 20px;
-	border-color: red;
-
-}
-.dash-logout:hover{
-	background-color:#5C232C;
-	color:#fff;
+.btn_box button{
+  font-family: 'arvo', sans-serif;
+  font-weight: 300;
+  font-size: 15px; 
 }
 
-.dash-logout a{
-	color:#383E4B;
-	font-size:16px;
+.btn_box button i{
+    margin-right:8px
 }
 
-.dash-logout a:hover{
-	color:#fff;
+.dash_h3{
+    text-align: left;
+    font-family: "arvo",sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin:-10px 0px 10px 0px;
+    color: #596377; 
+    margin-bottom:10px;
 }
 
-.dash-logout i{
-	position: relative;
-	left: 3px;
-	top:1px;
+.smaller{
+   margin-top:15px;
 }
+
+.btn_teal {
+    background-color:#53CEE4;
+    -webkit-border-top-left-radius:0px;
+    -moz-border-radius-topleft:0px;
+    border-top-left-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -moz-border-radius-topright:0px;
+    border-top-right-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    -moz-border-radius-bottomright:0px;
+    border-bottom-right-radius:0px;
+    -webkit-border-bottom-left-radius:0px;
+    -moz-border-radius-bottomleft:0px;
+    border-bottom-left-radius:0px;
+    text-indent:0;
+    display:inline-block;
+    color: rgb(255,255,255);
+    font-family:'PT sans',sans-serif;
+    font-weight: bold;
+    font-size:15px;
+    font-weight:normal;
+    font-style:normal;
+    padding: 8px 16px;
+    line-height: 30px;
+    text-decoration:none;
+    text-align:center;
+  }
+  .btn-teal:hover {
+    background-color:#1FADC7;
+  }
+  .btn-teal:active {
+
+  }
+  

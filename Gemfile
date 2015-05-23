@@ -50,6 +50,7 @@ gem 'commontator', '~> 4.10.0'
 gem 'omniauth-twitter'
 gem 'google-analytics-rails'
 gem 'gon'
+gem 'tabulous'
 
 
 group :production do

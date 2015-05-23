@@ -1,149 +1,64 @@
-<body class="dash">
-<div id='content'>
-   <div id='left' class="clearfix fixed">
-        <div id="top">
-            <%= link_to image_tag("logo_white.png", class: 'dash_logo'), main_app.root_path %>
-            <p class="sidetitle">Listings Dashboard</p>
-        </div>
-	   	<div class="dash-avatar">
-	   		<%=image_tag current_user.avatar.url(:amedium), class: 'dash-img img-circle', size: "100x100"%>
-	   	    <h3 class="sidetitle"><%= current_user.name%></h3>
-	   	    <div class="dash-logout ">
-	   	    	<%= link_to main_app.root_path, data: { no_turbolink: true } do %>
-                <i class="fa fa-power-off"></i>
-                <% end %>
-	   	    </div>	  
-	   	</div>   	
-   </div>
-   <div id='right' class="clearfix">
-    <div id="dash-header" class="main_header">
-        <div class="main_menu col-md-5">
-            <ul class="main_nav pull-right">
-               <li><%=link_to main_app.browse_path, data: { no_turbolink: true } do %>
-                  <span class="glyphicon glyphicon-list-alt"></span>
-                <%end%>
-               </li>
-               <li>
-                  <%= link_to main_app.sellers_path , data: { no_turbolink: true } do %>
-                    <span class="glyphicon glyphicon-th"></span> 
-                  <% end %> 
-                </li>
-               <!--<li><button type="button" class="btn btn-post" data-toggle="modal" data-target="#myModal">Poster des Annonces</button></li>-->
-            </ul> 
-        </div>
-    </div>
-   	<div class="container">
-        <div class="row clearfix">
-            <div class="col-md-12 column">
-                <div class="row clearfix">
-                    <div class="col-md-8 column">
-                        <div class="page-header">
-                            <h1>Listings Dashboard <small class=
-                            "smaller"><%=Time.now.strftime("%B %e, %Y at %I:%M %p")%></small></h1>
-                        </div>
-                        <button type="button" class="btn btn-post" data-toggle="modal" data-target="#myModal">Poster des Annonces</button>
-                        <!---<h3 class="text-left">Listings Published and Active</h3>-->
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Listings Published and Active
-                            </div>
+<% @title = "Dashboard" %>
+<%= render :partial => 'listings/form'%>
+<div class ="container">
+    <div class = "row">
+        <div class ="col-md-12">
+            <div class="tabs_link">
+                <h3 class="dash_h3">Dashboard<small> Vue general</small><small class=" smaller pull-right"> <%=Time.now.strftime("%B %e, %Y at %I:%M %p")%></small></h3>
+                <div role="tabpanel">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-pills" role="tablist">
+                     <li role="presentation" class="active">
+                        <a href="#Overview" aria-controls="Overview" role="tab" data-toggle="tab">
+                            <i class="fa fa-binoculars"></i>Overview
+                        </a>
+                     </li>
+                    <li role="presentation">
+                        <a href="#Activity" aria-controls="home" role="tab" data-toggle="tab">
+                            <i class="fa fa-bell"></i>Activity
+                        </a>
+                     </li>
+                    <li role="presentation">
+                        <a href="#Listings" aria-controls="Listings" role="tab" data-toggle="tab">
+                            <i class="fa fa-tasks"></i>Listings
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#Sales" aria-controls="Sales" role="tab" data-toggle="tab">
+                            <i class="fa fa-credit-card"></i>Sales
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#Orders" aria-controls="Orders" role="tab" data-toggle="tab">
+                            <i class="fa fa-shopping-cart"></i>Orders
+                        </a>
+                    </li>
+                  </ul>
 
-                            <table class=
-                            "table table-striped table-hover table-condensed">
-                                <thead>
-                                    <tr>
-                                        <th>Listing number</th>
-
-                                        <th>Product name</th>
-
-                                        <th>Product Price</th>
-
-                                        <th>Date creation</th>
-
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <% @listings.each do|listing|%>
-
-                                    <tr>
-                                        <td class="success">
-                                        <%=listing.listing_number%></td>
-
-                                        <td><%=listing.name%></td>
-
-                                        <td><%=listing.price%></td>
-
-                                        <td><%=listing.created_at%></td>
-
-                                        <td>
-                                        <%= link_to edit_listing_path(listing), class: "btn btn-primary btn-xs" do %>
-                                        <span class="glyphicon glyphicon-edit"></span>
-                                        <%end%>
-                                        <%= link_to listing, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs" do %>
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                        <%end%>
-                                        </td>
-                                    </tr>
-                                    <%end%>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div>
-                            <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
-                        </div><!--<h3>
-h3. Lorem ipsum dolor sit amet.
-</h3>-->
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Current orders
-                            </div>
-
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-
-                                        <th>Product</th>
-
-                                        <th>Payment Taken</th>
-
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-
-                                        <td>TB - Monthly</td>
-
-                                        <td>01/04/2012</td>
-
-                                        <td>Default</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div>
-                            <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
-                        </div>
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="Overview">
+                      
                     </div>
-
-                    <div class="col-md-4 column">
-                      	<ul class="statbox">
-					   		<li></li>
-					   		<li></li>
-					   	</ul>  
+                    <div role="tabpanel" class="tab-pane" id="Activity">
+                      <%= render :partial => 'activities/index'%>
                     </div>
+                    <div role="tabpanel" class="tab-pane" id="Listings">
+                      <%= render :partial =>'listings/current_list'%>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Sales">...</div>
+                    <div role="tabpanel" class="tab-pane" id="Orders">
+                        <p>demo</p>
+                    </div>
+                  </div>
+
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
-   <%= render :partial => 'listings/form'%>
-   </div>
 </div>
+    
+
+
+ 
+   

@@ -5,7 +5,9 @@
                 <h3 class="time_lead"><%= image_tag ("cd-icon-timeline.png")%> Activity Timeline </h3>
                 <section id="cd-timeline" class="cd-container">
                     <% @activities.each do |activity|%>
-                    <%= render partial: "activities/#{activity.targetable_type.underscore}/#{activity.action}", locals:{activity: activity}%>
+                        <% unless activity.created_at <= 5.days.ago%> 
+                           <%= render partial: "activities/#{activity.targetable_type.underscore}/#{activity.action}", locals:{activity: activity}%>
+                        <%end%>
                     <%end%>
                 </section> <!-- cd-timeline --> 
             </div>

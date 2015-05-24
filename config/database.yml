@@ -21,7 +21,7 @@ test:
   database: db/test.sqlite3
   
 production:
-  adapter: localhost
+  adapter: postgresql
   database: timarche
   pool: 5
   timeout: 5000

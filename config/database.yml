@@ -22,6 +22,6 @@ test:
   
 production:
   adapter: postgresql
-  database: timarche
+  database: timarche_Db
   pool: 5
   timeout: 5000

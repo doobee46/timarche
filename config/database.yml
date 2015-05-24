@@ -20,12 +20,9 @@ test:
   <<: *default
   database: db/test.sqlite3
   
-production:
-  production: 
-  Host: 172.17.42.1
-  Password: CLkNLmxsq7gUK8an
+production: 
+  Host: 127.0.0.1
   Port: 32768
-  User: root
   adapter: postgresql
   database: timarche
   encoding: unicode

@@ -25,4 +25,7 @@ production:
   encoding: unicode
   database: timarche
   pool: 5
-  host: localhost
+  Host: 172.17.42.1                                                                                                                              
+  Port: 32768                                                                                                                                    
+  User: 'root'                                                                                                                                   
+  Password: 'CLkNLmxsq7gUK8an

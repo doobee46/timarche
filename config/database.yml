@@ -21,11 +21,12 @@ test:
   database: db/test.sqlite3
   
 production:
+  production: 
+  Host: 172.17.42.1
+  Password: CLkNLmxsq7gUK8an
+  Port: 32768
+  User: root
   adapter: postgresql
-  encoding: unicode
   database: timarche
+  encoding: unicode
   pool: 5
-  Host: 172.17.42.1                                                                                                                              
-  Port: 32768                                                                                                                                    
-  User: 'root'                                                                                                                                   
-  Password: 'CLkNLmxsq7gUK8an

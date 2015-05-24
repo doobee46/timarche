@@ -1,13 +1,10 @@
-body.dash{
-    background-color:#E9F0F5;
-}
 
 h3.time_lead{
     text-align: left;
     font-family: "arvo",sans-serif;
     font-weight: 700;
     font-size: 18px;
-    margin:10px 0px 10px 0px;
+    margin:30px 0px 10px 0px;
     color: #596377;   
 }
 
@@ -118,11 +115,12 @@ html * {
   box-sizing: border-box;
 }
 
-body {
-  font-size: 100%;
+body.dash{
+  background-color:#E9F0F5;
+  font-size: 13px;
   font-family: "Droid Serif", serif;
   color: #7f8c97;
-  background-color: #e9f0f5;
+
 }
 
 a {
@@ -149,7 +147,7 @@ Modules - reusable parts of our design
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
   width: 90%;
   max-width: 1170px;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 .cd-container::after {
   /* clearfix */
@@ -363,6 +361,7 @@ header h1 {
   border-radius: 0.25em;
   padding: 1em;
   box-shadow: 0 3px 0 #d7e4ed;
+  margin-top:-25px;
 }
 .cd-timeline-content:after {
   content: "";
@@ -414,8 +413,8 @@ header h1 {
     font-size: 1.25em;
   }
   .cd-timeline-content p {
-    font-size: 16px;
-    font-size: 1em;
+    font-size: 15px;
+    font-size: 0.95em;
   }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
     font-size: 14px;

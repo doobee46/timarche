@@ -3,7 +3,6 @@
         <%=image_tag ("cd-icon-published.png")%>
         <!--<img src="assets/images/cd-icon-picture.svg" alt="Picture">-->
     </div> <!-- cd-timeline-img -->
-
     <div class="cd-timeline-content">
         <ul class="media-list">
           <li class="media">
@@ -14,7 +13,10 @@
             </div>
             <div class="media-body">
               <h4 class="media-heading"><%=activity.user.name%></h4>
-              <p>published a new <%= link_to "listing" , listing_path(activity.targetable_id)%><p>
+              <p>publish a new listing <%= link_to activity.targetable.listing_number, listing_path(activity.targetable.slug)%><p>
+              <% if activity.targetable %>
+              <%= link_to image_tag(activity.targetable.image.url(:avatar), class: 'img-thumbnail'), listing_path(activity.targetable.slug) %>
+              <% end %>
             </div>
           </li>
         </ul>

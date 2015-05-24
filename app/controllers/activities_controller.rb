@@ -1,8 +1,10 @@
 class ActivitiesController < ApplicationController
+    respond_to :html, :json
     
   def index
-      followers_ids = current_user.followers.map(&:id)
-      @activities =Activity.where("user_id in (?)",followers_ids.push(current_user.id)).order("created_at desc").all  
+      params[:page] ||=1
+      @activities =Activity.for_user(current_user, params)
+      respond_with(@activities)
   end
     
 end

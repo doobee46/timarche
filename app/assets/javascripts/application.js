@@ -18,3 +18,9 @@
 //= require social-share-button
 //= require turbolinks
 //= require_tree .
+
+var pollActivity = function(){
+    console.log("pollActivity was called.");
+}
+
+window.pollInterval = window.setInterval(pollActivity,5000)

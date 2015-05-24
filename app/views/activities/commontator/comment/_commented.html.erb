@@ -14,7 +14,10 @@
             </div>
             <div class="media-body">
               <h4 class="media-heading"><%=activity.user.name%></h4>
-              <p>posted a <%= link_to "comment" , listing_path(activity.targetable_id)%><p>
+              <p>posted a <%= link_to "comment" , listing_path(activity.targetable_id)%> on your listing <p>
+              <% if activity.targetable %>
+              "<%= link_to activity.targetable.body, listing_path(activity.targetable_id) %>"
+              <% end %>
             </div>
           </li>
         </ul>

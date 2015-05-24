@@ -14,7 +14,10 @@
             </div>
             <div class="media-body">
               <h4 class="media-heading"><%=activity.user.name%></h4>
-              <p>viewed a <%= link_to "listing" , listing_path(activity.targetable_id)%><p>
+              <p>view listing <p>
+              <% if activity.targetable %>
+              <%= link_to image_tag(activity.targetable.image.url(:avatar), class: 'img-thumbnail'), listing_path(activity.targetable.slug) %>
+              <% end %>
             </div>
           </li>
         </ul>

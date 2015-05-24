@@ -54,12 +54,12 @@ gem 'tabulous'
 
 
 group :production do
+  gem 'sqlite3'  
   gem 'pg'
   gem 'rails_12factor'
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'faker'

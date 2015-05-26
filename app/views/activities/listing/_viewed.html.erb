@@ -16,7 +16,7 @@
               <h4 class="media-heading"><%=activity.user.name%></h4>
               <p>view listing <p>
               <% if activity.targetable %>
-              <%= link_to image_tag(activity.targetable.image.url(:avatar), class: 'img-thumbnail'), listing_path(activity.targetable.slug) %>
+              <%= link_to image_tag(activity.targetable.image.url(:avatar), class: "img-circle",size: "32x32"), listing_path(activity.targetable.slug) %>
               <% end %>
             </div>
           </li>

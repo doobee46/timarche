@@ -1,3 +1,4 @@
+<body id="bd_list">
 <% @title = "browse" %>
 <div class="container clearfix">
   <div class="row">
@@ -55,11 +56,12 @@
               </li>
             <% end %>
             <a class="ubm-banner" data-id="1"></a>
-          </ul>  
+          </ul>
+          <div>
+             <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
+          </div>   
       </div>
     </div>
-    <div>
-      <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
-    </div>   
+    
   </div>
 </div>

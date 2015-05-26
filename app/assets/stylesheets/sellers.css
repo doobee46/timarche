@@ -52,6 +52,12 @@
     font-size: 13px;
     padding-left:10px;	
 }
+
+.demo span i{
+    position:relative;
+    top: -15px;
+    margin-right: 3px;
+}
 .demo span p{
 	display: inline-block;
     height: 18px;

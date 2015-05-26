@@ -5,10 +5,10 @@ gem "paperclip", "~> 4.2"
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.3.1'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 4.0.5'
 gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 gem "figaro"
 gem "bootstrap_flash_messages", "~> 1.0.0"
 gem 'mailboxer'
@@ -51,6 +51,7 @@ gem 'omniauth-twitter'
 gem 'google-analytics-rails'
 gem 'gon'
 gem 'tabulous'
+gem 'chosen-rails'
 
 
 group :production do 

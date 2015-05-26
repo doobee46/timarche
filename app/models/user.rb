@@ -53,10 +53,7 @@ class User < ActiveRecord::Base
 
   devise authentication_keys: [:login]
 
-  def name
-    username
-  end
-
+ 
   def mailboxer_email(object)
      email
   end

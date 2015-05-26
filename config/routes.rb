@@ -46,23 +46,19 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :messages do
+  resources :conversations, only: [:index, :show, :destroy] do
     member do
-      post :new
+      post :reply
+      post :restore
+      post :mark_as_read
+    end
+    collection do
+      delete :empty_trash
     end
   end
-  resources :conversations do
-  member do
-    post :reply
-    post :trash
-    post :untrash
-  end
- collection do
-    get :trashbin
-    post :empty_trash
-  end
- end
- 
+  resources :messages, only: [:new, :create]
+
+  resources :users, only: [:index]
 
  
   #->Prelang (user_login:devise/stylized_paths)

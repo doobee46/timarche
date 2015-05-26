@@ -2,15 +2,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <h3 class="list_h3">Acheter directement nos produits de nos vendeurs qualifies.</h3>
       <div class="trending">
         <h3>Trending</h3>
         <% if @trend.blank?%>
          <p> we don't have data to show you yet </p>
          <%else%>
-        <ul>
-            <% @trend.each do |listing| %>
+          <ul>
+             <% @trend.each do |listing| %>
               <li class="item">
-                    <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
+                <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
                   <div class="info">
                     <span class="item_title"><%= listing.name %></span>
                     <span class="avatar_info">
@@ -26,7 +27,7 @@
                   <% if listing.created_at >= (Date.today) %>
                     <span class="label label-green">New</span>
                   <%end%>
-                 
+
                   <div class="block-actions clearfix">
                     <%=form_for(Like.new,:remote => true) do |f| %>
                     <%= f.hidden_field :listing_id, value: listing.id %>
@@ -35,7 +36,7 @@
                     <%end%>   
                     <%end%>
                   </div>                                 
-              </li>
+            </li>
              <% end %>  
           </ul>
          <%end%>  

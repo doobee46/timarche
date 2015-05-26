@@ -8,13 +8,15 @@
               <li class="clearfix">
                 <a href="">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                  <span class=" bell fa fa-bell"><span class=" notification circle"></span></span>
+                      <span class=" bell fa fa-bell"><span class=" notification circle"></span></span>
                   </a>
-                  <ul class="activ dropdown-menu" role="menu">
-                    <li><a href="#"><span class="fa fa-mobile"></span>Contact</a></li>
-                    <li><a href="#"><span class="fa fa-sign-out"></span>Jobs</a></li>
-                  </ul>
                 </a>
+                   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                  </ul>
               </li>
               <li>
                 <%= link_to main_app.conversations_path do%>
@@ -71,8 +73,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="head_brand col-md-2">
-             <%= link_to image_tag("logo.png", class: ' animated bounce'), main_app.root_path %>
+          <div class=" col-md-2">
+              <div class="head_brand">
+                  <%= link_to image_tag("timarche_logo_new.png"), main_app.root_path %>
+              </div>
           </div>
           <div class="col-md-5">
             <div class="form_nav">
@@ -90,7 +94,7 @@
             <ul class="main_nav pull-right">
                 <% if @title == "Dashboard"%>
                 <li><%=link_to main_app.browse_path, data: { no_turbolink: true } do %>
-                  <span class="glyphicon glyphicon-list-alt"></span>Shopping
+                 <i class="fa fa-shopping-cart"></i>Shopping
                 <%end%>
                </li>
                 <li>
@@ -102,12 +106,12 @@
                </li>
                 <%else%>
                <li><%=link_to main_app.browse_path, data: { no_turbolink: true } do %>
-                  <span class="glyphicon glyphicon-list-alt"></span>Publications
+                   <i class="fa fa-shopping-cart"></i>Shopping
                 <%end%>
                </li>
                <li>
                   <%= link_to main_app.sellers_path , data: { no_turbolink: true } do %>
-                    <span class="glyphicon glyphicon-th"></span> Les vendeurs
+                    <i class="fa fa-users"></i>Vendeurs
                   <% end %> 
                 </li>
                 <%end%>

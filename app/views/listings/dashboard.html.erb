@@ -5,7 +5,8 @@
     <div class = "row">
         <div class ="col-md-12">
             <div class="tabs_link">
-                <h3 class="dash_h3">Dashboard<small> Vue general</small><small class=" smaller pull-right"> <%=Time.now.strftime("%B %e, %Y at %I:%M %p")%></small></h3>
+                <h3 class="dash_h3">Dashboard</h3>
+                <small class=" smaller"> <%=Time.now.strftime("%B %e, %Y at %I:%M %p")%></small>
                 <div role="tabpanel">
                   <!-- Nav tabs -->
                   <ul class="nav nav-tabs" role="tablist">
@@ -34,6 +35,7 @@
                             <i class="fa fa-shopping-cart"></i>Orders
                         </a>
                     </li>
+                  
                   </ul>
 
                   <!-- Tab panes -->
@@ -45,13 +47,14 @@
                       <%= render :partial => 'activities/index'%>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="Listings">
-                      <h3 class="time_lead"><%= image_tag ("cd-icon-timeline.png")%> Manage Listings </h3> 
+                      <h3 class="time_lead">Mes Publications </h3> 
                       <%= render :partial =>'listings/current_list'%>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="Sales">...</div>
                     <div role="tabpanel" class="tab-pane" id="Orders">
                         <p>demo</p>
                     </div>
+                   
                   </div>
 
                 </div>

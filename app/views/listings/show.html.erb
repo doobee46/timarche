@@ -13,7 +13,7 @@
 			</div>
 		</div>
 
-	<div class"container">
+	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="col-md-7">
@@ -57,7 +57,10 @@
 						  <span>En vente par</span>
 						  <h3><%= link_to @listing.user.username %></h3>
 						</div>
-						<button class="btn btn-danger btn-lg btn-cont">Contacter</button>
+                        <% unless current_user == @user %>
+                        <%= link_to 'Send message', new_message_path(to: @listing.user.id), class: 'btn btn-danger btn-lg btn-cont' %>
+                        <% end %>
+						<!--<button class="btn btn-danger btn-lg btn-cont">Contacter</button>-->
 					</div>
 				</div>
 			</div>

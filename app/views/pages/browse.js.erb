@@ -1,0 +1,10 @@
+/**
+* Created with timarche.
+* User: obedlorisson
+* Date: 2015-05-25
+* Time: 01:00 PM
+* To change this template use Tools | Templates.
+*/
+
+$('.item_list').append('<%= escape_javascript render(@listings) %>');
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@listings) %>');

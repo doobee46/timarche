@@ -5,7 +5,7 @@
 	<%= image_tag seller.avatar.url(:amedium), class: "img-circle pull-left",size: "64x64"%>
 		<div class="demo">
 		 <h3><%=link_to seller.username , seller_path(seller)%></h3>
-		 <span class="glyphicon glyphicon-map-marker" aria-hidden="true"><p><%= seller.location%></p></span>
+		 <span> <i class="fa fa-map-marker"></i><p><%= seller.location%></p></span>
 		</div>
 	</div>
 	<div class="seller_item">

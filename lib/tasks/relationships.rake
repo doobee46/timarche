@@ -7,8 +7,8 @@ namespace :relationships do
   	user = users.first
   	following = users[2..10]
   	followers = users[3..9]
-  	following.each {|followed| user.follow(followed)}
-  	followers.each {|follower| follower.follow(user)}
+  	following.each {|followed| user.follow!(followed)}
+  	followers.each {|follower| follower.follow!(user)}
 
   end
 

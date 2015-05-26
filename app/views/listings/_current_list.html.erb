@@ -1,19 +1,7 @@
 <ul>
 <%@listings.each do |listing| %>
   <li class="item">
-      <div class="info">
-
-        <%= link_to edit_listing_path(listing) do %>
-        <span class="glyphicon glyphicon-edit"></span>
-        <%end%>
-
-        <%= link_to listing, method: :delete, data: { confirm: "Are you sure?" } do %>
-        <span class="glyphicon glyphicon-trash"></span>
-        <%end%>
-
-      </div>
-
-        <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
+      <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
       <div class="info">
         <span class="item_title"><%= listing.name %></span>
         <span class="avatar_info">
@@ -28,8 +16,7 @@
 
       <% if listing.created_at >= (Date.today) %>
         <span class="label label-green">New</span>
-      <%end%>
-                                
+      <%end%>                             
   </li>
  <% end %>  
 </ul>

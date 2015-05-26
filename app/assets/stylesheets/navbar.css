@@ -131,6 +131,11 @@ ul.dropdown-menu li :hover{
             box-shadow: 0 8px 6px -6px #DBD9D9;
 }
 
+.head_brand{
+   position: relative;
+   top: 8px;
+}
+
 .head_brand a img{
     top:5px;
 }
@@ -159,6 +164,8 @@ ul.main_nav li a{
   border: none;
 }
 
+ul.main_nav li a i
+
 ul.main_nav li a:hover{
     color:#4D913C;
 }
@@ -171,9 +178,9 @@ ul.main_nav li a:last-child{
  padding-right:0px;
 }
 
-ul.main_nav li a span{
+ul.main_nav li a i{
     margin-right:7px;
-    color:#64B650;
+    color:#444;
 }
 
 /******************************topnavcategory********************/
@@ -318,7 +325,7 @@ ul.main_nav li a span{
 form.topnav-form{
     position: relative;
     top:10px;
-    left:-60px;
+    left:-50px;
 }
 
 .form_nav span{

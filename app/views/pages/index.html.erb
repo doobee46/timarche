@@ -61,10 +61,10 @@
         </div>
         <div class="recent_pro clearfix">
           <ul class="trending">
-           <%= render @listings.limit(3).order('created_at DESC')%>
+           <%= render @listings.sample(3) %>
           </ul>
           <div class="voir-plus clear">
-              <%=link_to "Voir les annonces", listings_path, class: "btn btn-voir" %>
+              <%-# link_to "Voir les annonces", listings_path, class: "btn btn-voir"- %>
           </div> 
           <%end%>
         </div>          

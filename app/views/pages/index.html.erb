@@ -54,7 +54,7 @@
     <div class="row">
       <div class="col-md-12 clearfix">
         <div class="main_listings switcher">
-          <% if @listings.blank?%>
+          <% if @listings.count < 3 || @listings.blank?%>
           <%else%>
           <h3>Publications Récentes</h3>
           <p>Découvrez les nouveaux produits de partout dans le marché.</p>

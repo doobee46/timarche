@@ -26,7 +26,7 @@ var pollActivity = function(){
         url: Routes.activities_path({format: 'json', since: window.lastFetch}),
         type:"GET",
         datatype:"json",
-        success:function(data){
+        success: function(data){
             window.lastFetch = Math.floor((new.Date).getTime() / 1000);
             console.log(data);
         }
@@ -35,14 +35,5 @@ var pollActivity = function(){
 
 window.pollInterval = window.setInterval(pollActivity,5000)
 
-$(document).ready ->
-  if $('.pagination').length
-    $(window).scroll ->
-      url = $('.pagination .next_page').attr('href')
-      if url and $(window).scrollTop() > $(document).height() - $(window).height() - 50
-        $('.pagination').html '<img src="/assets/spin.gif" alt="Loading..." title="Loading..." />'
-        return $.getScript(url)
-      return
-    return $(window).scroll()
-  return
+
 

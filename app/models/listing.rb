@@ -27,6 +27,7 @@ class Listing < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   #validate :listing_limit, :on => :create
   do_not_validate_attachment_file_type :image
+  Paperclip.options[:content_type_mappings] = {nil => "image/png"}
 
   attr_default :listing_number do
     t = Time.now

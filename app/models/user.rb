@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   #validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png","image/jpg"] }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   do_not_validate_attachment_file_type :avatar
- 
+  Paperclip.options[:content_type_mappings] = {nil => "image/png"}
 
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable

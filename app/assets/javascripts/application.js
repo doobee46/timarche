@@ -19,7 +19,7 @@
 //= require turbolinks
 //= require chosen-jquery
 //= require messages
-//= require_tree .
+//= require_tree 
 
 var pollActivity = function(){
     $.ajax({

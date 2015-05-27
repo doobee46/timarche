@@ -544,12 +544,30 @@ table > tbody > tr > td{
 }
 
 .list_h3{
-    text-align: center;
-    font-family: "arvo",sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    margin-top: 1px;
-    color: #596377;
-    width: 620px;
-    margin: 0 auto;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: #FFF;
+    margin: 0px auto;
+    position: relative;
+    top: 140px;
+    left: 35px;
+    text-transform: capitalize;
+    font-size: 45px;
 }
+
+.seller_box{
+   display: block;
+    width: 100%;
+    height: 75px;
+    opacity: 0.5;
+    background-color: #000;
+    position: relative;
+    top: 245px;
+}
+
+ ul.seller_display{
+   list-style-type:none;
+   margin:0;
+   padding:0;
+}
+

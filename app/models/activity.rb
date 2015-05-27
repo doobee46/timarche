@@ -6,7 +6,7 @@ class Activity < ActiveRecord::Base
     
     def self.for_user(user, options={})
         options[:page] ||=1
-        followers_ids = user.followers.map(&:id).push(user.id)
+        followers_ids = user.followers.map(&:id)
         collection = where("user_id in (?)",followers_ids).
                      order("created_at desc")
         if options[:since] && !options[:since].blank?

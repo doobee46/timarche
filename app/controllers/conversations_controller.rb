@@ -12,7 +12,7 @@ class ConversationsController < ApplicationController
     else
       @conversations = @mailbox.trash
     end
-
+    @messages_count = current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)
     @conversations = @conversations.paginate(page: params[:page], per_page: 10)
   end
 

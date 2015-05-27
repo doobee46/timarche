@@ -20,7 +20,7 @@
 
 span.mini_avatar img.img-circle{
     position: relative;
-    top:0px;
+    top:-2px;
 }
 
 ul.mini_nav{
@@ -66,9 +66,9 @@ ul.mini_nav li a span.notification{
 }
  
 
-ul.mini_nav li a span{
+/*ul.mini_nav li a span{
     margin-right: 5px;
-}
+}*/
 
 ul.mini_nav li a.dropdown-toggle{
     font-family: "open sans",sans-serif;

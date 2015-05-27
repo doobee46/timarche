@@ -22,8 +22,8 @@ doc/
 .idea
 
 #Ignore sampleimages
-/sampleimages
-/sampleavatar
+#/sampleimages
+#/sampleavatar
 
 
 config/settings.local.yml

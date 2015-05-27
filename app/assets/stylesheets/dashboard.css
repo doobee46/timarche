@@ -102,6 +102,14 @@ ul.nav.nav-tabs li a i{
 
   }
 
+.owner_pic{
+   position: relative;
+    left: 530px;
+    margin-bottom: 35px;
+}
 
+.owner_pic img{
+    border:3px solid ;
+}
 
   

@@ -21,8 +21,8 @@
               <li>
                 <%= link_to main_app.conversations_path do%>
                 <span class=" env fa fa-envelope"></span>
-                  <% if current_user.mailbox.receipts.count %>
-                      <span class="circle"></span>
+                  <% if current_user.mailbox.inbox.present? %>
+                      <span class="badge"><%=current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)%></span>
                   <%end%>
                 <%end%>
               </li>

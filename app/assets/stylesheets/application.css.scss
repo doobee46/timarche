@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
- *= requiere font.css
  *= require social-share-button
  */
 @import "bootstrap-sprockets";
@@ -172,6 +171,14 @@ a:focus{
     height: 680px;
     background-repeat: no-repeat;
     margin:-20px 0px 0px 0px;
+}
+
+.hero_bg{
+    background-image: url(image_path("hero_bg.jpg"));
+    height:420px;
+    background-repeat: no-repeat;
+    width:100%;
+    margin:20px 0px;
 }
 
 .jumbo_center{

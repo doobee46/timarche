@@ -2,7 +2,21 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h3 class="list_h3">Acheter directement nos produits de nos vendeurs qualifies.</h3>
+      <!--<h3 class="list_h3">Acheter directement nos produits </h3>-->
+       <div class="hero_bg">
+          <h3 class="list_h3">Acheter directement </h3> 
+           <h3 class="list_h3">de nos vendeurs qualifies.</h3>
+           <div class="seller_box">  
+               
+           </div>
+           <ul class="seller_display">
+               <% @users.limit(6).each do |user| %>
+               <li>
+                 <%=image_tag user.avatar.url(:amedium), size: "45x45",alt: "avatar",class: "img-circle"%>  
+               </li>
+           </ul>
+            <%end%>
+        </div>
       <div class="trending">
         <h3>Trending</h3>
         <% if @trend.blank?%>

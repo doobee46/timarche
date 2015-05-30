@@ -54,18 +54,16 @@ ul.nav.nav-tabs li a i{
 }
 
 .dash_h3{
-    text-align: center;
-    font-family: "arvo",sans-serif;
-    font-weight: 700;
     font-size: 28px;
-    margin:-10px 0px 35px 0px;
+    margin:30px 0px 20px 0px;
     color: #596377; 
 }
 
 .smaller{
    position: relative;
-   top: -35px;
-   margin-left: 495px;
+   text-align:center;
+   margin:0 auto;
+    color:#888 !important;
 }
 
 .btn_teal {
@@ -102,6 +100,19 @@ ul.nav.nav-tabs li a i{
 
   }
 
+.dash_info{
+    display: block;
+    background-color: #FFF;
+    width: 280px;
+   margin: 0px auto -50px;
+    height: 150px;
+    position: relative;
+    top: -80px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 0px #D7E4ED;
+    padding: 8px 15px 0px; 
+}
+
 .owner_pic{
    position: relative;
     left: 530px;
@@ -109,7 +120,45 @@ ul.nav.nav-tabs li a i{
 }
 
 .owner_pic img{
-    border:3px solid ;
+    border: 3px solid;
+    margin-bottom: 5px;
+    position:relative;
+    z-index:30;
 }
 
-  
+.subs{
+    font-size: 14px;
+    color: #596377;
+    position: relative;
+    top: -56px;
+}
+
+.dash_info h3{
+    text-align: center;
+    font-family: "arvo",sans-serif;
+    font-weight: 700;
+    color: #596377;
+    
+}
+
+.dash_info small{
+    text-align: center;
+    font-family: "arvo"
+}
+
+.dash_info h3 span {
+    color:#888;
+}
+
+.dash_info h3 span a {
+    z-index:1000;
+}
+
+h6.dash_time{
+    color: #888;
+    text-align: center;
+    position: relative;
+    top: -20px;
+    font-family: "arvo", sans-serif;
+    font-size: 10px;
+}

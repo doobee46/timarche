@@ -15,6 +15,9 @@
   <%end%>
 </head>
 	<body>
+        <% if content_for?(:body_attributes) %>
+          <%= yield(:body_attributes) %> 
+        <% end %>>
 		<% unless @title == "welcome" %>
 		   <%= render :partial => 'shared/header'%>
 		<%end%>

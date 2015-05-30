@@ -8,4 +8,5 @@ class Picture < ActiveRecord::Base
                       :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   end
    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+   Paperclip.options[:content_type_mappings] = {nil => "image/png"}
 end

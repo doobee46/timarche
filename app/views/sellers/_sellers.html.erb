@@ -16,11 +16,14 @@
      <%= link_to (image_tag listing.image.url(:thumb)), listing_path(listing)%>
      <%end%>
 	</div>
-	<div class="seller_foot">	
-	  
-	</div>
+    <div class="seller_foot">	
+	  <%= link_to new_message_path(to: seller.id), class: 'btn-follow',data: { no_turbolink: true } do %>
+        <i class="fa fa-pencil-square-o"></i>send message
+     <%end%> 
+    </div>
 </div>
 <%end%>
+    
 <div>
 
 </div>  

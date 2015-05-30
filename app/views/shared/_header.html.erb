@@ -80,7 +80,7 @@
           </div>
           <div class="col-md-5">
             <div class="form_nav">
-              <%= search_form_for @q , :class => "topnav-form" do  |f| %>
+              <%= search_form_for @q, url: main_app.listings_path , :class => "topnav-form" do  |f| %>
                   <div class="topnav_search">
                     <%= f.search_field :name_cont, placeholder: 'Recherche de produits, les boutiques, les collections, et vendeurs..', class: 'topnav_inp' %>
                   </div>
@@ -94,9 +94,10 @@
             <ul class="main_nav pull-right">
                 <% if @title == "Dashboard"%>
                 <li><%=link_to main_app.browse_path, data: { no_turbolink: true } do %>
-                 <i class="fa fa-shopping-cart"></i>Shopping
-                <%end%>
+                    <i class="fa fa-shopping-cart"></i>Shopping
+                    <%end%>
                </li>
+                           
                 <li>
                     <div class="btn_box">
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -115,7 +116,8 @@
                   <% end %> 
                 </li>
                 <%end%>
-            </ul> 
+            </ul>
+            
           </div>
         </div>
       </div>

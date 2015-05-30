@@ -50,13 +50,13 @@
                   <!-- Tab panes -->
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="Overview">
-                      
+                       <%= render :partial => 'listings/overview'%>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="Activity">
                       <%= render :partial => 'activities/index'%>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="Listings">
-                      <h3 class="time_lead">Mes Publications </h3> 
+                      <h3 class="time_lead">Manage Listings </h3> 
                       <%= render :partial =>'listings/current_list'%>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="Sales">...</div>

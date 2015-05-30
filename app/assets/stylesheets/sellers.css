@@ -6,6 +6,10 @@
     font-weight: 600;
     color: #596377;
 }
+.seller_div{
+    position:relative;
+    top:-50px;
+}
 
 .sellers_box{
 	width: 208px;

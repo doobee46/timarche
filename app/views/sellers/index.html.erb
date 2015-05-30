@@ -2,11 +2,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			 <h3 class="dash_h3">Nos vendeurs</h3>
-		     <%= render :partial => 'sellers/sellers'%>
-		     <div>
-		      <%= will_paginate @sellers, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
-		    </div>   
-		</div>   
+            <div class="seller_div">
+                 <h3 class="dash_h3">Nos vendeurs</h3>
+		         <%= render :partial => 'sellers/sellers'%> 
+            </div>    
+		</div>
+        <div class="container">
+          <%= will_paginate @sellers, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
+        </div> 
 	</div>
 </div>

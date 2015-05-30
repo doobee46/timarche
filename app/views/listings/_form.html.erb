@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-body">
            <div class="modal-header">
-              <h4 class="modal-title" id="myModalLabel">Poster des Annonces</h4>
+              <h4 class="modal-title" id="myModalLabel">Publier Produits</h4>
            </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <%= form_for :listing, :url => {:action => :create}, html: {class: "form-inline"} do |f| %>
@@ -31,7 +31,7 @@
                      <label>Images additionel du produit</label>
                      <%= file_field_tag "images[]", type: :file, multiple: true %>
                 <li>
-                     <%= f.button "Publier Annonce" , class: 'btn btn-login', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publication en cours..."} %>
+                     <%= f.button "Publier Produit" , class: 'btn btn-primary pull-right', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publication en cours..."} %>
                 </li>
             </ul>
          <% end %>

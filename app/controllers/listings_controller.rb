@@ -16,7 +16,7 @@ class ListingsController < ApplicationController
     @q = Listing.includes(:user, :impressions, :like, :category).search(params[:q])
     @listings= @q.result.paginate(:page => params[:page], :per_page => 29).order('created_at DESC')
     @featured = @listings.limit(5)
-    @trend = Listing.where("impressions_count >=1").limit(5).order('created_at DESC')
+    @trend = Listing.where("impressions_count >=10").limit(5).order('created_at DESC')
     @users=User.all
     respond_with(@listings)
 

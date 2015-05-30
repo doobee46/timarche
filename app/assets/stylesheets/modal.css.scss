@@ -1,6 +1,6 @@
 
 .modal-header{
-background-color:#5C232C;
+background-color:#D7E4ED;
 }
 .modal-dialog{
 top:35px;
@@ -20,7 +20,7 @@ margin-left:10px;
 }
 
 .modal-title {
-  color: #fff;
+  color: #444;
 }
 
 .modal-content{
@@ -45,6 +45,7 @@ form-style-1 {
     padding:0px;
     display:block;
     font-weight: bold;
+    font: 13px "arvo", "open sans", sans-serif;
 }
 .form-style-1 input[type=text],
 .form-style-1 input[type=date],

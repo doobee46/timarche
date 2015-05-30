@@ -105,6 +105,16 @@ class User < ActiveRecord::Base
         activity.save
         activity 
     end
+    
+   def total_views
+        views=[]
+        listings.each do |listing|
+            views.push(listing.impressions_count)
+        end
+        total = views.inject(0){|r,s| r+s}
+        total
+    end
+
 
  
   private

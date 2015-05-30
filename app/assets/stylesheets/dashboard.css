@@ -1,11 +1,18 @@
+.nav-tabs > li.active > a:hover{
+    border-bottom:1px solid #596377 !important;
+}
 
 h3.time_lead{
     text-align: left;
     font-family: "arvo",sans-serif;
     font-weight: 700;
     font-size: 18px;
-    margin:30px 0px 30px 0px;
-    color: #596377;   
+    margin: 1px 0px 25px;
+    color: #596377;
+    background-color: white;
+    width: 1120px;
+    padding: 20px;
+    box-shadow: 0px 3px 0px #D7E4ED;
 }
 
 .media-heading{
@@ -104,7 +111,7 @@ ul.nav.nav-tabs li a i{
     display: block;
     background-color: #FFF;
     width: 280px;
-   margin: 0px auto -50px;
+    margin: 0px auto -50px;
     height: 150px;
     position: relative;
     top: -80px;
@@ -161,6 +168,57 @@ h6.dash_time{
     top: -20px;
     font-family: "arvo", sans-serif;
     font-size: 10px;
+}
+
+.sales{
+    display:block;
+    width:100%;
+    height:200px;
+    background-color:#fff;
+    box-shadow: 0px 3px 0px #D7E4ED;
+    position: relative;
+    top: 20px;
+    left: -26px;
+}
+
+.sales p{
+    
+}
+
+.header_dash{
+    display:block;
+    width:100%;
+    height:40px;
+    background-color:#D7E4ED;
+    position: relative;
+    top: 20px;
+    left: -26px;
+    border-bottom:1px solid #BCC5CD;
+    
+}
+
+.header_dash h3{
+    font-family:"arvo",sans-serif;
+    font-size:14px;
+    color:#596377;
+    position: relative;
+    top: 12px;
+    left: 10px;
+    font-weight:700;
+}
+.up{
+    position:relative;
+    top:-15px;
+}
+
+p.pro_views{
+   font-family:"arvo",sans-serif;
+    font-size:50px;
+    color:#596377;
+    position: relative;
+    top: 50px;
+    font-weight:700;
+    text-align:center;
 }
 
 

@@ -43,6 +43,7 @@ class Listing < ActiveRecord::Base
     end
   end
 =end
-
+    
+   
 
 end

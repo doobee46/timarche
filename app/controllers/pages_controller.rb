@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   before_filter :authenticate_user!, except: [:about, :index, :contact, :privacy]
   respond_to :html, :json
 
-  def index
+  def index   
    @listings= @q.result
    @indexes = @listings.shuffle.sample(3)
    respond_with(@listings)

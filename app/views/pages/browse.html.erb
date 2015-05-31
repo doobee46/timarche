@@ -26,6 +26,7 @@
                   <span class="item_title">Publicité</span>
                 </div>                          
             </li>
+            <% cache do %> 
             <% @listings.each do |listing| %>
               <li class="item">
                     <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
@@ -54,7 +55,8 @@
                     <%end%>
                   </div>                                 
               </li>
-            <% end %>
+               <% end %>
+             <%end%>
             <a class="ubm-banner" data-id="1"></a>
           </ul>
           <div>

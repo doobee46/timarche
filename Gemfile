@@ -54,6 +54,7 @@ gem 'tabulous'
 gem 'chosen-rails'
 gem 'delayed_job_active_record'
 gem 'daemon-spawn'
+gem 'devise-i18n'
 
 group :production do 
   gem 'pg'

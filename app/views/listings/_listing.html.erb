@@ -8,6 +8,7 @@
     </div>  
   <% end %>
   <ul class="related_images">
+    <% cache do %>
     <%listing.pictures.limit(2).each do |picture| %>
     <li>
       <%=link_to listing_path(listing) do%>
@@ -19,13 +20,16 @@
       <%end%>
     </li>
     <%end%>
+    <%end%>
     <li class="price_count">
      <div class="thumbnail-outer count-box">
           <div class="thumbnail-inner">
+            <%cache do%>
             <%= link_to seller_path(listing.user) do%>       
               <span class="listing-count">
                  <%= listing.user.listings_count%> 
               </span> items  
+           <%end%>
            <%end%>
           </div>
       </div>

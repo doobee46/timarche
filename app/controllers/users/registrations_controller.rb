@@ -5,7 +5,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super 
       @user.create_subscription()
       # Sends email to user when user is created.
-      TimarcheMailer.welcome_email(@user).deliver 
+      TimarcheMailer.delay.welcome_email(@user)
   end
 
   def new

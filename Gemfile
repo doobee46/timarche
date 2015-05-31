@@ -52,7 +52,8 @@ gem 'google-analytics-rails'
 gem 'gon'
 gem 'tabulous'
 gem 'chosen-rails'
-
+gem 'delayed_job_active_record'
+gem 'daemon-spawn'
 
 group :production do 
   gem 'pg'

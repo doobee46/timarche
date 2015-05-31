@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
   def set_search
     @q = Listing.search(params[:q])
   end
-
+    
+  
 
   protected
 

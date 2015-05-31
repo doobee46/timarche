@@ -5,17 +5,17 @@
     </div> <!-- cd-timeline-img -->
     <div class="cd-timeline-content">
         <ul class="media-list">
-          <li class="media">
-            <div class="media-left">
+          <li class="media no-border">
+            <div class="media-left up-time">
               <a href="#">
-                <%= image_tag activity.user.avatar.url(:amedium), class: "img-circle pull-left",size: "64x64"%>
+                <%= image_tag activity.user.avatar.url(:amedium), class: "img-circle pull-left",size: "48x48"%>
               </a>
             </div>
             <div class="media-body">
               <h4 class="media-heading"><%=activity.user.name%></h4>
-              <p>publish a new listing <%= link_to activity.targetable.listing_number, listing_path(activity.targetable.slug)%><p>
+              <p>just publish a new listing <%= link_to activity.targetable.listing_number, listing_path(activity.targetable.slug)%><p>
               <% if activity.targetable %>
-              <%= link_to image_tag(activity.targetable.image.url(:avatar), class: "img-circle",size: "32x32"), listing_path(activity.targetable.slug) %>
+              <%= link_to image_tag(activity.targetable.image.url(:avatar), class="img-thumbnail target_able",size: "64x64"), listing_path(activity.targetable.slug) %>
               <% end %>
             </div>
           </li>

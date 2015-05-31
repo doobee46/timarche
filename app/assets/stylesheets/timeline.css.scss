@@ -261,6 +261,7 @@ header h1 {
   padding: 1em;
   box-shadow: 0 3px 0 #d7e4ed;
   margin-top:-25px;
+  height:82px;
 }
 .cd-timeline-content:after {
   content: "";
@@ -493,4 +494,8 @@ header h1 {
     -o-transform: translateX(0);
     transform: translateX(0);
   }
+}
+
+.no_border{
+    border-bottom:none !important;
 }

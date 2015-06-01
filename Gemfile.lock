@@ -327,6 +327,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   commontator (~> 4.10.0)
   daemon-spawn
+  daemons
   delayed_job_active_record
   devise!
   devise-i18n

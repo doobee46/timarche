@@ -52,14 +52,15 @@ gem 'google-analytics-rails'
 gem 'gon'
 gem 'tabulous'
 gem 'chosen-rails'
-gem 'delayed_job_active_record'
 gem 'daemon-spawn'
 gem 'devise-i18n'
+
 
 group :production do 
   gem 'pg'
   gem 'rails_12factor'
   gem 'faker'
+  gem 'delayed_job_active_record' 
 end
 
 group :development, :test do
@@ -69,4 +70,6 @@ group :development, :test do
   #gem 'faker'
   gem 'thin'
   gem 'ruby-progressbar'
+  gem "letter_opener", :group => :development
+  gem 'letter_opener_web', '~> 1.2.0', :group => :development  
 end

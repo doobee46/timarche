@@ -38,9 +38,8 @@ Rails.application.configure do
   
   Rails.application.routes.default_url_options[:host] = 'localhost'
 
-  config.action_mailer.delivery_method = :smtp
-  # SMTP settings for Mandrill
-  config.action_mailer.smtp_settings = {
+  config.action_mailer.delivery_method = :letter_opener
+ 
   # SMTP settings for Mandrill
   config.action_mailer.smtp_settings = {
       :address        => 'smtp.mandrillapp.com',
@@ -52,6 +51,6 @@ Rails.application.configure do
       :enable_starttls_auto => true
     }
 
-}
+
 
 end

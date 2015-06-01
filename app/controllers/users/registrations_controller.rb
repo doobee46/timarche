@@ -4,8 +4,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super 
       @user.create_subscription()
+      if Rails.env.development?
+          TimarcheMailer.welcome_email(@user).deliver
+      else
       # Sends email to user when user is created.
       TimarcheMailer.delay.welcome_email(@user)
+      end
   end
 
   def new

@@ -136,7 +136,7 @@ ul.nav.nav-tabs li a i{
     font-size: 14px;
     color: #596377;
     position: relative;
-    top: -56px;
+    top: -30px;
 }
 
 .dash_info h3{
@@ -180,9 +180,7 @@ h6.dash_time{
     left: -26px;
 }
 
-.sales p{
-    
-}
+
 
 .header_dash{
     display:block;

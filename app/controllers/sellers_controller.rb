@@ -3,7 +3,7 @@ class SellersController < ApplicationController
 
   def index
     @users = User.all
-    @sellers  =@users.includes(:listings,:activities).where("users.listings_count >=1").paginate(:page => params[:page], :per_page => 30)
+    @sellers  =@users.where("users.listings_count >=1").paginate(:page => params[:page], :per_page => 30)
     @q = Listing.includes(:user, :impressions, :like, :category).search(params[:q])
     @listings= @q.result.paginate(:page => params[:page], :per_page => 30)
     respond_with(@sellers)

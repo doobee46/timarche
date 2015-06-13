@@ -1,0 +1,60 @@
+FORMAT: 1A
+HOST: http://telecom-mama.codio.io:3000/api/listings.json
+
+
+# timarche
+
+Polls is a simple API allowing consumers to view listing and buy them.
+
+# Timarche API Root [/]
+
+This resource does not have any attributes. Instead it offers the initial
+API affordances in the form of the links in the JSON body.
+
+It is recommend to follow the “url” link values,
+[Link](https://tools.ietf.org/html/rfc5988) or Location headers where
+applicable to retrieve resources. Instead of constructing your own URLs,
+to keep your client decoupled from implementation details.
+
+## Retrieve the Entry Point [GET]
+
++ Response 200 (application/json)
+
+        {
+            "listings_url": "/listings"
+        }
+
+## Group listing 
+
+Resources related to listings in the API.
+
+## listing Collection [/listings]
+
+A listing object has the following attributes:
+
++ title
++ created_at - An ISO8601 date when the listing was published.
++ description
++ price 
++ image
++ listing_number 
++ picture - An array of related images objects.
+
+
+### View a listing Detail [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "title": "deleniti",
+            "description": "Repudiandae omnis excepturi. Amet explicabo error cumque facere deleniti ullam facilis. Adipisci quasi exercitationem est pariatur reiciendis ut. Vel perspiciatis ipsam. Molestias praesentium ut.",
+            "price": "4846.0",
+            "image": "/system/listings/images/000/000/001/original/sample_15.png?1433714599",
+            "listing_number": "TM2015-HT0607220319",
+            "created_at": "2015-06-07T22:03:19.984Z",
+            "pictures": [],
+            "listing_id": 1
+        },
+
+

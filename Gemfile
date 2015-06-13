@@ -68,9 +68,11 @@ group :development, :test do
   gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
-  #gem 'faker'
+  gem 'faker'
   gem 'thin'
   gem 'ruby-progressbar'
   gem "letter_opener", :group => :development
-  gem 'letter_opener_web', '~> 1.2.0', :group => :development  
+  gem 'letter_opener_web', '~> 1.2.0', :group => :development
+  gem 'kaminari'
+  gem 'spinner.rb'
 end

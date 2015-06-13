@@ -5,9 +5,11 @@
                 <h3 class="time_lead"><%= image_tag ("cd-icon-timeline.png")%> Activity Timeline </h3>
                 
                     <% if @activities.blank?%>
-                      <p class="no_results"> we don't have data to show you yet, please go follow , like or comment on products  </p>
-                    <% else%>
-                     <section id="cd-timeline" class="cd-container">
+                      <div class="col-md-6 col-md-offset-3">
+                       <p class="no_results "> we don't have data to show you yet, please go follow , like or comment on products  </p>
+                      </div>
+                       <% else%>
+                      <section id="cd-timeline" class="cd-container">
                         <% @activities.each do |activity|%>
                             <%unless activity.created_at <= 12.days.ago%>                         
                                <%= render partial: "activities/#{activity.targetable_type.underscore}/#{activity.action}", locals:{activity: activity}%>                         

@@ -180,6 +180,14 @@ h6.dash_time{
     left: -26px;
 }
 
+.sales span{
+    position: relative;
+    top: 25px;
+    left: 110px;
+    font-family: "arvo", sans-serif;
+    font-size: 12px;
+    font-weight:700;
+}
 
 
 .header_dash{

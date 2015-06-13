@@ -150,6 +150,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.2)
     jwt (1.2.0)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.4.1)
@@ -266,6 +269,7 @@ GEM
     social-share-button (0.1.8)
       coffee-rails
       sass-rails
+    spinner.rb (0.3.0)
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -341,6 +345,7 @@ DEPENDENCIES
   intercom-rails
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   koudoku!
   letter_opener
   letter_opener_web (~> 1.2.0)
@@ -362,6 +367,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.5)
   sdoc (~> 0.4.0)
   social-share-button
+  spinner.rb
   spring
   sqlite3
   tabulous

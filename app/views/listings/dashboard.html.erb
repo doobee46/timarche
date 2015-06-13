@@ -12,12 +12,8 @@
                 <div class="dash_info">
                     <h3 class="dash_h3">Dashboard</h3>
                     <h6 class="dash_time"> <%=Time.now.strftime("%B %e, %Y at %I:%M %p")%></h6>
-                    <!--<h3 class="smaller">Membre depuis <%-time_ago_in_words(current_user.created_at)+" "+"ago"%></h3>-->
-                     <% if current_user.subscription.plan.blank?%>
-                    <span><%=link_to "upgrade", koudoku.owner_subscriptions_path(current_user),class:"btn btn-info btn-xs" %></span>
-                    <%else%>
-                    <span><%=link_to (current_user.subscription.plan.name), koudoku.owner_subscriptions_path(current_user),class:"btn btn-info btn-xs" %></span>
-                    <%end%>
+                    <h3 class="smaller">Membre depuis <%-time_ago_in_words(current_user.created_at)+" "+"ago"%></h3>
+                    
                 </div>
                 
                 <div role="tabpanel">

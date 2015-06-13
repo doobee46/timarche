@@ -20,11 +20,13 @@ doc/
 .project
 .DS_Store
 .idea
+vendor/bundle
 
 #Ignore sampleimages
 #/sampleimages
 #/sampleavatar
 
+scraper.rb
 
 config/settings.local.yml
 config/settings/*.local.yml

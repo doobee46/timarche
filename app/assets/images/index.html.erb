@@ -1,0 +1,123 @@
+<body class="welcome">
+<% @title = "welcome" %>
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          <div class="header_welcome">
+            <%=image_tag 'new_logo.png'%> 
+            <div class="login_block">
+              <ul class="pull-right">
+                <% if user_signed_in? %>
+                  <li>
+                    <p class="btn btn-log">Welcome back , 
+                        <span>
+                          <%= link_to main_app.dashboard_path, data: { no_turbolink: true } do %>
+                          <span class="glyphicon glyphicon-tasks"></span> Dashboard
+                          <% end %>
+                        </span>
+                    </p>
+                  </li>
+                <%else%>
+                  <li>
+                    <%= link_to "S'inscrire",main_app.user_registration_path, class: 'btn btn-log' %> 
+                  </li>
+                  <li>
+                    <%= link_to "Se connecter",main_app.user_session_path,class: 'btn btn-log' %> 
+                  </li>
+                <%end%>
+              </ul>
+            </div>
+          </div>
+          
+
+        <div class="homepage-hero-module">
+            <div class="video-container">
+              <div class="jumbo_center center-block">
+                 <h1>Votre place de marché</h1>
+                  <p>C'est l'endroit où vendre, louer, échanger et partager des biens et services avec les autres membres de la place de marché.</p>
+                   <%= search_form_for @q , :class => "navbar-form" do  |f| %>
+                      <div class=" form-group">
+                        <%= f.search_field :name_cont, placeholder: 'Recherche de produits, les boutiques, les collections, et vendeurs...' %>
+                      </div>
+                      <%= f.button "Submit" , :class =>'btn btn-lg btn-jumbo' do %>
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                      <%end%>
+                  <% end %> 
+                  <div class="hr">
+                     <div class="inner">or</div> 
+                  </div>
+                     <%= button_to "Voir Publications", listings_path, :method => :get, class: 'btn btn-action'%>
+              </div>
+                <div class="filter"></div>
+                <video autoplay loop class="fillWidth">
+                    <%= video_tag ("market.mp4"), :size => "320x240"%>
+                    <%= video_tag ("market.webm"), :size => "320x240"%>
+                </video>
+                <div class="poster hidden">
+                    <%=image_tag("market.jpg")%>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>     
+  </div>
+</div>
+<div class="recent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 clearfix">
+        <div class="main_listings switcher">
+          <% if @listings.count < 3 || @listings.blank?%>
+          <%else%>
+          <h3>Publications Récentes</h3>
+          <p>Découvrez les nouveaux produits de partout dans le marché.</p>
+        </div>
+        <div class="recent_pro clearfix">
+          <ul class="trending">
+           <%= render @listings.sample(3) %>
+          </ul>
+          <%end%>
+        </div>          
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer_mid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mid-footer">
+          <div class="mid_listings switcher">
+            <h3>La meilleure façon de vendre et d'acheter en ligne  </h3>
+            <p> 3 raisons d'utiliser Timarché</p>
+          </div>
+          <div class="col col-md-4">
+            <%=image_tag("fs-bank.png",)%> 
+            <h3>clients satisfaits</h3>
+            <p>
+             Apprenez à connaître boutiques et articles avec avis de notre communauté.
+            </p>
+          </div>
+          <div class="col col-md-4">
+            <%=image_tag("fs-credit.png",)%>
+            <h3>Vendeurs passionnés</h3>
+            <p>
+              Acheter des gens créatifs qui se soucient de la qualité et de l'artisanat.
+            </p>
+          </div>
+          <div class="col no_boder_col col-md-4">
+            <%=image_tag("fs-shield.png",)%>
+            <h3>Transactions Sécurisées</h3>
+            <p>
+              Restez confiant en sachant notre equipe de sécurité est là pour vous protéger.
+            </p>
+          </div>
+          <%= render :partial => 'pages/payment'%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render :partial => 'pages/invite'%>
+

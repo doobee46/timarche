@@ -17,6 +17,7 @@
 //= require wufoo.js
 //= require social-share-button
 //= require turbolinks
+//= require video.js
 //= require chosen-jquery
 //= require messages
 //= require_tree .

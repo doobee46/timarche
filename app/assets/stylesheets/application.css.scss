@@ -101,12 +101,14 @@ a:focus{
 .header_welcome{
  width: 100%;
  position: relative;
+ top:45px;
 }
 
 .header_welcome img{
   float:left;
   position: relative;
   top: -10px;
+  z-index:1000;
 }
 
 .btn-log{
@@ -126,7 +128,8 @@ a:focus{
     width: 100%;
     float:right;
     position: relative;
-    top: -25px;
+    top: -15px;
+    z-index:1000;
 }
 
 .login_block ul{
@@ -185,7 +188,9 @@ a:focus{
     text-align: center;
     /*padding-top:45px;*/
     width: 780px;
-    margin-top:105px;
+    margin-top:175px;
+    position:relative;
+    z-index:1000;
 }
 
 .jumbo_center form.navbar-form{

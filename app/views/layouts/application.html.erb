@@ -5,21 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
+  <%= render :partial => 'layouts/googlefont'%>
   <%= analytics_init if Rails.env.production? %>
   <%= render :partial => 'layouts/sumome'%>
-  <%= render :partial => 'layouts/bounce'%>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,600,300,200|Montserrat:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
   <%if Rails.env.production?%>
   <%= render :partial => 'layouts/zopim'%>
   <%end%>
 </head>
-	<body>
+	  <body>
+    
         <% if content_for?(:body_attributes) %>
           <%= yield(:body_attributes) %> 
-        <% end %>>
+        <% end %>
 		<% unless @title == "welcome" %>
 		   <%= render :partial => 'shared/header'%>
 		<%end%>
@@ -29,5 +26,5 @@
 		<%= yield :koudoku %>
 		<%= yield %>
 		<%= render :partial => 'shared/footer'%>
-	</body>
+    </body>
 </html>

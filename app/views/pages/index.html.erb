@@ -5,13 +5,13 @@
    <div class="filter"></div>
     <%= video_tag (["market.mp4", "market.webm"]), :class=> "fillWidth", autoplay: true, loop: true%>
     <div class="poster hidden">
-        <%=image_tag("market.jpg")%>
+        <%=image_tag "market.jpg"%>
     </div>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
           <div class="header_welcome">
-            <%=image_tag ("timarche_logo_new_1.png")%> 
+            <%=image_tag "timarche_logo_new_1.png" %> 
             <div class="login_block">
               <ul class="pull-right">
                 <% if user_signed_in? %>
@@ -86,21 +86,21 @@
             <p> 3 raisons d'utiliser Timarché</p>
           </div>
           <div class="col col-md-4">
-            <%=image_tag("fs-bank.png",)%> 
+            <%=image_tag "fs-bank.png"%> 
             <h3>clients satisfaits</h3>
             <p>
              Apprenez à connaître boutiques et articles avec avis de notre communauté.
             </p>
           </div>
           <div class="col col-md-4">
-            <%=image_tag("fs-credit.png",)%>
+            <%=image_tag "fs-credit.png" %>
             <h3>Vendeurs passionnés</h3>
             <p>
               Acheter des gens créatifs qui se soucient de la qualité et de l'artisanat.
             </p>
           </div>
           <div class="col no_boder_col col-md-4">
-            <%=image_tag("fs-shield.png",)%>
+            <%=image_tag "fs-shield.png" %>
             <h3>Transactions Sécurisées</h3>
             <p>
               Restez confiant en sachant notre equipe de sécurité est là pour vous protéger.

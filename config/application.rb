@@ -21,7 +21,7 @@ module Timarche
     # config.i18n.default_locale = :en
     # Include the authenticity token in remote forms.
     config.action_view.embed_authenticity_token_in_remote_forms = true
-    config.assets.paths << "#{Rails.root}/app/assets/videos"
+    #config.assets.paths << "#{Rails.root}/app/assets/videos"
 
   end
 end

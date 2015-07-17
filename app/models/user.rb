@@ -21,8 +21,9 @@ class User < ActiveRecord::Base
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  extend FriendlyId
-  friendly_id :name, use: :slugged  
+  # 
+  #extend FriendlyId
+  #friendly_id :username, use: :slugged  
 
 
   if Rails.env.development?
@@ -114,8 +115,6 @@ class User < ActiveRecord::Base
         total = views.inject(0){|r,s| r+s}
         total
     end
-
-
  
   private
 

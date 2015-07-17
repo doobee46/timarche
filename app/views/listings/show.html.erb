@@ -4,10 +4,9 @@
 		    <div class="row">
 				<div class="col-md-12">
 					<div class="title_head">
-						<!--<span class="label label-primary label-id">Publication Id:<%=@listing.listing_number%></span>-->
+						<span class="label label-primary label-id">Publication Id:<%=@listing.listing_number%></span>
 						<p class="desc_title"><%=@listing.name%></p>
 						<p class="desc"><%=@listing.description%></p>
-						<!--<span class="store"> En vente par :<%=link_to @listing.user.username%></span>-->
 					</div>
 				</div>
 			</div>
@@ -25,8 +24,7 @@
 					<div class="stats">
 					<%= render :partial => 'listings/like'%>	
 					<%= render :partial => 'listings/viewcount'%>
-					</div>
-					<%= social_share_button_tag(@listing.description, :popup => "true")%>
+                    </div>
 					<div class="body_desc">
 					   <p><%=@listing.description%></p>
 					</div>
@@ -58,9 +56,10 @@
 						  <h3><%= link_to @listing.user.username %></h3>
 						</div>
                         <% unless current_user == @user %>
-                        <%= link_to 'Send message', new_message_path(to: @listing.user.id), class: 'btn btn-danger btn-lg btn-cont' %>
+                        <%= link_to new_message_path(to: @listing.user.id), class: 'btn btn-danger btn-lg btn-cont' do %>
+                        <i class="fa fa-pencil-square-o"></i>Contact Vendeur
                         <% end %>
-						<!--<button class="btn btn-danger btn-lg btn-cont">Contacter</button>-->
+                        <% end %>
 					</div>
 				</div>
 			</div>

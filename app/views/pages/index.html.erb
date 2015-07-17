@@ -18,7 +18,7 @@
                   <li>
                     <p class="btn btn-log">Welcome back , 
                         <span>
-                          <%= link_to main_app.dashboard_path, data: { no_turbolink: true } do %>
+                          <%= link_to main_app.dashboard_path, data: { no_turbolink: true } do %> 
                           <span class="glyphicon glyphicon-tasks"></span> Dashboard
                           <% end %>
                         </span>
@@ -49,7 +49,7 @@
                   <div class="hr">
                      <div class="inner">or</div> 
                   </div>
-                     <%= button_to "Voir Publications", listings_path, :method => :get, class: 'btn btn-action'%>
+                     <%= button_to "Voir Publications", browse_path, :method => :get, class: 'btn btn-action'%>
               </div>
             </div>
         </div>

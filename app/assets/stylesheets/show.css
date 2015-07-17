@@ -17,6 +17,10 @@
     width: 820px;
 }
 
+.title_head span{
+    position:relative;
+    left:20px;
+}
 
 .desc{
     font-family: 'Source Sans Pro', sans-serif;
@@ -30,20 +34,23 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-bottom: 0px;
+    margin-left:20px;
+    position:relative;
+    top:-5px;
 }
 
 .desc_title{
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 1px;
     margin-bottom: 0px;
-    color:#5C232C /*#596377*/;
+    color:#3F465E/*#5C232C #596377*/;
     font-size: 28px;
     font-weight: 600;
     text-transform:capitalize;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
+    margin-left:20px;
 }
 
 span.store a{
@@ -82,7 +89,7 @@ span.store{
   height: auto;
   padding: 8px 5px;
   border-bottom: 1px dashed #D8DAE4;
-
+ 
 }
 
 .body_desc p{
@@ -94,7 +101,8 @@ span.store{
     margin-top: 12px;
     font-weight: 300;
     font-style: normal;
-    margin-left: -8px;
+    margin-left: -5px;
+    
 }
 
 .mid_col {
@@ -179,12 +187,25 @@ span.store{
     right: 50px;
 }
 
+.listing_author span{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal ;
+  font-size:16; 
+  position:relative;
+  left: -45px;
+  top: 15px;
+}
+
 .listing_author h3 a{
    font-size:18px;
    color: #3F465E;
    font-family: 'Source Sans Pro', sans-serif;
-    font-style: normal;
-    font-weight: 600;
+   font-style: normal;
+   font-weight: 600;
+   position: relative;
+   left: -45px;
+   top: -12px;
+   text-transform: capitalize;
 }
 
 .contact img{
@@ -231,3 +252,6 @@ span.store{
 .cards ul li i{
   opacity: 0.5;
 }
+
+
+

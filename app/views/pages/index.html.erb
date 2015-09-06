@@ -18,7 +18,7 @@
                   <li>
                     <p class="btn btn-log">Welcome back , 
                         <span>
-                          <%= link_to main_app.dashboard_path, data: { no_turbolink: true } do %> 
+                          <%= link_to main_app.dashboard_path do %> 
                           <span class="glyphicon glyphicon-tasks"></span> Dashboard
                           <% end %>
                         </span>
@@ -45,7 +45,7 @@
                       <%= f.button "Submit" , :class =>'btn btn-lg btn-jumbo' do %>
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                       <%end%>
-                  <% end %> 
+                  <%end%> 
                   <div class="hr">
                      <div class="inner">or</div> 
                   </div>

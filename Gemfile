@@ -54,7 +54,7 @@ gem 'tabulous'
 gem 'chosen-rails'
 gem 'daemon-spawn'
 gem 'devise-i18n'
-
+gem 'spinner.rb' 
 
 group :production do 
   gem 'pg'
@@ -74,6 +74,6 @@ group :development, :test do
   gem "letter_opener", :group => :development
   gem 'letter_opener_web', '~> 1.2.0', :group => :development
   gem 'kaminari'
-  gem 'spinner.rb'  
+  
   
 end

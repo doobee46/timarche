@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
-  $('#myTab a:last').tab 'show'
+$(document).ready ->
+  $('table#cur_listing').DataTable()
   return
-

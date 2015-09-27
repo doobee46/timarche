@@ -1,22 +1,32 @@
-<ul>
-<%@listings.each do |listing| %>
-  <li class="item">
-      <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
-      <div class="info">
-        <span class="item_title"><%= listing.name %></span>
-        <span class="avatar_info">
-           <%=link_to seller_path(listing.user) do %>
-           <%=image_tag listing.user.avatar.url(:athumb), size: "20x20", alt: "avatar",class: "img-circle"%>
-           <p><%=listing.user.username %></p>
-           <%end%>
-        </span>
-        <span class="item_price">Gdes <%=(listing.price)%>
-        </span>
-      </div>
+<table id="user_listing" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Publication Id</th>
+            <th>Title</th>
+            <th>Published</th>
+            <th>Listing Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <%@listings.each do |listing| %>
+        <tr>
+            <td><span class="label label-primary"><%= listing.listing_number %></span> </td>
+            <td><%= link_to listing.name, listing_path(listing) %> </td>
+            <td></td>
+            <td>Gdes <%=(listing.price)%></td>
+            <td>
+                <div class="dash_actions">
+                    <ul>
+                      <li><%= link_to content_tag(:i, "", class: "fa fa-pencil-square-o"), "#", class: "edit-listing", "data-listing_id" => listing.id %></li>
+                      <li><a href="#"><i class="fa fa-reply "></i></a></li>
+                      <li><a href="#"><i class="fa fa-times "></i></a></li>
+                    </ul>
+                  </div>
+            </td>
+        </tr>
+      <%end%>
+    </tbody>
+</table>
 
-      <% if listing.created_at >= (Date.today) %>
-        <span class="label label-green">New</span>
-      <%end%>                             
-  </li>
- <% end %>  
-</ul>
+

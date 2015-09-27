@@ -236,3 +236,24 @@ p.pro_views{
     top: -55px;
     left: 310px;
 }
+
+.dash_actions{
+    text-align: center;
+  }
+
+.dash_actions ul{
+    list-style-type: none;
+    margin: 0; padding: 0;
+
+   }
+   
+.dash_actions ul li{
+    float: left;
+    text-align: center;
+   }
+ 
+.dash_actions ul li a{
+    display: block;
+    padding: 0px 3px;
+    text-align: center;
+   }

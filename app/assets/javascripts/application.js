@@ -14,6 +14,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-onboarded-0.0.8.min.js
+//= require dataTables.bootstrap.min.js
 //= require wufoo.js
 //= require social-share-button
 //= require turbolinks
@@ -22,6 +23,9 @@
 //= require messages
 //= require_tree .
 
+$(document).ready( function () {
+    $('#user_listing').DataTable();
+});
 
 
 

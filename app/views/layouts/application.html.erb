@@ -9,6 +9,7 @@
   <%= analytics_init if Rails.env.production? %>
   <%= render :partial => 'layouts/sharethis'%> 
   <%= render :partial => 'layouts/sumome'%>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %> 
   <%if Rails.env.production?%>
   <%= render :partial => 'layouts/zopim'%>
   <%end%>

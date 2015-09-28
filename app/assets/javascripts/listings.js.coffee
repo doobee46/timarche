@@ -5,3 +5,7 @@
 $(document).ready ->
   $('table#cur_listing').DataTable()
   return
+
+$(document).ready ->
+  $('[data-toggle="tooltip"]').tooltip()
+  return

@@ -22,6 +22,8 @@ gem 'open_uri_redirections'
 gem 'social-share-button'
 gem 'attribute-defaults'
 gem 'ransack'
+gem "chartkick"
+gem 'groupdate'
 gem 'intercom-rails'
 gem 'koudoku',github: 'doobee46/koudoku'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -39,7 +41,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'jquery-datatables-rails', '~> 3.3.0'
-
+gem 'pg'
 gem 'bundler'
 gem 'rails_config'
 gem 'devise', github: 'plataformatec/devise'
@@ -59,7 +61,6 @@ gem 'devise-i18n'
 gem 'spinner.rb' 
 
 group :production do 
-  gem 'pg'
   gem 'rails_12factor'
   gem 'faker'
   gem 'delayed_job_active_record'

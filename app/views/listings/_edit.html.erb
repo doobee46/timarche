@@ -1,0 +1,41 @@
+<div class="modal fade" id="myEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+           <!--<div class="modal-header">
+              <h4 class="modal-title" id="myModalLabel">Publier Produits</h4>
+           </div>-->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= form_for :listing, :url => {:action => :edit}, html: {class: "form-inline"} do |f| %>
+            <ul class="form-style-1">
+                <li>
+                   <%= f.label :name%><%= f.text_field :name, class: "field-divided" %></li>
+                <li>
+                    <%= f.label :price%>
+                    <%= f.text_field :price,class:"field-long"%>
+                <li>
+                     <%= f.label :category_id,class:"field-select" %>
+                     <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "btn btn-default dropdown-toggle form-control"}%>
+                </li>
+                  <li>
+                      <%= f.label :image %>
+                      <%= f.file_field :image%> 
+                </li>
+                <li>
+                     <%= f.label :description %>
+                     <%= f.text_area :description,class:"field-long field-textarea"%>
+                   
+                </li>
+               
+                <li></li>
+                     <label>Images additionel du produit</label>
+                     <%= file_field_tag "images[]", type: :file, multiple: true %>
+                <li>
+                     <%= f.button "Publier Produit" , class: 'btn btn-primary pull-right', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publication en cours..."} %>
+                </li>
+            </ul>
+         <% end %>
+      </div>
+    </div>
+  </div>
+</div>

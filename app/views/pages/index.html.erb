@@ -18,9 +18,8 @@
                   <li>
                     <p class="btn btn-log">Welcome back , 
                         <span>
-                          <%= link_to main_app.dashboard_path do %> 
-                          <span class="glyphicon glyphicon-tasks"></span> Dashboard
-                          <% end %>
+                         <%= link_to content_tag(:span, "", class: "glyphicon glyphicon-tasks"),
+                           main_app.dashboard_path%> My Dashboard   
                         </span>
                     </p>
                   </li>
@@ -42,9 +41,9 @@
                       <div class=" form-group">
                         <%= f.search_field :name_cont, placeholder: 'Recherche de produits, les boutiques, les collections, et vendeurs...' %>
                       </div>
-                      <%= f.button "Submit" , :class =>'btn btn-lg btn-jumbo' do %>
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                      <%end%>
+                       <%= f.button class: 'btn btn-lg btn-jumbo' do %> 
+                            <%=content_tag(:span, "", class: "glyphicon glyphicon-search")%>
+                        <%end%>
                   <%end%> 
                   <div class="hr">
                      <div class="inner">or</div> 

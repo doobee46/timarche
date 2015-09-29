@@ -6,7 +6,7 @@
                     <h3>Products View Activities</h3>
                 </div>
                 <div class="sales">
-                   <td><%= line_chart current_user.listings.group_by_day(:created_at).count %></td> 
+                   <td><%= line_chart User.group_by_day(:created_at).count %></td> 
                 </div>
             </div>
             <div class="col-md-3">

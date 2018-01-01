@@ -155,13 +155,14 @@ ul.main_nav li a{
   line-height:50px;
   transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   margin-left: 10px;
   font-weight:400;
   color:#666;
   text-decoration: none;
   border: none;
+  letter-spacing:1px;
 }
 
 ul.main_nav li a i
@@ -350,6 +351,8 @@ input[type="search"].topnav_inp{
     width: 100%;
     box-sizing: border-box;
     border-radius:4px; 
+    position:relative;
+    left:55px;
 }
 
 
@@ -379,7 +382,7 @@ input[type="search"].topnav_inp{
     -moz-border-left-colors: none;
     border-image: none;
     position: absolute;
-    right: 1px;
+    right: -53px;
     top: 1px;
     bottom: 0px;
     padding:6px;

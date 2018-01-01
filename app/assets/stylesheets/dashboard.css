@@ -141,15 +141,16 @@ ul.nav.nav-tabs li a i{
 
 .dash_info h3{
     text-align: center;
-    font-family: "arvo",sans-serif;
-    font-weight: 700;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 400;
     color: #596377;
+    letter-spacing: 1px;
     
 }
 
 .dash_info small{
     text-align: center;
-    font-family: "arvo"
+    font-family: "open-s"
 }
 
 .dash_info h3 span {

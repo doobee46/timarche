@@ -7,7 +7,7 @@
     margin: 22px auto 50px;
     padding:20px 5px 20px 5px;
     background: none repeat scroll 0% 0% #fff;
-    border: 1px solid #B1BACE;
+    border: 1px solid #eeeeee;
     /*border-radius: 5px 4px 4px;*/
     clear: both;
 }
@@ -74,15 +74,16 @@ span.store{
 
 .first_col{
    padding:8px;
-   border: 1px dashed #D8DAE4;
+   border: 1px solid #D8DAE4;
    margin-top: 25px;
+   border-radius:3px;
 }
 
 .first_col img{
     border-radius: 4px;
     max-width: 100%;
     vertical-align: middle;
-   
+    width:1024px;
 }
 
 .body_desc{
@@ -110,7 +111,7 @@ span.store{
     width: 120px;
     height: 100%;
     display: block;
-    border: 1px dashed #D8DAE4;
+    border: 1px solid #D8DAE4;
     margin-top: 25px;
     margin-left: -20px;
     padding: 8px;

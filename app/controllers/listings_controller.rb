@@ -14,12 +14,12 @@ class ListingsController < ApplicationController
 
   def index
     @q = Listing.includes(:user, :impressions, :like, :category).search(params[:q]) 
-    @listings= @q.result.paginate(:page => params[:page], :per_page => 29).order('created_at DESC')
+    @listings= @q.result.paginate(:page => params[:page], :per_page => 30).order('created_at DESC')
     @featured = @listings.limit(5)
     @trend = Listing.where("impressions_count >=10").limit(5).order('created_at DESC')
+    @categories = Category.all
     @users=User.all
-    respond_with(@listings)
-
+    respond_with(@listing)
   end
 
 
@@ -75,7 +75,7 @@ class ListingsController < ApplicationController
     @popular = Listing.popular.order("created_at desc").page(params[:page]).per_page(30)
     respond_with(@popular)
   end
-
+    
   def today
      where("listing.created_at >= ?", (Date.today))
   end

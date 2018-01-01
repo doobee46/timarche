@@ -1,3 +1,4 @@
+<%= tinymce_assets %>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -23,7 +24,7 @@
                 </li>
                 <li>
                      <%= f.label :description %>
-                     <%= f.text_area :description,class:"field-long field-textarea"%>
+                     <%= f.text_area :description,class:"field-long field-textarea tinymce"%>
                    
                 </li>
                
@@ -39,6 +40,6 @@
     </div>
   </div>
 </div>
-
+<%= tinymce %>
     
        

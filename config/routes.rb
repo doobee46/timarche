@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'about'       => "pages#about"
   get 'ads'         => "pages#ads"
-  get 'browse'      => "pages#browse"
+  get 'browse'      => "listings#index"
   get 'contact'     => "pages#contact"
   get 'privacy'     => "pages#privacy"
   get 'sellers'     => "sellers#index"

@@ -221,15 +221,16 @@ ul.main_nav li a i{
 
 .topnav ul li a{
     display: block;
-    padding: 0 15px;
+    padding: 0 10px;
     font-family:"open sans",sans-serif;
-    font-size:13px;
+    font-size:12px;
     line-height:30px;
     color:rgb(68,68,68);
     text-align:left;
     text-transform: capitalize;
     text-decoration: none;
     font-weight:400;
+    letter-spacing:1px;
 }
 .topnav ul li a span.caret{
     color:#666;
@@ -256,10 +257,10 @@ ul.main_nav li a i{
     padding: 0 22px;
 }
 
-.topnav ul li:nth-child(10){
+.topnav ul li:nth-child(11){
     background-color: #64B650;
 }
-.topnav ul li:nth-child(10) a{
+.topnav ul li:nth-child(11) a{
     font-family:"open sans",sans-serif;
     font-size:12px;
     color:rgb(0,16,63);
@@ -268,7 +269,7 @@ ul.main_nav li a i{
     padding: 0 35px;
 }
 
-.topnav ul li:nth-child(10) a:hover{
+.topnav ul li:nth-child(11) a:hover{
     background-color:rgb(255,191,0) 
 }
 

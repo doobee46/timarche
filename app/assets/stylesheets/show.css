@@ -20,6 +20,7 @@
 .title_head span{
     position:relative;
     left:20px;
+    letter-spacing:1px;
 }
 
 .desc{
@@ -184,7 +185,7 @@ span.store{
     float: right;
     position:relative;
     top: 25px;
-    right: 50px;
+    right: 15px;
 }
 
 .listing_author span{

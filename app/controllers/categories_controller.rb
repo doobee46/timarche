@@ -9,7 +9,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    respond_with(@category)
+    @category = Category.find(params[:id])
+    @listings = Listing.where(:category_id => @category).paginate(:page => params[:page], :per_page =>30)
+    respond_with(@listings)
   end
 
   def new
@@ -38,7 +40,7 @@ class CategoriesController < ApplicationController
 
   private
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.friendly.find(params[:id])
     end
 
     def category_params

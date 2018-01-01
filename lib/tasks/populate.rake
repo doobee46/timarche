@@ -4,10 +4,10 @@ namespace :app do
   task :populate do |t, args|
       spinner = Spinner.new
     spinner.task("Populating user", 'user:populate')
+    spinner.task("creating category", 'category:create')
     spinner.task("Creating listing", 'listings:populate')
     spinner.task("Creating plan", 'plan:populate')
     spinner.task("Creating relationships", 'relationships:follow')
-    spinner.task("creating category", 'category:create')
     spinner.spin!
   end
 end

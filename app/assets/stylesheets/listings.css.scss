@@ -243,19 +243,19 @@ ul.list_cat li:last-child{
 	color:#26C9FF;
 }
 
-.item_list ul{
-	list-style-type: none;
+.item_list{
+    display:inline-block;
 	padding:0px ;
-	margin-top: 50px;
+	margin-top: 30px;
 	width: 100%;
 }
 
-ul li.item{
+.item{
 	width: 208px;
 	margin-right:20px;
 	float: left;
 	min-height: 1px;
-	margin-bottom: 35px;
+	margin-bottom: 25px;
 	position: relative;
 	box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.52);
 	border-radius: 0px 0px 4px 4px;
@@ -274,19 +274,19 @@ ul li.item{
 	margin-bottom: 25px;*/
 }
 
-ul li.item a img{
+.item a img{
 	display: block;
     width: 208px;
     height: 200px;
     vertical-align: middle;
 }
 
-ul li.item:last-of-type{
+.item:last-of-type{
 	margin-right: 0px;
 }
 
-ul li.item .info span.item_title{
-	  text-align: left;
+.item .info span.item_title{
+	text-align: left;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
     font-size: 13px; 
@@ -299,12 +299,13 @@ ul li.item .info span.item_title{
     white-space: nowrap;
     width:205px;
     text-decoration: none;
-    margin:5px 0px 4px 7px;
+    margin:5px 0px 4px 12px;
     padding-right:3px;
     text-transform: capitalize;
+    letter-spacing:1px;
 }
 
-ul li.item .info span.item_price{
+.item .info span.item_price{
     color: #78C042;
     /*right: 4px*/
     bottom: 0px;
@@ -313,7 +314,7 @@ ul li.item .info span.item_price{
     overflow: hidden;
     float: right;
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
+    font-weight:bold;
     font-size:13px;
     text-decoration: none;
     letter-spacing: 1px;
@@ -321,7 +322,7 @@ ul li.item .info span.item_price{
     margin-top: 3px;
 }
 
-ul li.item .info a.store{
+.item .info a.store{
 	  margin: 4px 0px 0px 4px;
 	  font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
@@ -334,7 +335,7 @@ ul li.item .info a.store{
     width:100%;
 }
 
-ul li.item span.label{
+.item span.label{
   position: absolute;
   top: -8px;
   left: 5px;
@@ -428,7 +429,7 @@ ul li.item span.label{
     text-decoration: underline;
 }
 
-.block-actions{
+.item_list .block-actions{
     display: none;
     left: 25px;
     top: -150px;
@@ -456,14 +457,19 @@ ul li.item span.label{
    border:none;
 }
 
-ul li.item a img:hover{
+.item a img:hover{
     opacity: 0.5;
    -webkit-transition:2s;
     transition:2s;
 }
 
+.btn-center{
+    position: relative;
+    left: -45px;
+    letter-spacing: 1px;
+}
 
- .item_list ul li.item:hover .block-actions{
+ .item_list .item:hover .block-actions{
     display: block;
    -webkit-transition:2s;
     transition:2s;
@@ -492,16 +498,20 @@ ul li.item a img:hover{
 .info span.avatar_info a p{
     margin:8px 0px 0px 6px;
     font-family: 'open sans', sans-serif;
-    font-weight: 400;
+    font-weight:bold;
     color:#596377;
     font-size: 8px; 
     letter-spacing: 1px;
-    text-transform: uppercase;
-    text-overflow: ellipsis;
+    text-transform: capitalize;
     text-align: left;
-    white-space: nowrap;
-    width: 40px;
     text-decoration:none;
+    width:80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    top: -15px;
+    left: 20px;
 }
 
 .like{

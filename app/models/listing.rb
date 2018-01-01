@@ -32,8 +32,8 @@ class Listing < ActiveRecord::Base
   attr_default :listing_number do
     t = Time.now
     year=Date.current.year
-    hour = t.strftime('%m%d%H%M%S') 
-    "TM#{year}-HT#{hour}".to_s
+    hour = t.strftime('%m%d%H%M%S') + rand(100).to_s
+    "TM#{year}-HT#{hour}".to_s 
   end
 
 =begin
@@ -43,6 +43,18 @@ class Listing < ActiveRecord::Base
     end
   end
 =end
+ 
+  def self.getcategories(id)
+     listings = Listing.all
+     category_list =[]
+     listings.each do |listing|
+        if  listing.category_id == id
+         category_list.push(listing)
+        end
+     end
+     return category_list
+ end 
+ 
     
    
 

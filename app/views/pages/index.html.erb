@@ -55,26 +55,7 @@
       </div>
     </div>     
 </div>
-<div class="recent">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 clearfix">
-        <div class="main_listings switcher">
-          <% if @listings.count < 3 || @listings.blank?%>
-          <%else%>
-          <h3>Publications Récentes</h3>
-          <p>Découvrez les nouveaux produits de partout dans le marché.</p>
-        </div>
-        <div class="recent_pro clearfix">
-          <ul class="trending">
-           <%= render @listings.sample(3) %>
-          </ul>
-          <%end%>
-        </div>          
-      </div>
-    </div>
-  </div>
-</div>
+
 <div class="footer_mid">
   <div class="container">
     <div class="row">

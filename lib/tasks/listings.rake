@@ -17,7 +17,7 @@ namespace :listings do
                                     description: description,
                                     image: image,
                                     price: price)
-            end    
+             end    
          end 
      end
 end

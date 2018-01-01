@@ -2,10 +2,19 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
+
 $(document).ready ->
   $('table#cur_listing').DataTable()
   return
 
-$(document).ready ->
+$ ->
   $('[data-toggle="tooltip"]').tooltip()
+  return
+
+$(document).on 'page:fetch', ->
+  $('#spinner').show()
+  return
+$(document).on 'page:receive', ->
+  $('#spinner').hide()
   return

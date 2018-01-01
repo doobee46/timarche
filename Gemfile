@@ -25,6 +25,7 @@ gem 'ransack'
 gem "chartkick"
 gem 'groupdate'
 gem 'intercom-rails'
+gem 'tinymce-rails'
 gem 'koudoku',github: 'doobee46/koudoku'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
@@ -62,7 +63,7 @@ gem 'spinner.rb'
 
 group :production do 
   gem 'rails_12factor'
-  gem 'faker'
+  #gem 'faker'
   gem 'delayed_job_active_record'
   gem "daemons"
 end
@@ -71,7 +72,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
-  #gem 'faker'
+  gem 'faker'
   gem 'thin'
   gem 'ruby-progressbar'
   gem "letter_opener", :group => :development

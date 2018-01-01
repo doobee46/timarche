@@ -1,17 +1,12 @@
 <body id="bd_list">
-<% @title = @category.name %>
+<% @title = "browse" %>
 <div class="container clearfix">
   <div class="row">
     <div class="col-md-12">
       <div class="main_pages switcher">
-        <h3><%=@category.name%></h3>
-        <p>Découvrez <%=@category.name%> de partout dans le marché.</p>
+        <h3>Touts les Produits</h3>
+        <p>Découvrez les produits de partout dans le marché.</p>
         <div class="btn-group" role="group" aria-label="...">
-          <% if @title == @category.name %>
-            <%= link_to browse_path, class: "btn btn-default" do %>
-              <span class="fa fa-back"></span>Back
-            <%end%>
-          <%end%> 
           <%= link_to recent_path ,class: "btn btn-default" do %>
             <span class="fa fa-clock-o"></span>Recent
           <%end%>
@@ -22,11 +17,9 @@
       </div>
       <div class="item_list" id="listings">
          <%= render @listings %>          
-      </div>  
+      </div>
       <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
     </div>
     
   </div>
 </div>
-
-

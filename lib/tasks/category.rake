@@ -3,16 +3,15 @@ namespace :category do
     task create: :environment do
 
     Category.create([
-               {name: 'Electronique'},
+               {name: 'Electromenagers'},
                {name: 'Artisanat'},
                {name: 'fashion'},
                {name: 'Maisons'},
-               {name: 'Pour homme'},
-               {name: 'Pour femme'},
+               {name: 'Pour hommes'},
+               {name: 'Pour femmes'},
                {name: 'Antiquités'},
                {name: 'Enfants'},
-               {name: 'Music'},
-               {name: 'vendeurs vedettes'},
+               {name: 'Bijoux'},
                ])
     end
    

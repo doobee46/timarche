@@ -106,7 +106,7 @@ class User < ActiveRecord::Base
         activity.save
         activity 
     end
-    
+
    def total_views
         views=[]
         listings.each do |listing|
@@ -114,7 +114,7 @@ class User < ActiveRecord::Base
         end
         total = views.inject(0){|r,s| r+s}
         total
-    end
+   end
  
   private
 

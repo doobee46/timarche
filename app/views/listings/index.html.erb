@@ -15,14 +15,13 @@
           <%end%>
         </div>
       </div>
-      <div class="item_list">
+      <div class="item_list" >
          <%= render @listings %>          
       </div>
-      <div id="infinite-scrolling">
-         <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %> 
-      </div>  
+           
     </div>
     
   </div>
+  <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination" %>
 </div>
 

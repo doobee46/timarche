@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   before_filter :set_search
   before_filter :authenticate_user!, except: [:index, :recent, :popular]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-  respond_to :html, :json
+  respond_to :html, :json, :js
 
   def dashboard
     @listings = Listing.where(user: current_user).paginate(:page => params[:page], :per_page => 29).order('created_at DESC')
@@ -19,10 +19,9 @@ class ListingsController < ApplicationController
     @trend = Listing.where("impressions_count >=10").limit(5).order('created_at DESC')
     @categories = Category.all
     @users=User.all
-    respond_with(@listing)
+    respond_with(@listings)
   end
-
-
+    
   def show
     @listings= @q.result
     commontator_thread_show(@listing)
@@ -49,9 +48,9 @@ class ListingsController < ApplicationController
             @listing.pictures.create(image: image)
           }
        end
-    flash[:notice]= "L'annonce #{@listing.listing_number} a eté publiee avec succes."
+     flash[:notice]= "L'annonce #{@listing.listing_number} a eté publiee avec succes."
      respond_with(@listing)
-    current_user.create_activity(@listing, "published")
+     current_user.create_activity(@listing, "published")
     end
   end
 
@@ -90,7 +89,7 @@ class ListingsController < ApplicationController
     end
 
     def listing_params
-      params.require(:listing).permit(:name, :description, :price, :image, :category_id, :listing_number)
+      params.require(:listing).permit(:name, :description, :price, :image, :category_id, :listing_number, :user_id)
     end
 
 

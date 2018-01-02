@@ -1,1 +1,2 @@
-
+$('#items-list').append('<%= j render @listings  %>');
+$('.pagination').replaceWith('<%= j will_paginate(@listings) %>');

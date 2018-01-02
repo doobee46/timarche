@@ -1,15 +1,15 @@
-<div class="item">
+<div class="item" id="items-list">
     <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
   <div class="info">
     <span class="item_title"><%= listing.name %></span>
     <span class="avatar_info">
-       <%=link_to seller_path(listing.user) do %>
+       <%=link_to seller_path(listing.user.id) do %>
        <%=image_tag listing.user.avatar.url(:athumb), size: "20x20", alt: "avatar",class: "img-circle"%>
        <p class="has-tooltip" data-toggle="tooltip" title="<%= listing.user.name %>"><%=listing.user.username %></p>
        <%end%>
     </span>
-    <span class="item_price"><%=(listing.price)%>
-        HTG
+    <span class="item_price"><%=number_to_currency(listing.price, unit:"G", precision: 2)%>
+        
     </span>
   </div>
 
@@ -18,13 +18,15 @@
   <%end%>
 
   <div class="block-actions clearfix">
+  
     <%=form_for(Like.new,:remote => true) do |f| %>
     <%= f.hidden_field :listing_id, value: listing.id %>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.button " " , class: 'btn btn-success btn-sm btn-center', data: {disable_with: " saving..."} do %>
-       <span class="glyphicon glyphicon-heart"></span> like   
+        <%= f.button " " , class: 'btn btn-success btn-sm btn-center', data:{disable_with: 'saving...'} do %>
+          <span class="glyphicon glyphicon-heart"></span> like   
+        <%end%>
     <%end%>
-    <%end%>
+         
   </div>                                 
 </div>
         

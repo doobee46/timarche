@@ -1,4 +1,5 @@
 class SellersController < ApplicationController
+  before_filter :set_user 
   respond_to :html, :json
 
   def index
@@ -10,22 +11,27 @@ class SellersController < ApplicationController
   end
 
   def show
-      @user = User.find(params[:id]) 
+      @user = User.friendly.find(params[:id]) 
       @listings= @user.listings.paginate(:page => params[:page], :per_page => 30)
   end
 
   def following
-    @user  = User.find(params[:id])
+    @user  = User.friendly.find.(params[:id])
     @users = @user.followed_users.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
-    @user  = User.find(params[:id])
+    @user  = User.friendly.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
 
-
+  private 
+    
+  def set_user
+    @user = User.friendly.find(params[:id])
+  end
+    
  
 end

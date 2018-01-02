@@ -53,9 +53,7 @@ class Listing < ActiveRecord::Base
         end
      end
      return category_list
- end 
- 
-    
-   
+ end
+
 
 end

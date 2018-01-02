@@ -27,6 +27,16 @@ body.index_bg{
     background-repeat: no-repeat;
 }
 
+body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
+    margin-right: 0;
+}
+
+body.modal-open {
+    overflow: hidden !important;
+}
+
+/*body.modal-open{overflow:hidden!important;}*/
+
 body.welcome{
     padding-top:0px;
 
@@ -917,6 +927,7 @@ ul.trending li.trending_listing .owner-details em {
     background-color:#5C232C;
     padding: 3px 5px;
 }
+
 
 
 .pub_id{

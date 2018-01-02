@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged 
+    
   acts_as_commontator
   acts_as_messageable
   # Added by Koudoku.

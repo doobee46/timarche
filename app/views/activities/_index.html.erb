@@ -11,9 +11,9 @@
                        <% else%>
                       <section id="cd-timeline" class="cd-container">
                         <% @activities.each do |activity|%>
-                            <%unless activity.created_at <= 12.days.ago%>                         
+                            <%#unless activity.created_at <= 12.days.ago%>                         
                                <%= render partial: "activities/#{activity.targetable_type.underscore}/#{activity.action}", locals:{activity: activity}%>                         
-                            <%end%>
+                            <%#end%>
                         <%end%>
                     <%end%>
                 </section> <!-- cd-timeline --> 

@@ -70,19 +70,19 @@
         <div class="col-md-12">
           <div class=" col-md-2">
               <div class="head_brand">
-                  <%= link_to image_tag("logobig.png"), main_app.root_path %>
+                  <%= link_to image_tag("logobig1.png"), main_app.root_path %>
               </div>
           </div>
           <div class="col-md-5">
             <div class="form_nav">
-              <%= search_form_for @q, url: main_app.listings_path , :class => "topnav-form" do  |f| %>
+               <%= search_form_for @q, url: main_app.listings_path , :class => "topnav-form"  do  |f| %>
                   <div class="topnav_search">
                     <%= f.search_field :name_cont, placeholder: 'Recherche de produits, les boutiques, les collections, et vendeurs..', class: 'topnav_inp' %>
                   </div>
                   <%= f.button "Submit" , :class =>'search-button' do %>
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                   <%end%>
-              <% end %> 
+              <% end %>
             </div>  
           </div>
           <div class="main_menu col-md-5">

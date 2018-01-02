@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :listings
+  resources :listings do
+    collection do
+      match 'search' => 'listings#search', via: [:get, :post], as: :search
+    end
+  end
 
   resources :likes, only: :create
 

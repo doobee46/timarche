@@ -1,8 +1,8 @@
-class LikesController < ApplicationController
+class LikesController < ApplicationController  
   before_filter :authenticate_user!
-  
-  def create
-  	 @like = Like.new(like_params)
+ 
+  def create 
+     @like = Like.new(like_params)
      respond_to do|format|
   	 if@like.save
          current_user.create_activity(@like, "like")
@@ -15,7 +15,7 @@ class LikesController < ApplicationController
   end
 
   private
-
+   
   def like_params
   	params.require(:like).permit(:listing_id, :user_id)
   end

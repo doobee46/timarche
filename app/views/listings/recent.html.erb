@@ -20,9 +20,15 @@
           <%end%>
         </div>
       </div>
+      <% if @recent.blank? %>
+        <div class="col-md-6 col-md-offset-3">
+           <p class="no_results "> we don't have data to show you yet, stay tuned more is on the way </p>
+        </div>
+      <% else %>
       <div class="item_list" id="listings">
-         <%=render @recent %>          
-      </div>  
+         <%= render @recent %>         
+      </div>
+      <% end %>
       <%= will_paginate @recent, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
     </div>
     

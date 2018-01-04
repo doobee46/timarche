@@ -4,15 +4,15 @@
       <div class="col-md-12">
         <div class="foot-wrapper">
           <ul class="foot-list">
-            <li><a href="">Features</a></li>
-            <li><a href="">Success Stories</a></li>
-            <li> <%= link_to 'Pricing',main_app.pricing_path %></li>
+            <li><%=link_to "Catalogue", browse_path %></li>
+            <li><a href="">Vendeurs vedettes</a></li>
+            <li> <%= link_to 'Prix',main_app.pricing_path %></li>
             <li><a href="https://www.facebook.com/timarche"><i class="fa fa-facebook  fa-lg"></i></a></li>
             <li><%= link_to (image_tag("footer_icon.png")), main_app.root_path %></li>
             <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-            <li><a href="">about us</a></li>
-            <li><a href="">team</a></li>
-            <li><a href="">Contact us </a></li>
+            <li><a href="">A propos</a></li>
+            <li><a href="">L'quipe</a></li>
+            <li><a href="">Conatactez nous</a></li>
           </ul>
         </div>
       </div>
@@ -24,8 +24,7 @@
     <div class="row">
       <div class="col-md-12">
         <div><%= image_tag("gray_logo.png")%></div>
-        <p class="left">© TIMARCHE is crafted with <i class="fa fa-heart"></i> in New York.</p> <p class="right"><%= link_to "Privacy Policy", main_app.privacy_path %> &amp; <a href="/termsofuse.html">Terms of use</a>
-          http://timarche.mautic.com/p/mtracking.gif
+        <p class="left">© TIMARCHE is crafted with <i class="fa fa-heart"></i> in New York.</p> <p class="right"><%= link_to "Vie Priveé", main_app.privacy_path %> &amp; <a href="/termsofuse.html">Termes d'utilisation</a>
         </p>
       </div>
     </div>

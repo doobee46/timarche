@@ -2,6 +2,7 @@
   <%if @listing.like.blank?%>
   <span></span>
   <%else%>
-  <span class="like"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <%= pluralize(@listing.like.count, 'like' )%></span>
+  <span class="like"><span class="glyphicon glyphicon-heart" aria-hidden="true">
+  </span> <%=number_to_human(pluralize(@listing.like.count, 'like' ))%></span>
   <%end%>
 </div>

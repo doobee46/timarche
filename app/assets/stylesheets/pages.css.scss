@@ -1,4 +1,8 @@
 body#bd_list{
+    background-image:url(image_path("intro_listing.png"));
+	background-size: contain;
+	background-position: center-top;
+    background-repeat: no-repeat;
     background-color:#EEEEEE;
 }
 

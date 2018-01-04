@@ -11,12 +11,9 @@
                       <span class=" bell fa fa-bell"><span class=" notification circle"></span></span>
                   </a>
                 </a>
-                 <!--  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                  </ul>-->
+                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><%= render :partial => 'activities/index'%></a></li>                    
+                  </ul>
               </li>
               <li>    
               <%= link_to content_tag(:span, "", class: "env fa fa-envelope"), main_app.conversations_path%>
@@ -87,31 +84,31 @@
           </div>
           <div class="main_menu col-md-5">
             <ul class="main_nav pull-right">
-                <% if @title == "Dashboard"%>
-                <li>
-                    <%=link_to main_app.browse_path, data: { no_turbolink: true } do %>
-                    <i class="fa fa-shopping-cart"></i>Produits
-                    <%end%>
-               </li>
-                           
+                <% if @title == "Dashboard"%>                           
                 <li>
                     <div class="btn_box">
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                          <i class="fa fa-plus"></i>Poster annonces
+                      <button type="button" class="btn-follow btn-spacer btn-spacer-plus " data-toggle="modal" data-target="#myModal">
+                          <i class="fa fa-plus"></i>annonces
                         </button>                  
                    </div>                    
                </li>
                 <%else%>
-               <li><%=link_to main_app.browse_path, data: { no_turbolink: true } do %>
-                   <i class="fa fa-tag"></i>Marché
-                <%end%>
+                <li>
+                    <div class="btn_box">
+                      <button type="button" class="btn-follow btn-spacer btn-spacer-plus" data-toggle="modal" data-target="#myModal">
+                          <i class="fa fa-plus"></i>Annonces
+                        </button>                  
+                   </div>                    
                </li>
-               <li>
-                  <%= link_to main_app.sellers_path , data: { no_turbolink: true } do %>
-                    <i class="fa fa-users"></i>Vendeurs
-                  <% end %> 
-                </li>
-                <%end%>
+                <li>
+                    <div class="btn_box">
+                      <button type="button" class="btn-follow btn-spacer" data-toggle="modal" data-target="#myModal">
+                          <i class="fa fa-shopping-cart"></i>Stores
+                        </button>                  
+                   </div>     
+               </li>
+                  
+               <%end%>
             </ul>
             
           </div>

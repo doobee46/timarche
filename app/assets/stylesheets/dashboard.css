@@ -258,3 +258,14 @@ p.pro_views{
     padding: 0px 3px;
     text-align: center;
    }
+
+
+.btn-spacer{
+    position: relative;
+    top:-8px;
+}
+
+.btn-spacer-plus{
+    position:relative;
+    right:15px;
+}

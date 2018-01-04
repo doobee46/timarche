@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # 
+    
   extend FriendlyId
   friendly_id :name, use: :slugged 
     
@@ -20,15 +24,10 @@ class User < ActiveRecord::Base
                                    dependent: :destroy                               
   
   has_many :followers, through: :reverse_relationships, source: :follower
+    
+  has_many :notifications, foreign_key: :recipient_id
   
   
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  # 
-  #extend FriendlyId
-  #friendly_id :username, use: :slugged  
-
-
   if Rails.env.development?
       has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#", :feed =>"64x64" }, :default_url => "default_:style.png"
   else

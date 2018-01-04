@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :check_signed_in
+    
   before_filter :set_search
   before_filter :authenticate_user!, except: [:about, :index, :contact, :privacy]
   respond_to :html, :json
@@ -46,6 +48,10 @@ class PagesController < ApplicationController
 
   def set_search
     @q=Listing.search(params[:q])
+  end
+    
+  def check_signed_in
+   redirect_to listings_path if user_signed_in?
   end
 
 end

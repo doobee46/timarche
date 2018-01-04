@@ -126,7 +126,7 @@ ul.list_cat{
 	margin: 0px;
 	border-bottom: 1px dashed #e1e5e9;
 	width: 100%;
-  height: 95px;
+    height: 95px;
 }
 
 .cat_list{
@@ -134,14 +134,14 @@ ul.list_cat{
 }
 
 ul.list_cat li.electro{
-	float:left;
-	display: inline;
-	margin-right: 5px;
-	background-image:url(image_path("store_bg_1.png"));
-  width: 222px;
-  height: 74px;
-  left: -5px;
-  position: relative;
+    float:left;
+    display: inline;
+    margin-right: 5px;
+    background-image:url(image_path("store_bg_1.png"));
+    width: 222px;
+    height: 74px;
+    left: -5px;
+    position: relative;
 }
 
 ul.list_cat li.artisanat{
@@ -261,17 +261,6 @@ ul.list_cat li:last-child{
 	border-radius: 0px 0px 4px 4px;
 	background: none repeat scroll 0% 0% #FFF;
 	height: 260px;
-	/*background-color:rgb(255,255,255);
-	width:222px;
-	height:273px;
-	-moz-box-shadow:0px 1px 2px rgba(0,0,0,0.28);
-	-webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.28);
-	box-shadow:0px 1px 2px rgba(0,0,0,0.28);
-	padding: 4px;
-	margin-right: 25px;
-	display: inline-table;
-	float: left;
-	margin-bottom: 25px;*/
 }
 
 .item a img{
@@ -289,20 +278,23 @@ ul.list_cat li:last-child{
 	text-align: left;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
-    font-size: 13px; 
-    /*margin:0px 0px 10px 8px;*/
-    color:#596377;
+    font-size: 13px;
+    /* margin: 0px 0px 10px 8px; */
+    color: #596377;
     display: block;
     float: left;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width:205px;
+    width: 100%;
     text-decoration: none;
-    margin:5px 0px 4px 12px;
-    padding-right:3px;
+    margin: 3px 0px 4px 0px;
+    padding-left: 8px;
     text-transform: capitalize;
-    letter-spacing:1px;
+    letter-spacing: 1px;
+    padding-bottom: 3px;
+    border-bottom: 1px dashed #d1d4d5;
+    padding-top: 6px;
 }
 
 .item .info span.item_price{
@@ -323,8 +315,8 @@ ul.list_cat li:last-child{
 }
 
 .item .info a.store{
-	  margin: 4px 0px 0px 4px;
-	  font-family: 'Source Sans Pro', sans-serif;
+	margin: 4px 0px 0px 4px;
+	font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 11px; 
     letter-spacing: 1px;
@@ -464,8 +456,6 @@ ul.list_cat li:last-child{
 }
 
 .btn-center{
-    position: relative;
-    left: -45px;
     letter-spacing: 1px;
 }
 
@@ -589,4 +579,23 @@ table > tbody > tr > td{
     margin-top: 10px;
     letter-spacing:1px;
     
+}
+
+.round-button {
+    display:block;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #464646;
+    box-shadow: 0 0 3px gray;
+    font-size:20px;
+    font-weight:bold;
+}
+.round-button:hover {
+    background: #262626;
 }

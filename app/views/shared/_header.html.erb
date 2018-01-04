@@ -8,7 +8,7 @@
               <li class="clearfix">
                 <a href="">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                      <span class=" bell fa fa-bell"><span class=" notification circle"></span></span>
+                      <span class=" bell fa fa-bell "><span class=" notification circle"></span></span>
                   </a>
                 </a>
                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
@@ -46,6 +46,11 @@
                       <span class="fa fa-sign-out"></span> Déconnexion
                     <% end %> 
                   </li>
+                  <li>
+                     <%= link_to ads_path, data: { no_turbolink: true } do %>
+                      <span class="glyphicon glyphicon-tasks"></span> Advertise with us
+                      <% end %>
+                  </li> 
                 </ul>
               </li>
               <% else %>
@@ -95,22 +100,21 @@
                 <%else%>
                 <li>
                     <div class="btn_box">
-                      <button type="button" class="btn-follow btn-spacer btn-spacer-plus" data-toggle="modal" data-target="#myModal">
-                          <i class="fa fa-plus"></i>Annonces
+                       <button type="button" class="btn-follow btn-spacer btn-spacer-plus" data-toggle="modal" data-target="#myModal">
+                          <i class="fa fa-plus"></i>Poster Ici
                         </button>                  
                    </div>                    
                </li>
                 <li>
                     <div class="btn_box">
-                      <button type="button" class="btn-follow btn-spacer" data-toggle="modal" data-target="#myModal">
+                      <button type="button" class="btn-follow btn-spacer">
                           <i class="fa fa-shopping-cart"></i>Stores
                         </button>                  
                    </div>     
                </li>
                   
                <%end%>
-            </ul>
-            
+            </ul>           
           </div>
         </div>
       </div>

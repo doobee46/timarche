@@ -9,6 +9,7 @@ namespace :listings do
        	  puts "[DEBUG] Creating listings for user #{user.id} of #{User.last.id}"
           
             10.times do|n|
+              categories = [1,2,3,4,5,6,7,8,]
               name = Faker::Lorem.word   	 
               price= Faker::Number.number(4)
               image = File.open(Dir.glob(File.join(Rails.root, 'sampleimages','*')).sample)
@@ -16,7 +17,8 @@ namespace :listings do
               user.listings.create!(name: name, 
                                     description: description,
                                     image: image,
-                                    price: price)
+                                    price: price,
+                                    category_id: categories.sample)
              end    
          end 
      end

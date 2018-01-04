@@ -3,18 +3,18 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-
-$(document).ready ->
+->
   $('table#cur_listing').DataTable()
   return
 
-$ ->
+->
   $('[data-toggle="tooltip"]').tooltip()
   return
 
 $(document).on 'page:fetch', ->
   $('#spinner').show()
   return
+
 $(document).on 'page:receive', ->
   $('#spinner').hide()
   return

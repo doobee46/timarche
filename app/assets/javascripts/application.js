@@ -24,12 +24,13 @@
 //= require messages
 //= require_tree .
 
+
 $(document).ready(function() {
   if ($('.pagination').length) {
     $(window).scroll(function() {
-      var url = $('.pagination .pagination-sm .next_page').attr('href');
+      var url = $('.pagination .next_page').attr('href');
       if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-        $('.pagination').text("Please Wait...");
+        $('.pagination ').text("loading more...");
         return $.getScript(url);
       }
     });

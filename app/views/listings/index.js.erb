@@ -1,2 +1,6 @@
-$('#items-list').append('<%= j render @listings  %>');
-$('.pagination').replaceWith('<%= j will_paginate(@listings) %>');
+$('#listings').append('<%= escape_javascript render(@listings) %>');
+<% if @listings.next_page %>
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@listings) %>');
+<% else %>
+$('.pagination').remove();
+<% end %>

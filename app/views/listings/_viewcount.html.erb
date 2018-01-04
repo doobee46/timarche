@@ -5,7 +5,7 @@
   <%else%>
   <span class="like">
 	  <i class="fa fa-eye"></i>
-	  <%= pluralize(@listing.impressions.count, 'view' )%>
+	  <%= number_to_human(pluralize(@listing.impressions.count, 'view'))%>
   </span>
   <%end%>
 </div>

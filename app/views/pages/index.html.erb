@@ -48,7 +48,11 @@
                   <div class="hr">
                      <div class="inner">or</div> 
                   </div>
+                     <% if user_signed_in? %>
                      <%= button_to "Voir Publications", browse_path, :method => :get, class: 'btn btn-action'%>
+                     <% else %>
+                     <%= button_to "Voir Publications", main_app.user_session_path, class: 'btn btn-action'%>
+                     <% end %>
               </div>
             </div>
         </div>

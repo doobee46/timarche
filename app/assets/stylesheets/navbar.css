@@ -222,13 +222,13 @@ ul.main_nav li a i{
 
 .topnav ul li a{
     display: block;
-    padding: 0 10px;
+    padding: 0 8px;
     font-family:"open sans",sans-serif;
-    font-size:12px;
+    font-size:11px;
     line-height:30px;
     color:rgb(68,68,68);
     text-align:left;
-    text-transform: capitalize;
+    text-transform: uppercase;
     text-decoration: none;
     font-weight:400;
     letter-spacing:1px;
@@ -252,7 +252,7 @@ ul.main_nav li a i{
 /*.topnav ul li:first-child a:hover {
     background-color:rgb(255,255,255);
     color:none;
-}*/
+}
 
 .topnav ul li:nth-child(9) a{
     padding: 0 22px;
@@ -279,14 +279,14 @@ ul.main_nav li a i{
 }
 
 .topnav ul li:last-child a{
-    font-family:Oswald;
+    font-family:"open sans",sans-serif;
     font-size:8px;
     color:rgb(255,255,255);
     text-align:left;
     background-color:rgb(0,16,64);
     padding: 0 2px;
     
-}
+}*/
 
 .topnav ul li.dropdown ul.dropdown-menu {
     width: 60px;

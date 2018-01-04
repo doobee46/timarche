@@ -14,14 +14,13 @@
             <span class="fa fa-fire"></span>Trending
           <%end%>
         </div>
-      </div>
-      <div class="item_list" >
-         <%= render @listings %>          
-      </div>
-           
-    </div>
-    
+      </div>     
+     <div class="item_list" >
+        <div id="listings">
+          <%= render @listings %>
+       </div>        
+     </div>
+       <%= will_paginate @listings  %>
   </div>
-  <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination" %>
 </div>
 

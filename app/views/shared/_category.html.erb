@@ -6,34 +6,15 @@
                 <ul>
                   <li>
                      <%= link_to browse_path  do %>
-                        <span class="fa fa-home"></span>
+                        <span class="fa fa-home"></span>Home
                      <%end%>
                   </li>
                     <% @categories.each do |category| %>
                     <li><%= link_to category.name, category_path(category.slug) %></li>
                     <%end%>
-                    <li>
-                      <%= link_to 'vendeurs vedettes', main_app.sellers_path , data: { no_turbolink: true }  %>
-                    </li>
-                    <li role="presentation" class="dropdown">
-                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                        About<span class="caret"></span>
-                      </a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><span class="fa fa-phone-square"></span>Contact</a></li>
-                        <li><a href="#"><span class="fa fa-pencil-square-o"></span>Ouvrir une boutique</a></li>
-                        <li><a href="#"><span class="fa fa-briefcase"></span>Jobs</a></li>
-                        <li>
-                          <%= link_to ads_path, data: { no_turbolink: true } do %>
-                          <span class="glyphicon glyphicon-tasks"></span> Advertise with us
-                          <% end %>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a href=""></a></li>
                 </ul>
             </div>
-        </div>
-      </div>
+         </div>
+       </div>
     </div>
 </div>

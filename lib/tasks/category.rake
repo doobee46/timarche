@@ -4,14 +4,17 @@ namespace :category do
 
     Category.create([
                {name: 'Electromenagers'},
-               {name: 'Artisanat'},
-               {name: 'fashion'},
+               {name: 'Vehicules'},
+               {name: 'Immobiliers'},
                {name: 'Maisons'},
-               {name: 'Pour hommes'},
-               {name: 'Pour femmes'},
-               {name: 'Antiquités'},
-               {name: 'Enfants'},
+               {name: 'Ordinateurs'},
                {name: 'Bijoux'},
+               {name: 'Electroniques'},
+               {name: 'Antiquités'},
+               {name: 'Cellphones'},
+               {name: 'Outils'},
+               {name: 'Sports'},
+               {name: 'Autres'},
                ])
     end
    

@@ -151,7 +151,7 @@ ul.main_nav li{
 
 ul.main_nav li a{
   display: block;
-  padding: 0px 25px ;
+  /*padding: 0px 25px ;*/
   line-height:50px;
   transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
   font-family: 'Open Sans', sans-serif;
@@ -165,7 +165,6 @@ ul.main_nav li a{
   letter-spacing:1px;
 }
 
-ul.main_nav li a i
 
 ul.main_nav li a:hover{
     color:#4D913C;

@@ -14,20 +14,19 @@
   <%= render :partial => 'layouts/zopim'%>
   <%end%>
 </head>
-	  <body>
-    
+  <body>
     <% if content_for?(:body_attributes) %>
       <%= yield(:body_attributes) %> 
     <% end %>
-		<% unless @title == "welcome" %>
-		   <%= render :partial => 'shared/header'%>
-		<%end%>
-		<div class="container">
-	       <%= flash_messages %>
-		</div>
-        <div class="backdrop" id="spinner" style="display:none;"></div>
-		<%= yield :koudoku %>
-		<%= yield %>
-		<%= render :partial => 'shared/footer'%>
+    <% unless @title == "welcome" %>
+       <%= render :partial => 'shared/header'%>
+    <%end%>
+    <div class="container">
+       <%= flash_messages %>
+    </div>
+    <div class="backdrop" id="spinner" style="display:none;"></div>
+    <%= yield :koudoku %>
+    <%= yield %>
+    <%= render :partial => 'shared/footer'%>
     </body>
 </html>

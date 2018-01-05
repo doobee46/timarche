@@ -90,17 +90,17 @@ span.store{
   width: 100%;
   height: auto;
   padding: 8px 5px;
-  border-bottom: 1px dashed #D8DAE4;
+  border-bottom: 1px solid #D8DAE4;
  
 }
 
 .body_desc p{
-    font-size: 13px;
+    font-size: 12px;
     color: #333 /*#596377*/;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'open sans', sans-serif;
     letter-spacing: 1px;
     text-transform: capitalize;
-    margin-top: 12px;
+    margin-top: 10px;
     font-weight: 300;
     font-style: normal;
     margin-left: -5px;
@@ -255,5 +255,10 @@ span.store{
   opacity: 0.5;
 }
 
+.positioned{
+  margin-top: 10px;
+  position: relative;
+  top: 20px;
+}
 
 

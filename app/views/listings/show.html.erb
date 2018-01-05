@@ -43,8 +43,8 @@
 					<div class="stats">
 					<%= render :partial => 'listings/like'%>	
 					<%= render :partial => 'listings/viewcount'%>
-                    </div>
-                    <p class="thread_header">Description de Produits</p>
+          </div>
+          <p class="thread_header positioned">Description de Produits</p>
 					<div class="body_desc">
 					   <p><%=@listing.description%></p>
 					</div>
@@ -75,11 +75,11 @@
 						  <span>En vente par</span>
 						  <h3><%= link_to @listing.user.username %></h3>
 						</div>
-                        <% unless current_user == @user %>
-                        <%= link_to new_message_path(to: @listing.user.id), class: 'btn btn-danger btn-lg btn-cont' do %>
-                        <i class="fa fa-pencil-square-o"></i>Contact Vendeur
-                        <% end %>
-                        <% end %>
+              <% unless current_user == @user %>
+              <%= link_to new_message_path(to: @listing.user.id), class: 'btn btn-danger btn-lg btn-cont' do %>
+              <i class="fa fa-pencil-square-o"></i>Contact Vendeur
+              <% end %>
+              <% end %>
 					</div>
 				</div>
 			</div>

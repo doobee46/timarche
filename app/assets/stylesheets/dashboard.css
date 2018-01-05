@@ -45,9 +45,11 @@ ul.nav.nav-tabs li a i{
 }
 
 .btn_box{
-   position:relative;
-   top: 7px;
-   left:12px;
+    position: relative;
+    top: 7px;
+    left: 12px;
+    height: 45px;
+    margin: 0px 0px 6px 6px;
 }
 
 .btn_box button{
@@ -269,5 +271,46 @@ p.pro_views{
 
 .btn-spacer-plus{
     position:relative;
-    right:15px;
+    right:10px;
 }
+
+.btn-spacer-plus-left{
+  position:relative;
+  left:10px;
+}
+
+ .btn-nav{
+ 	cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    color: #596377;
+    border-radius: 4px;
+    display: inline-block;
+    -webkit-transition: background-color 100ms ease 0s;
+    transition: background-color 100ms ease 0s;
+    font-family: "open sans",sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 1px solid #C2C9D6;
+    background-color: #FCFDFD;
+    /* box-shadow: 0px 1px 0px 0px #FFF inset; */
+    width: 100%;
+    padding: 10px 10px;
+    margin: 7px auto;
+    /* display: block; */
+ }
+
+ .btn-nav:hover{
+ 	background-color:#1ABC9C /*#5C232C #596377*/;
+ 	color:#fff;
+ 	text-transform: uppercase;
+ }
+
+.btn-nav i{
+    width:100%;
+    margin:0 auto; 
+}
+ 

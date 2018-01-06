@@ -3,6 +3,8 @@ require 'will_paginate/array'
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  
+  before_action :set_notifications, if: :user_signed_in?
       
   before_filter :set_search 
 
@@ -18,7 +20,9 @@ class ApplicationController < ActionController::Base
     @q = Listing.search(params[:q])
   end
     
- 
+  def set_notifications
+    @notifications = Notification.where(recipient: current_user).recent
+  end
     
   
   protected

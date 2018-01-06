@@ -35,7 +35,6 @@ module Commontator
           sub = @thread.config.thread_subscription.to_sym
           @thread.subscribe(@user) if sub == :a || sub == :b
           Subscription.comment_created(@comment)
-
           @per_page = params[:per_page] || @thread.config.comments_per_page
            current_user.create_activity(@comment, "commented")
           format.html { redirect_to @thread }

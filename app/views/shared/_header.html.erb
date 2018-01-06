@@ -1,69 +1,4 @@
 <div class="header">
-  <div class="mini_header">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="mini_nav clearfix">
-             <%if user_signed_in?%>
-              <li class="clearfix">
-                <a href="">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                      <span class=" bell fa fa-bell "><span class=" notification circle"></span></span>
-                  </a>
-                </a>
-                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"></a></li>                    
-                  </ul>
-              </li>
-              <li>    
-              <%= link_to content_tag(:span, "", class: "env fa fa-envelope"), main_app.conversations_path%>
-                <% if current_user.mailbox.inbox.present? %>
-                  <span class="badge"><%=current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)%></span>
-               <%end%>
-              </li>
-              <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle avat" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                  <span class="mini_avatar">
-                     <%= image_tag current_user.avatar.url(:athumb), class: "img-circle",size: "22x22" %>
-                  </span>
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                      <%= link_to content_tag(:span, "Dashboard", class: "glyphicon glyphicon-tasks"), 
-                       main_app.dashboard_path%> 
-                  </li>
-                  <li>
-                      <%= link_to content_tag(:span, " Edit Account", class: "fa fa-pencil-square-o"), 
-                        main_app.edit_user_registration_path%>
-                  </li>
-                  <li>
-                      <%= link_to content_tag(:span, "Conversations", class: "fa fa-comment"), 
-                        main_app.conversations_path%>  
-                  </li>
-                  <li>
-                    <%= link_to main_app.destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
-                      <span class="fa fa-sign-out"></span> Déconnexion
-                    <% end %> 
-                  </li>
-                  <li>
-                      <%= link_to content_tag(:span, " ", class: "glyphicon glyphicon-tasks"), ads_path%>
-                  </li> 
-                </ul>
-              </li>
-              <% else %>
-              <li>
-                <%= link_to "S'inscrire",main_app.user_registration_path %>
-              </li>
-              <li>
-                <%= link_to "Se connecter",main_app.user_session_path %> 
-              </li>
-            <%end%>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="main_header">
     <div class="container">
       <div class="row">
@@ -87,65 +22,64 @@
           </div>
           <div class="main_menu col-md-5">
             <ul class="main_nav pull-right">
-                <% if @title == "Dashboard"%>                           
-                <li>
+               <% if @title == "Dashboard"%>                           
+                <li> 
                     <div class="btn_box">
-                        <button type="button" class="btn-nav btn-spacer btn-spacer-plus " data-toggle="modal" data-target="#myModal">
-                          <i class="fa fa-plus"></i>
-                        </button>                  
-                   </div>                    
+                        <button type="button" class="btn-follow btn-spacer btn-spacer-plus " data-toggle="modal" data-target="#myModal">
+                          <i class="fa fa-plus"></i> Poster ici
+                        </button>
+                    </div>
+                </li>
+               <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle avat" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                       <i class="fa fa-bell"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+
+                    </ul>                         
                </li>
-               <li>
-                   <div class="btn_box">
-                        <button type="button" class="btn-nav btn-spacer btn-spacer-plus ">
-                          <i class="fa fa-bell"></i>
-                        </button>        
-                   </div>     
+                <li>
+                  <%= link_to content_tag(:span, "", class: "env fa fa-envelope"), main_app.conversations_path%>
+                  <% if current_user.mailbox.inbox.present? %>
+                      <span class="badge"><%=current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)%></span>
+                  <%end%>                                        
                </li>
-               <li>
-                   <div class="btn_box">
-                      <%= link_to content_tag(:span, "", class: "btn-nav btn-spacer fa fa-envelope"), main_app.conversations_path%>
-                      <% if current_user.mailbox.inbox.present? %>
-                          <span class="badge"><%=current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)%></span>
-                      <%end%>                                    
-                   </div>     
-               </li>
-               <li>
-                   <div class="btn_box">    
-                     <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle avat" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                          <span class="mini_avatar">
-                             <%= image_tag current_user.avatar.url(:athumb), class: "img-circle",size: "35x35" %>
-                          </span>
-                          <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li>
-                              <%= link_to content_tag(:span, "Dashboard", class: "glyphicon glyphicon-tasks"), 
-                               main_app.dashboard_path%> 
-                          </li>
-                          <li>
-                              <%= link_to content_tag(:span, " Edit Account", class: "fa fa-pencil-square-o"), 
-                                main_app.edit_user_registration_path%>
-                          </li>
-                          <li>
-                              <%= link_to content_tag(:span, "Conversations", class: "fa fa-comment"), 
-                                main_app.conversations_path%>  
-                          </li>
-                          <li>
-                            <%= link_to main_app.destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
-                              <span class="fa fa-sign-out"></span> Déconnexion
-                            <% end %> 
-                          </li>
-                        </ul>
-                      </li>                     
-                   </div>     
-               </li> 
+                <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle avat" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                  <span class="mini_avatar">
+                     <%= image_tag current_user.avatar.url(:athumb), class: "img-circle",size: "22x22" %>
+                  </span>
+                  <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                          <%= link_to content_tag(:span, "Dashboard", class: "glyphicon glyphicon-tasks"), 
+                           main_app.dashboard_path%> 
+                      </li>
+                      <li>
+                          <%= link_to content_tag(:span, " Edit Account", class: "fa fa-pencil-square-o"), 
+                            main_app.edit_user_registration_path%>
+                      </li>
+                      <li>
+                          <%= link_to content_tag(:span, "Conversations", class: "fa fa-comment"), 
+                            main_app.conversations_path%>  
+                      </li>
+                      <li>
+                        <%= link_to main_app.destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
+                          <span class="fa fa-sign-out"></span> Déconnexion
+                        <% end %> 
+                      </li>
+                      <li>
+                          <%= link_to content_tag(:span, " ", class: "glyphicon glyphicon-tasks"), ads_path%>
+                      </li> 
+                    </ul>
+              </li>
+                
                 <%else%>
                 <li>
                     <div class="btn_box">
-                       <button type="button" data-toggle="tooltip" data-placement="bottom" title="Poster Annonces Ici" class="btn-nav btn-spacer btn-spacer-plus">
-                          <i class="fa fa-plus"></i>
+                       <button type="button" class="btn-follow btn-spacer btn-spacer-plus">
+                          <i class="fa fa-plus"></i>Poster ici
                         </button>                  
                    </div>                    
                </li>                 

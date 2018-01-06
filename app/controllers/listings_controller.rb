@@ -39,6 +39,7 @@ class ListingsController < ApplicationController
   end
 
   def create
+    @users = User.all
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
     if @listing.save
@@ -48,8 +49,10 @@ class ListingsController < ApplicationController
             @listing.pictures.create(image: image)
           }
        end
-     current_user.create_activity(@listing, "published")
-                
+     #current_user.create_activity(@listing, "published")
+     (@users - [current_user]).each do |user|
+       Notification.create(recipient: user, actor: current_user, action: "posted", notifiable: @listing)
+     end 
      flash[:notice]= "L'annonce #{@listing.listing_number} a eté publiee avec succès."
      respond_with(@listing)  
     end

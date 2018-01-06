@@ -22,6 +22,12 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   
   mount Commontator::Engine => '/commontator'
+    
+  resources :notifications do
+    collection do
+      post :mark_as_read
+    end
+  end
 
 
   get 'pages/index'

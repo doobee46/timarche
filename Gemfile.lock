@@ -218,6 +218,7 @@ GEM
     paperclip-dropbox (1.2.2)
       dropbox-sdk (~> 1.3)
       paperclip (>= 3.1, < 5)
+    pg (0.21.0)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
@@ -287,7 +288,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.10)
     stripe (1.17.2)
       json (~> 1.8.1)
       mime-types (>= 1.25, < 3.0)
@@ -369,6 +369,7 @@ DEPENDENCIES
   open_uri_redirections
   paperclip (~> 4.2)
   paperclip-dropbox (>= 1.1.7)
+  pg (~> 0.20)
   quiet_assets
   rails (= 4.1.4)
   rails_12factor
@@ -380,7 +381,6 @@ DEPENDENCIES
   social-share-button
   spinner.rb
   spring
-  sqlite3
   tabulous
   thin
   tinymce-rails

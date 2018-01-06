@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
+gem 'pg', '~> 0.20' 
 gem "paperclip", "~> 4.2"
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "font-awesome-rails"
@@ -42,7 +43,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'jquery-datatables-rails', '~> 3.3.0'
-#gem 'pg'
 gem 'bundler'
 gem 'rails_config'
 gem 'devise', github: 'plataformatec/devise'
@@ -61,15 +61,16 @@ gem 'daemon-spawn'
 gem 'devise-i18n'
 gem 'spinner.rb' 
 
+
 group :production do 
+  gem 'pg', '~> 0.20'  
   gem 'rails_12factor'
-  #gem 'faker'
+  gem 'faker'
   gem 'delayed_job_active_record'
   gem "daemons"
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'faker'

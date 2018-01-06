@@ -1,13 +1,13 @@
 default: &default
   adapter: postgresql
   host: localhost
-  username: doobee46
-  password:
+  username: doobee56
+  password: metro246
   template: template0
   port:    5432
   timeout: 5000
 development:
-  adapter: sqlite3
+  <<: *default
   database: timarche_dev
 test:
   <<: *default

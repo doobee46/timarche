@@ -5,9 +5,9 @@
             <div class="topnav">
                 <ul>
                   <li>
-                     <%= link_to browse_path  do %>
-                        <span class="fa fa-home"></span>Home
-                     <%end%>
+                      <a href ="/browse">
+                          <span class="fa fa-home"></span>Home
+                      </a> 
                   </li>
                     <% @categories.each do |category| %>
                     <li><%= link_to category.name, category_path(category.slug) %></li>

@@ -7,16 +7,16 @@
         <h3>Ajouts Populaire</h3>
         <p>Découvrez les plus prisés dans le marché.</p>
         <div class="btn-group" role="group" aria-label="...">
-          <%= link_to browse_path, class: "btn btn-default" do %>
-            <span class="fa fa-arrow-circle-o-left"></span>Back
-          <%end%>
-          <%= link_to recent_path ,class: "btn btn-default" do %>
-            <span class="fa fa-clock-o"></span>Recent
-          <%end%>
+           <a href ="/browse" class="btn btn-default">
+              <span class="fa fa-arrow-circle-o-left"></span>back
+           </a> 
+            <a href ="/recent" class="btn btn-default">
+              <span class="fa fa-clock-o"></span>Recent
+           </a> 
           <% unless @title =='popular' %>
-          <%= link_to popular_path , class: "btn btn-default" do %>
-            <span class="fa fa-fire"></span>Trending
-          <%end%>
+          <a href ="/popular" class="btn btn-default">
+              <span class="fa fa-fire"></span>Trending
+           </a>  
           <%end%>
         </div>
       </div>

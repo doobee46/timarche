@@ -37,7 +37,7 @@
               <div class="jumbo_center center-block">
                  <h1>Votre place de marché</h1>
                   <p>C'est l'endroit où vendre, louer, échanger et partager des biens et services avec les autres membres de la place de marché.</p>
-                   <%= search_form_for @q , :class => "navbar-form" do  |f| %>
+                   <%= search_form_for @q, url: main_app.listings_path , :class => "navbar-form" do  |f| %>
                       <div class=" form-group">
                         <%= f.search_field :name_cont, placeholder: 'Recherche de produits, les boutiques, les collections, et vendeurs...' %>
                       </div>

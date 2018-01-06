@@ -7,15 +7,15 @@
         <h3><%=@listing.name%></h3>
         <p>Published by : <%=@listing.user.name%></p>
         <div class="btn-group" role="group" aria-label="...">
-           <%= link_to browse_path, class: "btn btn-default" do %>
-            <span class="fa fa-arrow-circle-o-left"></span>Back
-          <%end%>
-          <%= link_to recent_path ,class: "btn btn-default" do %>
-            <span class="fa fa-clock-o"></span>Recent
-          <%end%>
-          <%= link_to popular_path , class: "btn btn-default" do %>
-            <span class="fa fa-fire"></span>Trending
-          <%end%>
+           <a href ="/browse" class="btn btn-default">
+              <span class="fa fa-arrow-circle-o-left"></span>back
+           </a>
+           <a href ="/recent" class="btn btn-default">
+              <span class="fa fa-clock-o"></span>Recent
+           </a> 
+           <a href ="/popular" class="btn btn-default">
+              <span class="fa fa-fire"></span>Trending
+           </a> 
         </div>
       </div>    
 <div class="product">

@@ -7,12 +7,12 @@
         <h3>Touts les Annonces</h3>
         <p>Découvrez les annonces de partout dans le marché.</p>
         <div class="btn-group" role="group" aria-label="...">
-          <%= link_to recent_path ,class: "btn btn-default" do %>
-            <span class="fa fa-clock-o"></span>Recent
-          <%end%>
-          <%= link_to popular_path , class: "btn btn-default" do %>
-            <span class="fa fa-fire"></span>Trending
-          <%end%>
+           <a href ="/recent" class="btn btn-default">
+              <span class="fa fa-clock-o"></span>Recent
+           </a> 
+           <a href ="/popular" class="btn btn-default">
+              <span class="fa fa-fire"></span>Trending
+           </a>  
         </div>
       </div>     
      <div class="item_list" >

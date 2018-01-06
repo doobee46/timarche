@@ -7,17 +7,18 @@
         <h3>Nouveaux Ajouts</h3>
         <p>Découvrez les tous dernier ajouts dans le marché.</p>
         <div class="btn-group" role="group" aria-label="...">
-          <%= link_to browse_path, class: "btn btn-default" do %>
-            <span class="fa fa-arrow-circle-o-left"></span>Back
-          <%end%>
+          
+           <a href ="/browse" class="btn btn-default">
+              <span class="fa fa-arrow-circle-o-left"></span>back
+           </a>
           <% unless @title =='recent' %>
-          <%= link_to recent_path ,class: "btn btn-default" do %>
-            <span class="fa fa-clock-o"></span>Recent
+           <a href ="/recent" class="btn btn-default">
+              <span class="fa fa-clock-o"></span>Recent
+           </a> 
           <%end%>
-          <%end%>
-          <%= link_to popular_path , class: "btn btn-default" do %>
-            <span class="fa fa-fire"></span>Trending
-          <%end%>
+           <a href ="/popular" class="btn btn-default">
+              <span class="fa fa-fire"></span>Trending
+           </a>
         </div>
       </div>
       <% if @recent.blank? %>

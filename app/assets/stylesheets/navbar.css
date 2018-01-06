@@ -241,11 +241,11 @@ ul.main_nav li a i{
     color:rgb(255,255,255);
 }
 
-.topnav ul li:first-child{
+/*.topnav ul li:first-child{
     border-left:none; 
-}
+}*/
 .topnav ul li:first-child a{
-    padding: 0  7px;
+    padding: 0  8px;
    
 }
 /*.topnav ul li:first-child a:hover {

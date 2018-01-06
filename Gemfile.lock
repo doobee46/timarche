@@ -231,7 +231,7 @@ GEM
       omniauth-oauth (~> 1.0)
     open_uri_redirections (0.2.1)
     orm_adapter (0.5.0)
-    pg (0.21.0)
+    pg (0.20.0)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
@@ -382,7 +382,7 @@ DEPENDENCIES
   omniauth-twitter
   open_uri_redirections
   paperclip!
-  pg (~> 0.20)
+  pg (~> 0.20.0)
   quiet_assets
   rails (= 4.1.4)
   rails_12factor

@@ -64,7 +64,7 @@ gem 'spinner.rb'
 
 
 group :production do 
-  gem 'pg', '~> 0.20'  
+  gem 'pg', '~> 0.20.0'  
   gem 'rails_12factor'
   gem 'faker'
   gem 'delayed_job_active_record'

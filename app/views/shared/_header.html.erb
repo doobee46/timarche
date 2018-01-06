@@ -42,12 +42,12 @@
                         main_app.conversations_path%>  
                   </li>
                   <li>
-                    <%= link_to main_app.destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
+                    <% link_to main_app.destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
                       <span class="fa fa-sign-out"></span> Déconnexion
                     <% end %> 
                   </li>
                   <li>
-                     <%= link_to ads_path, data: { no_turbolink: true } do %>
+                     <% link_to ads_path, data: { no_turbolink: true } do %>
                       <span class="glyphicon glyphicon-tasks"></span> Advertise with us
                       <% end %>
                   </li> 
@@ -140,7 +140,7 @@
                             <% end %> 
                           </li>
                           <li>
-                             <%= link_to ads_path, data: { no_turbolink: true } do %>
+                             <% link_to ads_path, data: { no_turbolink: true } do %>
                               <span class="glyphicon glyphicon-tasks"></span> Advertise with us
                               <% end %>
                           </li> 

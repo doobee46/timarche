@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
-gem 'pg', '~> 0.20' 
 gem "paperclip", "~> 4.2"
-gem "paperclip-dropbox", ">= 1.1.7"
+#gem "paperclip-dropbox", ">= 1.1.7"
 gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'sass-rails', '~> 4.0.5'
@@ -28,6 +27,7 @@ gem 'groupdate'
 gem 'intercom-rails'
 gem 'tinymce-rails'
 gem 'koudoku',github: 'doobee46/koudoku'
+gem 'aws-sdk', '~> 2.3'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -73,7 +73,7 @@ end
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'faker'
+  #gem 'faker'
   gem 'thin'
   gem 'ruby-progressbar'
   gem "letter_opener", :group => :development

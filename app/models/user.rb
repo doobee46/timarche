@@ -32,8 +32,8 @@ class User < ActiveRecord::Base
       has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#", :feed =>"64x64" }, :default_url => "default_:style.png"
   else
   has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#" }, :default_url => "default_:style.png",
-                    :storage => :dropbox,
-                    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
+                    :storage => :s3,
+                    :s3_credentials => Rails.root.join("config/dropbox.yml")
   end
   #validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png","image/jpg"] }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   Paperclip.options[:content_type_mappings] = {nil => "image/png"}
 
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable
   attr_accessor :login
   
   #->Prelang (user_login:devise/username_login_support)

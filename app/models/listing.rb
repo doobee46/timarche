@@ -6,7 +6,7 @@ class Listing < ActiveRecord::Base
   belongs_to :user, counter_cache: :listings_count
   belongs_to :category
   has_many   :pictures, dependent: :destroy
-  has_many   :likes, dependent: :destroy, through: :users
+  has_many   :like, dependent: :destroy, through: :users
   has_many   :activities
   
   #include SimpleRecommender::Recommendable

@@ -40,17 +40,6 @@
     top:5px;
 }
 
-ul.nav_menu{
-  list-style-type: none;
-  margin: 0px ; padding:0px;
-}
-
-ul.nav_menu {
-  float:left;
-  display: block;
-  padding: 0px 25px ;
-}
-
 i.fa.fa-bell{
     font-size: 28px;
     color: #bbb;
@@ -63,8 +52,18 @@ i.fa.fa-bell{
     left:-420px !important;
 }
 
+.notifications{
+  position:relative;
+  right:55px;
+}
 
+.move-left{
+  left:-149px !important;
+}
 
+.account{
+  top:-15px !important;
+}
 
 /*ul.main_nav{
   list-style-type: none;

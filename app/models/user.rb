@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
     
   has_many :notifications, foreign_key: :recipient_id
   
-  has_many :like, foreign_key: :user_id
+  #has_many :like, foreign_key: :user_id
  
   
   if Rails.env.development?

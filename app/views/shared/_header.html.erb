@@ -19,73 +19,62 @@
                   <%end%>
               <% end %>
             </div>  
-          </div>
-          <div class="main_menu col-md-5">
-            <ul class="main_nav pull-right">
-               <% if @title == "Dashboard"%>                           
-                <li> 
-                    <div class="btn_box">
-                        <button type="button" class="btn-follow btn-spacer btn-spacer-plus " data-toggle="modal" data-target="#myModal">
-                          <i class="fa fa-plus"></i> Poster ici
-                        </button>
-                    </div>
-                </li>
-               <li role="presentation" class="dropdown">
-                    <a class="dropdown-toggle avat" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                       <i class="fa fa-bell"></i>
+           </div>
+           <ul class="nav_menu pull-right">
+               <li class="dropdown dropdown-notifications" data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
+                    <a href="#notifications-panel" class="dropdown-toggle" data-behavior="notifications-link" data-toggle="dropdown">              
+                      <i data-count="<%=current_user.notifications.unread.count%>" class="fa fa-bell notification-icon"></i>
                     </a>
-                    <ul class="dropdown-menu" role="menu">
 
-                    </ul>                         
+                    <div class="dropdown-container move-down">
+                      <div class="dropdown-toolbar">
+                        <div class="dropdown-toolbar-actions">
+                          <a href="#">Mark all as read</a>
+                        </div>
+                        <h3 class="dropdown-toolbar-title">Notifications (<%=current_user.notifications.count%>)</h3>
+                      </div><!-- /dropdown-toolbar -->
+
+                      <ul class="dropdown-menu" >
+                         <li data-behavior="notification-items" ></li>
+                      </ul>
+
+                      <div class="dropdown-footer text-center">
+                        <a href="#">View All</a>
+                      </div><!-- /dropdown-footer -->
+
+                    </div><!-- /dropdown-container -->
+                </li><!-- /dropdown -->
+               <li>
+                   <div class="btn-group dropdown">
+                      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span class="caret"></span>
+                      </button>
+
+                      <div class="dropdown-container move-left">
+
+                        <div class="dropdown-toolbar">
+                          Signed in as<br>
+                          <strong><%=current_user.name%></strong>
+                        </div><!-- /dropdown-toolbar -->
+
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Your profile</a></li>
+                          <li><a href="#">Vendeur Dashboard</a></li>
+                          <li><a href="#">Inbox</a></li>
+                          <li><a href="#">Integrations</a></li>
+                          <li><a href="#">Help</a></li>
+                          <li><a href="#">Log out</a></li>
+                        </ul>
+
+                        <div class="dropdown-footer">
+                          <i class="glyphicon glyphicon-cog"></i> Settings
+                        </div><!-- /dropdown-footer -->
+
+                      </div><!-- /dropdown-container -->
+                    </div><!-- /dropdown -->
                </li>
-                <li>
-                  <%= link_to content_tag(:span, "", class: "env fa fa-envelope"), main_app.conversations_path%>
-                  <% if current_user.mailbox.inbox.present? %>
-                      <span class="badge"><%=current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)%></span>
-                  <%end%>                                        
-               </li>
-                <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle avat" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                  <span class="mini_avatar">
-                     <%= image_tag current_user.avatar.url(:athumb), class: "img-circle",size: "22x22" %>
-                  </span>
-                  <span class="caret"></span>
-                </a>
-                    <ul class="dropdown-menu" role="menu">
-                      <li>
-                          <%= link_to content_tag(:span, "Dashboard", class: "glyphicon glyphicon-tasks"), 
-                           main_app.dashboard_path%> 
-                      </li>
-                      <li>
-                          <%= link_to content_tag(:span, " Edit Account", class: "fa fa-pencil-square-o"), 
-                            main_app.edit_user_registration_path%>
-                      </li>
-                      <li>
-                          <%= link_to content_tag(:span, "Conversations", class: "fa fa-comment"), 
-                            main_app.conversations_path%>  
-                      </li>
-                      <li>
-                        <%= link_to main_app.destroy_user_session_path, method: :delete, data: { no_turbolink: true } do %>
-                          <span class="fa fa-sign-out"></span> Déconnexion
-                        <% end %> 
-                      </li>
-                      <li>
-                          <%= link_to content_tag(:span, " ", class: "glyphicon glyphicon-tasks"), ads_path%>
-                      </li> 
-                    </ul>
-              </li>
-                
-                <%else%>
-                <li>
-                    <div class="btn_box">
-                       <button type="button" class="btn-follow btn-spacer btn-spacer-plus">
-                          <i class="fa fa-plus"></i>Poster ici
-                        </button>                  
-                   </div>                    
-               </li>                 
-             <%end%>
-            </ul>           
-          </div>
+           </ul>        
         </div>
       </div>
     </div>        

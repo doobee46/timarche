@@ -287,9 +287,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    simple_recommender (0.0.3)
-      pg
-      rails (>= 4.0.0)
     social-share-button (0.1.8)
       coffee-rails
       sass-rails
@@ -394,7 +391,6 @@ DEPENDENCIES
   ruby-progressbar
   sass-rails (~> 4.0.5)
   sdoc (~> 0.4.0)
-  simple_recommender
   social-share-button
   spinner.rb
   spring

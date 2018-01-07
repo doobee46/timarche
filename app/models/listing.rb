@@ -9,8 +9,8 @@ class Listing < ActiveRecord::Base
   has_many   :likes, dependent: :destroy, through: :users
   has_many   :activities
   
-  include SimpleRecommender::Recommendable
-  similar_by :users
+  #include SimpleRecommender::Recommendable
+  #similar_by :users
   
   scope :published,->{where("listings.created_at IS NOT NULL ")}
   scope :recent, lambda{published.where("created_at >= ?", (Date.today))}

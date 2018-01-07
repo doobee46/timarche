@@ -1,5 +1,5 @@
-<%= link_to listing_path(notification.notifiable.slug, anchor: dom_id(notification.notifiable)), class: "dropdown-item #{"unread" if !notification.read_at?}" do %>
-  <%= notification.actor.username %> a
-  <%= notification.action %> une nouvelle
-  <%= notification.notifiable_type.underscore.humanize.downcase %>
+<%= link_to forum_thread_path(notification.notifiable.slug, anchor: dom_id(notification.notifiable)), class: "dropdown-item #{"unread" if !notification.read_at?}" do %>
+  <%= notification.actor.username %>
+  <%= notification.action %>
+  a <%= notification.notifiable_type.underscore.humanize.downcase %>
 <% end %>

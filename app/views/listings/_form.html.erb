@@ -14,6 +14,12 @@
                 <li>
                     <%= f.label :price%>
                     <%= f.text_field :price,class:"field-long"%>
+                </li>
+                 <li>
+                     <%= f.label :display_usd ,'Prix en US dollar' %>
+                     <%= f.check_box :display_usd %>
+                   
+                </li>
                 <li>
                      <%= f.label :category_id,class:"field-select" %>
                      <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "btn btn-default dropdown-toggle form-control"}%>
@@ -28,11 +34,12 @@
                    
                 </li>
                
+               
                 <li></li>
                      <label>Images additionel du produit</label>
                      <%= file_field_tag "images[]", type: :file, multiple: true %>
                 <li>
-                     <%= f.button "Publier Produit" , class: 'btn btn-primary pull-right', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publication en cours..."} %>
+                     <%= f.button "Publier Produit" , class: 'btn btn-primary pull-right', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Placement en cours..."} %>
                 </li>
             </ul>
          <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107070509) do
+ActiveRecord::Schema.define(version: 20180107220227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -163,6 +163,7 @@ ActiveRecord::Schema.define(version: 20180107070509) do
     t.string   "slug"
     t.string   "listing_number"
     t.integer  "impressions_count",  default: 0
+    t.boolean  "display_usd"
   end
 
   add_index "listings", ["listing_number"], name: "index_listings_on_listing_number", using: :btree

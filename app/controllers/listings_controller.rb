@@ -51,7 +51,7 @@ class ListingsController < ApplicationController
        end
      #current_user.create_activity(@listing, "published")
      (@users - [current_user]).each do |user|
-       Notification.create(recipient: user, actor: current_user, action: "posted", notifiable: @listing)
+       Notification.create(recipient: user, actor: current_user, action: "publié", notifiable: @listing)
      end 
      flash[:notice]= "L'annonce #{@listing.listing_number} a eté publiee avec succès."
      respond_with(@listing)  

@@ -6,8 +6,11 @@ class Listing < ActiveRecord::Base
   belongs_to :user, counter_cache: :listings_count
   belongs_to :category
   has_many   :pictures, dependent: :destroy
-  has_many   :like, dependent: :destroy
+  has_many   :likes, dependent: :destroy, through: :users
   has_many   :activities
+  
+  include SimpleRecommender::Recommendable
+  similar_by :users
   
   scope :published,->{where("listings.created_at IS NOT NULL ")}
   scope :recent, lambda{published.where("created_at >= ?", (Date.today))}

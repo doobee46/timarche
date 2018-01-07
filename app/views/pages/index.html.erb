@@ -25,10 +25,10 @@
                   </li>
                 <%else%>
                   <li>
-                    <%= link_to "S'inscrire",main_app.user_registration_path, class: 'btn btn-log' %> 
+                    <%= link_to "S'inscrire",main_app.user_registration_path, class: 'btn btn-log' ,data: { no_turbolink: true } %> 
                   </li>
                   <li>
-                    <%= link_to "Se connecter",main_app.user_session_path,class: 'btn btn-log' %> 
+                    <%= link_to "Se connecter",main_app.user_session_path,class: 'btn btn-log' ,data: { no_turbolink: true } %> 
                   </li>
                 <%end%>
               </ul>

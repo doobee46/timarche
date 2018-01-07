@@ -85,18 +85,18 @@ Rails.application.configure do
   Rails.application.routes.default_url_options[:host] = 'localhost' 
   
   config.action_mailer.delivery_method = :smtp
-  # SMTP settings for Mandrill
+  # SMTP settings for Mailgun
   config.action_mailer.smtp_settings = {
-      :address        => 'smtp.mandrillapp.com',
-      :port           => '587',
+      :address        => 'smtp.mailgun.org',
+      :port           => 587,
       :authentication => :plain,
-      :user_name      => ENV['MANDRILL_USERNAME'],
-      :password       => ENV['MANDRILL_PASSWORD'],
-      :domain         => 'heroku.com',
+      :user_name      => 'postmaster@sandbox55fdf66ab0f2403887d409e7b7574420.mailgun.org',
+      :password       => 'f4448cb1ef1379d84e8f3a38c660fed6',
+      :domain         => 'sandbox55fdf66ab0f2403887d409e7b7574420.mailgun.org',
       :enable_starttls_auto => true
     }
-
-  #->Prelang
+  
+#->Prelang
   GA.tracker = "UA-58445756-1"
   
   config.paperclip_defaults = {

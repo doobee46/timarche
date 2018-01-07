@@ -64,7 +64,14 @@
                         <ul class="dropdown-menu">
                           <li><%= link_to "Profile", main_app.edit_user_registration_path %></li>
                           <li><%= link_to "Dashboard", main_app.dashboard_path %></li>
-                          <li><%= link_to "Messages", main_app.conversations_path%></li>
+                          <li>
+                          <%= link_to main_app.conversations_path do%>
+                              <% if current_user.mailbox.inbox.present? %>
+                                  <span class="badge"><%=current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)%></span>
+                                  Messages
+                              <%end%>
+                          <%end%>
+                          </li>
                           <li><a href="#">Favoris</a></li>
                           <!--<li><a href="#">Help</a></li>
                           <li><a href="#">Log out</a></li>-->

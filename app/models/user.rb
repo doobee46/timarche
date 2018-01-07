@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
     
   has_many :notifications, foreign_key: :recipient_id
   
+  has_many :likes, foreign_key: :user_id
+ 
   
   if Rails.env.development?
       has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#", :feed =>"64x64" }, :default_url => "default_:style.png"

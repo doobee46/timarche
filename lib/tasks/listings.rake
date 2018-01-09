@@ -10,6 +10,7 @@ namespace :listings do
           
             4.times do|n|
               categories = [1,2,3,4,5,6,7,8]
+              price_usd = [true, false]
               name = Faker::Lorem.word   	 
               price= Faker::Number.number(4)
               image = File.open(Dir.glob(File.join(Rails.root, 'sampleimages','*')).sample)
@@ -18,7 +19,8 @@ namespace :listings do
                                     description: description,
                                     image: image,
                                     price: price,
-                                    category_id: categories.sample)
+                                    category_id: categories.sample,
+                                    display_usd: price.sample )
              end    
          end 
      end

@@ -62,9 +62,13 @@
 				<div class="col-md-3">
 					<div class="last_col">
 						<div class="show_price">
-						<span>HTG</span> <%=@listing.price%>
+					    <%if @listing.display_usd == true %>
+                          <span class="item_price"><%=number_to_currency(@listing.price, unit:"$", precision: 2)%></span> 
+                        <% else %>
+                          <span class="item_price"><%=number_to_currency(@listing.price, unit:"HTG", precision: 2)%></span> 
+                        <%end%>
 						</div>
-						<%= render :partial => 'listings/card'%>
+						  <%= render :partial => 'listings/card'%>
 						<button class="btn btn-danger btn-lg btn-price">Acheter</button>
 					</div>
 					<div class="last_col">

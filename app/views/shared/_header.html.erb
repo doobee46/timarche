@@ -33,7 +33,7 @@
                         <div class="dropdown-toolbar-actions">
                           <a href="#">Mark all as read</a>
                         </div>
-                        <h3 class="dropdown-toolbar-title">Notifications (<%=current_user.notifications.count%>)</h3>
+                        <h3 class="dropdown-toolbar-title">Notifications (<%=current_user.notifications.count%>) recent</h3>
                       </div><!-- /dropdown-toolbar -->
 
                       <ul class="dropdown-menu" >
@@ -62,14 +62,17 @@
                         </div><!-- /dropdown-toolbar -->
 
                         <ul class="dropdown-menu">
+                          <% unless @title == 'browse'%>
+                          <li><%= link_to "Home", main_app.browse_path %></li>
+                          <% end %>
                           <li><%= link_to "Profile", main_app.edit_user_registration_path %></li>
                           <li><%= link_to "Dashboard", main_app.dashboard_path %></li>
                           <li>
                           <%= link_to main_app.conversations_path do%>
                               <% if current_user.mailbox.inbox.present? %>
                                   <span class="badge"><%=current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)%></span>
-                                  Messages
                               <%end%>
+                              Messages
                           <%end%>
                           </li>
                           <li><a href="#">Favoris</a></li>

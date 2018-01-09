@@ -18,9 +18,9 @@
            </a> 
         </div>
       </div>    
-<div class="product">
+   <div class="product">
 		<div class="container">
-		    <div class="row">
+		   <div class="row">
 				<div class="col-md-12">
 					<div class="title_head">
 						<!--<span class="label label-primary label-id">Id:<%#=@listing.listing_number%></span>-->
@@ -29,8 +29,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -38,7 +37,18 @@
 					<div class="social_icon">
 					</div>
 					<div class="first_col">
-						<%=image_tag @listing.image.url(:large)%>
+            <div class="flexslider">
+              <ul class="slides">
+                <li>
+                  <%=image_tag @listing.image.url(:large)%>
+                </li>
+                  <% @listing.pictures.each do |picture| %>
+                <li>
+                  <%=image_tag picture.image.url(:medium)%>
+                </li>
+                  <%end %>
+              </ul>
+            </div>			
 					</div>
 					<div class="stats">
 					<%= render :partial => 'listings/like'%>	
@@ -54,19 +64,17 @@
 				</div>
 				<div class="col-md-2">
 					<div class="mid_col">
-						<% @listing.pictures.each do |picture| %>
-						<%= image_tag picture.image.url(:medium)%>
-						<%end %>
+            	
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="last_col">
 						<div class="show_price">
 					    <%if @listing.display_usd == true %>
-                          <span class="item_price"><%=number_to_currency(@listing.price, unit:"$", precision: 2)%></span> 
-                        <% else %>
-                          <span class="item_price"><%=number_to_currency(@listing.price, unit:"HTG", precision: 2)%></span> 
-                        <%end%>
+                <span class="item_price"><%=number_to_currency(@listing.price, unit:"$", precision: 2)%></span> 
+                <% else %>
+                  <span class="item_price"><%=number_to_currency(@listing.price, unit:"HTG", precision: 2)%></span> 
+                <%end%>
 						</div>
 						  <%= render :partial => 'listings/card'%>
 						<button class="btn btn-danger btn-lg btn-price">Acheter</button>
@@ -80,9 +88,9 @@
 						  <h3><%= link_to @listing.user.username %></h3>
 						</div>
               <% unless current_user == @user %>
-              <%= link_to new_message_path(to: @listing.user.id), class: 'btn btn-danger btn-lg btn-cont' do %>
-              <i class="fa fa-pencil-square-o"></i>Contact Vendeur
-              <% end %>
+                <%= link_to new_message_path(to: @listing.user.id), class: 'btn btn-danger btn-lg btn-cont' do %>
+                <i class="fa fa-pencil-square-o"></i>Contact Vendeur
+                <% end %>
               <% end %>
 					</div>
 				</div>

@@ -29,6 +29,7 @@ gem 'intercom-rails'
 gem 'tinymce-rails'
 gem 'koudoku',github: 'doobee46/koudoku'
 gem 'aws-sdk', '~> 2.3'
+gem 'flex-slider-rails'
 #gem 'simple_recommender'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby

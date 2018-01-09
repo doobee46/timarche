@@ -22,6 +22,7 @@
 //= require video.js
 //= require chosen-jquery
 //= require messages
+//= require jquery.flexslider-min  
 //= require_tree .
 
 
@@ -44,6 +45,9 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function(){ 
+    $('.flexslider').flexslider();
+});
 
 
 

@@ -139,6 +139,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     figaro (1.0.0)
       thor (~> 0.14)
+    flex-slider-rails (2.6.4.1)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     foreigner (1.7.1)
@@ -361,6 +362,7 @@ DEPENDENCIES
   devise-i18n
   faker
   figaro
+  flex-slider-rails
   font-awesome-rails
   friendly_id (~> 5.0.0)
   gon

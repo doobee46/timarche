@@ -76,7 +76,7 @@ end
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
-  #gem 'faker'
+  gem 'faker'
   gem 'thin'
   gem 'ruby-progressbar'
   gem "letter_opener", :group => :development

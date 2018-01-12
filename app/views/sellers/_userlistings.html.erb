@@ -14,12 +14,11 @@
               <span class="item_price">Gdes <%=(listing.price)%>
               </span>
             </div>
-           
             <div class="block-actions">
               <%=form_for(Like.new,:remote => true) do |f| %>
               <%= f.hidden_field :listing_id, value: listing.id %>
-              <%= f.button " " , class: 'btn btn-success btn-sm', data: {disable_with: " saving..."} do %>
-                 <span class="glyphicon glyphicon-heart"></span> like
+              <%= f.button " " , class: 'round-button btn-center', data: {disable_with: "..."} do %>
+                 <span class="glyphicon glyphicon-heart"></span>
               <%end%>   
               <%end%>
             </div>                                 

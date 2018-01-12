@@ -128,20 +128,160 @@ span.store{
     opacity: 1;
 }
 
-.last_col{
-    width: 290px;
-    height: 190px;
-    display: block;
-    margin-top: 25px;
-    margin-left: -60px;
-    padding: 4px;
-    margin-bottom: 18px;
-    border-radius: 4px;
-    background: none repeat scroll 0% 0% #FFF;
-    border: 1px solid #D8DAE4;
+
+.box-container {
+  width: 320px;
+  height: auto;
+  position: relative;
+  top: 25px;
+  left:-65px;
 }
 
-.show_price{
+.box {
+  width: 100%;
+  height: auto;
+  border: 1px solid #d8dae4;
+  margin-bottom: 5px;
+}
+
+.box-title {
+  background-color: #fff;
+  height: 40px;
+  display: block;
+}
+
+.box-title h2 {
+    position: relative;
+    bottom: 20px;
+    left: 14px;
+    line-height: 35px;
+    color: #78C042;
+    letter-spacing: 1px;
+    font-family: 'oswald', sans-serif;
+}
+
+.box-condition {
+  height: 30px;
+  padding: 0px;
+}
+
+.box-condition h3 {
+    position: relative;
+    bottom: 20px;
+    left: 15px;
+    font-size: 16px;
+    padding: 7px 0px;
+    line-height: 14px;
+    font-family: 'Open sans', sans-serif;
+    letter-spacing: 1px;
+    color: #3f465e;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.box-condition h3 span {
+  position: relative;
+  left: 50px;
+  color: #d8dae4;
+}
+
+.box-condition.localisation h3 span {
+  position: relative;
+  left: 30px;
+}
+
+.box.actions-block .contact {
+    width: 47%;
+    height: auto;
+    float: left;
+    background-color: #5c232c;
+    border-right: #fff;
+    padding: 3px;
+}
+
+.box.actions-block .contact a {
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0px 0px 0px 15px;
+  padding: 2px 2px 2px 2px;
+  position: relative;
+  left: 15%;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.box.actions-block .more {
+    width: 49%;
+    height: auto;
+    float: left;
+    background-color: #5c232c;
+    border-right: #fff;
+    padding: 3px;
+    position: relative;
+    left: 15px;
+}
+
+.box.actions-block .more a {
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0px 0px 0px 15px;
+  padding: 2px 2px 2px 2px;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.box.box-vente {
+  width: 100%;
+  height: auto;
+}
+.box.box-vente .info-avatar {
+  position: relative;
+  top: 18px;
+  left: 15px;
+  margin-right: 35px;
+  float: left;
+}
+.box.box-vente .info-avatar img.circle {
+  border-radius: 50px;
+}
+.box.box-vente .seller-info h3 {
+    position: relative;
+    left: 15px;
+    font-size: 13px;
+    text-transform: Capitalize;
+    font-family: 'Open sans', sans-serif;
+    letter-spacing: 1px;
+    color: #3f465e;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: relative;
+    top: 2px;
+}
+.box.box-vente .seller-info p {
+    position: relative;
+    left: 88px;
+    text-transform: Capitalize;
+    font-family: 'open sans', sans-serif;
+    letter-spacing: 1px;
+    color: #AAAAAA;
+    font-weight: 300;
+    font-size: 9px;
+    text-transform: uppercase;
+    position: relative;
+    top: -5px;
+}
+
+
+/*.show_price{
     color: #3F465E;
     font-family: 'Source Sans Pro', sans-serif;
     font-style: normal;
@@ -260,5 +400,5 @@ span.store{
   position: relative;
   top: 20px;
 }
-
+*/
 

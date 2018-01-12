@@ -23,7 +23,7 @@ doc/
 vendor/bundle
 
 #Ignore sampleimages
-#/sampleimages
+/sampleimages
 #/sampleavatar
 
 scraper.rb
@@ -37,3 +37,4 @@ config/environments/*.local.yml
 
 # Ignore Paperclip uploaded files
 /public/system
+/public/assets

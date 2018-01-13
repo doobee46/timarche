@@ -86,16 +86,14 @@ Rails.application.configure do
   
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for Mailgun
-  config.action_mailer.smtp_settings = {
-      :address        => 'smtp.mailgun.org',
-      :port           => 587,
-      :authentication => :plain,
-      :user_name      => 'postmaster@sandbox55fdf66ab0f2403887d409e7b7574420.mailgun.org',
-      :password       => 'f4448cb1ef1379d84e8f3a38c660fed6',
-      :domain         => 'sandbox55fdf66ab0f2403887d409e7b7574420.mailgun.org',
-      :enable_starttls_auto => true
-    }
-  
+ config.action_mailer.smtp_settings = {
+     :port => ENV['MAILGUN_SMTP_PORT'],
+     :address => ENV['MAILGUN_SMTP_SERVER'],
+     :user_name => ENV['MAILGUN_SMTP_LOGIN'],
+     :password => ENV['MAILGUN_SMTP_PASSWORD'],
+     :domain => 'timarche-staging.heroku.com',
+     :authentication => :plain
+  }
 #->Prelang
   GA.tracker = "UA-58445756-1"
   

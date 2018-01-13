@@ -6,6 +6,7 @@ class ListingsController < ApplicationController
   respond_to :html, :json, :js
 
   def dashboard
+    @categories = Category.all
     @listings = Listing.where(user: current_user).paginate(:page => params[:page], :per_page => 50).order('created_at DESC')
     params[:page] ||=1
     @activities =Activity.for_user(current_user, params)
@@ -23,6 +24,7 @@ class ListingsController < ApplicationController
   end
     
   def show
+    @categories = Category.all
     @listings= @q.result
     commontator_thread_show(@listing)
     impressionist(@listing)
@@ -70,11 +72,13 @@ class ListingsController < ApplicationController
 
    
   def recent
+    @categories = Category.all  
     @recent = Listing.recent.page(params[:page]).per_page(30).order("created_at DESC")
     respond_with(@recent)
   end
 
   def popular
+    @categories = Category.all  
     @popular = Listing.popular.page(params[:page]).per_page(30).order("created_at DESC")
     respond_with(@popular)
   end

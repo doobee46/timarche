@@ -94,7 +94,7 @@
       </div>
     </div>        
   </div>
-  <% unless @title == "dashboard" %>
-     <%= render :partial => 'shared/category' %>
-  <% end %>
+   <% if params[:controller] == "listings" || params[:controller] =='categories' && @title != 'dashboard'%>
+       <%= render :partial => 'shared/category'  %>
+   <% end %>
 </div> 

@@ -29,14 +29,12 @@ class User < ActiveRecord::Base
   
   #has_many :like, foreign_key: :user_id
  
+ 
+  has_attached_file :avatar, :styles => { :athumb => "30x30#" }, :default_url => "default_:style.png"
   
-  if Rails.env.development?
-      has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#", :feed =>"64x64" }, :default_url => "default_:style.png"
-  else
-  has_attached_file :avatar, :styles => { :amedium => "300x300>", :athumb => "30x30#" }, :default_url => "default_:style.png",
-                    :storage => :s3,
-                    :s3_credentials => Rails.root.join("config/dropbox.yml")
-  end
+  validates :username, uniqueness: true, presence: true
+  validates :email, uniqueness: true, presence: true  
+    
   #validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png","image/jpg"] }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   do_not_validate_attachment_file_type :avatar

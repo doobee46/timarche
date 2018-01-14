@@ -33,11 +33,23 @@
                         <div class="dropdown-toolbar-actions">
                           <a href="" data-behavior="notifications-link">Mark all as read</a>
                         </div>
-                        <h3 class="dropdown-toolbar-title">Notifications (<%=current_user.notifications.count%>)</h3>
+                        <% if current_user.notifications.unread.present? %>
+                          <h3 class="dropdown-toolbar-title">Notifications (<%=current_user.notifications.count%>)</h3>
+                           <% else %>
+                          <h3 class="dropdown-toolbar-title">Notifications (<%=current_user.notifications.unread.count%>)</h3>
+                        <%end%>
                       </div><!-- /dropdown-toolbar -->
 
                       <ul class="dropdown-menu" >
+                         <% if current_user.notifications.unread.present? %>
                          <li data-behavior="notification-items" ></li>
+                         <% else %>
+                          <li>
+                              <a href="#">
+                                Pas de nouveaux notifications  
+                              </a>
+                          </li>
+                         <% end %>
                       </ul>
 
                       <div class="dropdown-footer text-center">

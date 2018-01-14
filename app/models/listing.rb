@@ -37,7 +37,7 @@ class Listing < ActiveRecord::Base
 
 =begin
   def listing_limit
-    if self.user.listings(:reload).count >= 1
+    if @user.listings(:reload).count >= 10
       errors.add(:base, "Exceeded thing limit")
     end
   end

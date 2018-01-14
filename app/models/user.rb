@@ -10,12 +10,9 @@ class User < ActiveRecord::Base
   acts_as_messageable
   # Added by Koudoku.
   has_one  :subscription
-
   devise   :omniauthable, :omniauth_providers => [:facebook]
-
   has_many :listings, dependent: :destroy
   has_many :activities
-
   has_many :relationships,foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
 

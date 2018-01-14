@@ -6,7 +6,7 @@
       <div class="main_pages switcher">
         <h3><%=@category.name%></h3>
         <p>Découvrez <%=@category.name%> de partout dans le marché.</p>
-        <div class="btn-group" role="group" aria-label="...">
+        <div class="btn-group switcher-left" role="group" aria-label="...">
           <% if @title == @category.name %>
             <%= link_to browse_path, class: "btn btn-default" do %>
               <span class="fa fa-back"></span>Back

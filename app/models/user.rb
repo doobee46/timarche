@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     
   has_many :notifications, foreign_key: :recipient_id
   
-  #has_many :like, foreign_key: :user_id
+  #has_many :like, through: :listings
  
  
   has_attached_file :avatar, :styles => { :athumb => "30x30#" }, :default_url => "default_:style.png"

@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get 'browse'      => "listings#index"
   get 'contact'     => "pages#contact"
   get 'privacy'     => "pages#privacy"
+  get 'team'        => "pages#team"
   get 'sellers'     => "sellers#index"
   get 'dashboard'   => "listings#dashboard"
   get 'recent', :to =>"listings#recent",  :as => :recent

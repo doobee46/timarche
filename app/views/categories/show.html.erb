@@ -9,14 +9,14 @@
         <div class="btn-group switcher-left" role="group" aria-label="...">
           <% if @title == @category.name %>
             <%= link_to browse_path, class: "btn btn-default" do %>
-              <span class="fa fa-back"></span>Back
+              <span class="fa fa-arrow-circle-o-left"></span>Retour a la liste
             <%end%>
           <%end%> 
           <%= link_to recent_path ,class: "btn btn-default" do %>
-            <span class="fa fa-clock-o"></span>Recent
+            <span class="fa fa-clock-o"></span>Nouveautés
           <%end%>
           <%= link_to popular_path , class: "btn btn-default" do %>
-            <span class="fa fa-fire"></span>Trending
+            <span class="fa fa-fire"></span>Populaires
           <%end%>
         </div>
       </div>

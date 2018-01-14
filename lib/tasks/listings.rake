@@ -8,7 +8,7 @@ namespace :listings do
           puts "----------------------------------------------------------------"
        	  puts "[DEBUG] Creating listings for user #{user.id} of #{User.last.id}"
           
-            4.times do|n|
+            1.times do|n|
               categories = [1,2,3,4,5,6,7,8]
               display =[true, false]
               name = Faker::Lorem.word   	 

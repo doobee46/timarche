@@ -1,8 +1,8 @@
 class PagesController < ApplicationController
-  before_action :check_signed_in
+  before_action :check_signed_in, except:[:about, :index, :contact, :privacy, :team]
     
   before_filter :set_search
-  before_filter :authenticate_user!, except: [:about, :index, :contact, :privacy]
+  before_filter :authenticate_user!, except: [:about, :index, :contact, :privacy, :team]
   respond_to :html, :json
 
   def index
@@ -20,6 +20,9 @@ class PagesController < ApplicationController
   end
 
   def contact
+  end
+    
+  def team
   end
 
   def privacy

@@ -6,7 +6,9 @@
                     <h3>Products View Activities</h3>
                 </div>
                 <div class="sales">
-                   <!--<td><#%= line_chart User.group_by_day(:created_at).count %></td>-->
+                    <% current_user.listings.each do |listing| %>
+                    <td><% line_chart listing.impressions.group_by_day(:created_at).count %></td>
+                    <% end %>
                 </div>
             </div>
             <div class="col-md-3">

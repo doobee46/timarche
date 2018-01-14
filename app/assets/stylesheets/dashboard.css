@@ -182,6 +182,7 @@ h6.dash_time{
     position: relative;
     top: 20px;
     left: -26px;
+    border: 1px solid #ddd;
 }
 
 .sales span{

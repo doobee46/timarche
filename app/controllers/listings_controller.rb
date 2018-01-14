@@ -20,6 +20,7 @@ class ListingsController < ApplicationController
     @trend = Listing.where("impressions_count >=10").limit(5).order('created_at DESC')
     @categories = Category.all
     @users=User.all
+    @notifications= Notification.all
     respond_with(@listings)
   end
     

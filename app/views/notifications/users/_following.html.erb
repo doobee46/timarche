@@ -1,5 +1,5 @@
-<%= link_to users_path(notification.notifiable.slug, anchor: dom_id(notification.notifiable)), class: "dropdown-item #{"unread" if !notification.read_at?}" do %>
-  <%= notification.actor.username %>
+<%= link_to sellers_path(notification.notifiable.id, anchor: dom_id(notification.notifiable)), class: "dropdown-item #{"unread" if !notification.read_at?}" do %>
+  <strong><%= notification.actor.username %></strong>
   started <%= notification.action %> you
   <%#= notification.notifiable_type.underscore.humanize.downcase %>
 <% end %>

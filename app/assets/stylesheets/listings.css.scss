@@ -604,3 +604,10 @@ table > tbody > tr > td{
     background: #262626;
 }
 
+ul.dropdown-menu li{
+    letter-spacing:1px;
+}
+
+ul.dropdown-menu li a.dropdown-item strong{
+    text-transform:capitalize
+}

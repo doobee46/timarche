@@ -1,5 +1,5 @@
 <%= link_to listing_path(notification.notifiable.slug, anchor: dom_id(notification.notifiable)), class: "dropdown-item #{"unread" if !notification.read_at?}" do %>
-  <%= notification.actor.username %>
+  <strong><%= notification.actor.username %></strong>
   <%= notification.action %>
-  a <%= notification.notifiable_type.underscore.humanize.downcase %>
+  a <%= notification.notifiable_type.underscore.humanize.downcase %> <strong><%=notification.notifiable.name%></strong>
 <% end %>

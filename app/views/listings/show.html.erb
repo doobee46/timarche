@@ -81,6 +81,9 @@
                       <div class=" box box-condition localisation">
                         <h3>Localisation <span>Delmas</span></h3>
                       </div>
+                       <div class=" box box-condition localisation">
+                        <h3>Category <span><%=@listing.category.name %></span></h3>
+                      </div>
                       <div class=" box box-vente">
                         <div class="info-avatar">
                           <%= image_tag @listing.user.avatar.url(:amedium),size: "40x40", class: "img-circle"%>

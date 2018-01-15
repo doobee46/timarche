@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <%@listings.each do |listing| %>
-        <tr>
+        <tr id="listing_<%= listing.id %>" >
             <td><%= link_to (image_tag listing.image.url(:avatar),size:"30x30"), listing_path(listing) %></td>
             <td><span class="label label-primary pub_id"><%= listing.listing_number %></span> </td>
             <td><%= link_to listing.name, listing_path(listing) %> </td>
@@ -30,16 +30,20 @@
                 <div class="dash_actions">
                     <ul>
                       <li>
-                        <%= link_to edit_listing_path(listing.slug) do %>
+                        <%= link_to edit_listing_path(listing) do %>
                           <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Edit listing" data-toggle="modal" data-target="#myModal"></span>
                         <%end%>
                       <li><a href="#"><i class="glyphicon glyphicon-send" data-toggle="tooltip" title="Publish listing"></i></a></li>
-                      <li><a href="#"><i class="glyphicon glyphicon-trash"data-toggle="tooltip" title="delete listing"></i></a></li>
+                      <li>
+                       <%= link_to (listing), method: :delete, :remote => true, data:{confirm: "Are you sure?.", disable_with: "<i class='fa fa-spinner fa-spin'></i>"}, class: 'delete_listing' do %>
+                         <span class="glyphicon glyphicon-trash"data-toggle="tooltip" title="delete listing"></span>
+                       <%end%>
+                      </li>
                     </ul>
                   </div>
-            </td>
-        </tr>
-      <%end%>
+              </td>
+           </tr>
+       <%end%>
     </tbody>
 </table>
 

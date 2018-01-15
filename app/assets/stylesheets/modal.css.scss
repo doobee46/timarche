@@ -1,30 +1,63 @@
-
-.modal-header{
-background-color:#D7E4ED;
+.modal-body {
+  padding: 30px !important;
+ 
 }
+
+label{
+  letter-spacing: 1px;
+  font-family: 'open sans', sans-serif !important;
+  font-size: 12px !important;
+  text-transform:uppercase;
+  color:#5c232c;
+}    
+
+.modal-title{
+    letter-spacing: 1px;
+    font-family: 'open sans', sans-serif !important;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.close {
+    color: #fff !important;
+}
+
 .modal-dialog{
 top:35px;
 }
-.modal-header h1{
-font-family:'Pt sans', sans-serif;
-font-size:20px;
-color:rgb(0,0,0);
-text-align:left;
-padding-bottom: 5px;
-text-shadow: 1px 1px 1px rgb(35, 86, 117);
-text-transform: uppercase;
-}
-.modal_wrapper{
-margin-top:10px;
-margin-left:10px;
+
+.modal-header{
+    background-color: #5c232c;
 }
 
-.modal-title {
-  color: #444;
+.modal_wrapper{
+    margin-top:10px;
+    margin-left:10px;
 }
+
+form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 12px !important;
+    line-height: 1.428571429;
+    color: #AAA !important;
+    background-color: #e2e5e5 !important;
+    background-image: none;
+    border: 2px solid #e2e5e5 !important;
+    border-radius: none !important;
+    box-shadow: none !important;
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    font-family: 'open sans',sans-serif !important;
+    letter-spacing: 1px !important;
+    font-weight: 300;
+}
+ 
 
 .modal-content{
-    width: 420px;
+    width:100%;
     left: 80px
 }
 
@@ -40,12 +73,9 @@ form-style-1 {
     list-style: none;
     margin: 10px 0 0 0;
 }
+
 .form-style-1 label{
-    margin:0 0 3px 0;
-    padding:0px;
-    display:block;
-    font-weight: bold;
-    font: 13px "arvo", "open sans", sans-serif;
+  
 }
 .form-style-1 input[type=text],
 .form-style-1 input[type=date],

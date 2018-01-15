@@ -199,7 +199,7 @@ h6.dash_time{
     display:block;
     width:100%;
     height:40px;
-    background-color:#D7E4ED;
+    background-color:#5c232c;
     position: relative;
     top: 20px;
     left: -26px;
@@ -210,7 +210,7 @@ h6.dash_time{
 .header_dash h3{
     font-family: "open sans",sans-serif;
     font-size: 12px;
-    color: #596377;
+    color: #fff;
     position: relative;
     top: 12px;
     left: 10px;
@@ -314,4 +314,7 @@ p.pro_views{
     width:100%;
     margin:0 auto; 
 }
- 
+
+/******************************************Modal****************************************/
+
+

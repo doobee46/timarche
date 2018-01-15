@@ -8,7 +8,7 @@ class Listing < ActiveRecord::Base
   has_many   :pictures, dependent: :destroy
   has_many   :like, dependent: :destroy
   has_many   :activities
-  has_many   :like
+  has_many   :notifications, as: :notifiable , dependent: :destroy
   
   #include SimpleRecommender::Recommendable
   #similar_by :users

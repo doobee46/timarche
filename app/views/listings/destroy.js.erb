@@ -1,0 +1,6 @@
+$('#listing_<%=@listing.id %>').bind('ajax:success', function() {  
+    $(this).closest('tr').fadeOut();
+    $(".alert").show();
+    $(".alert").html("Annonces supprimées avec succès.");
+    $(".alert").fadeOut(5000);
+});

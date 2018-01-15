@@ -40,9 +40,9 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
-  $('.has-tooltip').tooltip();
-});
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 
 $(document).ready(function(){ 

@@ -6,6 +6,7 @@ class ListingsController < ApplicationController
   respond_to :html, :json, :js
 
   def dashboard
+    @listing = Listing.new
     @categories = Category.all
     @listings = Listing.where(user: current_user).paginate(:page => params[:page], :per_page => 50).order('created_at DESC')
     params[:page] ||=1

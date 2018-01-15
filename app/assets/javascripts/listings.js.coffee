@@ -7,9 +7,6 @@
   $('table#cur_listing').DataTable()
   return
 
-->
-  $('[data-toggle="tooltip"]').tooltip()
-  return
 
 $(document).on 'page:fetch', ->
   $('#spinner').show()

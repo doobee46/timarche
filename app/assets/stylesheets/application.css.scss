@@ -932,8 +932,11 @@ ul.trending li.trending_listing .owner-details em {
 
 
 .pub_id{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size:12px;
+    font-family: 'open sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    position: relative;
+    top: 8px;
 }
 
 .backdrop {

@@ -38,6 +38,7 @@
 					<div class="first_col">
                     <div class="flexslider">
                       <ul class="slides">
+                        <% if @listing.pictures.present?%>
                         <li>
                           <%=image_tag @listing.image.url(:large)%>
                         </li>
@@ -46,6 +47,11 @@
                               <%=image_tag picture.image.url(:large)%>
                             </li>
                           <%end %>
+                          <% else %>
+                            <li>
+                              <%=image_tag @listing.image.url(:large)%>
+                            </li>
+                          <%end%>
                       </ul>
                    </div>			
             </div>
@@ -62,9 +68,9 @@
 					</div>
 				</div>
 				<div class="col-md-2">
-					<div class="mid_col">
+					<!--<div class="mid_col">
             	
-					</div>
+					</div>-->
 				</div>
 				<div class="col-md-3">			
                     <div class="box-container">

@@ -1,52 +1,121 @@
 <%= tinymce_assets %>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-body">
-           <!--<div class="modal-header">
-              <h4 class="modal-title" id="myModalLabel">Publier Produits</h4>
-           </div>-->
+      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <%= form_for :listing, :url => {:action => :create}, html: {class: "form-inline"} do |f| %>
-            <ul class="form-style-1">
-                <li>
-                   <%= f.label :name%><%= f.text_field :name, class: "field-divided" %></li>
-                <li>
-                    <%= f.label :price%>
-                    <%= f.text_field :price,class:"field-long"%>
-                </li>
-                 <li>
-                     <%= f.label :display_usd ,'Prix en US dollar' %>
-                     <%= f.check_box :display_usd %>
-                   
-                </li>
-                <li>
-                     <%= f.label :category_id,class:"field-select" %>
-                     <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "btn btn-default dropdown-toggle form-control"}%>
-                </li>
-                  <li>
-                      <%= f.label :image %>
-                      <%= f.file_field :image%> 
-                </li>
-                <li>
-                     <%= f.label :description %>
-                     <%= f.text_area :description,class:"field-long field-textarea tinymce"%>
-                   
-                </li>
-               
-               
-                <li></li>
-                     <label>Images additionel du produit</label>
-                     <%= file_field_tag "images[]", type: :file, multiple: true %>
-                <li>
-                     <%= f.button "Publier Produit" , class: 'btn btn-primary pull-right', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Placement en cours..."} %>
-                </li>
-            </ul>
-         <% end %>
+        <h4 class="modal-title">Annonce Publication</h4>
       </div>
-    </div>
-  </div>
-</div>
+      
+      <div class="modal-body"> 
+         <%= form_for :listing, :url => {:action => :create} do |f| %>
+          <div class="form-group row">
+               <%= f.label :name,"Titre de l'annonce", class: 'col-4 col-form-label'%> 
+            <div class="col-8">
+               <%= f.text_field :name, placeholder: "Titre de l'annonce",class: "form-control here" %>  
+            </div>
+          </div>
+          <div class="form-group row">
+            <%= f.label :price,"Prix d'offre", class:'col-4 col-form-label'%>
+            <div class="col-8">
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-usd"></i>
+                </div>
+                <%= f.text_field :price,placeholder: "Prix d'offre" ,class:"form-control here"%>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+             <%= f.label :display_usd ,'Prix en USD', class: 'col-4' %>  
+            <div class="col-8">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <%= f.check_box :display_usd, class:'form-check-input' %>
+                  USD
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <%= f.label :category_id,class:"col-4 col-form-label" %>
+            <div class="col-8">
+              <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "choose a category"}, {class: "form-control here"}%>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="select1" class="col-4 col-form-label">Localisation</label> 
+            <div class="col-8">
+              <select id="select1" name="select1" class="form-control">
+                <option value="rabbit">Rabbit</option>
+                <option value="duck">Duck</option>
+                <option value="fish">Fish</option>
+              </select>
+            </div>
+          </div>
+           <div class="form-group row">
+            <%= f.label :image, "Image Principale", class:'col-4 col-form-label' %>   
+            <div class="col-8">
+            <%= f.file_field :image, class:'form-control here'%>
+            </div>
+          </div> 
+          <div class="form-group row">
+            <label class="col-4">Condition</label> 
+            <div class="col-8">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input name="radio1" type="radio" class="form-check-input" value="rabbit">
+                        Usé
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input name="radio1" type="radio" class="form-check-input" value="duck">
+                        Neuf
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input name="radio1" type="radio" class="form-check-input" value="fish">
+                        normal
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+             <%= f.label :description,'Produit Description', class:'col-4 col-form-label' %> 
+            <div class="col-8">
+              <%= f.text_area :description,class:" form-control here " do%>  
+              <span id="textareaHelpBlock" class="form-text text-muted">veuillez donner une description exacte de votre produit.</span>
+              <%end%>
+            </div>
+          </div>
+          <div class="form-group row">
+            <%= f.label :image, "Image additionel", class:'col-4 col-form-label' %>   
+            <div class="col-8">
+            <%= file_field_tag "images[]", type: :file, multiple: true, class:'form-control here'%>
+            </div>
+          </div> 
+          <div class="form-group row">
+            <label class="col-4">Sauvegarder sans publier</label> 
+            <div class="col-8">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input name="radio" type="radio" class="form-check-input" value="rabbit">
+                        Unpublished
+                </label>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <%= f.button "Publier Produit" , class: 'btn btn-primary pull-right', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Publication en cours..."} %> 
+      </div>
+      <%end%>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <%= tinymce %>
     
        

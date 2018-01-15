@@ -1,3 +1,4 @@
+<%= render :partial => 'listings/form'%>
 <table id="cur_listing" class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -17,17 +18,23 @@
             <td><span class="label label-primary pub_id"><%= listing.listing_number %></span> </td>
             <td><%= link_to listing.name, listing_path(listing) %> </td>
             <td><span class="label label-success pub_id">Published</span></td>
-            <td>Gdes <%=(listing.price)%></td>
+            <td>
+            <%if listing.display_usd == true %>
+                <%=number_to_currency(listing.price, unit:"$", precision: 2)%>
+                <% else %>
+                <%=number_to_currency(listing.price, unit:"HTG", precision: 2)%> 
+            <%end%>
+            </td>
             <td><%=listing.impressions_count%></td>
             <td>
                 <div class="dash_actions">
                     <ul>
                       <li>
-                        <%= link_to content_tag(:i, "", class: "fa fa-pencil-square-o"),
-                           edit_listing_path(listing),"data-toggle" => "modal","data-target" => "#myEdit"%>
-                        </li>
-                      <li><a href="#"><i class="fa fa-reply " data-toggle="tooltip" title="Publish listing"></i></a></li>
-                      <li><a href="#"><i class="fa fa-trash "data-toggle="tooltip" title="delete listing"></i></a></li>
+                        <%= link_to edit_listing_path(listing.slug) do %>
+                          <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Edit listing" data-toggle="modal" data-target="#myModal"></span>
+                        <%end%>
+                      <li><a href="#"><i class="glyphicon glyphicon-send" data-toggle="tooltip" title="Publish listing"></i></a></li>
+                      <li><a href="#"><i class="glyphicon glyphicon-trash"data-toggle="tooltip" title="delete listing"></i></a></li>
                     </ul>
                   </div>
             </td>

@@ -82,6 +82,4 @@ group :development, :test do
   gem "letter_opener", :group => :development
   gem 'letter_opener_web', '~> 1.2.0', :group => :development
   gem 'kaminari'
-  
-  
 end

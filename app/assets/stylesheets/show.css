@@ -401,4 +401,10 @@ span.store{
   top: 20px;
 }
 */
-
+.ads{
+  width:728px;
+  height:90px;
+  margin:0 auto;
+  border:1px solid #e1e5e9;
+  display:block;
+}

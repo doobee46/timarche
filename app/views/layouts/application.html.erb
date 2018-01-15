@@ -2,6 +2,7 @@
 <html>
 <head>
   <title><%= @title || "Timarche" %></title>
+  <%= render :partial =>'layouts/meta'%>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
@@ -12,6 +13,7 @@
   <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %> 
   <%if Rails.env.production?%>
   <%= render :partial => 'layouts/tawk'%>
+  <%= render :partial => 'layouts/adsense'%>
   <%end%>
 </head>
   <body>

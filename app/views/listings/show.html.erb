@@ -3,6 +3,9 @@
 <div class="container clearfix">
   <div class="row">
     <div class="col-md-12">
+     <div class="ads">
+        <%=render :partial =>'listings/adleaderboard'%>
+      </div>
       <!--<div class="main_pages switcher">
      
         <div class="btn-group" role="group" aria-label="...">
@@ -36,24 +39,7 @@
 					<div class="social_icon">
 					</div>
 					<div class="first_col">
-                    <div class="flexslider">
-                      <ul class="slides">
-                        <% if @listing.pictures.present?%>
-                        <li>
-                          <%=image_tag @listing.image.url(:large)%>
-                        </li>
-                          <% @listing.pictures.each do |picture| %>
-                            <li>
-                              <%=image_tag picture.image.url(:large)%>
-                            </li>
-                          <%end %>
-                          <% else %>
-                            <li>
-                              <%=image_tag @listing.image.url(:large)%>
-                            </li>
-                          <%end%>
-                      </ul>
-                   </div>			
+              <%=image_tag @listing.image.url(:large)%>			
             </div>
            <div class="stats">
             <%= render :partial => 'listings/like'%>	

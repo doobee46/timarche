@@ -20,7 +20,6 @@ gem 'quiet_assets'
 gem 'impressionist'
 gem 'newrelic_rpm'
 gem 'open_uri_redirections'
-gem 'social-share-button'
 gem 'attribute-defaults'
 gem 'ransack'
 gem "chartkick"
@@ -29,7 +28,6 @@ gem 'intercom-rails'
 gem 'tinymce-rails'
 gem 'koudoku',github: 'doobee46/koudoku'
 gem 'aws-sdk', '~> 2.3'
-gem 'flex-slider-rails'
 #gem 'simple_recommender'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby

@@ -15,3 +15,6 @@ $(document).on 'page:fetch', ->
 $(document).on 'page:receive', ->
   $('#spinner').hide()
   return
+
+$(document).ready ->
+  $(".bxslider").bxSlider()

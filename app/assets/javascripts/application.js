@@ -17,12 +17,10 @@
 //= require jquery_ujs
 //= require jquery-onboarded-0.0.8.min.js
 //= require wufoo.js
-//= require social-share-button
 //= require turbolinks
 //= require video.js
 //= require chosen-jquery
 //= require messages
-//= require jquery.flexslider-min  
 //= require_tree .
 
 

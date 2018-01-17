@@ -607,8 +607,14 @@ table > tbody > tr > td{
     background: #262626;
 }
 
-ul.dropdown-menu li{
-    letter-spacing:1px;
+ul.dropdown-menu li.notif{
+    
+}
+
+ul.dropdwon-menu li.notif a{
+   font-family:'open sans', sans-serif !important;
+   font-size:13 !important;
+  
 }
 
 ul.dropdown-menu li a.dropdown-item strong{

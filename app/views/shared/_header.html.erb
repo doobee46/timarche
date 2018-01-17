@@ -42,9 +42,9 @@
 
                      <ul class="dropdown-menu" >
                          <% if current_user.notifications.unread.present? %>
-                         <li data-behavior="notification-items" ></li>
+                         <li data-behavior="notification-items" class="notif" ></li>
                          <% else %>
-                          <li>
+                          <li class="notif">
                               <a href="#">
                                 Pas de nouveaux notifications  
                               </a>

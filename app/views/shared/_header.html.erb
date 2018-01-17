@@ -5,7 +5,7 @@
         <div class="col-md-12">
           <div class=" col-md-2">
               <div class="head_brand">
-                  <%= link_to image_tag("logobig1.png"), main_app.root_path %>
+                  <%= link_to image_tag("logobig1.png"), main_app.browse_path %>
               </div>
           </div>
           <div class="col-md-5">
@@ -33,14 +33,14 @@
                         <div class="dropdown-toolbar-actions">
                           <a href="" data-behavior="notifications-link">Mark all as read</a>
                         </div>
-                        <% if current_user.notifications.unread.present? %>
-                          <h3 class="dropdown-toolbar-title">Notifications (<%=current_user.notifications.count%>)</h3>
-                           <% else %>
-                          <h3 class="dropdown-toolbar-title">Notifications (<%=current_user.notifications.unread.count%>)</h3>
-                        <%end%>
+                           <% if current_user.notifications.unread.present? %>
+                            <h3 class="dropdown-toolbar-title">Notifications (<%=current_user.notifications.count%>)</h3>
+                             <% else %>
+                            <h3 class="dropdown-toolbar-title">Notifications (<%=current_user.notifications.unread.count%>)</h3>
+                          <%end%>
                       </div><!-- /dropdown-toolbar -->
 
-                      <ul class="dropdown-menu" >
+                     <ul class="dropdown-menu" >
                          <% if current_user.notifications.unread.present? %>
                          <li data-behavior="notification-items" ></li>
                          <% else %>
@@ -53,7 +53,7 @@
                       </ul>
 
                       <div class="dropdown-footer text-center">
-                        <a href="#">View All</a>
+                        <a href="#" data-behavior="notifications-link">View All</a>
                       </div><!-- /dropdown-footer -->
 
                     </div><!-- /dropdown-container -->

@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require bootstrap-sprockets
-//= require jquery_ujs
 //= require jquery-onboarded-0.0.8.min.js
 //= require wufoo.js
 //= require turbolinks
@@ -43,9 +43,7 @@ $(function () {
 })
 
 
-$(document).ready(function(){ 
-    $('.flexslider').flexslider();
-});
+
 
 
 

@@ -38,19 +38,16 @@ Rails.application.configure do
   
   Rails.application.routes.default_url_options[:host] = 'localhost'
 
-  config.action_mailer.delivery_method = :letter_opener
- 
-  # SMTP settings for Mandrill
-  config.action_mailer.smtp_settings = {
-      :address        => 'smtp.mandrillapp.com',
-      :port           => '587',
-      :authentication => :plain,
-      :user_name      => ENV['MANDRILL_USERNAME'],
-      :password       => ENV['MANDRILL_PASSWORD'],
-      :domain         => 'localhost',
-      :enable_starttls_auto => true
-    }
-
-  
+  config.action_mailer.delivery_method = :smtp
+   
+   # SMTP settings for Mailgun
+ config.action_mailer.smtp_settings = {
+     :port => 587,
+     :address => ENV['MAILGUN_SMTP_SERVER'],
+     :user_name => ENV['MAILGUN_SMTP_LOGIN'],
+     :password => ENV['MAILGUN_SMTP_PASSWORD'],
+     :domain => 'localhost',
+     :authentication => :plain
+  }
 
 end

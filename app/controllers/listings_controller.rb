@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
    
   before_filter :set_search
-  before_filter :authenticate_user!, except: [:index, :recent, :popular]
+  before_filter :authenticate_user!
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json, :js
 

@@ -26,6 +26,9 @@
     <div class="container">
        <%= flash_messages %>
     </div>
+    <div class="container">
+       <%= breadcrumbs style: :bootstrap, separator: '' %>   
+    </div>
     <div class="backdrop" id="spinner" style="display:none;"></div>
     <%= yield :koudoku %>
     <%= yield %>

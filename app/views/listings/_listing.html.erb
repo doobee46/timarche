@@ -17,7 +17,7 @@
      
     </div>
 
-    <% if listing.created_at == (Time.now.midnight - 1.day)..Time.now.midnight %>
+    <% if listing.created_at >= (Date.today)%>
       <span class="label label-green">New</span>
     <%end%>
 

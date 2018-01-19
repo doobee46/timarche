@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
   
   has_many :followers, through: :reverse_relationships, source: :follower
     
-  has_many :notifications, foreign_key: :recipient_id
-  
+  has_many :notifications, foreign_key: :recipient_id , dependent: :destroy
+   
   #has_many :like, through: :listings
  
  

@@ -953,3 +953,27 @@ ul.trending li.trending_listing .owner-details em {
 .switcher-left {
     left: 12px !important;
 }
+
+.breadcrumb{
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: none !important;
+    border-radius:none !important;
+}
+
+.breadcrumb li a{
+    color: #337ab7;
+    text-decoration: none;
+    outline: 0;
+    font-size: 13px;
+    letter-spacing:1px;
+    font-family:'open sans', sans-serif;
+}
+
+.breadcrumb > .active {
+    color: #777777;
+    font-size:13px;
+    letter-spacing:1px;
+    font-family:'open sans', sans-serif;
+}

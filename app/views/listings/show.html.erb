@@ -28,6 +28,7 @@
 						<!--<span class="label label-primary label-id">Id:<%#=@listing.listing_number%></span>-->
 						<p class="desc_title"><%=@listing.name%></p>
 						<p class="desc"><%=@listing.description%></p>
+                        <% breadcrumb :listings, @listing %>
 					</div>
 				</div>
 			</div>

@@ -4,6 +4,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="main_pages switcher">
+        <% breadcrumb :categories, @category %>
         <h3><%=@category.name%></h3>
         <p>Découvrez <%=@category.name%> de partout dans le marché.</p>
         <div class="btn-group switcher-left" role="group" aria-label="...">

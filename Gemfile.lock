@@ -152,6 +152,8 @@ GEM
       multi_json
       request_store (>= 1.0.5)
     google-analytics-rails (0.0.6)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     groupdate (2.4.0)
       activesupport (>= 3)
     hashie (3.3.2)
@@ -362,6 +364,7 @@ DEPENDENCIES
   friendly_id (~> 5.0.0)
   gon
   google-analytics-rails
+  gretel
   groupdate
   impressionist
   intercom-rails

@@ -13,7 +13,8 @@ Devise.setup do |config|
     config.mailer_sender = 'Equique@timarche.com'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  #config.mailer = 'Devise::Mailer'
+  config.mailer = 'MyDeviseMailer'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -232,7 +233,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-   config.omniauth :facebook, '396660897158883', '128d8a97e12dbae3e98a29eecfae875c', token_params: { parse: :json }
+    config.omniauth :facebook, '396660897158883', '128d8a97e12dbae3e98a29eecfae875c',scope: 'email', info_fields: 'email, name', token_params: { parse: :json }
     # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

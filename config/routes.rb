@@ -39,10 +39,10 @@ Rails.application.routes.draw do
   get 'team'        => "pages#team"
   get 'sellers'     => "sellers#index"
   get 'dashboard'   => "listings#dashboard"
-  get 'recent', :to =>"listings#recent",  :as => :recent
-  get 'popular',:to =>"listings#popular", :as => :popular
-  match '/sellers/:id',to: 'sellers#show', via: 'get'
-
+  get 'recent', :to => "listings#recent",    :as => :recent
+  get 'popular',:to => "listings#popular",   :as => :popular
+  match '/sellers/:id',to: 'sellers#show',   via: 'get'
+  match "delete" => "registrations#destroy", :via => :delete
 
   devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks",
                                    registrations: "users/registrations", 
@@ -68,7 +68,7 @@ Rails.application.routes.draw do
   end
   resources :messages, only: [:new, :create]
 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show, :destroy]
 
  
   #->Prelang (user_login:devise/stylized_paths)

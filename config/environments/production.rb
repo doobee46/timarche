@@ -82,7 +82,7 @@ Rails.application.configure do
 
   config.action_mailer.asset_host = 'http://timarche.com'
   
-  Rails.application.routes.default_url_options[:host] = 'localhost' 
+  Rails.application.routes.default_url_options[:host] = 'https://timarche-staging.herokuapp.com' 
   
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for Mailgun

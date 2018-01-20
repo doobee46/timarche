@@ -18,8 +18,7 @@
                   <li>
                     <p class="btn btn-log">Welcome back , 
                         <span>
-                         <%= link_to content_tag(:span, "", class: "glyphicon glyphicon-tasks"),
-                           main_app.dashboard_path%> My Dashboard   
+                         <%= link_to "#{current_user.name}",main_app.browse_path, data: { no_turbolink: true }%>   
                         </span>
                     </p>
                   </li>
@@ -51,7 +50,7 @@
                      <% if user_signed_in? %>
                      <%= button_to "Voir Publications", browse_path, :method => :get, class: 'btn btn-action'%>
                      <% else %>
-                     <%= button_to "Voir Publications", main_app.user_session_path, class: 'btn btn-action'%>
+                     <%= button_to "S'inscrire", main_app.user_session_path, class: 'btn btn-action'%>
                      <% end %>
               </div>
             </div>

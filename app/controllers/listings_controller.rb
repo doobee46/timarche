@@ -86,7 +86,7 @@ class ListingsController < ApplicationController
     @popular = Listing.popular.page(params[:page]).per_page(30).order("created_at DESC")
     respond_with(@popular)
   end
-    
+ 
   def today
      where("listing.created_at >= ?", (Date.today))
   end

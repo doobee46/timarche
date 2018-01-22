@@ -41,8 +41,9 @@ Rails.application.routes.draw do
   get 'team'        => "pages#team"
   get 'sellers'     => "sellers#index"
   get 'dashboard'   => "listings#dashboard"
-  get 'recent', :to => "listings#recent",    :as => :recent
-  get 'popular',:to => "listings#popular",   :as => :popular
+  get 'recent',    :to => "listings#recent",    :as => :recent
+  get 'popular',   :to => "listings#popular",   :as => :popular
+  get 'favorites', :to => "hearts#favorites",   :as => :favorites
   match '/sellers/:id',to: 'sellers#show',   via: 'get'
   match "delete" => "registrations#destroy", :via => :delete
   match 'heart',   to: 'hearts#heart',   via: :post

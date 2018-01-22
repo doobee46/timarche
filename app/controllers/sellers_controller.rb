@@ -25,7 +25,7 @@ class SellersController < ApplicationController
     @user  = User.friendly.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
-  end
+  end 
 
   private 
     

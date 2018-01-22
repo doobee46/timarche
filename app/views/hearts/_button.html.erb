@@ -1,5 +1,5 @@
 <% if current_user.heart?(listing) %>
-  <%= button_to "liked", {:action=>'unheart', :controller =>'hearts', :listing_id => listing.id},class: 'btn btn-success btn-like', remote: true, method: :delete  %>
+  <%= icon_button_to fa_icon(:heart, text: "liked"), {:action=>'unheart', :controller =>'hearts', :listing_id => listing.id},class: 'btn btn-success btn-like like-left-slide', remote: true, method: :delete  %>
 <% else %>
-  <%= button_to "like", {:action =>'heart', :controller => 'hearts', :listing_id =>listing.id},class:'btn btn-default btn-like', remote: true  %>
+  <%= icon_button_to fa_icon(:heart, text: "like"), {:action =>'heart', :controller => 'hearts', :listing_id =>listing.id},class:'btn btn-default btn-like like-right-slide', remote: true  %>
 <% end %>

@@ -1,5 +1,5 @@
 crumb :root do
-  link "Home", browse_path
+  link "Acceuil", browse_path
 end
 
 crumb :categories do |category|

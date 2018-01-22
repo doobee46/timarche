@@ -1,8 +1,8 @@
 <div class="like-action clearfix pull-left">
-  <%if @listing.like.blank?%>
+  <%if @listing.hearts.blank?%>
   <span></span>
   <%else%>
   <span class="like"><span class="glyphicon glyphicon-heart" aria-hidden="true">
-  </span> <%=number_to_human(pluralize(@listing.like.count, 'like' ))%></span>
+  </span> <%=number_to_human(pluralize(@listing.hearts.count, 'like' ))%></span>
   <%end%>
 </div>

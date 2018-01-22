@@ -7,8 +7,21 @@
 }
 
 .btn-like{
-	font-size:13px;
-	font-family:'open sans', sans-serif;
-	text-transform:capitalize;
-	letter-spacing:1px;
+	  font-size: 13px !important;
+    text-transform: capitalize;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 2px !important;
+    /* margin: 0 auto; */
+    position: relative;
+    left: -20px;
+    top: -150px;
+}
+
+.like-left-slide{
+	left:-4px !important;
+}
+
+.like-right-slide{
+	left: 6px !important;
 }

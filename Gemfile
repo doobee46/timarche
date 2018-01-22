@@ -62,7 +62,7 @@ gem 'chosen-rails'
 gem 'daemon-spawn'
 gem 'devise-i18n'
 gem 'spinner.rb' 
-
+gem 'kaminari'
 
 group :production do 
   gem 'pg', '~> 0.20.0'  
@@ -70,6 +70,7 @@ group :production do
   gem 'faker'
   gem 'delayed_job_active_record'
   gem "daemons"
+ 
 end
 
 group :development, :test do
@@ -80,5 +81,5 @@ group :development, :test do
   gem 'ruby-progressbar'
   gem "letter_opener", :group => :development
   gem 'letter_opener_web', '~> 1.2.0', :group => :development
-  gem 'kaminari'
+  gem 'pry-rails'
 end

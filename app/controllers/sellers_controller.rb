@@ -12,7 +12,8 @@ class SellersController < ApplicationController
 
   def show
       @user = User.friendly.find(params[:id]) 
-      @listings= @user.listings.paginate(:page => params[:page], :per_page => 30)
+      @lists = User.list(params[:id].to_i)
+      @listings= Kaminari.paginate_array(@lists).page(params[:page]).per(30)
   end
 
   def following

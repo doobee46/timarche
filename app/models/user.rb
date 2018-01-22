@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   has_many :listings, through: :hearts,dependent: :destroy
  
  
-  has_attached_file :avatar, :styles => { :athumb => "30x30#" }, :default_url => "default_:style.png"
+  has_attached_file :avatar, :styles => { :athumb => "30x30#",:amedium =>"120x120#" }, :default_url => "default_:style.png"
   
   validates :username, uniqueness: true
   validates :email, uniqueness: true, presence: true  
@@ -131,6 +131,18 @@ end
 def heart?(listing)
   self.hearts.find_by_listing_id(listing.id)
 end
+  
+ def self.list(id)
+      list = []
+      user= User.find(id)
+      listings = Listing.all
+      listings.each do |listing|
+        if listing.user_id == id
+          list << listing
+        end
+      end
+      return list 
+  end  
   
  
   private

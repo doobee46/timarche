@@ -19,6 +19,10 @@ class Listing < ActiveRecord::Base
   scope :published,->{where("listings.created_at IS NOT NULL ")}
   scope :recent, lambda{published.where(:created_at == ((Time.now.midnight - 1.day)..Time.now.midnight))}
   scope :popular, ->{where("listings.impressions_count >= 30").order("impressions_count DESC")}
+  
+  validates :title, presence: true
+  validates :description, presence: true 
+  validates :price, presence: true
    
   extend FriendlyId
   friendly_id :name, use: :slugged

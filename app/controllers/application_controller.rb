@@ -33,10 +33,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update)  { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password,:name,:avatar,:bio, :location) }
   end
     
-  rescue_from ActiveRecord::RecordNotFound do
-  flash[:warning] = 'Resource not found.'
-  redirect_back_or root_path
-  end 
+  #rescue_from ActiveRecord::RecordNotFound do
+  #flash[:warning] = 'Resource not found.'
+  #redirect_back_or root_path
+  #end 
    
   def redirect_back_or(path)
      redirect_to request.referer || path

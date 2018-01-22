@@ -10,6 +10,9 @@ class Listing < ActiveRecord::Base
   has_many   :activities
   has_many   :notifications, as: :notifiable , dependent: :destroy
   
+  has_many :hearts, dependent: :destroy
+  has_many :users, through: :hearts
+  
   #include SimpleRecommender::Recommendable
   #similar_by :users
   

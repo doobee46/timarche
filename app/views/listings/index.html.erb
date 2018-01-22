@@ -16,11 +16,11 @@
             </div>
           </div>     
          <div class="item_list" >
-            <div id="listings">
-              <%= render @listings %>
+            <div id="listings">        
+              <%= render @listings ,locals: {listing: @listing} %>  
            </div>        
          </div>
-           <%= will_paginate @listings  %>
+            <%= will_paginate @listings  %>
       </div>
     </div>
 </div>

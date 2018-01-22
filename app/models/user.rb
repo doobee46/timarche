@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   # Added by Koudoku.
   has_one  :subscription
   devise   :omniauthable, :omniauth_providers => [:facebook]
-  has_many :listings, dependent: :destroy
+  #has_many :listings, dependent: :destroy
   has_many :activities
   has_many :relationships,foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
@@ -24,10 +24,11 @@ class User < ActiveRecord::Base
     
   has_many :notifications, foreign_key: :recipient_id , dependent: :destroy
    
-  #has_many :like, through: :listings
+  has_many :hearts, dependent: :destroy
+  has_many :listings, through: :hearts,dependent: :destroy
  
  
-  has_attached_file :avatar, :styles => { :athumb => "30x30#" }, :default_url => "default_:style.png"
+  has_attached_file :avatar, :styles => { :athumb => "30x30#",:amedium =>"120x120#" }, :default_url => "default_:style.png"
   
   validates :username, uniqueness: true
   validates :email, uniqueness: true, presence: true  
@@ -114,6 +115,35 @@ class User < ActiveRecord::Base
         total = views.inject(0){|r,s| r+s}
         total
    end
+  
+  # creates a new heart row with listing_id and user_id
+def heart!(listing)
+  self.hearts.create!(listing_id: listing.id)
+end
+
+# destroys a heart with matching listing_id and user_id
+def unheart!(listing)
+  heart = self.hearts.find_by_listing_id(listing.id)
+  heart.destroy!
+end
+
+# returns true of false if a listing is hearted by user
+def heart?(listing)
+  self.hearts.find_by_listing_id(listing.id)
+end
+  
+ def self.list(id)
+      list = []
+      user= User.find(id)
+      listings = Listing.all
+      listings.each do |listing|
+        if listing.user_id == id
+          list << listing
+        end
+      end
+      return list 
+  end  
+  
  
   private
 

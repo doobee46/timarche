@@ -10,17 +10,23 @@ class Listing < ActiveRecord::Base
   has_many   :activities
   has_many   :notifications, as: :notifiable , dependent: :destroy
   
+  has_many :hearts, dependent: :destroy
+  has_many :users, through: :hearts
+  
   #include SimpleRecommender::Recommendable
   #similar_by :users
   
   scope :published,->{where("listings.created_at IS NOT NULL ")}
   scope :recent, lambda{published.where(:created_at == ((Time.now.midnight - 1.day)..Time.now.midnight))}
   scope :popular, ->{where("listings.impressions_count >= 30").order("impressions_count DESC")}
-
+  
+  validates :title, presence: true
+  validates :description, presence: true 
+  validates :price, presence: true
+   
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  
   has_attached_file :image, :styles => { :large=> "564x394#",:medium => "208x200#", :thumb => "100x100>", :avatar =>"64x64#", }, :default_url => "default_:style.png"
   
   #validates_attachment :image, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png","image/jpg"] }

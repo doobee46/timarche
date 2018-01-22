@@ -1,0 +1,28 @@
+// Place all the styles related to the Hearts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.heart{
+	border-left:none !important;
+}
+
+.btn-like{
+	  font-size: 13px !important;
+    text-transform: capitalize;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 2px !important;
+    /* margin: 0 auto; */
+    position: relative;
+    left: -20px;
+    top: -150px;
+}
+
+.like-left-slide{
+	left:-4px !important;
+}
+
+.like-right-slide{
+	left: 6px !important;
+	border: 1px solid #ccc !important;
+}

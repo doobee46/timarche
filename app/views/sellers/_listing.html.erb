@@ -1,5 +1,5 @@
 <div class="item">
-  <%= link_to (image_tag listing.image.url(:medium)), listing_path(listing) %>               
+  <%= link_to (image_tag listing.image.url(:amedium)), listing_path(listing) %>               
     <div class="info">
       <span class="item_title"><%= listing.name %></span>
         <%if listing.display_usd == true %>
@@ -27,8 +27,3 @@
       <%end%>
   </div>
 </div>
-
-
-        
-
- 

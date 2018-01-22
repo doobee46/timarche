@@ -1,4 +1,4 @@
-<body class="pr-show">
+<body id="bd_list">
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -9,13 +9,17 @@
 				<div class="show_info">
 					<h3><%=@user.name%></h3>
 					<p><%=@user.bio%></p>
-		            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"><span class="map-loc"><%=@user.location%></span></span>
+		       <span class="glyphicon glyphicon-map-marker" aria-hidden="true"><span class="map-loc"><%=@user.location%></span></span>
 				</div>
 			</div>
 			<%= render :partial => 'shared/stats'%>
 			<%= render :partial => 'sellers/follow_form' if user_signed_in? %>
-			<%= render :partial => 'sellers/userlistings'%>
-			 <div>
+			<div class="item_list" >
+            <div id="listings">        
+              <%= render @listings ,locals: {listing: @listing} %>  
+           </div>        
+         </div>
+			<div>
 			 <%= will_paginate @listings, renderer: BootstrapPagination::Rails, class: "pagination pagination-sm" %>
       </div>
 		</div>

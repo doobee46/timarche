@@ -20,12 +20,13 @@
     <% if listing.created_at >= (Date.today)%>
       <span class="label label-green">New</span>
     <%end%>
-
+  <% if listing.image.exists?%>
   <div class="block-actions clearfix"> 
       <%= div_for(listing ,class:'heart') do %>
       <%= render :partial => 'hearts/button', locals: { listing: listing } %>
       <%end%>
   </div>
+  <%end%>
 </div>
 
 

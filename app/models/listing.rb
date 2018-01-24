@@ -10,8 +10,8 @@ class Listing < ActiveRecord::Base
   has_many   :activities
   has_many   :notifications, as: :notifiable , dependent: :destroy
   
-  has_many :hearts, dependent: :destroy
-  has_many :users, through: :hearts
+  has_many   :hearts, dependent: :destroy
+  has_many   :users, through: :hearts 
   
   #include SimpleRecommender::Recommendable
   #similar_by :users
@@ -20,7 +20,7 @@ class Listing < ActiveRecord::Base
   scope :recent, lambda{published.where(:created_at == ((Time.now.midnight - 1.day)..Time.now.midnight))}
   scope :popular, ->{where("listings.impressions_count >= 30").order("impressions_count DESC")}
   
-  validates :title, presence: true
+  validates :name, presence: true
   validates :description, presence: true 
   validates :price, presence: true
    
@@ -42,13 +42,16 @@ class Listing < ActiveRecord::Base
     "TM#{year}-HT#{hour}".to_s 
   end
 
+  
 =begin
-  def listing_limit
+  def self.limit
     if @user.listings(:reload).count >= 10
-      errors.add(:base, "Exceeded thing limit")
+      errors.add(:base, " limit")
+      flash[:notice] = "Welcome to the Sample App!"
     end
   end
 =end
+
  
   def self.getcategories(id)
      listings = Listing.all

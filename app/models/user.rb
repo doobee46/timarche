@@ -26,8 +26,7 @@ class User < ActiveRecord::Base
    
   has_many :hearts, dependent: :destroy
   has_many :listings, through: :hearts,dependent: :destroy
- 
- 
+  
   has_attached_file :avatar, :styles => { :athumb => "30x30#",:amedium =>"120x120#" }, :default_url => "default_:style.png"
   
   validates :username, uniqueness: true

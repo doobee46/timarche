@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   # Added by Koudoku.
   has_one  :subscription
   devise   :omniauthable, :omniauth_providers => [:facebook]
-  #has_many :listings, dependent: :destroy
+  has_many :listings, dependent: :destroy
   has_many :activities
   has_many :relationships,foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   has_many :notifications, foreign_key: :recipient_id , dependent: :destroy
    
   has_many :hearts, dependent: :destroy
-  has_many :listings, through: :hearts,dependent: :destroy
+  #has_many :listings, through: :hearts,dependent: :destroy
   
   has_attached_file :avatar, :styles => { :athumb => "30x30#",:amedium =>"120x120#" }, :default_url => "default_:style.png"
   

@@ -4,10 +4,11 @@
 
 .product{
     width: 100%;
+    height:auto;
     margin: 22px auto 50px;
     padding:20px 5px 20px 5px;
     background: none repeat scroll 0% 0% #fff;
-    border: 1px solid #eeeeee;
+    border: 1px solid #ddd;
     /*border-radius: 5px 4px 4px;*/
     clear: both;
 }
@@ -407,4 +408,21 @@ span.store{
   margin:0 auto;
   border:1px solid #e1e5e9;
   display:block;
+}
+
+.box_content{
+    width: 100%;
+    height: auto;
+    padding: 5px 35px;
+    background: #fff;
+    border: 1px solid #dddddd;
+    position: relative;
+    top: -40px;
+    margin-bottom: 8px;
+}
+
+.box_content p{
+    font-family:"open sans", sans-serif;
+    font-size: 12px;
+    color: #444;
 }

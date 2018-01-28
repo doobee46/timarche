@@ -13,7 +13,7 @@ end
 
 crumb :listings do |listing|
   link listing.category.name, category_path(listing.category)
-  link listing.name, listings_path(listing)
+  link listing.slug, listings_path(listing)
 end
 
 # crumb :project do |project|

@@ -11,7 +11,7 @@ namespace :user do
       puts "----------------"
 
     	30.times do |n|
-    		puts"[DEBUG] creating user #{n+1} of 100"
+    		puts"[DEBUG] creating user #{n+1} of 30"
     		name = Faker::Name.name
             username = Faker::Internet.user_name(%w(_))
             avatar = File.open(Dir.glob(File.join(Rails.root, 'sampleavatar','*')).sample)

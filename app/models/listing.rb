@@ -11,7 +11,7 @@ class Listing < ActiveRecord::Base
   has_many   :notifications, as: :notifiable , dependent: :destroy
   
   has_many   :hearts, dependent: :destroy
-  has_many   :users, through: :hearts 
+  #has_many   :users, through: :hearts 
   
   #include SimpleRecommender::Recommendable
   #similar_by :users

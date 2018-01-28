@@ -17,7 +17,7 @@ class ListingsController < ApplicationController
   def index
     @q = Listing.includes(:user, :impressions, :hearts, :category).search(params[:q]) 
     @listings = @q.result.paginate(:page => params[:page], :per_page => 40).order('created_at DESC')
-    @featured = @listings.limit(5)
+    @featured = @listings.popular.limit(5)
     @trend = Listing.where("impressions_count >=10").limit(5).order('created_at DESC')
     @categories = Category.all
     @users=User.all

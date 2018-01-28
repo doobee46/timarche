@@ -167,9 +167,13 @@ ul.main_nav li a i{
     border-left:none; 
 }*/
 .topnav ul li:first-child a{
-    padding: 0  8px;
+    padding: 0  20px;
    
 }
+.topnav ul li:last-child a{
+    padding: 0 6px;
+}
+
 /*.topnav ul li:first-child a:hover {
     background-color:rgb(255,255,255);
     color:none;

@@ -2,72 +2,169 @@
 <body class="dash">
 <% @title = "dashboard" %>
 <%= render :partial => 'listings/form'%> 
-<div class ="container">
-    <div class = "row">
-        <div class ="col-md-12">
-            <div class="tabs_link">
-                <div class="btn_box">
-                    <button type="button" class="btn-follow btn-spacer btn-spacer-plus " data-toggle="modal" data-target="#myModal">
-                      <i class="fa fa-plus"></i> Poster ici
-                    </button>
-                </div>
-                
-                <div role="tabpanel">
-                  <!-- Nav tabs -->
-                  <ul class="nav nav-tabs" role="tablist">
-                     <li role="presentation" class="active">
-                        <a href="#Overview" aria-controls="Overview" role="tab" data-toggle="tab">
-                            <i class="fa fa-binoculars"></i>Overview
-                        </a>
-                     </li>
-                    <!--<li role="presentation">
-                        <a href="#Activity" aria-controls="home" role="tab" data-toggle="tab">
-                            <i class="fa fa-bell"></i>Activity
-                        </a>
-                     </li>-->
-                    <li role="presentation">
-                        <a href="#Listings" aria-controls="Listings" role="tab" data-toggle="tab">
-                            <i class="fa fa-tasks"></i>Annonces
-                        </a>
-                    </li>
-                    <!--<li role="presentation">
-                        <a href="#Sales" aria-controls="Sales" role="tab" data-toggle="tab">
-                            <i class="fa fa-credit-card"></i>Sales
-                        </a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#Orders" aria-controls="Orders" role="tab" data-toggle="tab">
-                            <i class="fa fa-shopping-cart"></i>Orders
-                        </a>
-                    </li>-->
-                  
-                  </ul>
-
-                  <!-- Tab panes -->
-                  <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="Overview">
-                       <%= render :partial => 'listings/overview'%>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="Activity">
-                     
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="Listings">
-                      <h3 class="time_lead">Manage Listings (<%= current_user.listings.count%>) </h3> 
-                      <%= render :partial =>'listings/current_list'%>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="Sales">...</div>
-                    <div role="tabpanel" class="tab-pane" id="Orders">
-                        <p>demo</p>
-                    </div>
-                   
-                  </div>
-
-                </div>
-            </div>  
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="dash-box dash-box-avatar">
+        <%= image_tag current_user.avatar.url(:alarge)%>
+      </div>
+      <div class="dash-box dash-box-panel box-bottom">
+        <h2><%=current_user.name.split.first.upcase%> <i class="fa fa-check-circle-o" aria-hidden="true"></i></h2>
+        <%= link_to "Edit Profile", main_app.edit_user_registration_path %>
+      </div>
+      <div class="dash-box dash-box-panel">
+        <h2 class="box-info"> Cliquer Ici pour Poster</h2>
+        <a href="#" class="btn btn-default post-info" data-toggle="modal" data-target="#myModal">
+          Poster une annonce</a>
+      </div>
+      <div class=" dash-box dash-box-panel">
+        <div class="dash-box-bar">
+          <h2>Verification</h2>
         </div>
+        <div class="box-panel-body">
+          <ul>
+            <li>
+              Phone
+              <i class="fa fa-check-circle-o pull-right" aria-hidden="true"></i>
+            </li>
+            <li>
+              email
+              <i class="fa fa-check-circle-o pull-right" aria-hidden="true"></i>
+            </li>
+          </ul>
+          <a href="#"> Verification </a>
+        </div>
+      </div>
+      <div class="dash-box dash-box-panel">
+        <div class="dash-box-bar">
+          <h2>Compte Social Connecté</h2>
+        </div>
+        <div class="box-panel-body">
+          <ul>
+            <li>
+              Facebook
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+    <div class="col-md-5">
+      <div class="dash-box dash-box-panel">
+        <div class="dash-box-bar">
+          <h2>Notifications<span>(<%=current_user.notifications.unread.count%> nouveau)</span></h2>
+        </div>
+        <div class="box-panel-content" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
+          <ul>
+             <% if current_user.notifications.unread.present? %>
+             <li data-behavior="notification-items" class="notif" >
+                <i class="fa fa-close pull-right" aria-hidden="true"></i> 
+             </li>
+             <% else %>
+              <li class="notif">
+                  <a href="#">
+                    Pas de nouveaux notifications  
+                  </a>
+              </li>
+             <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="dash-box dash-box-footer">
+        <a href="#" data-behavior="notifications-link">Voir tous</a>
+      </div>
+    </div>
+    <div class="col-md-4" clearfix>
+      <div class="dash-box dash-box-panel">
+        <div class="dash-box-bar">
+          <h2>Messages<span>(<%=current_user.mailbox.inbox(:unread => true).count(:id, :distinct => true)%> nouveau)</span></h2>
+        </div>
+        <div class="dash-box-content">
+          <ul class="dash-box-media">
+            <li>
+              <div class="media">
+                <%#message = receipt.message %> 
+                <div class="media-left">
+                  <%#image_tag(message.sender.avatar.url(:amedium), size: "45x45", class:"media-object img-circle")%> 
+                </div>
+                <div class=" media-body">
+                  <h4 class="media-heading"><span class="pull-right">01/20/2018 5:42pm </span></h4>
+                   I really like this apt, and I would like to rent for the week 21st ... 
+                </div>
+              </div>
+            </li>   
+          </ul>
+        </div>
+      </div>
+      <div class="dash-box dash-box-footer">
+       <a href="#" >Voir les messages</a>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="dash-box dash-box-ads">
+        <h2>Vendez plus , Gagner plus</h2>
+        <p>Maintenant ouvrir un store c'est plus facile</p>
+        <a href="#" class="btn btn-danger pull-right">ouvrir un store</a>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="dash-box dash-box-activity">
+        <div class="dash-box-bar">
+          <h2>Annonces Activité</h2>
+        </div>
+        <div class="box-body">
+          <%= line_chart @listing.impressions.group_by_day(:created_at).count %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="dash-box dash-box-views">
+        <div class="dash-box-bar">
+          <h2>Total Impressions</h2>
+        </div>
+        <div class="dash-box-body">
+          <h3><%=number_to_human(current_user.total_views)%></h3>
+          <p class="impressions"> Impressions </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-offset-3 col-md-9">
+      <div class="panel panel-default panel-table move-top">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-6">
+              <h3 class="panel-title">Manage Listings <span>(<%= current_user.listings.count%>)</span></h3>
+            </div>
+            <div class="col-md-6 text-right">
+              <button type="button" class="btn btn-sm btn-primary btn-create" data-toggle="modal" data-target="#myModal">Create New</button>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <%= render :partial =>'listings/current_list'%>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-4">Page 1 of 5
+            </div>
+            <div class="col-md-8">
+              <ul class="pagination hidden-xs pull-right">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+              </ul>
+              <ul class="pagination visible-xs pull-right">
+                <li><a href="#">«</a></li>
+                <li><a href="#">»</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-    
 
 
  

@@ -16,13 +16,15 @@
   <%= render :partial => 'layouts/adsense'%>
   <%end%>
 </head>
-  <body>
+  <body> 
+     
     <% if content_for?(:body_attributes) %>
       <%= yield(:body_attributes) %> 
     <% end %>
     <% unless @title == "welcome" %>
        <%= render :partial => 'shared/header'%>
     <%end%>
+    <%#=Userswitch.users(current_user)%>  
     <div class="container">
        <%= flash_messages %>
     </div>

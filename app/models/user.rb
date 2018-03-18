@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   has_many :hearts, dependent: :destroy
   #has_many :listings, through: :hearts,dependent: :destroy
   
-  has_attached_file :avatar, :styles => { :athumb => "30x30#",:amedium =>"120x120#" }, :default_url => "default_:style.png"
+  has_attached_file :avatar, :styles => { :athumb => "30x30#",:amedium =>"120x120#",:alarge =>"260X208#" }, :default_url => "default_:style.png"
   
   validates :username, uniqueness: true
   validates :email, uniqueness: true, presence: true  
@@ -116,20 +116,20 @@ class User < ActiveRecord::Base
    end
   
   # creates a new heart row with listing_id and user_id
-def heart!(listing)
-  self.hearts.create!(listing_id: listing.id)
-end
+    def heart!(listing)
+      self.hearts.create!(listing_id: listing.id)
+    end
 
-# destroys a heart with matching listing_id and user_id
-def unheart!(listing)
-  heart = self.hearts.find_by_listing_id(listing.id)
-  heart.destroy!
-end
+    # destroys a heart with matching listing_id and user_id
+    def unheart!(listing)
+      heart = self.hearts.find_by_listing_id(listing.id)
+      heart.destroy!
+    end
 
-# returns true of false if a listing is hearted by user
-def heart?(listing)
-  self.hearts.find_by_listing_id(listing.id)
-end
+    # returns true of false if a listing is hearted by user
+    def heart?(listing)
+      self.hearts.find_by_listing_id(listing.id)
+    end
   
  def self.list(id)
       list = []

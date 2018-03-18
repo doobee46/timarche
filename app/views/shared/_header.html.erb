@@ -106,7 +106,7 @@
       </div>
     </div>        
   </div>
-   <% if params[:controller] == "listings" || params[:controller] =='categories' && @title != 'dashboard'%>
+   <% if params[:controller] == "listings" || params[:controller] =='categories' && @title != "dashboard" %>
        <%= render :partial => 'shared/category'  %>
    <% end %>
 </div> 

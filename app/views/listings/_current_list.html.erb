@@ -1,46 +1,38 @@
 <table id="cur_listing" class="table table-striped table-bordered">
     <thead>
         <tr>
+            <th><em class="fa fa-cog"></em></th>
             <th>Thumbs</th>
             <th>Publication Id</th>
             <th>Title</th>
             <th>Status</th>
             <th>Listing Price</th>
             <th>Total Views</th>
-            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
       <%@listings.each do |listing| %>
-        <tr id="listing_<%= listing.id %>" >
+        <tr id="listing_<%= listing.id %>">
+            <td align="center">
+              <%= link_to edit_listing_path(listing), class:'btn btn-default' do %>
+              <em class="fa fa-pencil" data-toggle="tooltip" title="Edit listing" ></em>
+              <% end %>
+              <%= link_to (listing), method: :delete, :remote => true, data:{confirm: "Are you sure?.", disable_with: "<i class='fa fa-spinner fa-spin'></i>"}, class: 'btn btn-danger delete_listing' do %>
+                 <em class="fa fa-trash"data-toggle="tooltip" title="delete listing"></em>
+              <%end%>
+            </td>
             <td><%= link_to (image_tag listing.image.url(:avatar),size:"30x30"), listing_path(listing) %></td>
-            <td><span class="label label-primary pub_id"><%= listing.listing_number %></span> </td>
+            <td><span class="label label-primary"><%= listing.listing_number %></span> </td>
             <td><%= link_to listing.name, listing_path(listing) %> </td>
-            <td><span class="label label-success pub_id">Published</span></td>
+            <td><span class="label label-success">Published</span></td>
             <td>
             <%if listing.display_usd == true %>
                 <%=number_to_currency(listing.price, unit:"$", precision: 2)%>
-                <% else %>
+            <% else %>
                 <%=number_to_currency(listing.price, unit:"HTG", precision: 2)%> 
             <%end%>
             </td>
-            <td><%=listing.impressions_count%></td>
-            <td>
-                <div class="dash_actions">
-                    <ul>
-                      <li>
-                        <%= link_to edit_listing_path(listing) do %>
-                          <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Edit listing" ></span>
-                        <%end%>
-                      <li><a href="#"><i class="glyphicon glyphicon-send" data-toggle="tooltip" title="Publish listing"></i></a></li>
-                      <li>
-                       <%= link_to (listing), method: :delete, :remote => true, data:{confirm: "Are you sure?.", disable_with: "<i class='fa fa-spinner fa-spin'></i>"}, class: 'delete_listing' do %>
-                         <span class="glyphicon glyphicon-trash"data-toggle="tooltip" title="delete listing"></span>
-                       <%end%>
-                      </li>
-                    </ul>
-                  </div>
-              </td>
+            <td><%=listing.impressions_count%></td>   
            </tr>
        <%end%>
     </tbody>

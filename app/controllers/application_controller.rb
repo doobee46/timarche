@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_search
   
   def after_sign_in_path_for(resource)
-      listings_path
+      browse_path
   end
 
   def set_search

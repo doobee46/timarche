@@ -10,7 +10,6 @@ class ListingsController < ApplicationController
     @categories = Category.all
     @listings = Listing.where(user: current_user).paginate(:page => params[:page], :per_page => 50).order('created_at DESC')
     params[:page] ||=1
-    @activities =Activity.for_user(current_user, params)
     render layout: "dashboard"
   end
 
@@ -49,17 +48,15 @@ class ListingsController < ApplicationController
     @listing.user_id = current_user.id
     if @listing.save
       if params[:images]
-          # The magic is here ;)
           params[:images].each { |image|
             @listing.pictures.create(image: image)
           }
        end
-     #current_user.create_activity(@listing, "published")
      (@users - [current_user]).each do |user|
         Notification.create(recipient: user, actor: current_user, action: "posted", notifiable: @listing)
-     end 
-     flash[:notice]= "L'annonce #{@listing.listing_number} a eté publiee avec succès."
-     respond_with(@listing)  
+     end   
+     flash[:notice]= "L'annonce #{@listing.listing_number} a eté publiee avec succès."   
+     respond_with(@listing)
     end
   end
 
@@ -72,7 +69,6 @@ class ListingsController < ApplicationController
     @listing.destroy
     respond_with(@listing)
   end
-
    
   def recent
     @categories = Category.all  
@@ -86,9 +82,6 @@ class ListingsController < ApplicationController
     respond_with(@popular)
   end
  
-  def today
-     where("listing.created_at >= ?", (Date.today))
-  end
 
   private
     def set_search
@@ -100,7 +93,7 @@ class ListingsController < ApplicationController
     end
 
     def listing_params
-      params.require(:listing).permit(:name, :description, :price, :image, :category_id, :listing_number, :user_id, :display_usd)
+      params.require(:listing).permit(:name, :description, :price, :image, :category_id, :listing_number,:user_id, :display_usd)
     end
 
 

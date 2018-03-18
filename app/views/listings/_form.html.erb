@@ -7,7 +7,7 @@
         <h4 class="modal-title">Publication d'annonce</h4>
       </div>
       <div class="modal-body"> 
-         <%= form_for @listing do |f| %>
+         <%= form_for :listing, :url => {:action => :create} do |f| %>
           <div class="form-group row">
                <%= f.label :name,"Titre de l'annonce", class: 'col-4 col-form-label'%> 
             <div class="col-8">

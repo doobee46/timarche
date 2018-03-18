@@ -63,6 +63,7 @@ gem 'daemon-spawn'
 gem 'devise-i18n'
 gem 'spinner.rb' 
 gem 'kaminari'
+gem 'active_median', '~> 0.1.0'
 
 group :production do 
   gem 'pg', '~> 0.20.0'  
@@ -79,7 +80,8 @@ group :development, :test do
   gem 'faker'
   gem 'thin'
   gem 'ruby-progressbar'
-  gem "letter_opener", :group => :development
-  gem 'letter_opener_web', '~> 1.2.0', :group => :development
+  #gem "letter_opener", :group => :development
+  #gem 'letter_opener_web', '~> 1.2.0', :group => :development
   gem 'pry-rails'
+  gem "userswitch"
 end

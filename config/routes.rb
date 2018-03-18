@@ -94,11 +94,11 @@ namespace :api do
     resources :listings, :users
 end 
 
-
+=begin
 if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end
-
+=end
 
 
 mount Koudoku::Engine, at: 'koudoku'
